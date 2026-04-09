@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { withPrismaRetry } from '@/lib/prisma-retry'
 import { selectRecoverableRun } from '@/lib/run-runtime/recovery'
 import { resolveRetryInvalidationStepKeys } from '@/lib/workflow-engine/dependencies'
 import {
@@ -674,7 +675,7 @@ async function applyRunProjection(tx: GraphRuntimeTx, input: RunEventInput) {
 }
 
 export async function createRun(input: CreateRunInput) {
-  const row = await runtimeClient.graphRun.create({
+  const row = await withPrismaRetry(() => runtimeClient.graphRun.create({
     data: {
       userId: input.userId,
       projectId: input.projectId,
@@ -693,7 +694,7 @@ export async function createRun(input: CreateRunInput) {
       queuedAt: new Date(),
       lastSeq: 0,
     },
-  })
+  }))
   return mapRunRow(row)
 }
 
@@ -751,7 +752,7 @@ export async function claimRunLease(params: {
 }) {
   const now = new Date()
   const leaseExpiresAt = new Date(now.getTime() + Math.max(5_000, Math.floor(params.leaseMs)))
-  const result = await runtimeClient.graphRun.updateMany({
+  const result = await withPrismaRetry(() => runtimeClient.graphRun.updateMany({
     where: {
       id: params.runId,
       userId: params.userId,
@@ -770,7 +771,7 @@ export async function claimRunLease(params: {
       leaseExpiresAt,
       heartbeatAt: now,
     },
-  })
+  }))
   if (result.count === 0) {
     return null
   }
@@ -785,7 +786,7 @@ export async function renewRunLease(params: {
 }) {
   const now = new Date()
   const leaseExpiresAt = new Date(now.getTime() + Math.max(5_000, Math.floor(params.leaseMs)))
-  const result = await runtimeClient.graphRun.updateMany({
+  const result = await withPrismaRetry(() => runtimeClient.graphRun.updateMany({
     where: {
       id: params.runId,
       userId: params.userId,
@@ -798,7 +799,7 @@ export async function renewRunLease(params: {
       leaseExpiresAt,
       heartbeatAt: now,
     },
-  })
+  }))
   if (result.count === 0) {
     return null
   }
@@ -809,7 +810,7 @@ export async function releaseRunLease(params: {
   runId: string
   workerId: string
 }) {
-  await runtimeClient.graphRun.updateMany({
+  await withPrismaRetry(() => runtimeClient.graphRun.updateMany({
     where: {
       id: params.runId,
       leaseOwner: params.workerId,
@@ -818,7 +819,7 @@ export async function releaseRunLease(params: {
       leaseOwner: null,
       leaseExpiresAt: null,
     },
-  })
+  }))
 }
 
 export async function getRunSnapshot(runId: string) {
@@ -897,7 +898,7 @@ export async function requestRunCancel(params: {
 }
 
 export async function appendRunEventWithSeq(input: RunEventInput): Promise<RunEvent> {
-  return await runtimeClient.$transaction(async (tx) => {
+  return await withPrismaRetry(() => runtimeClient.$transaction(async (tx) => {
     const run = await tx.graphRun.update({
       where: { id: input.runId },
       data: {
@@ -925,7 +926,7 @@ export async function appendRunEventWithSeq(input: RunEventInput): Promise<RunEv
 
     await applyRunProjection(tx, input)
     return mapEventRow(created)
-  })
+  }))
 }
 
 export async function listRunEventsAfterSeq(params: {
@@ -1056,7 +1057,7 @@ export async function createArtifact(params: {
     throw new Error('refId is required')
   }
 
-  const row = await upsertArtifactStrict({
+  const row = await withPrismaRetry(() => upsertArtifactStrict({
     artifactModel,
     runId: params.runId,
     stepKey,
@@ -1064,7 +1065,7 @@ export async function createArtifact(params: {
     refId,
     versionHash: params.versionHash || null,
     payload: params.payload || null,
-  })
+  }))
   return mapArtifactRow(row)
 }
 
