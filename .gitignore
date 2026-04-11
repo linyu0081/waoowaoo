@@ -37,6 +37,7 @@ yarn-error.log*
 .vscode/
 .idea/
 .claude/
+!seedance/.claude/
 .cursor/
 .gemini/
 .artifacts/
