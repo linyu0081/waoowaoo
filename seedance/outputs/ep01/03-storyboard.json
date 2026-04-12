@@ -1,0 +1,1273 @@
+[
+  {
+    "clip_id": "clip-001",
+    "panels": [
+      {
+        "panel_number": 1,
+        "description": "俯拍大远景：明孝陵地下陵宫全貌，巨大石室中央方形祭坛鲜血流淌，四壁龙纹浮雕，两侧石象生贴满符箓，眼窝渗出黑血，四角插满暗红魂幡，空中一道金色龙魂飘浮",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "明孝陵地下核心陵宫。石壁刻满盘旋龙纹。镇守陵寝的石象生全被贴上黑底红字的符箓。石马、石麒麟眼窝里往外渗着黑血。四周插满了诡异的魂幡。地上是巨大祭坛，祭坛上鲜血流动。空中一道龙魂飘浮着。",
+        "shot_type": "俯拍大远景",
+        "camera_move": "缓缓升起俯瞰",
+        "video_prompt": "昏暗巨大地下石质墓室全貌，中央方形石祭坛鲜血流淌，四壁密布盘旋龙纹浮雕，两侧灰白石象生贴满黑底红字符箓，眼窝渗出暗色液体，四角暗红魂幡无风自动，空中一道金色龙魂飘浮闪烁，镜头缓缓升起俯瞰全场，电影级真实画质，暗沉冷调",
+        "sync_video_prompt": "昏暗巨大地下石质墓室全貌，中央方形石祭坛鲜血流淌，四壁密布盘旋龙纹浮雕，两侧灰白石象生贴满黑底红字符箓，眼窝渗出暗色液体，四角暗红魂幡无风自动，空中一道金色龙魂飘浮闪烁，镜头缓缓升起俯瞰全场，电影级真实画质，暗沉冷调",
+        "photography": {
+          "lighting": {
+            "direction": "祭坛中心微弱红光向四周扩散",
+            "quality": "幽暗冷光，红色祭坛光源为主"
+          },
+          "depth_of_field": "深景深（T8.0），清晰展现空间全貌",
+          "color_tone": "暗沉冷调，以暗红和青灰为主"
+        },
+        "acting_notes": [],
+        "duration_sec": 6,
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 2,
+        "description": "中景：安倍宗介站在祭坛正前方（A位），惨白色狩衣，头戴黑漆高冠，右手捏着蝙蝠扇，周身黑气散发，仰头看向空中龙魂，嘴角带冷笑",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "安倍宗介穿着一身惨白色的狩衣，头戴高帽，手里捏着一把蝙蝠扇。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "中年男子身穿惨白色日式狩衣，头戴黑漆高冠，右手捏着黑骨蝙蝠扇，周身缓缓散发黑色雾气，仰头看向上方金色龙魂，嘴角微微上翘带冷笑，镜头缓缓推近，昏暗地下石室背景，电影级真实画质，暗沉冷调",
+        "photography": {
+          "lighting": {
+            "direction": "顶部龙魂金光映照面部，底部祭坛红光",
+            "quality": "冷暖交织，面部明暗分明"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "冷调为主，面部有暖色龙魂光"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "嘴角上扬带冷笑弧度，狭长双眼微眯仰望龙魂，右手蝙蝠扇轻轻摇动，下巴微抬姿态嚣张"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "安倍宗介身穿惨白色日式狩衣，头戴黑漆高冠，右手捏着黑骨蝙蝠扇，周身缓缓散发黑色雾气，仰头看向上方金色龙魂，嘴角微微上翘带冷笑，镜头缓缓推近，昏暗地下石室背景，电影级真实画质，暗沉冷调",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 3,
+        "description": "近景：安倍宗介面部特写，狭长双眼带阴鸷笑意，嘴唇张开正在说话",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "抽干了这洪武大帝的龙魂，引大和皇魂入主明孝陵，从此，华夏将永世为我帝国奴役！",
+        "shot_type": "平视近景",
+        "camera_move": "微微推近",
+        "video_prompt": "中年男子面部近景，瘦长脸庞阴沉，狭长双眼微眯带阴鸷笑意，薄唇张开正在说话，嘴角上扬嚣张冷笑，周身隐约黑色雾气缠绕，镜头微微推近，浅景深背景虚化，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "侧光从左侧照入",
+            "quality": "冷调侧光，面部半明半暗"
+          },
+          "depth_of_field": "浅景深（T2.8），背景虚化聚焦面部",
+          "color_tone": "冷调，阴郁"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "薄唇张开说话带嚣张笑意，眉梢上挑，狭长双眼微眯瞳孔收缩，下巴微扬"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "安倍宗介面部近景，瘦长脸庞阴沉，狭长双眼微眯带阴鸷笑意，薄唇张开，嘴角上扬嚣张冷笑，周身隐约黑色雾气缠绕，安倍宗介阴冷嚣张地说道：「抽干了这洪武大帝的龙魂，引大和皇魂入主明孝陵，从此，华夏将永世为我帝国奴役！」镜头微微推近，浅景深背景虚化，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 4,
+        "description": "中景：安倍宗介双手前伸释放黑气，一块莹绿色勾玉悬浮半空，通体幽绿内部血色丝线游走，勾玉中飞出一条暗紫色鳞片小蛇，竖瞳暗黄",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "安倍宗介周身黑气散发，双手释放出一块莹绿色的勾玉悬在半空，通体幽绿，内部有血色丝线游走，形状弯曲。勾玉中飞出一条蛇，鳞片呈暗紫色，边缘生着倒刺，竖瞳暗黄色。",
+        "shot_type": "仰拍中景",
+        "camera_move": "缓缓升起",
+        "video_prompt": "中年男子双手前伸释放浓黑雾气，一块莹绿色弯曲勾玉悬浮在半空中发光，勾玉内部血红色丝线游走，一条暗紫色鳞片小蛇从勾玉中飞出，蛇鳞边缘倒刺，竖瞳暗黄，镜头缓缓升起仰拍，昏暗石室背景，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "勾玉绿光为主光源照亮面部和手",
+            "quality": "绿色诡异光芒"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "暗绿色调为主，诡异氛围"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "双手前伸掌心向上，手指微张释放黑气，面部被绿光映照，表情得意狰狞"
+          }
+        ],
+        "duration_sec": 10,
+        "sync_video_prompt": "安倍宗介双手前伸释放浓黑雾气，一块莹绿色弯曲勾玉悬浮在半空中发光，勾玉内部血红色丝线游走，一条暗紫色鳞片小蛇从勾玉中飞出，蛇鳞边缘倒刺，竖瞳暗黄，镜头缓缓升起仰拍，昏暗石室背景，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 5,
+        "description": "全景：勾玉挂在小蛇脖颈处，黑光飞出化为两条锁龙链缠在金龙身上，铁链生出倒钩刺入龙鳞，金鳞剥落漫天飞舞，龙瞳从金变赤红",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "勾玉挂在小蛇脖颈处，黑光飞出化为两条锁龙链，死死缠在龙身上。铁链生出倒钩刺入龙鳞，将金鳞生生剥落，漫天乱飞。龙瞳从金光变成赤红，神龙发出阵阵哀鸣。",
+        "shot_type": "仰拍全景",
+        "camera_move": "急速推近",
+        "video_prompt": "暗紫色小蛇脖颈处挂着莹绿勾玉，黑光飞出化为两条黑色锁龙链缠绕在金色神龙身上，铁链倒钩刺入金色龙鳞，金鳞剥落漫天飞舞闪烁，神龙瞳孔从金色变为赤红，发出哀鸣，镜头急速推近龙身，昏暗石室，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "龙身金光和勾玉绿光交织",
+            "quality": "金绿交错的魔幻光芒"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场壮观",
+          "color_tone": "金色与暗绿交织，逐渐偏红"
+        },
+        "acting_notes": [],
+        "duration_sec": 10,
+        "sync_video_prompt": "暗紫色小蛇脖颈处挂着莹绿勾玉，黑光飞出化为两条黑色锁龙链缠绕在金色神龙身上，铁链倒钩刺入金色龙鳞，金鳞剥落漫天飞舞闪烁，神龙瞳孔从金色变为赤红，发出哀鸣，镜头急速推近龙身，昏暗石室，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 6,
+        "description": "特写：金色帝王之气顺着锁链被吸入勾玉，进入小蛇体内，小蛇身躯膨胀",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "金色的帝王之气顺着锁链，源源不绝地被吸入勾玉内部，进入小蛇体内。",
+        "shot_type": "平视特写",
+        "camera_move": "固定镜头",
+        "video_prompt": "金色光芒沿着黑色锁链流动，源源不绝地被吸入莹绿勾玉中，勾玉发出强烈绿光，金色能量注入暗紫色小蛇体内，蛇身微微膨胀抽搐，固定镜头，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "金色光芒从锁链方向流入",
+            "quality": "金绿魔幻光效"
+          },
+          "depth_of_field": "极浅景深（T1.8），聚焦勾玉和蛇",
+          "color_tone": "金绿交织"
+        },
+        "acting_notes": [],
+        "duration_sec": 4,
+        "sync_video_prompt": "金色光芒沿着黑色锁链流动，源源不绝地被吸入莹绿勾玉中，勾玉发出强烈绿光，金色能量注入暗紫色小蛇体内，蛇身微微膨胀抽搐，固定镜头，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 7,
+        "description": "近景：画面外传来苍劲声音，五枚泛着铜绿的五帝钱破空飞来，钱体流转苍茫古朴光芒，镌刻鸟虫神篆",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "声音传来：抽我华夏帝王龙魂，找死！五枚泛着铜绿的五帝钱破空而来，钱体非金非石，通体流转着苍茫古朴光芒，镌刻着五道古老晦涩的鸟虫神篆。",
+        "shot_type": "平视近景",
+        "camera_move": "急速跟随",
+        "video_prompt": "五枚泛着铜绿光芒的古老铜钱从画面左侧破空飞来，钱体流转着苍茫古朴金色光芒，钱眼内五色神辉交织流转，激荡出古老音波，镜头急速跟随铜钱飞行轨迹，昏暗石室背景，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "铜钱自身苍茫金光",
+            "quality": "古朴金色光芒"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦铜钱",
+          "color_tone": "金铜色调，古朴厚重"
+        },
+        "acting_notes": [],
+        "duration_sec": 6,
+        "sync_video_prompt": "五枚泛着铜绿光芒的古老铜钱从画面左侧破空飞来，钱体流转着苍茫古朴金色光芒，钱眼内五色神辉交织流转，激荡出古老音波，赵玄真怒喝道：「抽我华夏帝王龙魂，找死！」镜头急速跟随铜钱飞行轨迹，昏暗石室背景，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 8,
+        "description": "全景：五枚铜钱首尾相接金光大盛，化作三尺长五帝金剑，剑光划过斩断大蛇脑袋，蛇头滚落留下腐蚀血迹",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "半空中，五枚铜钱激射而出。铜钱首尾相接，金光大盛，化作一把三尺长的五帝金剑。剑光划过。大蛇的脑袋齐颈而断。蛇头砸在石板上，咕噜噜滚出老远，留下血迹，将地面腐蚀。",
+        "shot_type": "平视全景",
+        "camera_move": "急速跟随剑光",
+        "video_prompt": "五枚铜钱在半空首尾相接金光大盛，瞬间化为一把三尺长金色长剑，剑光凌厉划过，斩断暗紫色大蛇脑袋，蛇头砸在石板上咕噜滚动，留下暗红血迹腐蚀地面，镜头急速跟随剑光轨迹，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "金剑强烈金光照亮全场",
+            "quality": "爆发式金色光芒"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场动作",
+          "color_tone": "金色爆发，血红对比"
+        },
+        "acting_notes": [],
+        "duration_sec": 10,
+        "sync_video_prompt": "五枚铜钱在半空首尾相接金光大盛，瞬间化为一把三尺长金色长剑，剑光凌厉划过，斩断暗紫色大蛇脑袋，蛇头砸在石板上咕噜滚动，留下暗红血迹腐蚀地面，镜头急速跟随剑光轨迹，电影级真实画质",
+        "connect_camera_move": "急速跟随"
+      },
+      {
+        "panel_number": 9,
+        "description": "全景：锁链碎裂飞散，金龙挣脱束缚，龙身金光重新闪耀，仰头发出震天怒吼，整个石室震颤",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "锁链碎裂，金龙得了喘息，发出一声震天动地的怒吼。",
+        "shot_type": "仰拍全景",
+        "camera_move": "急速拉远",
+        "video_prompt": "黑色锁链碎裂碎片飞散，金色神龙挣脱束缚龙身金光重新闪耀，仰起龙首发出震天动地的怒吼，石室剧烈震颤石块掉落，镜头急速拉远展现全场壮观，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "龙身金光照亮整个石室",
+            "quality": "强烈金色光芒"
+          },
+          "depth_of_field": "深景深（T8.0）",
+          "color_tone": "金色爆发，壮观辉煌"
+        },
+        "acting_notes": [],
+        "duration_sec": 6,
+        "sync_video_prompt": "黑色锁链碎裂碎片飞散，金色神龙挣脱束缚龙身金光重新闪耀，仰起龙首发出震天动地的怒吼，石室剧烈震颤石块掉落，镜头急速拉远展现全场壮观，电影级真实画质",
+        "connect_camera_move": "急速拉远"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-002",
+    "panels": [
+      {
+        "panel_number": 10,
+        "description": "近景：安倍宗介在祭坛前（A位）脸色大变，猛然回头望向陵宫入口方向",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "suspense",
+        "source_text": "安倍宗介脸色大变，回头。",
+        "shot_type": "平视近景",
+        "camera_move": "急速推近",
+        "video_prompt": "中年男子面部近景，瘦长脸庞原本得意的表情骤变为惊恐，猛然转头回望，狭长双眼瞪大，镜头急速推近面部，浅景深背景虚化，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "侧光从右侧入口方向照入",
+            "quality": "冷调侧光"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦面部表情",
+          "color_tone": "冷调，紧张氛围"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "面色骤白瞳孔收缩，猛然扭头回望，嘴巴微张，右手蝙蝠扇握紧"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "安倍宗介面部近景，瘦长脸庞原本得意的表情骤变为惊恐，猛然转头回望，狭长双眼瞪大，镜头急速推近面部，浅景深背景虚化，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 11,
+        "description": "中景：赵玄真从陵宫入口石门（D位）走入，干瘦老头，穿洗得发白的青布长衫，脚踩沾满黄泥的千层底布鞋，腰背挺直",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "赵玄真出现，干瘦的老头，穿着一身洗得发白的青布长衫，脚底踩着一双沾满黄泥的千层底布鞋。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "老年男子从石门走入昏暗地下石室，身形干瘦腰背挺直，穿一身洗得发白的青色长衫，脚踩沾满黄泥的千层底布鞋，步伐沉稳有力，镜头缓缓推近，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "背光从入口照入形成剪影",
+            "quality": "逆光剪影效果"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "冷青调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "腰背挺直如松，目光如鹰隼锐利直视前方，步伐沉稳大步走入，双手自然垂放"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "赵玄真从石门走入昏暗地下石室，身形干瘦腰背挺直，穿一身洗得发白的青色长衫，脚踩沾满黄泥的千层底布鞋，步伐沉稳有力，镜头缓缓推近，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 12,
+        "description": "近景：安倍宗介面部，惊讶后转为阴冷，正在说话",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "钦天监首席赵玄真，你竟还活着！",
+        "shot_type": "平视近景",
+        "camera_move": "微微推近",
+        "video_prompt": "中年男子面部近景，惊讶表情迅速转为阴冷，狭长双眼微眯，薄唇张开正在说话，嘴角微微勾起冷笑，镜头微微推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "侧光从左",
+            "quality": "冷调侧光半明半暗"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦面部",
+          "color_tone": "冷调阴郁"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "惊讶瞪大的眼睛迅速恢复阴冷，薄唇张开说话，眉梢微挑带蔑视"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "安倍宗介面部近景，惊讶表情迅速转为阴冷，狭长双眼微眯，薄唇张开，嘴角微微勾起冷笑，安倍宗介惊讶后阴冷道：「钦天监首席赵玄真，你竟还活着！」镜头微微推近，浅景深，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 13,
+        "description": "近景：赵玄真面部，眉头紧锁目光锐利，正在说话",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "阴阳寮大神官，安倍宗介！",
+        "shot_type": "反打近景",
+        "camera_move": "微微推近",
+        "video_prompt": "老年男子面部近景，花白剑眉紧锁，深邃双眼锐利直视前方，薄唇紧抿后张开正在说话，面容刚毅肃穆，镜头微微推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微弱光",
+            "quality": "冷调正面光"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦面部",
+          "color_tone": "冷青调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "花白剑眉紧锁，鹰隼般锐利目光直视对方，薄唇紧抿后张开说话，下颌微收表情肃穆"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "赵玄真面部近景，花白剑眉紧锁，深邃双眼锐利直视前方，薄唇紧抿后张开，面容刚毅肃穆，赵玄真肃穆道：「阴阳寮大神官，安倍宗介！」镜头微微推近，浅景深，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 14,
+        "description": "中景：安倍宗介站在祭坛前（A位），正在说话嘲讽招降，画面深处赵玄真站在入口处（D位）",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          },
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "你还有些本事，不如投入我大日本帝国怀抱。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "中年男子站在祭坛前正在说话，右手蝙蝠扇指向对方嘲讽，画面深处老年男子站在石门处静静注视，镜头缓缓推近说话者，浅景深远处人物虚化，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "祭坛红光映照安倍宗介",
+            "quality": "冷暖交织"
+          },
+          "depth_of_field": "浅景深（T2.8），焦点在说话者，远处虚化",
+          "color_tone": "冷调为主"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "右手蝙蝠扇向前一指，嘴角带嘲讽冷笑，身体微微前倾"
+          },
+          {
+            "name": "赵玄真",
+            "acting": "双手垂放身侧，面无表情目光锐利"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "安倍宗介站在祭坛前，右手蝙蝠扇指向对方嘲讽，画面深处赵玄真站在石门处静静注视，安倍宗介嘲讽道：「你还有些本事，不如投入我大日本帝国怀抱。」镜头缓缓推近说话者，浅景深远处人物虚化，电影级真实画质",
+        "connect_camera_move": "缓缓拉远"
+      },
+      {
+        "panel_number": 15,
+        "description": "近景：赵玄真面部怒目，厉声说「找死」",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "找死！",
+        "shot_type": "反打近景",
+        "camera_move": "急速推近",
+        "video_prompt": "老年男子面部近景，花白剑眉怒竖，双眼圆睁怒视前方，薄唇张开厉声说话，面部肌肉绷紧，镜头急速推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微光",
+            "quality": "冷调"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "冷调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "花白剑眉怒竖，双眼圆睁精光四射，薄唇猛然张开厉喝，面部肌肉绷紧"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "赵玄真面部近景，花白剑眉怒竖，双眼圆睁怒视前方，薄唇张开，面部肌肉绷紧，赵玄真怒喝道：「找死！」镜头急速推近，浅景深，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 16,
+        "description": "中景：赵玄真挥手释放三张燃烧的符箓飞向安倍宗介，安倍宗介挥蝙蝠扇涌出黑色雾气，雾气化为三团",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          },
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "赵玄真释放三张燃烧的符箓飞出，飞向安倍宗介。蝙蝠扇涌出黑色雾气，安倍宗介口中念着日语，雾气化为三团。",
+        "shot_type": "平视全景",
+        "camera_move": "快速跟随符箓飞行",
+        "video_prompt": "老年男子挥手释放三张燃烧的金色符箓飞向对面，中年男子挥动蝙蝠扇涌出浓黑雾气抵挡，黑雾分裂为三团，双方对峙于昏暗石室中，镜头快速跟随符箓飞行轨迹，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "符箓火光和黑雾交织",
+            "quality": "金红与暗黑交织"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场对战",
+          "color_tone": "火红与暗黑对比"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "右手向前猛挥释放符箓，身体前倾，目光锐利"
+          },
+          {
+            "name": "安倍宗介",
+            "acting": "左手展开蝙蝠扇前挡，口中念咒，身体后仰"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "赵玄真挥手释放三张燃烧的金色符箓飞向对面，安倍宗介挥动蝙蝠扇涌出浓黑雾气抵挡，黑雾分裂为三团，双方对峙于昏暗石室中，镜头快速跟随符箓飞行轨迹，电影级真实画质",
+        "connect_camera_move": "急速跟随"
+      },
+      {
+        "panel_number": 17,
+        "description": "全景：三团黑雾幻化出三个式神——雪女（白无垢和服惨白皮肤无瞳孔周身冰晶）、赤面鸦天狗（红面长鼻黑翼持长棍）、蜘蛛女（毒蜘蛛背上美艳女子上半身八条步足滴毒液）",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "雪女，白无垢和服，皮肤惨白，没有瞳孔，周身飞舞着六角冰晶。赤面鸦天狗，红面长鼻子，背后生着巨大的黑色羽翼，手里抓着一柄寒光闪闪的长棍。一只小山般大小的毒蜘蛛，蜘蛛背上却长着一个美艳女子的上半身，八条毛茸茸的步足如同锋利的长矛，滴着毒液。",
+        "shot_type": "仰拍全景",
+        "camera_move": "缓缓环绕",
+        "video_prompt": "三团黑雾在半空幻化成三个恐怖式神：白色和服惨白皮肤无瞳孔女子周身六角冰晶飞舞，红面长鼻巨大黑翼天狗持寒光长棍，巨大毒蜘蛛背上长着美艳女子上半身八条步足滴毒液，三式神环绕中年男子身周，镜头缓缓环绕仰拍，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "三式神各自发出不同色光",
+            "quality": "冰蓝、暗红、毒绿三色光"
+          },
+          "depth_of_field": "深景深（T8.0），展现三式神全貌",
+          "color_tone": "暗调多色交织，诡异恐怖"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "双臂张开站在三式神中央，嘴角冷笑得意"
+          }
+        ],
+        "duration_sec": 10,
+        "sync_video_prompt": "三团黑雾在半空幻化成三个恐怖式神：白色和服惨白皮肤无瞳孔女子周身六角冰晶飞舞，红面长鼻巨大黑翼天狗持寒光长棍，巨大毒蜘蛛背上长着美艳女子上半身八条步足滴毒液，三式神环绕安倍宗介身周，镜头缓缓环绕仰拍，电影级真实画质",
+        "connect_camera_move": "缓缓环绕"
+      },
+      {
+        "panel_number": 18,
+        "description": "全景：雪女吐暴风雪结冰破裂，天狗挥棍扇风刃切地砖，蜘蛛吐丝覆盖天地，三式神同时向赵玄真进攻",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "雪女张嘴吐出暴风雪，所过之处结冰破裂。大天狗挥舞长棍，扇起狂风，风刃切开地砖。蜘蛛吐丝，覆盖天地。",
+        "shot_type": "平视全景",
+        "camera_move": "手持晃动跟随",
+        "video_prompt": "三个恐怖式神同时进攻：白衣女子张嘴吐出暴风雪冰封地面，红面天狗挥舞长棍扇起风刃切开石地砖，巨大蜘蛛吐出银白蛛丝覆盖天地，老年男子站在攻击方向前方，镜头手持晃动跟随攻势推进，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "冰蓝暴风雪光、风刃银光、蛛丝银光交织",
+            "quality": "多色魔幻光效"
+          },
+          "depth_of_field": "深景深（T8.0）",
+          "color_tone": "冰蓝银白主调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "面色凝重但不退缩，双眼锐利盯着来袭攻击"
+          }
+        ],
+        "duration_sec": 10,
+        "sync_video_prompt": "三个恐怖式神同时进攻：白衣女子张嘴吐出暴风雪冰封地面，红面天狗挥舞长棍扇起风刃切开石地砖，巨大蜘蛛吐出银白蛛丝覆盖天地，赵玄真站在攻击方向前方，镜头手持晃动跟随攻势推进，电影级真实画质",
+        "connect_camera_move": "手持跟随"
+      },
+      {
+        "panel_number": 19,
+        "description": "近景：赵玄真神色凝重，划破指尖，凌空画符，正在念咒",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "赵玄真神色凝重，划破指尖，凌空画符。元始敕命，一炁冲霄，破。",
+        "shot_type": "平视近景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "老年男子面色凝重，右手食指划破左手指尖血珠溢出，抬手凌空画出金色符文，嘴唇张开正在念咒，面部被金色符光映照，镜头缓缓推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "手中金色符光映照面部",
+            "quality": "金色符文光"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦面部和手",
+          "color_tone": "金色暖光为主"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "眉头深锁目光专注，右手食指划破左手指尖鲜血溢出，抬手凌空画符，嘴唇张开念咒声音沉厚"
+          }
+        ],
+        "duration_sec": 7,
+        "sync_video_prompt": "赵玄真面色凝重，右手食指划破左手指尖血珠溢出，抬手凌空画出金色符文，嘴唇张开，面部被金色符光映照，赵玄真庄严念道：「元始敕命，一炁冲霄，破。」镜头缓缓推近，浅景深，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 20,
+        "description": "全景：巨大太极八卦图在半空成型金光笼罩三式神，风刃碎裂冰锥融化蛛丝搅碎，金光四射将三式神绞杀成黑雾",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          },
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "一张太极八卦图在半空成型，笼罩三个式神，金光爆射。风刃撞在金光上直接碎成渣，冰锥还没靠近就融化成水，蜘蛛丝也搅碎。八卦中，金光四射，将三头式神绞杀成黑雾。",
+        "shot_type": "仰拍全景",
+        "camera_move": "缓缓升起环绕",
+        "video_prompt": "巨大金色太极八卦图在半空旋转成型，金光笼罩三个式神，风刃撞击金光碎裂，冰锥靠近即融化，蛛丝被搅碎，八卦中金光爆射将三个式神绞杀成黑色雾气消散，镜头缓缓升起环绕，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "八卦图金光照亮全场",
+            "quality": "强烈爆发金色光芒"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场壮观",
+          "color_tone": "金色爆发，辉煌壮观"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "双手掐诀高举，全身金光闪耀"
+          },
+          {
+            "name": "安倍宗介",
+            "acting": "双臂挡在面前后退，面色惊恐"
+          }
+        ],
+        "duration_sec": 12,
+        "sync_video_prompt": "巨大金色太极八卦图在半空旋转成型，金光笼罩三个式神，风刃撞击金光碎裂，冰锥靠近即融化，蛛丝被搅碎，八卦中金光爆射将三个式神绞杀成黑色雾气消散，镜头缓缓升起环绕，电影级真实画质",
+        "connect_camera_move": "缓缓升起"
+      },
+      {
+        "panel_number": 21,
+        "description": "近景：安倍宗介吐血后退，面色惨白",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "安倍宗介吐血后退。",
+        "shot_type": "平视近景",
+        "camera_move": "急速推近",
+        "video_prompt": "中年男子张嘴喷出一口鲜血，面色惨白如纸，身体踉跄后退，双眼惊恐瞪大，镜头急速推近面部，浅景深背景虚化，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微光",
+            "quality": "冷调"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "惨白冷调"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "嘴巴猛然张开喷出鲜血，面色刷白，双眼瞪大惊恐，身体向后踉跄，右手扶住胸口"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "安倍宗介张嘴喷出一口鲜血，面色惨白如纸，身体踉跄后退，双眼惊恐瞪大，镜头急速推近面部，浅景深背景虚化，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-003",
+    "panels": [
+      {
+        "panel_number": 22,
+        "description": "近景：赵玄真面带傲气正在说话，嘴角微扬",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "阴阳师原出自我华夏阴阳学宗门下，不过学了点皮毛，也敢班门弄斧。",
+        "shot_type": "平视近景",
+        "camera_move": "微微推近",
+        "video_prompt": "老年男子面部近景，花白剑眉舒展，嘴角微微上扬带傲气，薄唇张开正在说话，目光锐利直视前方，镜头微微推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微光",
+            "quality": "冷调正面光"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "冷青调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "嘴角微扬带傲气，花白剑眉舒展，目光如炬直视前方，薄唇张开说话从容不迫"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "赵玄真面部近景，花白剑眉舒展，嘴角微微上扬带傲气，薄唇张开，目光锐利直视前方，赵玄真傲然说道：「阴阳师原出自我华夏阴阳学宗门下，不过学了点皮毛，也敢班门弄斧。」镜头微微推近，浅景深，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 23,
+        "description": "中景：安倍宗介周身黑气涌动落入勾玉，勾玉飞入地上无头蛇尸中，死蛇开始蠕动",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "安倍宗介周身黑气涌动，落到八尺琼勾玉中，勾玉进入倒在地上的无头蛇尸中，死蛇动了。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓俯拍跟随",
+        "video_prompt": "中年男子周身浓黑雾气涌动，黑气汇聚落入一块莹绿勾玉中，勾玉飞向地面插入暗紫色无头蛇尸体内，死蛇身躯开始诡异蠕动，镜头缓缓俯拍跟随勾玉轨迹，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "勾玉绿光和黑气混合",
+            "quality": "暗绿诡异光"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "暗绿与暗紫，诡异恐怖"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "双手前推释放黑气，面色阴沉带狰狞笑意"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "安倍宗介周身浓黑雾气涌动，黑气汇聚落入一块莹绿勾玉中，勾玉飞向地面插入暗紫色无头蛇尸体内，死蛇身躯开始诡异蠕动，镜头缓缓俯拍跟随勾玉轨迹，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 24,
+        "description": "特写：蛇尸断颈处血肉蠕动，八个肉瘤破皮而出，快速生长为八颗蛇头同时仰起",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "断颈处血肉蠕动，八个肉瘤破皮而出。八颗脑袋同时仰起。",
+        "shot_type": "平视特写",
+        "camera_move": "固定镜头",
+        "video_prompt": "暗紫色蛇尸断颈处血肉蠕动翻涌，八个肉红色肉瘤从断面破皮而出，迅速膨胀生长为八颗狰狞蛇头同时仰起嘶鸣，固定镜头，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "勾玉绿光从蛇体内发出",
+            "quality": "暗绿内发光"
+          },
+          "depth_of_field": "极浅景深（T1.8），聚焦蛇头生长",
+          "color_tone": "血红暗紫，恐怖"
+        },
+        "acting_notes": [],
+        "duration_sec": 5,
+        "sync_video_prompt": "暗紫色蛇尸断颈处血肉蠕动翻涌，八个肉红色肉瘤从断面破皮而出，迅速膨胀生长为八颗狰狞蛇头同时仰起嘶鸣，固定镜头，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 25,
+        "description": "近景：赵玄真面部震惊，双眼瞪大",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "八岐大蛇。",
+        "shot_type": "反打近景",
+        "camera_move": "急速推近",
+        "video_prompt": "老年男子面部近景，花白剑眉猛然上扬，深邃双眼瞪大瞳孔收缩显露震惊，薄唇微张正在说话，镜头急速推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微光",
+            "quality": "冷调"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "冷调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "双眼猛然瞪大瞳孔收缩，花白剑眉上扬，嘴唇微张低声惊呼，身体微微后倾"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "赵玄真面部近景，花白剑眉猛然上扬，深邃双眼瞪大瞳孔收缩显露震惊，薄唇微张，赵玄真震惊低语道：「八岐大蛇。」镜头急速推近，浅景深，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 26,
+        "description": "近景：安倍宗介得意狂笑，正在说话",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "你们华夏有句古话，青出于蓝而胜于蓝，死！",
+        "shot_type": "平视近景",
+        "camera_move": "微微推近",
+        "video_prompt": "中年男子面部近景，瘦长脸庞狰狞得意，嘴巴张开狂笑正在说话，狭长双眼带疯狂笑意，血迹残留嘴角，镜头微微推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "底光从下方照入",
+            "quality": "恐怖底光"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "暗绿冷调"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "嘴巴张开狂笑，双眼带疯狂笑意，右手蝙蝠扇猛然前指，身体前倾气势逼人"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "安倍宗介面部近景，瘦长脸庞狰狞得意，嘴巴张开狂笑，狭长双眼带疯狂笑意，血迹残留嘴角，安倍宗介癫狂大笑着说：「你们华夏有句古话，青出于蓝而胜于蓝，死！」镜头微微推近，浅景深，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 27,
+        "description": "全景：八岐大蛇八颗脑袋同时攻击——毒液、雷霆、烈焰、阴风、冰雹、瘴气、音波、砂石齐发",
+        "characters": [],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "八岐大蛇第一颗脑袋喷出毒液，第二颗吐出雷霆，第三颗喷吐烈焰，第四颗刮起阴风，第五颗砸下冰雹，第六颗吐出瘴气，第七颗发出音波，第八颗射出砂石。",
+        "shot_type": "仰拍全景",
+        "camera_move": "急速环绕",
+        "video_prompt": "巨大八头巨蛇八颗脑袋同时攻击：绿色毒液喷射、紫色雷霆劈出、橙红烈焰喷吐、阴风呼啸、白色冰雹砸下、绿色瘴气弥漫、透明音波震荡、砂石激射，八种攻击铺天盖地，镜头急速环绕仰拍，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "八种攻击各自发光",
+            "quality": "多色魔幻光效爆发"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场壮观",
+          "color_tone": "多色交织，混沌壮观"
+        },
+        "acting_notes": [],
+        "duration_sec": 12,
+        "sync_video_prompt": "巨大八头巨蛇八颗脑袋同时攻击：绿色毒液喷射、紫色雷霆劈出、橙红烈焰喷吐、阴风呼啸、白色冰雹砸下、绿色瘴气弥漫、透明音波震荡、砂石激射，八种攻击铺天盖地，镜头急速环绕仰拍，电影级真实画质",
+        "connect_camera_move": "急速环绕"
+      },
+      {
+        "panel_number": 28,
+        "description": "中景：赵玄真退后半步，咬破舌尖喷血在地上，双手捏诀，正在念咒",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "赵玄真退后半步，咬破舌尖，一口血喷在皇陵大地上，手中捏着手诀。上告昊天，下通幽冥。闻吾召请，速降真灵。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "老年男子后退半步站稳，咬破舌尖一口鲜血喷洒在青石地面上，双手在胸前捏出复杂手诀，嘴唇张开正在念咒，面容肃穆决绝，镜头缓缓推近，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "地面血光和手诀金光交织",
+            "quality": "暗红与金色交织"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "暗红与金色"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "后退半步双脚站稳，咬破舌尖血从口中喷出，双手胸前快速捏诀，面容肃穆决绝正在念咒"
+          }
+        ],
+        "duration_sec": 12,
+        "sync_video_prompt": "赵玄真后退半步站稳，咬破舌尖一口鲜血喷洒在青石地面上，双手在胸前捏出复杂手诀，嘴唇张开，面容肃穆决绝，赵玄真肃穆决然念道：「上告昊天，下通幽冥。闻吾召请，速降真灵。」镜头缓缓推近，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 29,
+        "description": "全景：赵玄真全身金光闪耀向四周涌去，皇陵震荡，石象生释放光芒汇聚在一起",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "赵玄真全身光芒闪耀，向皇陵四周涌去，整个皇陵摇晃。皇陵内陪葬的石马、石麒麟等都释放出光芒，汇聚在一起。",
+        "shot_type": "俯拍全景",
+        "camera_move": "缓缓升起",
+        "video_prompt": "老年男子全身爆发强烈金色光芒向四周扩散，整个地下石室剧烈震荡石块掉落，两侧石马石麒麟同时释放白色光芒汇聚升起，镜头缓缓升起俯拍全场，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "赵玄真身体为中心金光四射",
+            "quality": "强烈爆发金白光"
+          },
+          "depth_of_field": "深景深（T8.0）",
+          "color_tone": "金白辉煌"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "双手高举头顶，全身金光环绕，面容坚毅仰头"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "赵玄真全身爆发强烈金色光芒向四周扩散，整个地下石室剧烈震荡石块掉落，两侧石马石麒麟同时释放白色光芒汇聚升起，镜头缓缓升起俯拍全场，电影级真实画质",
+        "connect_camera_move": "缓缓升起"
+      },
+      {
+        "panel_number": 30,
+        "description": "近景：虚空中光芒凝聚，常遇春残魂虚影的面部轮廓逐渐清晰，正在说话",
+        "characters": [
+          {
+            "name": "常遇春",
+            "appearance": "初始形象（残魂虚影形态）"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "常遇春在此，谁敢惊扰吾皇陵寝！",
+        "shot_type": "仰拍近景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "虚空中白色金色光芒汇聚凝成一尊身披铁黑重甲的中年男子残魂虚影，国字脸虎目圆睁，嘴巴张开正在怒喝，半透明光芒形态，镜头缓缓推近面部，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "虚影自身金白光芒",
+            "quality": "柔和半透明光效"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦虚影面部",
+          "color_tone": "金白光辉，庄严"
+        },
+        "acting_notes": [
+          {
+            "name": "常遇春",
+            "acting": "虎目圆睁精光四射，嘴巴张开怒喝声如洪钟，国字脸刚毅威猛"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "虚空中白色金色光芒汇聚凝成常遇春残魂虚影，身披铁黑重甲，国字脸虎目圆睁，嘴巴张开，半透明光芒形态，常遇春威严怒喝道：「常遇春在此，谁敢惊扰吾皇陵寝！」镜头缓缓推近面部，浅景深，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 31,
+        "description": "全景：常遇春残魂全身重甲手持长枪踏马虚影冲出，长枪刺出枪芒劈开一切攻击，一枪穿透八岐大蛇，腥血喷溅安倍宗介满头满脸",
+        "characters": [
+          {
+            "name": "常遇春",
+            "appearance": "初始形象（残魂虚影形态）"
+          },
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象",
+            "slot": "祭坛正前方与石壁之间的空地"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "epic",
+        "source_text": "虚空中，汇聚在一起的光芒凝聚成一尊身披重甲，手持长枪的虚影踏马而出。长枪刺出，枪芒劈开一切毒液、雷霆、烈焰、阴风……八岐大蛇被一枪穿透，腥血喷溅，浇了安倍宗介满头满脸。",
+        "shot_type": "平视全景",
+        "camera_move": "急速跟随枪芒",
+        "video_prompt": "半透明金色重甲将军虚影骑马冲出，手持铁黑长枪猛然刺出，枪芒如虹劈开毒液雷霆烈焰一切攻击，长枪贯穿八头巨蛇身躯，腥红蛇血喷溅浇了旁边中年男子满头满脸，镜头急速跟随枪芒轨迹，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "枪芒金光划破黑暗",
+            "quality": "爆发式金色光芒"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场",
+          "color_tone": "金色与血红对比"
+        },
+        "acting_notes": [
+          {
+            "name": "常遇春",
+            "acting": "骑马冲锋虎目圆睁，双手握枪前刺，气势如虹"
+          },
+          {
+            "name": "安倍宗介",
+            "acting": "被蛇血浇头，面色惊恐双手挡在面前"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "常遇春残魂虚影骑马冲出，手持铁黑长枪猛然刺出，枪芒如虹劈开毒液雷霆烈焰一切攻击，长枪贯穿八头巨蛇身躯，腥红蛇血喷溅浇了旁边安倍宗介满头满脸，镜头急速跟随枪芒轨迹，电影级真实画质",
+        "connect_camera_move": "急速跟随"
+      },
+      {
+        "panel_number": 32,
+        "description": "中景：常遇春残魂光芒渐渐消散，化为点点光粒飘散",
+        "characters": [
+          {
+            "name": "常遇春",
+            "appearance": "初始形象（残魂虚影形态）"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "emotion",
+        "source_text": "常遇春残魂消散。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓拉远",
+        "video_prompt": "半透明金色重甲将军虚影身躯渐渐变淡，化为无数金色光粒缓缓飘散升起，最后一缕光芒消失在昏暗石室中，镜头缓缓拉远，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "虚影自身光芒渐弱",
+            "quality": "柔和渐弱金光"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "金色渐暗，悲壮"
+        },
+        "acting_notes": [
+          {
+            "name": "常遇春",
+            "acting": "面容安详微微点头，身躯渐渐透明化为光粒"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "常遇春残魂虚影身躯渐渐变淡，化为无数金色光粒缓缓飘散升起，最后一缕光芒消失在昏暗石室中，镜头缓缓拉远，电影级真实画质",
+        "connect_camera_move": "缓缓拉远"
+      },
+      {
+        "panel_number": 33,
+        "description": "近景：赵玄真面带傲然正在说话",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "阴阳寮大神官不过如此。",
+        "shot_type": "平视近景",
+        "camera_move": "微微推近",
+        "video_prompt": "老年男子面部近景，虽面色苍白但嘴角微扬带傲然，薄唇张开正在说话，目光锐利直视前方，镜头微微推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微光",
+            "quality": "冷调"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "冷青调"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "面色苍白但嘴角微扬傲然，目光锐利直视前方，薄唇张开说话"
+          }
+        ],
+        "duration_sec": 4,
+        "sync_video_prompt": "赵玄真面部近景，虽面色苍白但嘴角微扬带傲然，薄唇张开，目光锐利直视前方，赵玄真傲然说道：「阴阳寮大神官不过如此。」镜头微微推近，浅景深，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 34,
+        "description": "近景：安倍宗介满脸蛇血，面色惨白，正在说话放狠话",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "钦天监首席天师，果然名不虚传！这次是我败了，但下次。十年后我养好伤，定会带齐三神器前来，届时，必要抽你华夏明太祖之龙魂！",
+        "shot_type": "平视近景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "中年男子面部近景，满脸暗红蛇血，面色惨白如纸，嘴角血迹，薄唇张开正在说话放狠话，狭长双眼带不甘和阴狠，身体摇晃，镜头缓缓推近，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "正面微光",
+            "quality": "冷调"
+          },
+          "depth_of_field": "浅景深（T2.8）",
+          "color_tone": "惨白冷调，血红对比"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "满脸蛇血面色惨白，薄唇张开说话带不甘阴狠，双眼微眯带威胁，身体摇晃但挣扎站立"
+          }
+        ],
+        "duration_sec": 13,
+        "sync_video_prompt": "安倍宗介面部近景，满脸暗红蛇血，面色惨白如纸，嘴角血迹，薄唇张开放狠话，狭长双眼带不甘和阴狠，身体摇晃，安倍宗介不甘阴狠地说道：「钦天监首席天师，果然名不虚传！这次是我败了，但下次。十年后我养好伤，定会带齐三神器前来，届时，必要抽你华夏明太祖之龙魂！」镜头缓缓推近，浅景深，电影级真实画质",
+        "connect_camera_move": "急速推近"
+      },
+      {
+        "panel_number": 35,
+        "description": "中景：安倍宗介扔出烟玉，烟雾弥漫中消失不见",
+        "characters": [
+          {
+            "name": "安倍宗介",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "action",
+        "source_text": "安倍宗介扔出烟玉逃走。安倍宗介消失。",
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "中年男子从袖中掏出一颗黑色珠子猛然摔在地上，浓烈黑色烟雾瞬间弥漫开来，烟雾散去后人已消失不见，镜头缓缓推近烟雾，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "烟雾遮挡光源",
+            "quality": "黑雾弥漫"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "暗黑"
+        },
+        "acting_notes": [
+          {
+            "name": "安倍宗介",
+            "acting": "右手从袖中快速掏出珠子猛然摔地，趁烟雾弥漫转身消失"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "安倍宗介从袖中掏出一颗黑色珠子猛然摔在地上，浓烈黑色烟雾瞬间弥漫开来，烟雾散去后人已消失不见，镜头缓缓推近烟雾，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 36,
+        "description": "中景：赵玄真忽然全身喷血倒在地上，面朝上躺着",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象",
+            "slot": "陵宫入口石门内侧的位置"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "emotion",
+        "source_text": "安倍宗介消失，赵玄真忽然全身喷血倒在地上。",
+        "shot_type": "俯拍中景",
+        "camera_move": "缓缓升起俯拍",
+        "video_prompt": "老年男子忽然全身多处喷出鲜血，身体向后倒下重重摔在青石地面上，面朝上躺着，青布长衫染满鲜血，镜头缓缓升起俯拍，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "顶部龙魂微弱金光",
+            "quality": "幽暗微弱"
+          },
+          "depth_of_field": "中等景深（T4.0）",
+          "color_tone": "暗沉，鲜血暗红"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "身体猛然喷血向后倒地，面朝上躺着，面容痛苦但目光仍然清醒"
+          }
+        ],
+        "duration_sec": 5,
+        "sync_video_prompt": "赵玄真忽然全身多处喷出鲜血，身体向后倒下重重摔在青石地面上，面朝上躺着，青布长衫染满鲜血，镜头缓缓升起俯拍，电影级真实画质",
+        "connect_camera_move": "硬切"
+      },
+      {
+        "panel_number": 37,
+        "description": "近景：赵玄真躺在地上，面色苍白自语前半段——自嘲和感慨",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "emotion",
+        "source_text": "不，这一次是你胜了，想不到，阴阳寮的大神官，如今竟如此之强了。",
+        "shot_type": "俯拍近景",
+        "camera_move": "缓缓推近",
+        "video_prompt": "老年男子躺在青石地面上面朝上，面色苍白嘴角血迹，薄唇微张正在自语说话，深邃双眼带着感慨和自嘲，镜头缓缓俯拍推近面部，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "顶部龙魂微弱金光映照",
+            "quality": "微弱温暖金光"
+          },
+          "depth_of_field": "浅景深（T2.8），聚焦面部",
+          "color_tone": "暗沉，微弱暖光"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "面色苍白嘴角血迹，薄唇微张自语带自嘲苦笑，双眼清醒但带疲惫感慨"
+          }
+        ],
+        "duration_sec": 10,
+        "sync_video_prompt": "赵玄真躺在青石地面上面朝上，面色苍白嘴角血迹，薄唇微张，深邃双眼带着感慨和自嘲，赵玄真虚弱自嘲低语道：「不，这一次是你胜了，想不到，阴阳寮的大神官，如今竟如此之强了。」镜头缓缓俯拍推近面部，浅景深，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 38,
+        "description": "近景：赵玄真躺在地上，眼神渐渐涣散，低语后半段——忧虑华夏未来",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "emotion",
+        "source_text": "等十年后他再来，我华夏谁能挡住他？",
+        "shot_type": "俯拍近景",
+        "camera_move": "缓缓推近至极近景",
+        "video_prompt": "老年男子躺在青石地面上，面色苍白眼神渐渐涣散失焦，薄唇微张正在低语说话，双眼从清醒渐渐模糊，面容忧虑担忧，镜头缓缓俯拍推近至极近景面部，浅景深，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "顶部龙魂金光渐暗",
+            "quality": "微弱渐暗金光"
+          },
+          "depth_of_field": "极浅景深（T1.8），聚焦面部",
+          "color_tone": "暗沉渐黑"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "面色苍白薄唇微张低语，双眼从清醒渐渐涣散失焦，面容忧虑"
+          }
+        ],
+        "duration_sec": 8,
+        "sync_video_prompt": "赵玄真躺在青石地面上，面色苍白眼神渐渐涣散失焦，薄唇微张，双眼从清醒渐渐模糊，面容忧虑担忧，赵玄真忧虑低语道：「等十年后他再来，我华夏谁能挡住他？」镜头缓缓俯拍推近至极近景面部，浅景深，电影级真实画质",
+        "connect_camera_move": "缓缓推近"
+      },
+      {
+        "panel_number": 39,
+        "description": "大远景：赵玄真躺在地上的渺小身影，头顶金色龙魂微弱飘浮，整个地下陵宫幽暗宏大，画面渐暗",
+        "characters": [
+          {
+            "name": "赵玄真",
+            "appearance": "初始形象"
+          }
+        ],
+        "location": "明孝陵地下陵宫_夜",
+        "scene_type": "emotion",
+        "source_text": "赵玄真意识渐渐涣散，视线模糊成一片昏黑，连龙魂的金光都看得朦朦胧胧。",
+        "shot_type": "俯拍大远景",
+        "camera_move": "缓缓升起拉远",
+        "video_prompt": "俯拍昏暗巨大地下石室全貌，老年男子渺小身影躺在青石地面上一动不动，头顶高处金色龙魂微弱飘浮光芒渐暗，整个画面缓缓变暗变模糊，镜头缓缓升起拉远，电影级真实画质",
+        "photography": {
+          "lighting": {
+            "direction": "龙魂微弱金光渐暗",
+            "quality": "微弱渐暗"
+          },
+          "depth_of_field": "深景深（T8.0），展现全场空间",
+          "color_tone": "暗沉渐黑，悲壮"
+        },
+        "acting_notes": [
+          {
+            "name": "赵玄真",
+            "acting": "一动不动躺在地上，渺小孤独"
+          }
+        ],
+        "duration_sec": 6,
+        "sync_video_prompt": "俯拍昏暗巨大地下石室全貌，赵玄真渺小身影躺在青石地面上一动不动，头顶高处金色龙魂微弱飘浮光芒渐暗，整个画面缓缓变暗变模糊，镜头缓缓升起拉远，电影级真实画质",
+        "connect_camera_move": "缓缓拉远"
+      }
+    ]
+  }
+]

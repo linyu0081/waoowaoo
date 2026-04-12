@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "projectName": "龙脉",
+  "episode": "ep01",
+  "artStyle": "真人写实",
+  "artStylePrompt": "真实电影级画面质感，真实现实场景，色彩饱满通透，画面干净精致，真实感",
+  "videoRatio": "16:9",
+  "engine": "zencli",
+  "postMode": "音画同出",
+  "createdAt": "2026-04-11T15:36:00+08:00",
+  "characters": [
+    {
+      "id": "char-001",
+      "name": "赵玄真",
+      "voiceLine": "男声，老年音色，苍劲浑厚",
+      "profileData": {
+        "role_level": "S",
+        "age_range": "约七十岁",
+        "archetype": "忠诚护卫"
+      },
+      "images": ["../../assets/images/char-赵玄真.png"]
+    },
+    {
+      "id": "char-002",
+      "name": "安倍宗介",
+      "voiceLine": "男声，中年音色，阴冷嚣张带日式口音",
+      "profileData": {
+        "role_level": "A",
+        "age_range": "约四十岁",
+        "archetype": "阴险反派"
+      },
+      "images": ["../../assets/images/char-安倍宗介.png"]
+    },
+    {
+      "id": "char-003",
+      "name": "林砚舟",
+      "voiceLine": "男声，少年音色，清亮稚嫩",
+      "profileData": {
+        "role_level": "B",
+        "age_range": "约十五岁",
+        "archetype": "励志少年"
+      },
+      "images": ["../../assets/images/char-林砚舟.png"]
+    },
+    {
+      "id": "char-004",
+      "name": "常遇春",
+      "voiceLine": "男声，中年音色，豪放浑厚",
+      "profileData": {
+        "role_level": "B",
+        "age_range": "约三十五岁",
+        "archetype": "忠诚护卫"
+      },
+      "images": ["../../assets/images/char-常遇春.png"]
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-001",
+      "name": "明孝陵地下陵宫_夜",
+      "description": "明孝陵地下核心陵宫，巨大石室，石壁刻满龙纹浮雕，中央祭坛，石象生镇守，四周魂幡飘动",
+      "images": ["../../assets/images/scene-明孝陵地下陵宫_夜.png"]
+    }
+  ],
+  "clips": [
+    {
+      "id": "clip-001",
+      "summary": "安倍宗介施法抽取龙魂，赵玄真以五帝金剑斩蛇救龙",
+      "panels": []
+    },
+    {
+      "id": "clip-002",
+      "summary": "赵玄真现身对峙，太极八卦图绞杀三式神",
+      "panels": []
+    },
+    {
+      "id": "clip-003",
+      "summary": "八岐大蛇再生，常遇春残魂一枪穿蛇，安倍宗介败逃，赵玄真重伤",
+      "panels": []
+    }
+  ],
+  "stats": {
+    "totalClips": 3,
+    "totalPanels": 0,
+    "totalVideos": 0,
+    "totalDuration": "0s"
+  }
+}

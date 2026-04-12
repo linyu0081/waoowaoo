@@ -1,0 +1,121 @@
+[
+  {
+    "lineIndex": 1,
+    "speaker": "安倍宗介",
+    "content": "抽干了这洪武大帝的龙魂，引大和皇魂入主明孝陵，从此，华夏将永世为我帝国奴役！",
+    "emotionStrength": 0.35,
+    "matchedPanel": {"storyboardId": "clip-001", "panelIndex": 2}
+  },
+  {
+    "lineIndex": 2,
+    "speaker": "赵玄真",
+    "content": "抽我华夏帝王龙魂，找死！",
+    "emotionStrength": 0.4,
+    "matchedPanel": {"storyboardId": "clip-001", "panelIndex": 6}
+  },
+  {
+    "lineIndex": 3,
+    "speaker": "安倍宗介",
+    "content": "钦天监首席赵玄真，你竟还活着！",
+    "emotionStrength": 0.3,
+    "matchedPanel": {"storyboardId": "clip-002", "panelIndex": 2}
+  },
+  {
+    "lineIndex": 4,
+    "speaker": "赵玄真",
+    "content": "阴阳寮大神官，安倍宗介！",
+    "emotionStrength": 0.25,
+    "matchedPanel": {"storyboardId": "clip-002", "panelIndex": 3}
+  },
+  {
+    "lineIndex": 5,
+    "speaker": "安倍宗介",
+    "content": "钦天监早已是过去，你还有些本事，不如投入我大日本帝国怀抱。",
+    "emotionStrength": 0.25,
+    "matchedPanel": {"storyboardId": "clip-002", "panelIndex": 4}
+  },
+  {
+    "lineIndex": 6,
+    "speaker": "赵玄真",
+    "content": "找死！",
+    "emotionStrength": 0.4,
+    "matchedPanel": {"storyboardId": "clip-002", "panelIndex": 5}
+  },
+  {
+    "lineIndex": 7,
+    "speaker": "安倍宗介",
+    "content": "冥顽不化。",
+    "emotionStrength": 0.2,
+    "matchedPanel": {"storyboardId": "clip-002", "panelIndex": 6}
+  },
+  {
+    "lineIndex": 8,
+    "speaker": "赵玄真",
+    "content": "元始敕命，一炁冲霄，破。",
+    "emotionStrength": 0.35,
+    "matchedPanel": {"storyboardId": "clip-002", "panelIndex": 9}
+  },
+  {
+    "lineIndex": 9,
+    "speaker": "赵玄真",
+    "content": "阴阳师原出自我华夏阴阳学宗门下，不过学了点皮毛，也敢班门弄斧。",
+    "emotionStrength": 0.25,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 0}
+  },
+  {
+    "lineIndex": 10,
+    "speaker": "赵玄真",
+    "content": "八岐大蛇。",
+    "emotionStrength": 0.3,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 3}
+  },
+  {
+    "lineIndex": 11,
+    "speaker": "安倍宗介",
+    "content": "你们华夏有句古话，青出于蓝而胜于蓝，死！",
+    "emotionStrength": 0.4,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 4}
+  },
+  {
+    "lineIndex": 12,
+    "speaker": "赵玄真",
+    "content": "上告昊天，下通幽冥。闻吾召请，速降真灵。",
+    "emotionStrength": 0.35,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 6}
+  },
+  {
+    "lineIndex": 13,
+    "speaker": "常遇春",
+    "content": "常遇春在此，谁敢惊扰吾皇陵寝！",
+    "emotionStrength": 0.45,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 8}
+  },
+  {
+    "lineIndex": 14,
+    "speaker": "赵玄真",
+    "content": "阴阳寮大神官不过如此。",
+    "emotionStrength": 0.2,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 11}
+  },
+  {
+    "lineIndex": 15,
+    "speaker": "安倍宗介",
+    "content": "钦天监首席天师，果然名不虚传！这次是我败了，但下次。十年后我养好伤，定会带齐三神器前来，届时，必要抽你华夏明太祖之龙魂！",
+    "emotionStrength": 0.35,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 12}
+  },
+  {
+    "lineIndex": 16,
+    "speaker": "赵玄真",
+    "content": "不，这一次是你胜了，想不到，阴阳寮的大神官，如今竟如此之强了。",
+    "emotionStrength": 0.3,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 15}
+  },
+  {
+    "lineIndex": 17,
+    "speaker": "赵玄真",
+    "content": "等十年后他再来，我华夏谁能挡住他？",
+    "emotionStrength": 0.35,
+    "matchedPanel": {"storyboardId": "clip-003", "panelIndex": 16}
+  }
+]

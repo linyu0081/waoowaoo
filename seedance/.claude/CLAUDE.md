@@ -23,11 +23,15 @@
     │   │   ├── 02-screenplay.json           # 剧本（逐片段）
     │   │   ├── 03-storyboard.json           # 分镜板（4阶段完整数据）
     │   │   ├── 04-voice-lines.json          # 台词分析
-    │   │   ├── images/                      # 分镜图片
-    │   │   │   └── P01-S01.png
+    │   │   ├── 05-seedance-prompt.json      # ★ 视频生成提示词（按15s分段+素材引用）
+    │   │   ├── images/                      # 分镜图片 + 宫格图
+    │   │   │   ├── P01-S01.png
+    │   │   │   ├── panel-01-from-v3.jpg     # AI放大的独立分镜图
+    │   │   │   └── grid-ep01-clip001-v3.jpg # Clip宫格分镜图
     │   │   └── videos/                      # 视频产物
-    │   │       ├── P01-S01.mp4
-    │   │       └── P01-S01_storyboard_3x3.jpg
+    │   │       ├── SEG-01.mp4               # 即梦模式按段命名
+    │   │       ├── P01-S01.mp4              # zencli模式按镜头命名
+    │   │       └── SEG-01_storyboard_3x3.jpg
     │   └── ep02/
     │       └── ...
     ├── .agent-state.json                    # Agent 状态记录（Resumable 机制）
@@ -67,8 +71,9 @@
         默认 16:9
 
     Q3: 生成引擎
-        默认 zencli（Zen-SD2.0）
-        可选 dreamina（即梦 Seedance 2.0）
+        默认 zencli（Zen-SD2.0 SubjectToVideo）— 生图+生视频统一引擎
+        可选 dreamina（即梦 Seedance 2.0）— 用户说「用即梦」时切换
+        用户说「用zen生成」即表示用 zencli-skill
         用户可随时通过 ~engine 切换
 
     Q4: 后期模式
@@ -131,7 +136,8 @@
         - outputs/ep01/ 不存在 → [编剧导演分析阶段]
         - 有 01-clips.json + 02-screenplay.json，无 assets/images/ → [美术总监设计阶段]
         - 有 assets/images/，无 03-storyboard.json → [分镜师分镜阶段]
-        - 有 03-storyboard.json，无 videos/ → [视频导演生成阶段]
+        - 有 03-storyboard.json，无 05-seedance-prompt.json → [视频导演生成阶段 - Step 1/2]
+        - 有 05-seedance-prompt.json，无 videos/ → [视频导演生成阶段 - Step 3]
         - 所有产物齐全 → 该集已完成
 
 [工作流程]
@@ -299,9 +305,10 @@
     1️⃣ 编剧导演分析剧本（角色/场景/道具/片段/剧本）
     2️⃣ 美术总监设计角色与场景参考图
     3️⃣ 分镜师执行 4 阶段分镜（规划→摄影→演技→细化+台词）
-    4️⃣ 视频导演生成分镜图→视频→成片
+    4️⃣ 视频导演：分镜图 → 即梦提示词（05-seedance-prompt.json）→ 视频生成 → 成片
 
-    🎬 默认使用 ZenStudio（zencli）生图/生视频，可随时切换即梦
+    🎬 默认使用即梦（Seedance 2.0）生视频，可选 zencli 单镜头模式
+    🖼️ 默认使用 ZenStudio（zencli）生图
     🔊 默认音画同出（Seedance 2.0），可选分离配音模式
 
     💡 输入 **~help** 查看所有指令
