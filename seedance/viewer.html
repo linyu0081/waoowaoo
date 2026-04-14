@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seedance Studio — 项目资产总览</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #0a0a0f;
+  --bg-card: #12121a;
+  --bg-elevated: #1a1a26;
+  --bg-hover: #222233;
+  --border: #2a2a3a;
+  --border-accent: #3d3d55;
+  --text-primary: #e8e6e3;
+  --text-secondary: #8a8a9a;
+  --text-muted: #5a5a6a;
+  --accent-gold: #c9a84c;
+  --accent-gold-dim: #8a7233;
+  --accent-red: #8b2020;
+  --accent-red-bright: #c43c3c;
+  --accent-green: #2a6a3a;
+  --accent-blue: #2a4a7a;
+  --accent-purple: #4a2a6a;
+  --radius: 6px;
+  --radius-lg: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.5);
+  --font-display: 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+::selection { background: var(--accent-gold); color: var(--bg-deep); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ======== HEADER ======== */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,15,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+}
+.header-inner {
+  max-width: 1440px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 900;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+  display: flex; align-items: center; gap: 10px;
+}
+.logo::before {
+  content: ''; display: block; width: 3px; height: 22px;
+  background: linear-gradient(180deg, var(--accent-gold), transparent);
+}
+.project-selector {
+  display: flex; align-items: center; gap: 8px;
+}
+.project-selector select {
+  background: var(--bg-elevated); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 6px 28px 6px 12px; font-size: 13px;
+  font-family: var(--font-body);
+  appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8a9a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 8px center;
+}
+.project-selector select:hover { border-color: var(--accent-gold-dim); }
+.header-meta {
+  display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--text-muted);
+}
+.meta-tag {
+  padding: 3px 10px; border-radius: 20px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 11px;
+}
+
+/* ======== NAV TABS ======== */
+.nav-tabs {
+  max-width: 1440px; margin: 0 auto; padding: 0 32px;
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.nav-tab {
+  padding: 14px 24px; font-size: 14px; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  user-select: none;
+}
+.nav-tab:hover { color: var(--text-primary); background: rgba(255,255,255,0.02); }
+.nav-tab.active {
+  color: var(--accent-gold); border-bottom-color: var(--accent-gold);
+}
+
+/* ======== MAIN CONTENT ======== */
+.main { max-width: 1440px; margin: 0 auto; padding: 28px 32px 60px; }
+.tab-panel { display: none; animation: fadeIn 0.3s ease; }
+.tab-panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ======== SECTION TITLE ======== */
+.section-title {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  margin-bottom: 20px; padding-left: 14px;
+  border-left: 3px solid var(--accent-gold);
+  color: var(--text-primary);
+}
+.section-subtitle {
+  font-size: 13px; color: var(--text-muted); margin-bottom: 24px;
+}
+
+/* ======== ASSET CARDS (Characters/Locations/Props) ======== */
+.asset-grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.asset-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all 0.25s;
+}
+.asset-card:hover { border-color: var(--accent-gold-dim); transform: translateY(-2px); box-shadow: var(--shadow); }
+.asset-card-img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+.asset-card-img.landscape { aspect-ratio: 16/9; }
+.asset-card-body { padding: 16px; }
+.asset-card-name {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  margin-bottom: 6px; display: flex; align-items: center; gap: 8px;
+}
+.role-badge {
+  font-size: 10px; font-weight: 700; padding: 2px 6px;
+  border-radius: 3px; font-family: var(--font-mono);
+}
+.role-S { background: var(--accent-gold); color: var(--bg-deep); }
+.role-A { background: var(--accent-red-bright); color: #fff; }
+.role-B { background: var(--accent-blue); color: #fff; }
+.role-C { background: var(--accent-purple); color: #fff; }
+.asset-card-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+.asset-card-meta span { margin-right: 12px; }
+.voice-line {
+  font-size: 11px; color: var(--accent-gold); font-family: var(--font-mono);
+  background: rgba(201,168,76,0.08); padding: 4px 8px; border-radius: 4px;
+  margin-top: 8px; display: inline-block;
+}
+.asset-card-desc {
+  font-size: 12px; color: var(--text-muted); line-height: 1.7;
+  margin-top: 10px; max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.asset-card.expanded .asset-card-desc { max-height: 400px; }
+.toggle-desc {
+  font-size: 11px; color: var(--text-secondary); cursor: pointer;
+  margin-top: 8px; display: inline-block;
+}
+.toggle-desc:hover { color: var(--accent-gold); }
+
+/* ======== PROP CARD (inline) ======== */
+.prop-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.prop-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  transition: border-color 0.2s;
+}
+.prop-card:hover { border-color: var(--accent-gold-dim); }
+.prop-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.prop-summary { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+.prop-desc { font-size: 11px; color: var(--text-muted); font-style: italic; }
+
+/* ======== SCREENPLAY ======== */
+.clip-block { margin-bottom: 32px; }
+.clip-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px; cursor: pointer; user-select: none;
+}
+.clip-number {
+  font-family: var(--font-mono); font-size: 11px;
+  background: var(--accent-gold); color: var(--bg-deep);
+  padding: 3px 8px; border-radius: 3px; font-weight: 700;
+}
+.clip-summary { font-size: 14px; font-weight: 500; }
+.clip-toggle { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+.clip-content { display: none; }
+.clip-block.open .clip-content { display: block; }
+.scene-heading {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--accent-gold); padding: 8px 12px;
+  background: rgba(201,168,76,0.06); border-left: 2px solid var(--accent-gold-dim);
+  margin-bottom: 12px; border-radius: 0 var(--radius) var(--radius) 0;
+}
+.content-item { padding: 6px 0 6px 16px; font-size: 13px; border-left: 1px solid var(--border); margin-left: 12px; }
+.content-item.action { color: var(--text-secondary); }
+.content-item.dialogue { color: var(--text-primary); }
+.content-item.dialogue .char-name { color: var(--accent-gold); font-weight: 700; font-size: 12px; }
+.content-item.dialogue .parenthetical { color: var(--text-muted); font-size: 11px; font-style: italic; }
+.content-item.voiceover { color: var(--accent-gold-dim); font-style: italic; }
+
+/* ======== STORYBOARD ======== */
+.storyboard-clip { margin-bottom: 40px; }
+.storyboard-clip-title {
+  font-family: var(--font-display); font-size: 16px; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.panel-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+.panel-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all 0.25s;
+}
+.panel-card:hover { border-color: var(--accent-gold-dim); box-shadow: var(--shadow); }
+.panel-img-wrap { position: relative; }
+.panel-img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  background: var(--bg-elevated);
+}
+.panel-number-badge {
+  position: absolute; top: 8px; left: 8px;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  background: rgba(10,10,15,0.85); color: var(--accent-gold);
+  padding: 2px 8px; border-radius: 3px;
+}
+.panel-shot-badge {
+  position: absolute; top: 8px; right: 8px;
+  font-size: 10px; background: rgba(10,10,15,0.85); color: var(--text-secondary);
+  padding: 2px 8px; border-radius: 3px;
+}
+.panel-body { padding: 14px; }
+.panel-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.6; }
+.panel-prompt-toggle {
+  font-size: 11px; color: var(--accent-gold-dim); cursor: pointer;
+  margin-top: 6px;
+}
+.panel-prompt-toggle:hover { color: var(--accent-gold); }
+.panel-prompts { display: none; margin-top: 10px; }
+.panel-card.show-prompts .panel-prompts { display: block; }
+.prompt-block {
+  font-size: 11px; color: var(--text-muted);
+  background: rgba(0,0,0,0.3); padding: 10px;
+  border-radius: var(--radius); margin-bottom: 8px;
+  font-family: var(--font-mono); line-height: 1.6;
+  white-space: pre-wrap; word-break: break-all;
+  max-height: 200px; overflow-y: auto;
+}
+.prompt-label {
+  font-size: 10px; color: var(--text-secondary); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;
+}
+
+/* ======== SEEDANCE PROMPTS ======== */
+.seg-grid { display: grid; gap: 20px; }
+.seg-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  transition: border-color 0.2s;
+}
+.seg-card:hover { border-color: var(--accent-gold-dim); }
+.seg-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.seg-id {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+  background: var(--accent-gold); color: var(--bg-deep);
+  padding: 3px 10px; border-radius: 3px;
+}
+.seg-meta { font-size: 12px; color: var(--text-secondary); }
+.seg-prompt {
+  font-size: 12px; color: var(--text-muted); background: rgba(0,0,0,0.3);
+  padding: 14px; border-radius: var(--radius); font-family: var(--font-mono);
+  line-height: 1.7; white-space: pre-wrap; word-break: break-all;
+  max-height: 300px; overflow-y: auto;
+}
+.seg-refs { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.seg-ref-tag {
+  font-size: 10px; padding: 2px 8px; border-radius: 10px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  color: var(--text-muted); font-family: var(--font-mono);
+}
+
+/* ======== VIDEOS ======== */
+.video-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+.video-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.video-card video {
+  width: 100%; aspect-ratio: 16/9; background: #000;
+  border-bottom: 1px solid var(--border);
+}
+.video-card-body { padding: 12px 16px; }
+.video-name { font-family: var(--font-mono); font-size: 14px; font-weight: 500; }
+.video-size { font-size: 11px; color: var(--text-muted); }
+
+/* ======== VOICE LINES ======== */
+.voice-table { width: 100%; border-collapse: collapse; }
+.voice-table th {
+  text-align: left; font-size: 11px; color: var(--text-muted);
+  padding: 8px 12px; border-bottom: 1px solid var(--border);
+  font-weight: 500; text-transform: uppercase; letter-spacing: 1px;
+}
+.voice-table td {
+  padding: 10px 12px; border-bottom: 1px solid rgba(42,42,58,0.5);
+  font-size: 13px; vertical-align: top;
+}
+.voice-table tr:hover td { background: rgba(255,255,255,0.01); }
+.emotion-bar {
+  display: inline-block; height: 4px; border-radius: 2px;
+  background: var(--accent-gold); vertical-align: middle;
+}
+
+/* ======== STATS BAR ======== */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px; margin-bottom: 32px;
+}
+.stat-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; text-align: center;
+}
+.stat-value { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--accent-gold); }
+.stat-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .site-header { padding: 0 16px; }
+  .main { padding: 20px 16px; }
+  .nav-tabs { padding: 0 16px; overflow-x: auto; }
+  .nav-tab { padding: 12px 16px; white-space: nowrap; font-size: 13px; }
+  .asset-grid, .panel-grid, .video-grid { grid-template-columns: 1fr; }
+  .header-meta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">SEEDANCE STUDIO</div>
+    <div class="project-selector">
+      <select id="projectSelect">
+        <option value="ep01">EP01 — 龙脉</option>
+      </select>
+    </div>
+    <div class="header-meta">
+      <span class="meta-tag" id="metaStyle">真人写实</span>
+      <span class="meta-tag" id="metaRatio">16:9</span>
+      <span class="meta-tag" id="metaEngine">zencli</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-tabs" id="navTabs">
+  <div class="nav-tab active" data-tab="overview">总览</div>
+  <div class="nav-tab" data-tab="assets">资产库</div>
+  <div class="nav-tab" data-tab="screenplay">剧本</div>
+  <div class="nav-tab" data-tab="storyboard">分镜</div>
+  <div class="nav-tab" data-tab="seedance">Seedance 提示词</div>
+  <div class="nav-tab" data-tab="videos">视频</div>
+  <div class="nav-tab" data-tab="voicelines">台词</div>
+</nav>
+
+<main class="main">
+  <!-- ===== OVERVIEW ===== -->
+  <div class="tab-panel active" id="panel-overview">
+    <div class="stats-bar" id="statsBar"></div>
+    <h2 class="section-title">项目概况</h2>
+    <div id="overviewContent"></div>
+  </div>
+
+  <!-- ===== ASSETS ===== -->
+  <div class="tab-panel" id="panel-assets">
+    <h2 class="section-title">角色</h2>
+    <div class="asset-grid" id="characterGrid"></div>
+    <h2 class="section-title" style="margin-top:40px">场景</h2>
+    <div class="asset-grid" id="locationGrid"></div>
+    <h2 class="section-title" style="margin-top:40px">道具</h2>
+    <div class="prop-grid" id="propGrid"></div>
+  </div>
+
+  <!-- ===== SCREENPLAY ===== -->
+  <div class="tab-panel" id="panel-screenplay">
+    <h2 class="section-title">剧本</h2>
+    <div id="screenplayContent"></div>
+  </div>
+
+  <!-- ===== STORYBOARD ===== -->
+  <div class="tab-panel" id="panel-storyboard">
+    <h2 class="section-title">分镜板</h2>
+    <p class="section-subtitle">4 阶段分镜：规划 → 摄影 → 演技 → 细化 | 点击卡片展开提示词详情</p>
+    <div id="storyboardContent"></div>
+  </div>
+
+  <!-- ===== SEEDANCE PROMPTS ===== -->
+  <div class="tab-panel" id="panel-seedance">
+    <h2 class="section-title">Seedance 视频提示词</h2>
+    <p class="section-subtitle" id="seedanceMeta"></p>
+    <div class="seg-grid" id="seedanceGrid"></div>
+  </div>
+
+  <!-- ===== VIDEOS ===== -->
+  <div class="tab-panel" id="panel-videos">
+    <h2 class="section-title">视频</h2>
+    <div class="video-grid" id="videoGrid"></div>
+  </div>
+
+  <!-- ===== VOICE LINES ===== -->
+  <div class="tab-panel" id="panel-voicelines">
+    <h2 class="section-title">台词</h2>
+    <div style="overflow-x:auto">
+      <table class="voice-table" id="voiceTable">
+        <thead><tr>
+          <th>#</th><th>角色</th><th>台词</th><th>情感强度</th><th>匹配分镜</th>
+        </tr></thead>
+        <tbody id="voiceBody"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+const BASE = '';
+
+// ========== DATA LOADING ==========
+let manifest, characters, locations, props, clips, screenplay, storyboard, voiceLines, seedancePrompts;
+
+async function loadJSON(path) {
+  const res = await fetch(BASE + path);
+  if (!res.ok) throw new Error(`加载失败: ${path} (${res.status})`);
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch(e) {
+    throw new Error(`JSON 解析失败: ${path} — ${e.message}`);
+  }
+}
+
+async function init() {
+  try {
+    [manifest, characters, locations, props, clips, screenplay, storyboard, voiceLines, seedancePrompts] = await Promise.all([
+      loadJSON('outputs/ep01/manifest.json'),
+      loadJSON('assets/characters.json'),
+      loadJSON('assets/locations.json'),
+      loadJSON('assets/props.json'),
+      loadJSON('outputs/ep01/01-clips.json'),
+      loadJSON('outputs/ep01/02-screenplay.json'),
+      loadJSON('outputs/ep01/03-storyboard.json'),
+      loadJSON('outputs/ep01/04-voice-lines.json'),
+      loadJSON('outputs/ep01/05-seedance-prompt.json'),
+    ]);
+  } catch(err) {
+    document.querySelector('main').innerHTML = `
+      <div style="padding:60px 40px;text-align:center">
+        <h2 style="color:var(--accent-red-bright);margin-bottom:16px">❌ 数据加载失败</h2>
+        <pre style="color:var(--text-secondary);font-size:13px;background:var(--bg-card);padding:20px;border-radius:8px;text-align:left;max-width:600px;margin:0 auto;white-space:pre-wrap">${err.message}</pre>
+        <p style="color:var(--text-muted);margin-top:16px;font-size:13px">请确保通过 HTTP 服务器访问（非 file:// 协议），<br>如：python3 -m http.server 8899</p>
+      </div>`;
+    return;
+  }
+
+  renderOverview();
+  renderAssets();
+  renderScreenplay();
+  renderStoryboard();
+  renderSeedance();
+  renderVideos();
+  renderVoiceLines();
+  setupTabs();
+}
+
+// ========== TABS ==========
+function setupTabs() {
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+// ========== OVERVIEW ==========
+function renderOverview() {
+  const totalPanels = storyboard.reduce((s, c) => s + c.panels.length, 0);
+  const totalSegs = seedancePrompts.segments ? seedancePrompts.segments.length : 0;
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat-card"><div class="stat-value">${characters.characters.length}</div><div class="stat-label">角色</div></div>
+    <div class="stat-card"><div class="stat-value">${locations.locations.length}</div><div class="stat-label">场景</div></div>
+    <div class="stat-card"><div class="stat-value">${props.props.length}</div><div class="stat-label">道具</div></div>
+    <div class="stat-card"><div class="stat-value">${clips.length}</div><div class="stat-label">片段</div></div>
+    <div class="stat-card"><div class="stat-value">${totalPanels}</div><div class="stat-label">分镜</div></div>
+    <div class="stat-card"><div class="stat-value">${totalSegs}</div><div class="stat-label">视频段</div></div>
+    <div class="stat-card"><div class="stat-value">${voiceLines.length}</div><div class="stat-label">台词</div></div>
+    <div class="stat-card"><div class="stat-value">${seedancePrompts.total_duration_sec || 0}s</div><div class="stat-label">总时长</div></div>
+  `;
+  document.getElementById('metaStyle').textContent = manifest.artStyle;
+  document.getElementById('metaRatio').textContent = manifest.videoRatio;
+  document.getElementById('metaEngine').textContent = manifest.engine;
+
+  document.getElementById('overviewContent').innerHTML = `
+    <div style="display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:16px">
+      <div class="prop-card">
+        <div class="prop-name">📋 项目信息</div>
+        <div class="prop-summary">项目：${manifest.projectName} | 集数：${manifest.episode}</div>
+        <div class="prop-desc">画风：${manifest.artStyle} (${manifest.artStylePrompt})</div>
+        <div class="prop-desc">后期模式：${manifest.postMode} | 引擎：${manifest.engine}</div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-name">🎬 制作进度</div>
+        <div class="prop-desc">编剧导演：✅ 完成</div>
+        <div class="prop-desc">美术总监：✅ 完成</div>
+        <div class="prop-desc">分镜师：✅ 完成</div>
+        <div class="prop-desc">视频导演：⏳ 进行中 (SEG-01~03 已出片，SEG-04~07 待生成)</div>
+      </div>
+    </div>
+  `;
+}
+
+// ========== ASSETS ==========
+function renderAssets() {
+  const charHTML = characters.characters.map(c => {
+    const img = c.refImage || `assets/images/char-${c.name}.png`;
+    const desc = c.appearances?.[0]?.descriptions?.[0] || '';
+    return `
+    <div class="asset-card" onclick="this.classList.toggle('expanded')">
+      <img class="asset-card-img" src="${img}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'">
+      <div class="asset-card-body">
+        <div class="asset-card-name">${c.name} <span class="role-badge role-${c.role_level}">${c.role_level}</span></div>
+        <div class="asset-card-meta">
+          <span>${c.gender} · ${c.age_range}</span>
+          <span>${c.archetype}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary)">${c.introduction}</div>
+        ${c.voiceLine ? `<div class="voice-line">🎙 ${c.voiceLine}</div>` : ''}
+        <div class="toggle-desc">▼ 展开外貌描述</div>
+        <div class="asset-card-desc">${desc}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('characterGrid').innerHTML = charHTML;
+
+  const locHTML = locations.locations.map(l => {
+    const img = l.refImage || `assets/images/scene-${l.name}.png`;
+    return `
+    <div class="asset-card" onclick="this.classList.toggle('expanded')">
+      <img class="asset-card-img landscape" src="${img}" alt="${l.name}" loading="lazy" onerror="this.style.display='none'">
+      <div class="asset-card-body">
+        <div class="asset-card-name">${l.name}</div>
+        <div style="font-size:12px;color:var(--text-secondary)">${l.summary}</div>
+        <div class="toggle-desc">▼ 展开场景描述</div>
+        <div class="asset-card-desc">${(l.descriptions||[]).join('<br><br>')}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('locationGrid').innerHTML = locHTML;
+
+  const propHTML = props.props.map(p => `
+    <div class="prop-card">
+      <div class="prop-name">${p.name}</div>
+      <div class="prop-summary">${p.summary}</div>
+      <div class="prop-desc">${p.description}</div>
+    </div>
+  `).join('');
+  document.getElementById('propGrid').innerHTML = propHTML;
+}
+
+// ========== SCREENPLAY ==========
+function renderScreenplay() {
+  const html = screenplay.map((sp, i) => {
+    const scene = sp.scenes[0];
+    const contentHTML = scene.content.map(item => {
+      if (item.type === 'dialogue') {
+        return `<div class="content-item dialogue">
+          <div class="char-name">${item.character} ${item.parenthetical ? `<span class="parenthetical">(${item.parenthetical})</span>` : ''}</div>
+          <div>${item.lines}</div>
+        </div>`;
+      } else if (item.type === 'voiceover') {
+        return `<div class="content-item voiceover">🎙 ${item.character || '旁白'}：${item.text}</div>`;
+      }
+      return `<div class="content-item action">${item.text}</div>`;
+    }).join('');
+
+    return `
+    <div class="clip-block open">
+      <div class="clip-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="clip-number">${sp.clip_id.toUpperCase()}</span>
+        <span class="clip-summary">${clips[i]?.summary || ''}</span>
+        <span class="clip-toggle">▼</span>
+      </div>
+      <div class="clip-content">
+        <div class="scene-heading">${scene.heading.int_ext} · ${scene.heading.location} · ${scene.heading.time}</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;padding-left:12px">${scene.description}</div>
+        ${contentHTML}
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('screenplayContent').innerHTML = html;
+}
+
+// ========== STORYBOARD ==========
+function renderStoryboard() {
+  const panelImgMap = {};
+  const imgFiles = ['panel-01-from-v3.jpg','panel-02-from-v2.jpg','panel-03-from-v3.jpg','panel-04-from-v3.jpg','panel-05-from-v3.jpg','panel-06-from-v3.jpg','panel-07-from-v3.jpg','panel-08-from-v3.jpg','panel-09-from-v3.jpg'];
+  imgFiles.forEach((f, i) => panelImgMap[i + 1] = `outputs/ep01/images/${f}`);
+
+  const html = storyboard.map(clipData => {
+    const panelsHTML = clipData.panels.map(p => {
+      const imgSrc = panelImgMap[p.panel_number] || '';
+      return `
+      <div class="panel-card" onclick="this.classList.toggle('show-prompts')">
+        ${imgSrc ? `<div class="panel-img-wrap">
+          <img class="panel-img" src="${imgSrc}" alt="P${p.panel_number}" loading="lazy">
+          <span class="panel-number-badge">P${String(p.panel_number).padStart(2,'0')}</span>
+          <span class="panel-shot-badge">${p.shot_type || ''} · ${p.camera_move || ''}</span>
+        </div>` : `<div style="padding:20px;text-align:center;color:var(--text-muted);background:var(--bg-elevated);font-size:12px">
+          <span class="panel-number-badge" style="position:static;display:inline-block;margin-bottom:8px">P${String(p.panel_number).padStart(2,'0')}</span><br>
+          ${p.shot_type || ''} · ${p.camera_move || ''}<br>
+          <span style="font-size:10px">（无分镜图）</span>
+        </div>`}
+        <div class="panel-body">
+          <div class="panel-desc">${p.description}</div>
+          <div style="font-size:11px;color:var(--text-muted)">
+            ${(p.characters||[]).map(c=>`<span style="color:var(--accent-gold)">${c.name}</span>`).join(' · ')}
+            ${p.duration_sec ? ` · ${p.duration_sec}s` : ''}
+          </div>
+          <div class="panel-prompt-toggle">▼ 展开提示词</div>
+          <div class="panel-prompts">
+            ${p.video_prompt ? `<div class="prompt-label">Video Prompt</div><div class="prompt-block">${p.video_prompt}</div>` : ''}
+            ${p.sync_video_prompt ? `<div class="prompt-label">Sync Video Prompt (含台词)</div><div class="prompt-block">${p.sync_video_prompt}</div>` : ''}
+            ${p.source_text ? `<div class="prompt-label">原文</div><div class="prompt-block" style="color:var(--text-secondary)">${p.source_text}</div>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    return `
+    <div class="storyboard-clip">
+      <div class="storyboard-clip-title">
+        <span class="clip-number">${clipData.clip_id.toUpperCase()}</span>
+        <span>${clipData.panels.length} 个镜头</span>
+      </div>
+      <div class="panel-grid">${panelsHTML}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('storyboardContent').innerHTML = html;
+}
+
+// ========== SEEDANCE ==========
+function renderSeedance() {
+  const sp = seedancePrompts;
+  document.getElementById('seedanceMeta').innerHTML =
+    `v${sp.version} · ${sp.total_segments} 段 · ${sp.total_duration_sec}s 总时长 · ${sp.status}`;
+  
+  const html = (sp.segments || []).map(seg => `
+    <div class="seg-card">
+      <div class="seg-header">
+        <span class="seg-id">${seg.segment_id}</span>
+        <span class="seg-meta">${seg.clip_id} · P${seg.panels.join(',')} · ${seg.estimated_duration_sec}s</span>
+      </div>
+      <div class="seg-prompt">${seg.prompt}</div>
+      <div class="seg-refs">
+        ${(seg.reference_images||[]).map(r => `<span class="seg-ref-tag">${r}</span>`).join('')}
+      </div>
+      ${seg.note ? `<div style="font-size:11px;color:var(--text-muted);margin-top:8px">📝 ${seg.note}</div>` : ''}
+    </div>
+  `).join('');
+  document.getElementById('seedanceGrid').innerHTML = html;
+}
+
+// ========== VIDEOS ==========
+function renderVideos() {
+  // 动态从 seedancePrompts 中获取所有 segment，而非硬编码
+  const segs = seedancePrompts.segments || [];
+  const html = segs.map(seg => {
+    const f = `${seg.segment_id}.mp4`;
+    return `
+    <div class="video-card">
+      <video controls preload="metadata" src="outputs/ep01/videos/${f}" onerror="this.outerHTML='<div style=\\'padding:40px;text-align:center;color:var(--text-muted);font-size:12px\\'>⏳ 视频待生成</div>'"></video>
+      <div class="video-card-body">
+        <div class="video-name">${seg.segment_id}</div>
+        <div style="font-size:11px;color:var(--text-muted)">${seg.clip_id} · P${seg.panels.join(',')} · ${seg.estimated_duration_sec}s</div>
+        ${seg.characters?.length ? `<div style="font-size:11px;color:var(--accent-gold)">${seg.characters.join(' · ')}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('videoGrid').innerHTML = html;
+}
+
+// ========== VOICE LINES ==========
+function renderVoiceLines() {
+  const html = voiceLines.map(vl => {
+    const barW = Math.round(vl.emotionStrength * 200);
+    const mp = vl.matchedPanel;
+    return `<tr>
+      <td style="color:var(--text-muted);font-family:var(--font-mono);font-size:11px">${vl.lineIndex}</td>
+      <td style="color:var(--accent-gold);font-weight:500">${vl.speaker}</td>
+      <td>${vl.content}</td>
+      <td><span class="emotion-bar" style="width:${barW}px"></span> <span style="font-size:11px;color:var(--text-muted)">${vl.emotionStrength}</span></td>
+      <td style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted)">${mp ? `${mp.storyboardId} P${mp.panelIndex}` : '—'}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('voiceBody').innerHTML = html;
+}
+
+init().catch(err => console.error('Load failed:', err));
+</script>
+</body>
+</html>
