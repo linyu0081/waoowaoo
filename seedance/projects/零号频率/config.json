@@ -1,0 +1,11 @@
+{
+  "projectName": "零号频率",
+  "artStyle": "虚幻引擎5级照片级写实渲染",
+  "artStylePrompt": "虚幻引擎5级照片级写实渲染，写实CGI电影质感，精致技术光影效果",
+  "videoRatio": "16:9",
+  "videoModel": "seedance",
+  "paceStyle": "标准节奏",
+  "engine": "zencli",
+  "postMode": "音画同出",
+  "createdAt": "2026-04-14T00:00:00.000Z"
+}

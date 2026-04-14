@@ -1,5 +1,5 @@
 {
-  "activeProject": "龙脉",
+  "activeProject": "零号频率",
   "projects": {
     "龙脉": {
       "currentEpisode": "ep01",
@@ -16,6 +16,24 @@
           "status": "in_progress",
           "completedStages": ["script_analysis", "art_design", "storyboard", "ai_video_plan"],
           "note": "SEG-01~06已生成，SEG-07~16待补"
+        }
+      }
+    },
+    "零号频率": {
+      "currentEpisode": "ep01",
+      "currentStage": "art_design_done",
+      "agents": {
+        "screenwriter": "done",
+        "art-director": "done",
+        "storyboard-artist": "",
+        "ai-video-director": "",
+        "video-director": ""
+      },
+      "episodes": {
+        "ep01": {
+          "status": "in_progress",
+          "completedStages": ["script_analysis", "art_design"],
+          "note": "美术总监设计+生图完成，两步审核通过"
         }
       }
     }
