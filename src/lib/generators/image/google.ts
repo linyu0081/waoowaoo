@@ -128,17 +128,20 @@ export class GoogleGeminiImageGenerator extends BaseImageGenerator {
         ]
 
         // 调用 API
+        // Google Gemini imageConfig.imageSize 仅支持空值或特定像素格式，
+        // 不支持 "0.5K"、"2K" 等自定义缩写，需要过滤掉避免 INVALID_ARGUMENT
+        const validResolution = resolution && /^\d+x\d+$/.test(resolution) ? resolution : undefined
         const response = await ai.models.generateContent({
             model: this.modelId,
             contents: [{ parts: contentParts }],
             config: {
                 responseModalities: ['TEXT', 'IMAGE'],
                 safetySettings,
-                ...(aspectRatio || resolution
+                ...(aspectRatio || validResolution
                     ? {
                         imageConfig: {
                             ...(aspectRatio ? { aspectRatio } : {}),
-                            ...(resolution ? { imageSize: resolution } : {}),
+                            ...(validResolution ? { imageSize: validResolution } : {}),
                         },
                     }
                     : {})

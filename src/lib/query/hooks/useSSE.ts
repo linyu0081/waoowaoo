@@ -207,7 +207,8 @@ export function useSSE({ projectId, episodeId, enabled = true, onEvent }: UseSSE
       listeners.push({ type, handler })
     }
     source.onerror = (error) => {
-      _ulogError('[useSSE] stream error', error)
+      // EventSource 会自动重连，忽略不打印，避免未登录或网络抖动时控制台刷屏报错
+      // _ulogError('[useSSE] stream error', error)
     }
 
     return () => {

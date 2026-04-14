@@ -1,6 +1,23 @@
 {
-    "screenwriter": "done",
-    "art-director": "done",
-    "storyboard-artist": "done",
-    "video-director": ""
+  "activeProject": "龙脉",
+  "projects": {
+    "龙脉": {
+      "currentEpisode": "ep01",
+      "currentStage": "video",
+      "agents": {
+        "screenwriter": "done",
+        "art-director": "done",
+        "storyboard-artist": "done",
+        "ai-video-director": "done",
+        "video-director": ""
+      },
+      "episodes": {
+        "ep01": {
+          "status": "in_progress",
+          "completedStages": ["script_analysis", "art_design", "storyboard", "ai_video_plan"],
+          "note": "SEG-01~06已生成，SEG-07~16待补"
+        }
+      }
+    }
+  }
 }

@@ -208,6 +208,34 @@ export function useRunStreamState<TParams extends Record<string, unknown>>(
       status: 'running',
       message: 'retrying failed step',
     })
+    // Reset the retried step to pending so its old error output is cleared
+    // and auto-select it so the right panel shows its live log
+    setRunState((prev) => {
+      if (!prev || prev.runId !== runId) return prev
+      const step = prev.stepsById[stepId]
+      if (!step) return prev
+      const nextAttempt = step.attempt + 1
+      return {
+        ...prev,
+        stepsById: {
+          ...prev.stepsById,
+          [stepId]: {
+            ...step,
+            status: 'pending',
+            attempt: nextAttempt,
+            textOutput: '',
+            reasoningOutput: '',
+            textLength: 0,
+            reasoningLength: 0,
+            message: '',
+            errorMessage: '',
+            seqByLane: { text: 0, reasoning: 0 },
+          },
+        },
+        selectedStepId: stepId,
+        activeStepId: stepId,
+      }
+    })
     setIsRecoveredRunning(true)
     return {
       runId,

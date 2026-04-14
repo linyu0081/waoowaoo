@@ -58,7 +58,7 @@ export default async function LocaleLayout({
                     <Script
                         src="//unpkg.com/react-grab/dist/index.global.js"
                         crossOrigin="anonymous"
-                        strategy="beforeInteractive"
+                        strategy="lazyOnload"
                     />
                 )}
             </head>

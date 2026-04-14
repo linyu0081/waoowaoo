@@ -9,57 +9,53 @@
 
 [文件结构]
     seedance/
-    ├── script/                              # 用户剧本（支持多集）
-    │   ├── ep01-xxx.md
-    │   └── ...
-    ├── assets/                              # 全局共享素材库（跨集累积）
-    │   ├── characters.json                  # 角色档案（结构化 JSON）
-    │   ├── locations.json                   # 场景资产
-    │   ├── props.json                       # 道具资产
-    │   └── images/                          # 全局角色/场景参考图
-    │       ├── char-<角色名>.png
-    │       └── scene-<场景名>.png
-    ├── outputs/                             # 各集产出（按集数分目录）
-    │   ├── ep01/
-    │   │   ├── manifest.json                # ★ 资产总清单（HTML 展示页数据源）
-    │   │   ├── 01-clips.json                # 片段切分结果
-    │   │   ├── 02-screenplay.json           # 剧本（逐片段）
-    │   │   ├── 03-storyboard.json           # 分镜板（4阶段完整数据）
-    │   │   ├── 04-voice-lines.json          # 台词分析
-    │   │   ├── 05-seedance-prompt.json      # ★ 视频生成提示词（按15s分段+素材引用）
-    │   │   ├── images/                      # 分镜图片 + 宫格图
-    │   │   │   ├── P01-S01.png
-    │   │   │   ├── panel-01-from-v3.jpg     # AI放大的独立分镜图
-    │   │   │   └── grid-ep01-clip001-v3.jpg # Clip宫格分镜图
-    │   │   └── videos/                      # 视频产物
-    │   │       ├── SEG-01.mp4               # 即梦模式按段命名
-    │   │       ├── P01-S01.mp4              # zencli模式按镜头命名
-    │   │       └── SEG-01_storyboard_3x3.jpg
-    │   └── ep02/
-    │       └── ...
-    ├── .agent-state.json                    # Agent 状态记录（Resumable 机制）
+    ├── projects/                            # ★ 多项目根目录
+    │   └── <项目名>/                        # 每个项目独立文件夹
+    │       ├── config.json                  # 项目配置（artStyle/videoRatio/videoModel/paceStyle等）
+    │       ├── script/                      # 用户剧本（支持多集）
+    │       │   ├── ep01-xxx.md
+    │       │   └── ...
+    │       ├── assets/                      # 项目通用素材库（跨集累积）
+    │       │   ├── characters.json          # 角色档案（结构化 JSON）
+    │       │   ├── locations.json           # 场景资产
+    │       │   ├── props.json               # 道具资产
+    │       │   └── images/                  # 全局角色/场景参考图
+    │       │       ├── char-<角色名>.png
+    │       │       └── scene-<场景名>.png
+    │       └── outputs/                     # 各集产出（按集数分目录）
+    │           ├── ep01/
+    │           │   ├── manifest.json        # ★ 资产总清单（HTML 展示页数据源）
+    │           │   ├── 01-clips.json        # 片段切分结果
+    │           │   ├── 02-screenplay.json   # 剧本（逐片段）
+    │           │   ├── 03-storyboard.json   # 分镜板（4阶段完整数据）
+    │           │   ├── 04-voice-lines.json  # 台词分析
+    │           │   ├── 05-seedance-prompt.json  # ★ 视频生成提示词
+    │           │   ├── images/              # 分镜图片 + 宫格图
+    │           │   └── videos/              # 视频产物
+    │           └── ep02/
+    │               └── ...
+    ├── .agent-state.json                    # ★ 多项目状态记录
+    ├── viewer.html                          # 项目资产可视化（支持切换项目）
     └── .claude/
         ├── CLAUDE.md                        # 本文件
-        ├── agents/
-        │   ├── screenwriter.md              # 编剧导演 Agent
-        │   ├── art-director.md              # 美术总监 Agent
-        │   ├── storyboard-artist.md         # 分镜师 Agent
-        │   ├── ai-video-director.md         # ★ AI视频导演 Agent（seedance模式）
-        │   └── video-director.md            # 视频导演 Agent（执行者/其他模式）
-        └── skills/
-            ├── script-analysis-skill/       # 编剧导演技能包
-            ├── art-design-skill/            # 美术总监技能包
-            ├── storyboard-skill/            # 分镜师技能包
-            ├── ai-video-director-skill/     # ★ AI视频导演技能包
-            ├── video-production-skill/      # 视频导演技能包
-            ├── review-skill/               # 业务审核技能包
-            ├── compliance-review-skill/    # 合规审核技能包
-            ├── zencli-skill/               # ← 符号链接到 Seedance2.0agent
-            ├── dreamina-video-skill/       # ← 符号链接到 Seedance2.0agent
-            └── video-storyboard-skill/     # ← 符号链接到 Seedance2.0agent
+        ├── agents/                          # Agent 定义（全局共享）
+        └── skills/                          # 技能包（全局共享）
 
 [项目配置]
-    项目初始化时（~start）收集以下配置：
+    每个项目的配置保存在 projects/<项目名>/config.json：
+    {
+        "projectName": "项目名称",
+        "artStyle": "真人写实",
+        "artStylePrompt": "...",
+        "videoRatio": "16:9",
+        "videoModel": "seedance",
+        "paceStyle": "快节奏",
+        "engine": "zencli",
+        "postMode": "音画同出",
+        "createdAt": "ISO时间"
+    }
+
+    项目初始化时（~start 创建新项目 或 首次启动）收集以下配置：
 
     Q1: 视觉风格（artStyle）
         预设选项：漫画风 | 精致国漫 | 日系动漫风 | 真人写实
@@ -122,39 +118,66 @@
 [Resumable Subagents 机制]
     状态记录文件：.agent-state.json
         {
-            "screenwriter": "<agentId>",
-            "art-director": "<agentId>",
-            "storyboard-artist": "<agentId>",
-            "ai-video-director": "<agentId>",
-            "video-director": "<agentId>"
+            "activeProject": "<当前活跃项目名>",
+            "projects": {
+                "<项目名>": {
+                    "currentEpisode": "ep01",
+                    "currentStage": "video",
+                    "agents": {
+                        "screenwriter": "<agentId>",
+                        "art-director": "<agentId>",
+                        "storyboard-artist": "<agentId>",
+                        "ai-video-director": "<agentId>",
+                        "video-director": "<agentId>"
+                    },
+                    "episodes": {
+                        "ep01": {
+                            "status": "in_progress",
+                            "completedStages": ["script_analysis", "art_design"],
+                            "note": "描述当前进度"
+                        }
+                    }
+                }
+            }
         }
 
-    作用域：同一集内有效，跨集重置
+    作用域：
+        - 同一项目内同一集内有效，跨集重置 agents
+        - 跨项目时切换 activeProject，各项目状态独立保留
 
     调用规则：
-        - 同一集内首次调用 subagent：正常调用，记录 agentId
-        - 同一集内后续调用：使用 resume 恢复上下文
-        - 跨集时：清空所有 agentId，重新创建
+        - 同一项目同一集内首次调用 subagent：正常调用，记录 agentId
+        - 同一项目同一集内后续调用：使用 resume 恢复上下文
+        - 跨集时：清空该项目的 agents，重新创建
+        - 跨项目时：切换 activeProject，使用目标项目的 agents 状态
+
+[路径约定]
+    所有文件操作使用项目相对路径：
+    - 项目根目录：projects/<项目名>/
+    - 剧本：projects/<项目名>/script/
+    - 素材：projects/<项目名>/assets/
+    - 产出：projects/<项目名>/outputs/<集数>/
+    在指令中 <项目名> 由 .agent-state.json 的 activeProject 决定
 
 [项目状态检测与路由]
-    初始化时自动检测项目进度：
+    ★ 初始化时（每次启动）自动执行：
 
-    检测逻辑：
-        1. 扫描 script/ 识别所有剧本文件
-        2. 一个文件 = 一集，完整读取
-        3. 扫描 outputs/ 识别已完成产物
-        4. 对比确定每集进度
+    第一步：加载 .agent-state.json
+        1. 读取 .agent-state.json
+        2. 如果有 activeProject 且该项目存在 → 询问用户：
+           「检测到项目【{项目名}】正在进行中，当前进度：{进度描述}。
+           是否继续该项目？还是创建/切换到其他项目？」
+        3. 如果没有任何项目 → 引导创建新项目
 
-    单集进度判断（以 ep01 为例）：
-        - outputs/ep01/ 不存在 → [编剧导演分析阶段]
-        - 有 01-clips.json + 02-screenplay.json，无 assets/images/ → [美术总监设计阶段]
-        - 有 assets/images/，无 03-storyboard.json → [分镜师分镜阶段]
-        - 有 03-storyboard.json，无 05-seedance-prompt.json → [视频导演生成阶段]
-          seedance 模式 → 调用 ai-video-director（Phase 1-3）
-          其他模式 → 调用 video-director（Step 1 分镜图）
-        - 有 05-seedance-prompt.json，无 videos/ → [视频导演生成阶段 - 执行生成]
-          调用 video-director 读取 05-seedance-prompt.json 执行
-        - 所有产物齐全 → 该集已完成
+    第二步：扫描所有项目
+        1. 扫描 projects/ 目录，列出所有项目及其状态
+        2. 显示项目列表供选择
+
+    第三步：进入选定项目
+        1. 设置 activeProject
+        2. 读取 projects/<项目名>/config.json 加载配置
+        3. 扫描该项目的 script/ 和 outputs/ 确定进度
+        4. 路由到对应阶段
 
 [工作流程]
 
@@ -163,8 +186,11 @@
 
         收到 "~start" 或 "~start <集数>" 指令后：
 
-            第一步：收集基本信息（Q1-Q4）
-                如果是首次启动项目，依次询问 Q1-Q4 配置
+            第一步：确认当前项目
+                1. 检查 .agent-state.json 的 activeProject
+                2. 如果无活跃项目 → 提示先用 ~new 创建项目
+                3. 从 projects/<项目名>/config.json 读取配置
+                4. 如果 config.json 不存在（首次）→ 依次询问 Q1-Q4 配置并写入
 
             第二步：确定目标集数
                 1. 用户指定 → 使用指定集数
@@ -337,12 +363,18 @@
     - 每次生成新资产时同步更新 manifest.json
 
 [指令集 - 前缀 "~"]
-    - ~start [集数]：编剧导演分析阶段
+    项目管理：
+    - ~new <项目名>：创建新项目（收集 Q1-Q4 配置，创建目录结构）
+    - ~switch <项目名>：切换到已有项目
+    - ~projects：列出所有项目及其状态
+    - ~status：显示当前项目进度
+
+    流程控制：
+    - ~start [集数]：编剧导演分析阶段（在当前项目中）
     - ~design [集数]：美术总监设计+生图阶段
     - ~storyboard [集数]：分镜师分镜阶段
     - ~video [集数]：视频导演生成阶段
     - ~engine zen/dreamina：切换生成引擎（默认 zen）
-    - ~status：显示当前项目进度
     - ~help：显示所有可用指令
 
 [初始化]
@@ -370,7 +402,11 @@
     🖼️ 默认使用 ZenStudio（zencli）生图/生视频
     🔊 默认音画同出（Seedance 2.0），其他模式走分离配音
 
-    💡 输入 **~help** 查看所有指令
+    📂 **多项目管理**：
+    - **~new <项目名>** — 创建新项目
+    - **~switch <项目名>** — 切换项目
+    - **~projects** — 查看所有项目
+    - **~help** — 查看所有指令
 
     让我们开始吧！"
 

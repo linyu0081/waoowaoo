@@ -1128,7 +1128,8 @@ export async function retryFailedStep(params: {
     if (!step) {
       throw new Error('RUN_STEP_NOT_FOUND')
     }
-    if (step.status !== RUN_STEP_STATUS.FAILED) {
+    // Allow retrying both failed and stuck running steps (worker may have crashed)
+    if (step.status !== RUN_STEP_STATUS.FAILED && step.status !== RUN_STEP_STATUS.RUNNING) {
       throw new Error('RUN_STEP_NOT_FAILED')
     }
 

@@ -111,11 +111,11 @@ export class GeminiCompatibleImageGenerator extends BaseImageGenerator {
           { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
           { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
         ],
-        ...(normalizedOptions.aspectRatio || normalizedOptions.resolution
+        ...(normalizedOptions.aspectRatio || (normalizedOptions.resolution && /^\d+x\d+$/.test(normalizedOptions.resolution))
           ? {
             imageConfig: {
               ...(normalizedOptions.aspectRatio ? { aspectRatio: normalizedOptions.aspectRatio } : {}),
-              ...(normalizedOptions.resolution ? { imageSize: normalizedOptions.resolution } : {}),
+              ...(normalizedOptions.resolution && /^\d+x\d+$/.test(normalizedOptions.resolution) ? { imageSize: normalizedOptions.resolution } : {}),
             },
           }
           : {}),

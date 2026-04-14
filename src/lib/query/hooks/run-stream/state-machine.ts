@@ -291,7 +291,15 @@ export function applyRunStreamEvent(prev: RunState | null, event: RunStreamEvent
 
   if (event.event === 'run.start') {
     const nextStatus = normalizeRunStatus(event.status)
-    base.status = lockForwardRunStatus(base.status, nextStatus === 'idle' ? 'running' : nextStatus)
+    const desired = nextStatus === 'idle' ? 'running' : nextStatus
+    // Allow transitioning from failed back to running on retry
+    if (base.status === 'failed' && desired === 'running') {
+      base.status = 'running'
+      base.terminalAt = null
+      base.errorMessage = ''
+    } else {
+      base.status = lockForwardRunStatus(base.status, desired)
+    }
     if (event.payload && typeof event.payload === 'object') {
       base.payload = event.payload
     }

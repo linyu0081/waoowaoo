@@ -118,7 +118,7 @@ export default function WorkspaceRunStreamConsoles({
     ? scriptToStoryboardStages.find((stage) => stage.id === scriptToStoryboardSelectedStageId) || null
     : null
   const scriptToStoryboardShowCursor =
-    scriptToStoryboardStream.isRunning &&
+    (scriptToStoryboardStream.isRunning || scriptToStoryboardStream.isRecoveredRunning) &&
     scriptToStoryboardStream.selectedStep?.id === scriptToStoryboardStream.activeStepId &&
     scriptToStoryboardSelectedStage?.status === 'processing'
 

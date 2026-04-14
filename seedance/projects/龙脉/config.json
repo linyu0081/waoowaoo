@@ -1,0 +1,11 @@
+{
+  "projectName": "龙脉",
+  "artStyle": "真人写实",
+  "artStylePrompt": "真实电影级画面质感，真实现实场景，色彩饱满通透，画面干净精致，真实感",
+  "videoRatio": "16:9",
+  "videoModel": "seedance",
+  "paceStyle": "快节奏",
+  "engine": "zencli",
+  "postMode": "音画同出",
+  "createdAt": "2026-04-11T15:36:00+08:00"
+}

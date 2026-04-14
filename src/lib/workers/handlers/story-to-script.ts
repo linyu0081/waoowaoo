@@ -497,6 +497,74 @@ export async function handleStoryToScriptTask(job: Job<TaskJobData>) {
           .slice(0, 3)
           .map((item) => `${item.clipId}:${item.error || 'unknown error'}`)
           .join(' | ')
+        // Persist successful results before throwing so that partial progress is not lost.
+        // Users can then retry only the failed clips instead of regenerating everything.
+        await reportTaskProgress(job, 80, {
+          stage: 'story_to_script_persist',
+          stageLabel: 'progress.stage.storyToScriptPersist',
+          displayMode: 'detail',
+        })
+        try {
+          await assertRunActive('story_to_script_persist_partial')
+          const episodeStillExists = await prisma.novelPromotionEpisode.findUnique({
+            where: { id: episodeId },
+            select: { id: true },
+          })
+          if (episodeStillExists) {
+            const existingCharacterNamesPartial = new Set<string>(
+              (novelData.characters || []).map((item) => String(item.name || '').toLowerCase()),
+            )
+            const existingLocationNamesPartial = new Set<string>(
+              (novelData.locations || [])
+                .filter((item) => readAssetKind(item as unknown as Record<string, unknown>) !== 'prop')
+                .map((item) => String(item.name || '').toLowerCase()),
+            )
+            const existingPropNamesPartial = new Set<string>(
+              (novelData.locations || [])
+                .filter((item) => readAssetKind(item as unknown as Record<string, unknown>) === 'prop')
+                .map((item) => String(item.name || '').toLowerCase()),
+            )
+            await prisma.$transaction(async (tx) => {
+              await persistAnalyzedCharacters({
+                projectInternalId: novelData.id,
+                existingNames: existingCharacterNamesPartial,
+                analyzedCharacters: result.analyzedCharacters,
+                db: tx,
+              })
+              await persistAnalyzedLocations({
+                projectInternalId: novelData.id,
+                existingNames: existingLocationNamesPartial,
+                analyzedLocations: result.analyzedLocations,
+                db: tx,
+              })
+              await persistAnalyzedProps({
+                projectInternalId: novelData.id,
+                existingNames: existingPropNamesPartial,
+                analyzedProps: result.analyzedProps,
+                db: tx,
+              })
+              const createdClipRows = await persistClips({
+                episodeId,
+                clipList: result.clipList,
+                db: tx,
+              })
+              const clipIdMap = new Map(createdClipRows.map((item) => [item.clipKey, item.id]))
+              for (const screenplayResult of result.screenplayResults) {
+                if (!screenplayResult.success || !screenplayResult.screenplay) continue
+                const clipRecordId = resolveClipRecordId(clipIdMap, screenplayResult.clipId)
+                if (!clipRecordId) continue
+                await tx.novelPromotionClip.update({
+                  where: { id: clipRecordId },
+                  data: {
+                    screenplay: JSON.stringify(screenplayResult.screenplay),
+                  },
+                })
+              }
+            })
+          }
+        } catch {
+          // Best-effort persist; do not mask the original partial-failure error
+        }
         throw new Error(
           `STORY_TO_SCRIPT_PARTIAL_FAILED: ${result.summary.screenplayFailedCount}/${result.summary.clipCount} screenplay steps failed. ${preview}`,
         )

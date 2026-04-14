@@ -56,8 +56,9 @@ body {
 }
 .header-inner {
   max-width: 1440px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 12px;
   height: 60px;
+  flex-wrap: nowrap;
 }
 .logo {
   font-family: var(--font-display);
@@ -71,7 +72,17 @@ body {
   background: linear-gradient(180deg, var(--accent-gold), transparent);
 }
 .project-selector {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.selector-group {
+  display: flex; align-items: center; gap: 4px;
+}
+.selector-label {
+  font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.selector-divider {
+  width: 1px; height: 20px; background: var(--border); margin: 0 8px;
 }
 .project-selector select {
   background: var(--bg-elevated); color: var(--text-primary);
@@ -83,8 +94,10 @@ body {
   background-repeat: no-repeat; background-position: right 8px center;
 }
 .project-selector select:hover { border-color: var(--accent-gold-dim); }
+#episodeSelect { min-width: 90px; }
 .header-meta {
   display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--text-muted);
+  flex-shrink: 0;
 }
 .meta-tag {
   padding: 3px 10px; border-radius: 20px;
@@ -338,6 +351,160 @@ body {
 .stat-value { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--accent-gold); }
 .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
+/* ======== ACTION BUTTONS ======== */
+.header-actions {
+  display: flex; align-items: center; gap: 8px;
+  margin-left: auto; flex-shrink: 0;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: var(--radius);
+  font-size: 13px; font-family: var(--font-body);
+  font-weight: 500; cursor: pointer; transition: all 0.2s;
+  border: 1px solid transparent; outline: none;
+}
+.btn-primary {
+  background: var(--accent-gold); color: var(--bg-deep);
+  border-color: var(--accent-gold);
+}
+.btn-primary:hover { background: #e0bc5a; border-color: #e0bc5a; }
+.btn-secondary {
+  background: var(--bg-elevated); color: var(--text-primary);
+  border-color: var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent-gold-dim); color: var(--accent-gold); }
+.btn-danger {
+  background: transparent; color: var(--accent-red-bright);
+  border-color: var(--accent-red);
+}
+.btn-danger:hover { background: rgba(139,32,32,0.2); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ======== MODAL ======== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+.modal-overlay.hidden { display: none; }
+.modal {
+  background: var(--bg-card); border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg); width: 520px; max-width: calc(100vw - 32px);
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+  animation: modalIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-title {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  color: var(--text-primary); display: flex; align-items: center; gap: 10px;
+}
+.modal-title-icon {
+  width: 3px; height: 20px;
+  background: linear-gradient(180deg, var(--accent-gold), transparent);
+  border-radius: 2px;
+}
+.modal-close {
+  background: none; border: none; color: var(--text-muted);
+  font-size: 20px; cursor: pointer; padding: 4px; line-height: 1;
+  border-radius: var(--radius); transition: color 0.2s;
+}
+.modal-close:hover { color: var(--text-primary); background: var(--bg-hover); }
+.modal-body { padding: 20px 24px; }
+.modal-footer {
+  display: flex; justify-content: flex-end; gap: 10px;
+  padding: 16px 24px; border-top: 1px solid var(--border);
+}
+
+/* ======== FORM ELEMENTS ======== */
+.form-group { margin-bottom: 18px; }
+.form-label {
+  display: block; font-size: 12px; font-weight: 500;
+  color: var(--text-secondary); margin-bottom: 7px;
+  letter-spacing: 0.3px;
+}
+.form-label .required { color: var(--accent-red-bright); margin-left: 3px; }
+.form-label .hint {
+  font-size: 11px; color: var(--text-muted); font-weight: 400; margin-left: 6px;
+}
+.form-input {
+  width: 100%; padding: 9px 12px;
+  background: var(--bg-elevated); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 13px; font-family: var(--font-body);
+  transition: border-color 0.2s; outline: none;
+}
+.form-input:focus { border-color: var(--accent-gold-dim); }
+.form-input::placeholder { color: var(--text-muted); }
+.form-textarea {
+  resize: vertical; min-height: 140px; line-height: 1.6;
+  font-family: var(--font-mono); font-size: 12px;
+}
+.form-select {
+  appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8a9a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  padding-right: 32px;
+}
+.episode-notice {
+  background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25);
+  border-radius: var(--radius); padding: 10px 14px; margin-bottom: 18px;
+  font-size: 12px; color: var(--accent-gold); line-height: 1.6;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.episode-notice .notice-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+
+/* File upload area */
+.file-drop {
+  border: 2px dashed var(--border); border-radius: var(--radius);
+  padding: 20px; text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  color: var(--text-muted); font-size: 13px;
+}
+.file-drop:hover, .file-drop.dragover {
+  border-color: var(--accent-gold-dim);
+  background: rgba(201,168,76,0.04);
+  color: var(--text-secondary);
+}
+.file-drop input[type=file] { display: none; }
+.file-drop .drop-icon { font-size: 28px; margin-bottom: 8px; }
+.file-drop .drop-hint { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.file-selected {
+  background: rgba(42,106,58,0.15); border-color: var(--accent-green);
+  color: var(--text-secondary);
+}
+.file-selected .drop-icon::after { content: ' ✓'; color: #4caf82; }
+
+/* Toast notification */
+.toast-container {
+  position: fixed; bottom: 24px; right: 24px; z-index: 2000;
+  display: flex; flex-direction: column; gap: 8px;
+  pointer-events: none;
+}
+.toast {
+  background: var(--bg-elevated); border: 1px solid var(--border-accent);
+  border-radius: var(--radius); padding: 12px 18px;
+  font-size: 13px; color: var(--text-primary);
+  box-shadow: var(--shadow); pointer-events: auto;
+  animation: toastIn 0.3s ease;
+  display: flex; align-items: center; gap: 10px; max-width: 320px;
+}
+.toast.toast-success { border-color: var(--accent-green); }
+.toast.toast-error { border-color: var(--accent-red); }
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 /* ======== RESPONSIVE ======== */
 @media (max-width: 768px) {
   .site-header { padding: 0 16px; }
@@ -346,6 +513,9 @@ body {
   .nav-tab { padding: 12px 16px; white-space: nowrap; font-size: 13px; }
   .asset-grid, .panel-grid, .video-grid { grid-template-columns: 1fr; }
   .header-meta { display: none; }
+  .header-inner { flex-wrap: wrap; height: auto; padding: 12px 0; justify-content: space-between; }
+  .logo { font-size: 16px; }
+  .header-actions { margin-left: 0; width: 100%; justify-content: flex-end; margin-top: 8px; }
 }
 </style>
 </head>
@@ -355,17 +525,167 @@ body {
   <div class="header-inner">
     <div class="logo">SEEDANCE STUDIO</div>
     <div class="project-selector">
-      <select id="projectSelect">
-        <option value="ep01">EP01 — 龙脉</option>
-      </select>
+      <div class="selector-group">
+        <span class="selector-label">项目</span>
+        <select id="projectSelect" onchange="onProjectChange()">
+          <option value="">加载中...</option>
+        </select>
+      </div>
+      <div class="selector-divider"></div>
+      <div class="selector-group">
+        <span class="selector-label">集数</span>
+        <select id="episodeSelect" onchange="onEpisodeChange()">
+          <option value="">—</option>
+        </select>
+      </div>
     </div>
     <div class="header-meta">
       <span class="meta-tag" id="metaStyle">真人写实</span>
       <span class="meta-tag" id="metaRatio">16:9</span>
       <span class="meta-tag" id="metaEngine">zencli</span>
     </div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" onclick="openUploadModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span>上传剧本</span>
+      </button>
+      <button class="btn btn-primary" onclick="openNewProjectModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span>新建项目</span>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- ======== MODAL: 新建项目 ======== -->
+<div class="modal-overlay hidden" id="newProjectModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="newProjectTitle">
+    <div class="modal-header">
+      <div class="modal-title">
+        <div class="modal-title-icon"></div>
+        <span id="newProjectTitle">新建项目</span>
+      </div>
+      <button class="modal-close" onclick="closeNewProjectModal()" aria-label="关闭">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="episode-notice">
+        <span class="notice-icon">💡</span>
+        <span>首次创建项目必须上传<strong>第一集剧本</strong>，后续可通过「上传剧本」按钮添加更多集数。</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="npName">项目名称 <span class="required">*</span></label>
+        <input class="form-input" id="npName" type="text" placeholder="例：星际迷途 · 第一季" maxlength="80" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="npDesc">项目描述 <span class="hint">（选填）</span></label>
+        <input class="form-input" id="npDesc" type="text" placeholder="一句话介绍项目内容" maxlength="200" autocomplete="off">
+      </div>
+
+      <div style="height:1px;background:var(--border);margin:4px 0 18px"></div>
+
+      <div class="form-group">
+        <label class="form-label">
+          第一集剧本 <span class="required">*</span>
+          <span class="hint">— 支持上传 .txt / .md 文件，或直接粘贴文本</span>
+        </label>
+        <div class="file-drop" id="npFileDrop" onclick="document.getElementById('npFileInput').click()" ondragover="handleDragOver(event,'npFileDrop')" ondragleave="handleDragLeave(event,'npFileDrop')" ondrop="handleFileDrop(event,'npFileDrop','npScript')">
+          <input type="file" id="npFileInput" accept=".txt,.md,.text,text/plain" onchange="handleFileSelect(this,'npFileDrop','npScript')">
+          <div class="drop-icon">📄</div>
+          <div>点击选择文件，或将文件拖到此处</div>
+          <div class="drop-hint">支持 .txt / .md 文件，UTF-8 编码</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="npScript">
+          剧本内容 <span class="required">*</span>
+          <span class="hint">— 上传文件后自动填充，也可直接粘贴</span>
+        </label>
+        <textarea class="form-input form-textarea" id="npScript" placeholder="在此粘贴第一集剧本全文…" rows="7"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeNewProjectModal()">取消</button>
+      <button class="btn btn-primary" id="npSubmitBtn" onclick="submitNewProject()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        创建项目
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ======== MODAL: 上传剧本 ======== -->
+<div class="modal-overlay hidden" id="uploadModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+    <div class="modal-header">
+      <div class="modal-title">
+        <div class="modal-title-icon"></div>
+        <span id="uploadTitle">上传剧本</span>
+      </div>
+      <button class="modal-close" onclick="closeUploadModal()" aria-label="关闭">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label" for="upProject">目标项目 <span class="required">*</span></label>
+        <select class="form-input form-select" id="upProject" onchange="onUpProjectChange()">
+          <option value="">— 请选择项目 —</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="upEpisodeMode">集数</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <select class="form-input form-select" id="upEpisodeMode" style="flex:1" onchange="onUpEpisodeModeChange()">
+            <option value="existing">现有集数</option>
+            <option value="new">新建集数</option>
+          </select>
+          <select class="form-input form-select" id="upEpisodeExisting" style="flex:1">
+            <option value="">— 选择项目后加载 —</option>
+          </select>
+          <input class="form-input" id="upEpisodeNew" type="number" min="1" max="999" placeholder="集号" style="flex:0 0 80px;display:none" value="1">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="upEpisodeName">集数标题 <span class="hint">（选填，如：第一章 · 初遇）</span></label>
+        <input class="form-input" id="upEpisodeName" type="text" placeholder="留空则使用「第 N 集」" maxlength="100" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">
+          剧本文件
+          <span class="hint">— 支持上传 .txt / .md 文件，或直接粘贴文本</span>
+        </label>
+        <div class="file-drop" id="upFileDrop" onclick="document.getElementById('upFileInput').click()" ondragover="handleDragOver(event,'upFileDrop')" ondragleave="handleDragLeave(event,'upFileDrop')" ondrop="handleFileDrop(event,'upFileDrop','upScript')">
+          <input type="file" id="upFileInput" accept=".txt,.md,.text,text/plain" onchange="handleFileSelect(this,'upFileDrop','upScript')">
+          <div class="drop-icon">📄</div>
+          <div>点击选择文件，或将文件拖到此处</div>
+          <div class="drop-hint">支持 .txt / .md 文件，UTF-8 编码</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="upScript">
+          剧本内容 <span class="required">*</span>
+          <span class="hint">— 上传文件后自动填充，也可直接粘贴</span>
+        </label>
+        <textarea class="form-input form-textarea" id="upScript" placeholder="在此粘贴剧本全文…" rows="7"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeUploadModal()">取消</button>
+      <button class="btn btn-primary" id="upSubmitBtn" onclick="submitUpload()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        保存剧本
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ======== TOAST CONTAINER ======== -->
+<div class="toast-container" id="toastContainer"></div>
 
 <nav class="nav-tabs" id="navTabs">
   <div class="nav-tab active" data-tab="overview">总览</div>
@@ -438,9 +758,14 @@ body {
 <script>
 const BASE = '';
 
-// ========== DATA LOADING ==========
+// ========== STATE ==========
+let currentProject = '';
+let currentEpisode = '';
+let agentState = null;
+let projectConfig = null;
 let manifest, characters, locations, props, clips, screenplay, storyboard, voiceLines, seedancePrompts;
 
+// ========== DATA LOADING ==========
 async function loadJSON(path) {
   const res = await fetch(BASE + path);
   if (!res.ok) throw new Error(`加载失败: ${path} (${res.status})`);
@@ -452,18 +777,112 @@ async function loadJSON(path) {
   }
 }
 
-async function init() {
+async function loadAgentState() {
+  try {
+    agentState = await loadJSON('.agent-state.json');
+  } catch {
+    agentState = { activeProject: '', projects: {} };
+  }
+}
+
+async function discoverProjects() {
+  await loadAgentState();
+
+  // Collect project names from agent-state AND attempt to discover via config.json
+  const stateProjects = Object.keys(agentState.projects || {});
+  const projectNames = [...new Set(stateProjects)];
+
+  // If agent-state is empty, try common project names by probing config.json
+  if (projectNames.length === 0) {
+    // Fallback: try to load a directory listing — won't work on static server,
+    // so we just show an empty state
+    const select = document.getElementById('projectSelect');
+    select.innerHTML = '<option value="">无项目</option>';
+    document.getElementById('episodeSelect').innerHTML = '<option value="">—</option>';
+    return;
+  }
+
+  const select = document.getElementById('projectSelect');
+  select.innerHTML = projectNames.map(name => {
+    const ps = agentState.projects?.[name];
+    const stage = ps?.currentStage || '';
+    const label = stage ? `${name}（${stage}）` : name;
+    return `<option value="${name}" ${name === agentState.activeProject ? 'selected' : ''}>${label}</option>`;
+  }).join('');
+
+  currentProject = agentState.activeProject || projectNames[0];
+  await loadProject(currentProject);
+}
+
+async function loadProject(projectName) {
+  currentProject = projectName;
+  try {
+    projectConfig = await loadJSON(`projects/${projectName}/config.json`);
+  } catch {
+    projectConfig = {};
+  }
+
+  // Discover episodes: merge agent-state episodes with actual outputs probing
+  const projectState = agentState.projects?.[projectName];
+  const stateEpisodes = Object.keys(projectState?.episodes || {});
+
+  // Also probe common episode patterns (ep01..ep20) to find those not in state
+  const probeEpisodes = [];
+  for (let i = 1; i <= 20; i++) {
+    const epKey = `ep${String(i).padStart(2, '0')}`;
+    probeEpisodes.push(epKey);
+  }
+  const discoveredEpisodes = [];
+  await Promise.all(probeEpisodes.map(async (ep) => {
+    try {
+      const res = await fetch(`projects/${projectName}/outputs/${ep}/manifest.json`, { method: 'HEAD' });
+      if (res.ok) discoveredEpisodes.push(ep);
+    } catch {}
+  }));
+
+  // Also try probing 01-clips.json for episodes without manifest
+  if (discoveredEpisodes.length === 0) {
+    await Promise.all(probeEpisodes.slice(0, 5).map(async (ep) => {
+      try {
+        const res = await fetch(`projects/${projectName}/outputs/${ep}/01-clips.json`, { method: 'HEAD' });
+        if (res.ok && !discoveredEpisodes.includes(ep)) discoveredEpisodes.push(ep);
+      } catch {}
+    }));
+  }
+
+  // Merge and deduplicate, preserving order
+  const allEpisodes = [...new Set([...stateEpisodes, ...discoveredEpisodes])].sort();
+  if (allEpisodes.length === 0) allEpisodes.push('ep01');
+
+  const defaultEp = projectState?.currentEpisode || allEpisodes[0];
+  const epSelect = document.getElementById('episodeSelect');
+  epSelect.innerHTML = allEpisodes.map(ep => {
+    const epState = projectState?.episodes?.[ep];
+    const statusIcon = epState?.status === 'completed' ? ' ✅' : epState?.status === 'in_progress' ? ' ⏳' : '';
+    return `<option value="${ep}" ${ep === defaultEp ? 'selected' : ''}>${ep.toUpperCase()}${statusIcon}</option>`;
+  }).join('');
+
+  currentEpisode = defaultEp;
+  await loadEpisode(currentProject, currentEpisode);
+}
+
+async function loadEpisode(projectName, episode) {
+  currentProject = projectName;
+  currentEpisode = episode;
+  const base = `projects/${projectName}`;
+  const epBase = `${base}/outputs/${episode}`;
+
   try {
     [manifest, characters, locations, props, clips, screenplay, storyboard, voiceLines, seedancePrompts] = await Promise.all([
-      loadJSON('outputs/ep01/manifest.json'),
-      loadJSON('assets/characters.json'),
-      loadJSON('assets/locations.json'),
-      loadJSON('assets/props.json'),
-      loadJSON('outputs/ep01/01-clips.json'),
-      loadJSON('outputs/ep01/02-screenplay.json'),
-      loadJSON('outputs/ep01/03-storyboard.json'),
-      loadJSON('outputs/ep01/04-voice-lines.json'),
-      loadJSON('outputs/ep01/05-seedance-prompt.json'),
+      loadJSON(`${epBase}/manifest.json`).catch(() => ({})),
+      loadJSON(`${base}/assets/characters.json`).catch(() => ({characters:[]})),
+      loadJSON(`${base}/assets/locations.json`).catch(() => ({locations:[]})),
+      loadJSON(`${base}/assets/props.json`).catch(() => ({props:[]})),
+      loadJSON(`${epBase}/01-clips.json`).catch(() => []),
+      loadJSON(`${epBase}/02-screenplay.json`).catch(() => []),
+      loadJSON(`${epBase}/03-storyboard.json`).catch(() => []),
+      loadJSON(`${epBase}/04-voice-lines.json`).catch(() => []),
+      loadJSON(`${epBase}/05-seedance-prompt.json`).catch(() => ({segments:[]})),
     ]);
   } catch(err) {
     document.querySelector('main').innerHTML = `
@@ -482,6 +901,25 @@ async function init() {
   renderSeedance();
   renderVideos();
   renderVoiceLines();
+}
+
+function onProjectChange() {
+  const name = document.getElementById('projectSelect').value;
+  if (name) loadProject(name);
+}
+
+function onEpisodeChange() {
+  const ep = document.getElementById('episodeSelect').value;
+  if (ep && currentProject) loadEpisode(currentProject, ep);
+}
+
+function switchProject(name) {
+  document.getElementById('projectSelect').value = name;
+  loadProject(name);
+}
+
+async function init() {
+  await discoverProjects();
   setupTabs();
 }
 
@@ -499,36 +937,59 @@ function setupTabs() {
 
 // ========== OVERVIEW ==========
 function renderOverview() {
-  const totalPanels = storyboard.reduce((s, c) => s + c.panels.length, 0);
+  const totalPanels = (Array.isArray(storyboard) ? storyboard : []).reduce((s, c) => s + (c.panels||[]).length, 0);
   const totalSegs = seedancePrompts.segments ? seedancePrompts.segments.length : 0;
+  const charCount = characters.characters ? characters.characters.length : 0;
+  const locCount = locations.locations ? locations.locations.length : 0;
+  const propCount = props.props ? props.props.length : 0;
+  const clipCount = Array.isArray(clips) ? clips.length : 0;
+  const vlCount = Array.isArray(voiceLines) ? voiceLines.length : 0;
   document.getElementById('statsBar').innerHTML = `
-    <div class="stat-card"><div class="stat-value">${characters.characters.length}</div><div class="stat-label">角色</div></div>
-    <div class="stat-card"><div class="stat-value">${locations.locations.length}</div><div class="stat-label">场景</div></div>
-    <div class="stat-card"><div class="stat-value">${props.props.length}</div><div class="stat-label">道具</div></div>
-    <div class="stat-card"><div class="stat-value">${clips.length}</div><div class="stat-label">片段</div></div>
+    <div class="stat-card"><div class="stat-value">${charCount}</div><div class="stat-label">角色</div></div>
+    <div class="stat-card"><div class="stat-value">${locCount}</div><div class="stat-label">场景</div></div>
+    <div class="stat-card"><div class="stat-value">${propCount}</div><div class="stat-label">道具</div></div>
+    <div class="stat-card"><div class="stat-value">${clipCount}</div><div class="stat-label">片段</div></div>
     <div class="stat-card"><div class="stat-value">${totalPanels}</div><div class="stat-label">分镜</div></div>
     <div class="stat-card"><div class="stat-value">${totalSegs}</div><div class="stat-label">视频段</div></div>
-    <div class="stat-card"><div class="stat-value">${voiceLines.length}</div><div class="stat-label">台词</div></div>
+    <div class="stat-card"><div class="stat-value">${vlCount}</div><div class="stat-label">台词</div></div>
     <div class="stat-card"><div class="stat-value">${seedancePrompts.total_duration_sec || 0}s</div><div class="stat-label">总时长</div></div>
   `;
-  document.getElementById('metaStyle').textContent = manifest.artStyle;
-  document.getElementById('metaRatio').textContent = manifest.videoRatio;
-  document.getElementById('metaEngine').textContent = manifest.engine;
+  const cfg = projectConfig || manifest || {};
+  document.getElementById('metaStyle').textContent = cfg.artStyle || '—';
+  document.getElementById('metaRatio').textContent = cfg.videoRatio || '—';
+  document.getElementById('metaEngine').textContent = cfg.engine || '—';
+
+  // 多项目状态
+  const allProjects = Object.entries(agentState?.projects || {});
+  const projectListHTML = allProjects.map(([name, p]) => {
+    const isActive = name === currentProject;
+    const episodes = Object.entries(p.episodes || {});
+    const episodeInfo = episodes.map(([ep, info]) => {
+      const icon = info.status === 'completed' ? '✅' : info.status === 'in_progress' ? '⏳' : '⬜';
+      const note = info.note ? ` — ${info.note}` : '';
+      return `<div style="font-size:11px;color:var(--text-secondary);padding:2px 0">${icon} ${ep.toUpperCase()}${note}</div>`;
+    }).join('') || '<div style="font-size:11px;color:var(--text-muted)">暂无集数</div>';
+    const stageLabel = p.currentStage || '—';
+    return `<div class="prop-card" style="cursor:pointer;${isActive ? 'border-color:var(--accent-gold)' : ''}" onclick="switchProject('${name}')">
+      <div class="prop-name" style="display:flex;align-items:center;gap:8px">
+        ${isActive ? '<span style="color:var(--accent-gold)">▶</span>' : ''}
+        ${name}
+        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:var(--bg-elevated);color:var(--text-muted);font-family:var(--font-mono)">${stageLabel}</span>
+      </div>
+      <div style="margin-top:8px">${episodeInfo}</div>
+    </div>`;
+  }).join('');
 
   document.getElementById('overviewContent').innerHTML = `
     <div style="display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:16px">
       <div class="prop-card">
-        <div class="prop-name">📋 项目信息</div>
-        <div class="prop-summary">项目：${manifest.projectName} | 集数：${manifest.episode}</div>
-        <div class="prop-desc">画风：${manifest.artStyle} (${manifest.artStylePrompt})</div>
-        <div class="prop-desc">后期模式：${manifest.postMode} | 引擎：${manifest.engine}</div>
+        <div class="prop-name">📋 当前项目 — ${currentProject}</div>
+        <div class="prop-summary">当前集数：${currentEpisode.toUpperCase()} | 画风：${cfg.artStyle || '—'}</div>
+        <div class="prop-desc">后期模式：${cfg.postMode || '—'} | 引擎：${cfg.engine || '—'} | 节奏：${cfg.paceStyle || '—'}</div>
       </div>
-      <div class="prop-card">
-        <div class="prop-name">🎬 制作进度</div>
-        <div class="prop-desc">编剧导演：✅ 完成</div>
-        <div class="prop-desc">美术总监：✅ 完成</div>
-        <div class="prop-desc">分镜师：✅ 完成</div>
-        <div class="prop-desc">视频导演：⏳ 进行中 (SEG-01~03 已出片，SEG-04~07 待生成)</div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text-secondary)">🎬 所有项目（${allProjects.length}）<span style="font-size:11px;font-weight:400;color:var(--text-muted);margin-left:8px">点击切换</span></div>
+        <div style="display:grid;gap:10px">${projectListHTML || '<div class="prop-desc">暂无项目</div>'}</div>
       </div>
     </div>
   `;
@@ -536,8 +997,9 @@ function renderOverview() {
 
 // ========== ASSETS ==========
 function renderAssets() {
-  const charHTML = characters.characters.map(c => {
-    const img = c.refImage || `assets/images/char-${c.name}.png`;
+  const base = `projects/${currentProject}`;
+  const charHTML = (characters.characters||[]).map(c => {
+    const img = c.refImage ? `${base}/${c.refImage}` : `${base}/assets/images/char-${c.name}.png`;
     const desc = c.appearances?.[0]?.descriptions?.[0] || '';
     return `
     <div class="asset-card" onclick="this.classList.toggle('expanded')">
@@ -557,8 +1019,8 @@ function renderAssets() {
   }).join('');
   document.getElementById('characterGrid').innerHTML = charHTML;
 
-  const locHTML = locations.locations.map(l => {
-    const img = l.refImage || `assets/images/scene-${l.name}.png`;
+  const locHTML = (locations.locations||[]).map(l => {
+    const img = l.refImage ? `${base}/${l.refImage}` : `${base}/assets/images/scene-${l.name}.png`;
     return `
     <div class="asset-card" onclick="this.classList.toggle('expanded')">
       <img class="asset-card-img landscape" src="${img}" alt="${l.name}" loading="lazy" onerror="this.style.display='none'">
@@ -572,7 +1034,7 @@ function renderAssets() {
   }).join('');
   document.getElementById('locationGrid').innerHTML = locHTML;
 
-  const propHTML = props.props.map(p => `
+  const propHTML = (props.props||[]).map(p => `
     <div class="prop-card">
       <div class="prop-name">${p.name}</div>
       <div class="prop-summary">${p.summary}</div>
@@ -584,9 +1046,10 @@ function renderAssets() {
 
 // ========== SCREENPLAY ==========
 function renderScreenplay() {
-  const html = screenplay.map((sp, i) => {
-    const scene = sp.scenes[0];
-    const contentHTML = scene.content.map(item => {
+  const html = (Array.isArray(screenplay) ? screenplay : []).map((sp, i) => {
+    const scene = sp.scenes?.[0];
+    if (!scene) return '';
+    const contentHTML = (scene.content||[]).map(item => {
       if (item.type === 'dialogue') {
         return `<div class="content-item dialogue">
           <div class="char-name">${item.character} ${item.parenthetical ? `<span class="parenthetical">(${item.parenthetical})</span>` : ''}</div>
@@ -617,12 +1080,13 @@ function renderScreenplay() {
 
 // ========== STORYBOARD ==========
 function renderStoryboard() {
+  const epBase = `projects/${currentProject}/outputs/${currentEpisode}`;
   const panelImgMap = {};
   const imgFiles = ['panel-01-from-v3.jpg','panel-02-from-v2.jpg','panel-03-from-v3.jpg','panel-04-from-v3.jpg','panel-05-from-v3.jpg','panel-06-from-v3.jpg','panel-07-from-v3.jpg','panel-08-from-v3.jpg','panel-09-from-v3.jpg'];
-  imgFiles.forEach((f, i) => panelImgMap[i + 1] = `outputs/ep01/images/${f}`);
+  imgFiles.forEach((f, i) => panelImgMap[i + 1] = `${epBase}/images/${f}`);
 
-  const html = storyboard.map(clipData => {
-    const panelsHTML = clipData.panels.map(p => {
+  const html = (Array.isArray(storyboard) ? storyboard : []).map(clipData => {
+    const panelsHTML = (clipData.panels||[]).map(p => {
       const imgSrc = panelImgMap[p.panel_number] || '';
       return `
       <div class="panel-card" onclick="this.classList.toggle('show-prompts')">
@@ -686,13 +1150,14 @@ function renderSeedance() {
 
 // ========== VIDEOS ==========
 function renderVideos() {
+  const epBase = `projects/${currentProject}/outputs/${currentEpisode}`;
   // 动态从 seedancePrompts 中获取所有 segment，而非硬编码
   const segs = seedancePrompts.segments || [];
   const html = segs.map(seg => {
     const f = `${seg.segment_id}.mp4`;
     return `
     <div class="video-card">
-      <video controls preload="metadata" src="outputs/ep01/videos/${f}" onerror="this.outerHTML='<div style=\\'padding:40px;text-align:center;color:var(--text-muted);font-size:12px\\'>⏳ 视频待生成</div>'"></video>
+      <video controls preload="metadata" src="${epBase}/videos/${f}" onerror="this.outerHTML='<div style=\\'padding:40px;text-align:center;color:var(--text-muted);font-size:12px\\'>⏳ 视频待生成</div>'"></video>
       <div class="video-card-body">
         <div class="video-name">${seg.segment_id}</div>
         <div style="font-size:11px;color:var(--text-muted)">${seg.clip_id} · P${seg.panels.join(',')} · ${seg.estimated_duration_sec}s</div>
@@ -705,7 +1170,7 @@ function renderVideos() {
 
 // ========== VOICE LINES ==========
 function renderVoiceLines() {
-  const html = voiceLines.map(vl => {
+  const html = (Array.isArray(voiceLines) ? voiceLines : []).map(vl => {
     const barW = Math.round(vl.emotionStrength * 200);
     const mp = vl.matchedPanel;
     return `<tr>
@@ -720,6 +1185,330 @@ function renderVoiceLines() {
 }
 
 init().catch(err => console.error('Load failed:', err));
+
+// ========== TOAST ==========
+function showToast(msg, type = 'info', duration = 3500) {
+  const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
+  const el = document.createElement('div');
+  el.className = `toast toast-${type}`;
+  el.innerHTML = `<span>${icon}</span><span>${msg}</span>`;
+  document.getElementById('toastContainer').appendChild(el);
+  setTimeout(() => { el.style.opacity = '0'; el.style.transition = 'opacity 0.3s'; setTimeout(() => el.remove(), 300); }, duration);
+}
+
+// ========== FILE HELPERS ==========
+function handleDragOver(e, dropId) {
+  e.preventDefault();
+  document.getElementById(dropId).classList.add('dragover');
+}
+function handleDragLeave(e, dropId) {
+  document.getElementById(dropId).classList.remove('dragover');
+}
+function handleFileDrop(e, dropId, textareaId) {
+  e.preventDefault();
+  const drop = document.getElementById(dropId);
+  drop.classList.remove('dragover');
+  const file = e.dataTransfer?.files?.[0];
+  if (file) readFileIntoTextarea(file, dropId, textareaId);
+}
+function handleFileSelect(input, dropId, textareaId) {
+  const file = input.files?.[0];
+  if (file) readFileIntoTextarea(file, dropId, textareaId);
+}
+function readFileIntoTextarea(file, dropId, textareaId) {
+  if (file.size > 5 * 1024 * 1024) { showToast('文件过大，请选择 5MB 以内的文本文件', 'error'); return; }
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById(textareaId).value = e.target.result;
+    const drop = document.getElementById(dropId);
+    drop.classList.add('file-selected');
+    const iconEl = drop.querySelector('.drop-icon');
+    if (iconEl) iconEl.textContent = '📄';
+    const textEl = drop.querySelector('div:not(.drop-icon):not(.drop-hint)');
+    if (textEl) textEl.textContent = `已选择：${file.name}（${(file.size/1024).toFixed(1)} KB）`;
+  };
+  reader.onerror = () => showToast('文件读取失败', 'error');
+  reader.readAsText(file, 'UTF-8');
+}
+
+// ========== AGENT STATE HELPERS ==========
+// We persist changes to in-memory agentState and offer a JSON download
+// since static HTML cannot write back to .agent-state.json directly.
+function buildEpKey(num) {
+  return `ep${String(num).padStart(2, '0')}`;
+}
+
+function saveAgentStateToLocalStorage() {
+  try {
+    localStorage.setItem('seedance_agent_state', JSON.stringify(agentState));
+  } catch(e) { /* quota exceeded — ignore */ }
+}
+
+function loadAgentStateFromLocalStorage() {
+  try {
+    const raw = localStorage.getItem('seedance_agent_state');
+    if (raw) { agentState = JSON.parse(raw); return true; }
+  } catch {}
+  return false;
+}
+
+// Offer user to download the updated .agent-state.json
+function offerDownload(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.style.display = 'none';
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000);
+}
+
+// Offer user to download a script text file to the correct path
+function offerScriptDownload(projectName, epKey, text) {
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  // Suggest saving as the script novelText file
+  a.href = url;
+  a.download = `${projectName}__${epKey}__script.txt`;
+  a.style.display = 'none';
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000);
+}
+
+// ========== NEW PROJECT MODAL ==========
+function openNewProjectModal() {
+  // Reset form
+  document.getElementById('npName').value = '';
+  document.getElementById('npDesc').value = '';
+  document.getElementById('npScript').value = '';
+  document.getElementById('npFileInput').value = '';
+  const drop = document.getElementById('npFileDrop');
+  drop.classList.remove('file-selected', 'dragover');
+  const iconEl = drop.querySelector('.drop-icon');
+  if (iconEl) iconEl.textContent = '📄';
+  const textEl = drop.querySelector('div:not(.drop-icon):not(.drop-hint)');
+  if (textEl) textEl.textContent = '点击选择文件，或将文件拖到此处';
+
+  document.getElementById('newProjectModal').classList.remove('hidden');
+  document.getElementById('npName').focus();
+}
+
+function closeNewProjectModal() {
+  document.getElementById('newProjectModal').classList.add('hidden');
+}
+
+async function submitNewProject() {
+  const name = document.getElementById('npName').value.trim();
+  const desc = document.getElementById('npDesc').value.trim();
+  const script = document.getElementById('npScript').value.trim();
+
+  if (!name) { showToast('请填写项目名称', 'error'); document.getElementById('npName').focus(); return; }
+  if (!script) { showToast('首次创建项目必须上传第一集剧本内容', 'error'); document.getElementById('npScript').focus(); return; }
+
+  // Check duplicate name
+  if (agentState.projects?.[name]) {
+    showToast(`项目「${name}」已存在，请使用其他名称`, 'error'); return;
+  }
+
+  const btn = document.getElementById('npSubmitBtn');
+  btn.disabled = true; btn.textContent = '创建中…';
+
+  try {
+    const epKey = 'ep01';
+
+    // Update in-memory agentState
+    if (!agentState.projects) agentState.projects = {};
+    agentState.projects[name] = {
+      name,
+      description: desc || '',
+      currentStage: 'script-uploaded',
+      currentEpisode: epKey,
+      createdAt: new Date().toISOString(),
+      episodes: {
+        [epKey]: {
+          status: 'script-uploaded',
+          note: '第一集剧本已上传',
+          uploadedAt: new Date().toISOString(),
+          scriptLength: script.length,
+        }
+      }
+    };
+    if (!agentState.activeProject) agentState.activeProject = name;
+
+    saveAgentStateToLocalStorage();
+
+    // Offer downloads
+    offerDownload('.agent-state.json', agentState);
+    setTimeout(() => offerScriptDownload(name, epKey, script), 600);
+
+    closeNewProjectModal();
+    showToast(`项目「${name}」创建成功，第一集剧本已就绪`, 'success');
+
+    // Refresh project selector
+    await discoverProjects();
+
+    // Switch to new project
+    const sel = document.getElementById('projectSelect');
+    sel.value = name;
+    await loadProject(name);
+
+  } catch(err) {
+    showToast('创建失败：' + err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 创建项目';
+  }
+}
+
+// ========== UPLOAD MODAL ==========
+function openUploadModal() {
+  // Reset form
+  document.getElementById('upScript').value = '';
+  document.getElementById('upFileInput').value = '';
+  document.getElementById('upEpisodeName').value = '';
+  document.getElementById('upEpisodeNew').value = '';
+  document.getElementById('upEpisodeMode').value = 'existing';
+  const drop = document.getElementById('upFileDrop');
+  drop.classList.remove('file-selected', 'dragover');
+  const iconEl = drop.querySelector('.drop-icon');
+  if (iconEl) iconEl.textContent = '📄';
+  const textEl = drop.querySelector('div:not(.drop-icon):not(.drop-hint)');
+  if (textEl) textEl.textContent = '点击选择文件，或将文件拖到此处';
+
+  onUpEpisodeModeChange();
+
+  // Populate project selector
+  const projects = Object.keys(agentState.projects || {});
+  const sel = document.getElementById('upProject');
+  if (projects.length === 0) {
+    sel.innerHTML = '<option value="">— 暂无项目，请先新建 —</option>';
+  } else {
+    sel.innerHTML = '<option value="">— 请选择项目 —</option>' +
+      projects.map(p => `<option value="${p}" ${p === currentProject ? 'selected' : ''}>${p}</option>`).join('');
+  }
+
+  // Pre-fill episodes for current project
+  onUpProjectChange();
+
+  document.getElementById('uploadModal').classList.remove('hidden');
+  document.getElementById('upProject').focus();
+}
+
+function closeUploadModal() {
+  document.getElementById('uploadModal').classList.add('hidden');
+}
+
+function onUpProjectChange() {
+  const proj = document.getElementById('upProject').value;
+  const existingSel = document.getElementById('upEpisodeExisting');
+  if (!proj || !agentState.projects?.[proj]) {
+    existingSel.innerHTML = '<option value="">— 选择项目后加载 —</option>';
+    return;
+  }
+  const episodes = Object.keys(agentState.projects[proj].episodes || {});
+  if (episodes.length === 0) {
+    existingSel.innerHTML = '<option value="">— 暂无已有集数 —</option>';
+  } else {
+    existingSel.innerHTML = episodes.map(ep => `<option value="${ep}">${ep.toUpperCase()}</option>`).join('');
+  }
+  // Also update new episode number default
+  const epNums = episodes.map(e => parseInt(e.replace('ep',''),10)).filter(n => !isNaN(n));
+  const nextNum = epNums.length > 0 ? Math.max(...epNums) + 1 : 1;
+  document.getElementById('upEpisodeNew').value = nextNum;
+}
+
+function onUpEpisodeModeChange() {
+  const mode = document.getElementById('upEpisodeMode').value;
+  document.getElementById('upEpisodeExisting').style.display = mode === 'existing' ? '' : 'none';
+  document.getElementById('upEpisodeNew').style.display = mode === 'new' ? '' : 'none';
+}
+
+async function submitUpload() {
+  const proj = document.getElementById('upProject').value;
+  const mode = document.getElementById('upEpisodeMode').value;
+  const script = document.getElementById('upScript').value.trim();
+  const epName = document.getElementById('upEpisodeName').value.trim();
+
+  if (!proj) { showToast('请选择目标项目', 'error'); return; }
+  if (!script) { showToast('请填写或上传剧本内容', 'error'); document.getElementById('upScript').focus(); return; }
+
+  let epKey;
+  if (mode === 'existing') {
+    epKey = document.getElementById('upEpisodeExisting').value;
+    if (!epKey) { showToast('请选择集数', 'error'); return; }
+  } else {
+    const num = parseInt(document.getElementById('upEpisodeNew').value, 10);
+    if (!num || num < 1) { showToast('请输入有效集号（正整数）', 'error'); return; }
+    epKey = buildEpKey(num);
+  }
+
+  const btn = document.getElementById('upSubmitBtn');
+  btn.disabled = true; btn.textContent = '保存中…';
+
+  try {
+    const projState = agentState.projects[proj];
+    if (!projState.episodes) projState.episodes = {};
+
+    const isNew = mode === 'new' || !projState.episodes[epKey];
+    projState.episodes[epKey] = {
+      ...(projState.episodes[epKey] || {}),
+      status: 'script-uploaded',
+      note: epName || (isNew ? '剧本已上传' : '剧本已更新'),
+      uploadedAt: new Date().toISOString(),
+      scriptLength: script.length,
+      ...(epName ? { name: epName } : {}),
+    };
+    projState.currentStage = 'script-uploaded';
+
+    saveAgentStateToLocalStorage();
+
+    // Offer downloads
+    offerDownload('.agent-state.json', agentState);
+    setTimeout(() => offerScriptDownload(proj, epKey, script), 600);
+
+    closeUploadModal();
+    const action = isNew ? '新增' : '更新';
+    showToast(`${proj} · ${epKey.toUpperCase()} 剧本${action}成功`, 'success');
+
+    // Refresh UI
+    await discoverProjects();
+    const sel = document.getElementById('projectSelect');
+    sel.value = proj;
+    await loadProject(proj);
+    const epSel = document.getElementById('episodeSelect');
+    if (epSel.querySelector(`option[value="${epKey}"]`)) {
+      epSel.value = epKey;
+      await loadEpisode(proj, epKey);
+    }
+
+  } catch(err) {
+    showToast('保存失败：' + err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 保存剧本';
+  }
+}
+
+// Close modals on overlay click
+document.addEventListener('click', e => {
+  if (e.target.id === 'newProjectModal') closeNewProjectModal();
+  if (e.target.id === 'uploadModal') closeUploadModal();
+});
+
+// Close modals on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeNewProjectModal();
+    closeUploadModal();
+  }
+});
+
+// On init, try loading persisted state from localStorage first
+const _originalLoadAgentState = loadAgentState;
+loadAgentState = async function() {
+  const fromLS = loadAgentStateFromLocalStorage();
+  if (!fromLS) await _originalLoadAgentState();
+};
 </script>
 </body>
 </html>
