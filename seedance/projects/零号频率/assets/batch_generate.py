@@ -9,6 +9,7 @@
 """
 
 import json
+import re
 import subprocess
 import time
 import os
@@ -20,50 +21,66 @@ IMAGES_DIR = os.path.join(BASE_DIR, "assets/images")
 ART_STYLE_SUFFIX = ", 虚幻引擎5级照片级写实渲染，写实CGI电影质感，精致技术光影效果"
 CHAR_COMPOSITION = "角色设定图，白色背景，左半部分面部特写头肩半身，右半部分全身正面视图、侧面视图、背面视图三视图并排，16:9横版构图"
 
-POLL_INTERVAL = 12  # seconds between polls
-MAX_POLLS = 60      # max polls before giving up
+POLL_INTERVAL = 5   # seconds between polls
+MAX_POLLS = 120     # max polls before giving up (~10 min)
 
 os.makedirs(IMAGES_DIR, exist_ok=True)
 
-def run_zencli(args):
-    """Run zencli command and return parsed JSON output"""
+def run_zencli(args, timeout=120):
+    """Run zencli command and return parsed JSON output.
+    Handles spinner/progress characters that zencli may output before JSON."""
     cmd = [ZENCLI] + args + ["-o", "json"]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     if result.returncode != 0:
-        print(f"  ERROR: {result.stdout} {result.stderr}")
+        print(f"  ERROR: {result.stdout[:200]} {result.stderr[:200]}")
         return None
+    stdout = result.stdout
     try:
-        return json.loads(result.stdout)
+        return json.loads(stdout)
     except json.JSONDecodeError:
-        print(f"  Failed to parse JSON: {result.stdout[:200]}")
+        # zencli may output spinner chars before JSON — extract the JSON object
+        match = re.search(r'\{.*\}', stdout, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group())
+            except json.JSONDecodeError:
+                pass
+        print(f"  Failed to parse JSON: {stdout[:300]}")
         return None
 
 def upload_image(file_path):
-    """Upload local image to COS, return CDN URL"""
+    """Upload local image to COS, return CDN URL.
+    
+    zencli upload response format:
+    {
+      "url": "https://...",
+      "width": 1376, "height": 768,
+      "file_name": "...", "file_size": ...
+    }
+    """
     print(f"  Uploading: {file_path}")
-    cmd = [ZENCLI, "upload", file_path, "-o", "json"]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
-    if result.returncode != 0:
-        print(f"  Upload ERROR: {result.stdout} {result.stderr}")
+    result = run_zencli(["upload", file_path])
+    if not result:
+        print(f"  Upload failed for {file_path}")
         return None
-    try:
-        data = json.loads(result.stdout)
-        # Try common response shapes
-        url = data.get("url") or data.get("cdn_url")
-        if not url and "data" in data:
-            d = data["data"]
-            url = d.get("url") or d.get("cdn_url")
-        if url:
-            print(f"  Uploaded: {url}")
-            return url
-        print(f"  Upload response has no URL: {data}")
-        return None
-    except json.JSONDecodeError:
-        print(f"  Failed to parse upload JSON: {result.stdout[:200]}")
-        return None
+    url = result.get("url")
+    if url:
+        print(f"  Uploaded: {url}")
+        return url
+    print(f"  Upload response has no URL: {result}")
+    return None
 
 def generate_image(prompt, name, aspect_ratio="16:9", input_images=None):
-    """Submit image generation task, optionally with reference images"""
+    """Submit image generation task, optionally with reference images.
+    Returns task_id string or None.
+    
+    zencli response format:
+    {
+      "message": "...",
+      "task_ids": ["xxx"],
+      "params_summary": { "input_images_count": 1, ... }
+    }
+    """
     print(f"  Submitting: {name}")
     args = [
         "generate", "image",
@@ -75,45 +92,69 @@ def generate_image(prompt, name, aspect_ratio="16:9", input_images=None):
     if input_images:
         args.extend(["--input-images", input_images])
     result = run_zencli(args)
-    if result and "task_id" in result:
-        return result["task_id"]
-    elif result and "data" in result and "task_id" in result.get("data", {}):
-        return result["data"]["task_id"]
+    if not result:
+        print(f"  Failed to get response for {name}")
+        return None
+    # zencli returns task_ids array
+    task_ids = result.get("task_ids")
+    if task_ids and len(task_ids) > 0:
+        print(f"  Task ID: {task_ids[0]}")
+        return task_ids[0]
+    # fallback: try legacy formats
+    task_id = result.get("task_id") or result.get("data", {}).get("task_id")
+    if task_id:
+        return task_id
     print(f"  Failed to get task_id for {name}. Response: {result}")
     return None
 
 def poll_task(task_id):
-    """Poll task until completion"""
+    """Poll task until completion.
+    
+    zencli generate task response format:
+    {
+      "task_id": "xxx",
+      "state": 4,           # 4=SUCCESS, 5=FAILED
+      "state_desc": "SUCCESS（成功）",
+      "progress": 1,
+      "output_assets": [{ "asset_id": "...", "url": "...", "title": "..." }]
+    }
+    """
     for i in range(MAX_POLLS):
         result = run_zencli(["generate", "task", task_id])
         if result is None:
             time.sleep(POLL_INTERVAL)
             continue
 
-        status = None
         data = result if isinstance(result, dict) else {}
-        if "status" in data:
-            status = data["status"]
-        elif "data" in data and "status" in data.get("data", {}):
-            status = data["data"]["status"]
 
-        if status == "completed" or status == "success":
-            # Extract image URL
+        # Primary: use state (number) field from zencli
+        state = data.get("state")
+        if state is not None:
+            if state == 4:  # SUCCESS
+                url = None
+                output_assets = data.get("output_assets", [])
+                if output_assets:
+                    url = output_assets[0].get("url")
+                return {"status": "completed", "url": url, "raw": data}
+            elif state == 5:  # FAILED
+                return {"status": "failed", "raw": data}
+            state_desc = data.get("state_desc", f"state={state}")
+            progress = data.get("progress", 0)
+            print(f"    Poll {i+1}: {state_desc} progress={progress}, waiting {POLL_INTERVAL}s...")
+            time.sleep(POLL_INTERVAL)
+            continue
+
+        # Fallback: try status string field (legacy)
+        status = data.get("status") or data.get("data", {}).get("status")
+        if status in ("completed", "success"):
             url = None
-            if "url" in data:
+            output_assets = data.get("output_assets", [])
+            if output_assets:
+                url = output_assets[0].get("url")
+            elif "url" in data:
                 url = data["url"]
-            elif "data" in data:
-                d = data["data"]
-                if "url" in d:
-                    url = d["url"]
-                elif "images" in d and len(d["images"]) > 0:
-                    url = d["images"][0].get("url")
-                elif "result" in d:
-                    r = d["result"]
-                    if isinstance(r, dict):
-                        url = r.get("url") or (r.get("images", [{}])[0].get("url") if r.get("images") else None)
             return {"status": "completed", "url": url, "raw": data}
-        elif status == "failed" or status == "error":
+        elif status in ("failed", "error"):
             return {"status": "failed", "raw": data}
 
         print(f"    Poll {i+1}: status={status}, waiting {POLL_INTERVAL}s...")

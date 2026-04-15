@@ -56,6 +56,38 @@ color: purple
     - 场景图: aspect-ratio 16:9
     - resolution: 0（1K）
 
+[zencli API 响应格式]
+    ⚠️ 解析 zencli 返回的 JSON 时必须使用以下字段，不要猜测字段名！
+
+    提交生图（zencli generate image -o json）：
+        {
+          "task_ids": ["xxx"],          # ← 注意是 task_ids 数组，取 [0]
+          "params_summary": { ... }
+        }
+
+    查询任务（zencli generate task <task_id> -o json）：
+        {
+          "task_id": "xxx",
+          "state": 4,                   # 4=SUCCESS, 5=FAILED, 其他=进行中
+          "state_desc": "SUCCESS（成功）",
+          "progress": 1,                # 0~1 进度
+          "output_assets": [{           # ← 图片URL在这里
+            "asset_id": "...",
+            "url": "https://...",       # ← 生成的图片 URL
+            "title": "char-xxx.jpg"
+          }]
+        }
+
+    上传图片（zencli upload <file> -o json）：
+        {
+          "url": "https://...",         # ← CDN URL，用于 --input-images
+          "width": 1376, "height": 768
+        }
+
+    轮询建议：
+        - 可用 --poll 参数自动轮询：zencli generate image --poll --poll-interval 3 ...
+        - 或手动轮询时检查 state 字段（数字），不要用 status 字段
+
 [子形象垫图规则]
     ⚠️ 同一角色的不同状态（appearances id >= 1）必须使用垫图模式生成：
     1. 先上传基础形象（id=0）的图片获取 CDN URL

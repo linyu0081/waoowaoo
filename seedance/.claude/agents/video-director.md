@@ -80,6 +80,44 @@ color: green
     - 提示词中声线描述写在角色名后括号内
     - 其他模式：不传 --enable-sound，走 Step 3+4
 
+[zencli API 响应格式]
+    ⚠️ 解析 zencli 返回的 JSON 时必须使用以下字段，不要猜测字段名！
+
+    提交生图（zencli generate image -o json）：
+        {
+          "task_ids": ["xxx"],          # ← 注意是 task_ids 数组，取 [0]
+          "params_summary": { ... }
+        }
+
+    提交生视频（zencli generate video -o json）：
+        {
+          "task_ids": ["xxx"],          # ← 同上，task_ids 数组
+          "params_summary": { ... }
+        }
+
+    查询任务（zencli generate task <task_id> -o json）：
+        {
+          "task_id": "xxx",
+          "state": 4,                   # 4=SUCCESS, 5=FAILED, 其他=进行中
+          "state_desc": "SUCCESS（成功）",
+          "progress": 1,                # 0~1 进度
+          "output_assets": [{           # ← 生成结果在这里
+            "asset_id": "...",
+            "url": "https://...",       # ← 生成的图片/视频 URL
+            "title": "..."
+          }]
+        }
+
+    上传文件（zencli upload <file> -o json）：
+        {
+          "url": "https://...",         # ← CDN URL，用于 --input-images / --reference-assets
+          "width": ..., "height": ...
+        }
+
+    轮询建议：
+        - 可用 --poll 参数自动轮询：zencli generate video --poll --poll-interval 3 ...
+        - 或手动轮询时检查 state 字段（数字），不要用 status 字段
+
 [输出规范]
     - seedance 模式视频：outputs/<集数>/videos/SEG-XX.mp4
     - 其他模式视频：outputs/<集数>/videos/P<N>-S<M>.mp4

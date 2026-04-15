@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Seedance Studio — 项目资产总览</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -152,10 +155,12 @@ body {
 }
 .asset-card:hover { border-color: var(--accent-gold-dim); transform: translateY(-2px); box-shadow: var(--shadow); }
 .asset-card-img {
-  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
   border-bottom: 1px solid var(--border);
   background: var(--bg-elevated);
+  cursor: pointer; transition: filter 0.2s;
 }
+.asset-card-img:hover { filter: brightness(1.1); }
 .asset-card-img.landscape { aspect-ratio: 16/9; }
 .asset-card-body { padding: 16px; }
 .asset-card-name {
@@ -505,6 +510,143 @@ body {
   to { opacity: 1; transform: translateX(0); }
 }
 
+/* ======== APPEARANCE MODAL ======== */
+.appearance-modal-overlay {
+  position: fixed; inset: 0; z-index: 1100;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+.appearance-modal-overlay.hidden { display: none; }
+.appearance-modal {
+  background: var(--bg-card); border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg); width: 720px; max-width: calc(100vw - 32px);
+  max-height: 92vh; overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+  animation: modalIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+.appearance-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px 14px; border-bottom: 1px solid var(--border);
+}
+.appearance-modal-title {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  color: var(--text-primary); display: flex; align-items: center; gap: 10px;
+}
+.appearance-modal-close {
+  background: none; border: none; color: var(--text-muted);
+  font-size: 20px; cursor: pointer; padding: 4px; line-height: 1;
+  border-radius: var(--radius); transition: color 0.2s;
+}
+.appearance-modal-close:hover { color: var(--text-primary); background: var(--bg-hover); }
+.appearance-tabs {
+  display: flex; gap: 0; padding: 0 24px;
+  border-bottom: 1px solid var(--border); overflow-x: auto;
+}
+.appearance-tab {
+  padding: 12px 18px; font-size: 13px; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s; user-select: none; white-space: nowrap;
+}
+.appearance-tab:hover { color: var(--text-primary); }
+.appearance-tab.active {
+  color: var(--accent-gold); border-bottom-color: var(--accent-gold);
+}
+.appearance-body { padding: 20px 24px; }
+.appearance-img-wrap {
+  width: 100%; border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 16px;
+  background: var(--bg-elevated);
+}
+.appearance-img-wrap img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  display: block; transition: opacity 0.3s;
+}
+.appearance-reason {
+  font-size: 13px; color: var(--accent-gold); font-weight: 500;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
+}
+.appearance-desc {
+  font-size: 12px; color: var(--text-secondary); line-height: 1.7;
+  background: var(--bg-elevated); padding: 14px;
+  border-radius: var(--radius); max-height: 200px; overflow-y: auto;
+}
+.btn-appearance {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: var(--radius);
+  font-size: 11px; font-family: var(--font-body);
+  font-weight: 500; cursor: pointer; transition: all 0.2s;
+  border: 1px solid var(--accent-gold-dim);
+  background: rgba(201,168,76,0.08); color: var(--accent-gold);
+  margin-top: 8px;
+}
+.btn-appearance:hover {
+  background: rgba(201,168,76,0.18); border-color: var(--accent-gold);
+}
+
+/* ======== IMAGE LIGHTBOX ======== */
+.lightbox-overlay {
+  position: fixed; inset: 0; z-index: 1200;
+  background: rgba(0,0,0,0.92); backdrop-filter: blur(12px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  animation: fadeIn 0.2s ease; cursor: zoom-out;
+}
+.lightbox-overlay.hidden { display: none; }
+.lightbox-img {
+  max-width: 92vw; max-height: 78vh; object-fit: contain;
+  border-radius: var(--radius-lg); box-shadow: 0 16px 64px rgba(0,0,0,0.8);
+  animation: modalIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  cursor: default;
+}
+.lightbox-toolbar {
+  display: flex; align-items: center; gap: 12px;
+  margin-top: 16px; animation: fadeIn 0.3s ease;
+}
+.lightbox-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: var(--radius);
+  font-size: 13px; font-family: var(--font-body); font-weight: 500;
+  cursor: pointer; transition: all 0.2s; border: 1px solid var(--border-accent);
+  background: var(--bg-elevated); color: var(--text-primary);
+}
+.lightbox-btn:hover { border-color: var(--accent-gold); background: var(--bg-hover); }
+.lightbox-btn-upload {
+  border-color: var(--accent-gold-dim); color: var(--accent-gold);
+  background: rgba(201,168,76,0.1);
+}
+.lightbox-btn-upload:hover {
+  background: rgba(201,168,76,0.2); border-color: var(--accent-gold);
+}
+.lightbox-close {
+  position: absolute; top: 16px; right: 20px;
+  background: none; border: none; color: var(--text-muted);
+  font-size: 28px; cursor: pointer; line-height: 1;
+  transition: color 0.2s; z-index: 10;
+}
+.lightbox-close:hover { color: var(--text-primary); }
+.lightbox-label {
+  font-size: 12px; color: var(--text-secondary); margin-top: 8px;
+  font-family: var(--font-mono);
+}
+.appearance-img-wrap { position: relative; }
+.appearance-img-wrap img { cursor: pointer; }
+.appearance-img-wrap img:hover { filter: brightness(1.1); }
+.appearance-upload-btn {
+  position: absolute; bottom: 10px; right: 10px;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 5px 10px; border-radius: var(--radius);
+  font-size: 11px; font-family: var(--font-body); font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.6); color: #fff;
+  backdrop-filter: blur(4px);
+}
+.appearance-upload-btn:hover {
+  background: rgba(0,0,0,0.8); border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
 /* ======== RESPONSIVE ======== */
 @media (max-width: 768px) {
   .site-header { padding: 0 16px; }
@@ -684,6 +826,32 @@ body {
   </div>
 </div>
 
+<!-- ======== IMAGE LIGHTBOX ======== -->
+<div class="lightbox-overlay hidden" id="lightboxOverlay" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="大图预览" onclick="event.stopPropagation()">
+  <div class="lightbox-toolbar" onclick="event.stopPropagation()">
+    <button class="lightbox-btn lightbox-btn-upload" onclick="triggerUploadFromLightbox()">📤 上传替换</button>
+  </div>
+  <div class="lightbox-label" id="lightboxLabel"></div>
+  <input type="file" id="lightboxFileInput" accept="image/*" style="display:none" onchange="handleLightboxUpload(this)">
+</div>
+
+<!-- ======== APPEARANCE MODAL ======== -->
+<div class="appearance-modal-overlay hidden" id="appearanceModal">
+  <div class="appearance-modal">
+    <div class="appearance-modal-header">
+      <div class="appearance-modal-title">
+        <div class="modal-title-icon"></div>
+        <span id="appearanceCharName">角色形象</span>
+      </div>
+      <button class="appearance-modal-close" onclick="closeAppearanceModal()" aria-label="关闭">✕</button>
+    </div>
+    <div class="appearance-tabs" id="appearanceTabs"></div>
+    <div class="appearance-body" id="appearanceBody"></div>
+  </div>
+</div>
+
 <!-- ======== TOAST CONTAINER ======== -->
 <div class="toast-container" id="toastContainer"></div>
 
@@ -766,14 +934,26 @@ let projectConfig = null;
 let manifest, characters, locations, props, clips, screenplay, storyboard, voiceLines, seedancePrompts;
 
 // ========== DATA LOADING ==========
-async function loadJSON(path) {
-  const res = await fetch(BASE + path);
-  if (!res.ok) throw new Error(`加载失败: ${path} (${res.status})`);
-  const text = await res.text();
+async function loadJSON(path, timeoutMs = 5000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    return JSON.parse(text);
+    // URL 追加时间戳参数，绕过所有中间层缓存（VS Code 端口转发等）
+    const sep = path.includes('?') ? '&' : '?';
+    const bustUrl = BASE + path + sep + '_t=' + Date.now();
+    const res = await fetch(bustUrl, { signal: controller.signal, cache: 'no-store' });
+    clearTimeout(timer);
+    if (!res.ok) throw new Error(`加载失败: ${path} (${res.status})`);
+    const text = await res.text();
+    try {
+      return JSON.parse(text);
+    } catch(e) {
+      throw new Error(`JSON 解析失败: ${path} — ${e.message}`);
+    }
   } catch(e) {
-    throw new Error(`JSON 解析失败: ${path} — ${e.message}`);
+    clearTimeout(timer);
+    if (e.name === 'AbortError') throw new Error(`加载超时: ${path}`);
+    throw e;
   }
 }
 
@@ -822,37 +1002,10 @@ async function loadProject(projectName) {
     projectConfig = {};
   }
 
-  // Discover episodes: merge agent-state episodes with actual outputs probing
+  // 直接从 agentState 读取已知集数，不再暴力探测
   const projectState = agentState.projects?.[projectName];
   const stateEpisodes = Object.keys(projectState?.episodes || {});
-
-  // Also probe common episode patterns (ep01..ep20) to find those not in state
-  const probeEpisodes = [];
-  for (let i = 1; i <= 20; i++) {
-    const epKey = `ep${String(i).padStart(2, '0')}`;
-    probeEpisodes.push(epKey);
-  }
-  const discoveredEpisodes = [];
-  await Promise.all(probeEpisodes.map(async (ep) => {
-    try {
-      const res = await fetch(`projects/${projectName}/outputs/${ep}/manifest.json`, { method: 'HEAD' });
-      if (res.ok) discoveredEpisodes.push(ep);
-    } catch {}
-  }));
-
-  // Also try probing 01-clips.json for episodes without manifest
-  if (discoveredEpisodes.length === 0) {
-    await Promise.all(probeEpisodes.slice(0, 5).map(async (ep) => {
-      try {
-        const res = await fetch(`projects/${projectName}/outputs/${ep}/01-clips.json`, { method: 'HEAD' });
-        if (res.ok && !discoveredEpisodes.includes(ep)) discoveredEpisodes.push(ep);
-      } catch {}
-    }));
-  }
-
-  // Merge and deduplicate, preserving order
-  const allEpisodes = [...new Set([...stateEpisodes, ...discoveredEpisodes])].sort();
-  if (allEpisodes.length === 0) allEpisodes.push('ep01');
+  const allEpisodes = stateEpisodes.length > 0 ? stateEpisodes.sort() : ['ep01'];
 
   const defaultEp = projectState?.currentEpisode || allEpisodes[0];
   const epSelect = document.getElementById('episodeSelect');
@@ -884,6 +1037,19 @@ async function loadEpisode(projectName, episode) {
       loadJSON(`${epBase}/04-voice-lines.json`).catch(() => []),
       loadJSON(`${epBase}/05-seedance-prompt.json`).catch(() => ({segments:[]})),
     ]);
+
+    // 格式归一化：screenplay 可能是数组或 { clips: [...] } 对象
+    if (!Array.isArray(screenplay)) {
+      screenplay = screenplay?.clips || [];
+    }
+    // clips 同理
+    if (!Array.isArray(clips)) {
+      clips = clips?.clips || [];
+    }
+    // storyboard 同理
+    if (!Array.isArray(storyboard)) {
+      storyboard = storyboard?.clips || storyboard?.storyboard || [];
+    }
   } catch(err) {
     document.querySelector('main').innerHTML = `
       <div style="padding:60px 40px;text-align:center">
@@ -996,14 +1162,38 @@ function renderOverview() {
 }
 
 // ========== ASSETS ==========
+// 智能图片路径：尝试多个候选路径，找到第一个可用的
+// uploadPath: 上传替换时使用的服务器路径（不含时间戳）
+function buildImgWithFallback(candidates, alt, extraClass = '', uploadPath = '') {
+  // 所有图片 URL 追加时间戳参数，绕过缓存
+  const bust = '_t=' + Date.now();
+  const escaped = candidates.map(c => (c + (c.includes('?') ? '&' : '?') + bust).replace(/'/g, "\\'"));
+  // onerror 时根据递增索引依次尝试下一个候选路径
+  const fallbackArr = escaped.slice(1).map(c => c).join("','");
+  const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.display='none'}`;
+  const upAttr = uploadPath ? ` data-upload-path="${uploadPath}"` : ` data-upload-path="${candidates[0] || ''}"`;
+  const clickJS = `event.stopPropagation();openLightbox(this)`;
+  return `<img class="asset-card-img${extraClass ? ' '+extraClass : ''}" src="${escaped[0]}" alt="${alt}" loading="lazy" onerror="${fallbackJS}" onclick="${clickJS}"${upAttr}>`;
+}
+
+// 全局存储角色数据，供模态框使用
+let _charactersData = [];
+
 function renderAssets() {
   const base = `projects/${currentProject}`;
-  const charHTML = (characters.characters||[]).map(c => {
-    const img = c.refImage ? `${base}/${c.refImage}` : `${base}/assets/images/char-${c.name}.png`;
+  _charactersData = characters.characters || [];
+  const charHTML = _charactersData.map((c, ci) => {
+    // 构建多个候选图片路径
+    const candidates = [];
+    if (c.refImage) candidates.push(`${base}/${c.refImage}`);
+    candidates.push(`${base}/assets/images/char-${c.name}-base.png`);
+    candidates.push(`${base}/assets/images/char-${c.name}.png`);
+    const uploadPath = `${base}/assets/images/char-${c.name}-base.png`;
     const desc = c.appearances?.[0]?.descriptions?.[0] || '';
+    const hasMultiAppearances = (c.appearances || []).length > 1;
     return `
     <div class="asset-card" onclick="this.classList.toggle('expanded')">
-      <img class="asset-card-img" src="${img}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'">
+      ${buildImgWithFallback(candidates, c.name, '', uploadPath)}
       <div class="asset-card-body">
         <div class="asset-card-name">${c.name} <span class="role-badge role-${c.role_level}">${c.role_level}</span></div>
         <div class="asset-card-meta">
@@ -1012,6 +1202,7 @@ function renderAssets() {
         </div>
         <div style="font-size:12px;color:var(--text-secondary)">${c.introduction}</div>
         ${c.voiceLine ? `<div class="voice-line">🎙 ${c.voiceLine}</div>` : ''}
+        ${hasMultiAppearances ? `<button class="btn-appearance" onclick="event.stopPropagation();openAppearanceModal(${ci})">🎭 形象（${c.appearances.length}）</button>` : ''}
         <div class="toggle-desc">▼ 展开外貌描述</div>
         <div class="asset-card-desc">${desc}</div>
       </div>
@@ -1020,10 +1211,19 @@ function renderAssets() {
   document.getElementById('characterGrid').innerHTML = charHTML;
 
   const locHTML = (locations.locations||[]).map(l => {
-    const img = l.refImage ? `${base}/${l.refImage}` : `${base}/assets/images/scene-${l.name}.png`;
+    // 场景图片：尝试 refImage → loc-{name}.png → loc-{去掉时间后缀}.png → scene-{name}.png
+    const candidates = [];
+    if (l.refImage) candidates.push(`${base}/${l.refImage}`);
+    candidates.push(`${base}/assets/images/loc-${l.name}.png`);
+    // 去掉常见时间后缀（如 _黄昏、_夜、_日 等）
+    const nameNoTime = l.name.replace(/[_·](?:黄昏|清晨|夜晚|夜|日|白天|傍晚|正午|凌晨|拂晓|深夜)$/g, '');
+    if (nameNoTime !== l.name) candidates.push(`${base}/assets/images/loc-${nameNoTime}.png`);
+    candidates.push(`${base}/assets/images/scene-${l.name}.png`);
+    if (nameNoTime !== l.name) candidates.push(`${base}/assets/images/scene-${nameNoTime}.png`);
+    const uploadPath = nameNoTime !== l.name ? `${base}/assets/images/loc-${nameNoTime}.png` : `${base}/assets/images/loc-${l.name}.png`;
     return `
     <div class="asset-card" onclick="this.classList.toggle('expanded')">
-      <img class="asset-card-img landscape" src="${img}" alt="${l.name}" loading="lazy" onerror="this.style.display='none'">
+      ${buildImgWithFallback(candidates, l.name, 'landscape', uploadPath)}
       <div class="asset-card-body">
         <div class="asset-card-name">${l.name}</div>
         <div style="font-size:12px;color:var(--text-secondary)">${l.summary}</div>
@@ -1047,19 +1247,27 @@ function renderAssets() {
 // ========== SCREENPLAY ==========
 function renderScreenplay() {
   const html = (Array.isArray(screenplay) ? screenplay : []).map((sp, i) => {
-    const scene = sp.scenes?.[0];
-    if (!scene) return '';
-    const contentHTML = (scene.content||[]).map(item => {
-      if (item.type === 'dialogue') {
-        return `<div class="content-item dialogue">
-          <div class="char-name">${item.character} ${item.parenthetical ? `<span class="parenthetical">(${item.parenthetical})</span>` : ''}</div>
-          <div>${item.lines}</div>
-        </div>`;
-      } else if (item.type === 'voiceover') {
-        return `<div class="content-item voiceover">🎙 ${item.character || '旁白'}：${item.text}</div>`;
-      }
-      return `<div class="content-item action">${item.text}</div>`;
-    }).join('');
+    const scenes = sp.scenes || [];
+    if (scenes.length === 0) return '';
+
+    const scenesHTML = scenes.map(scene => {
+      const contentHTML = (scene.content||[]).map(item => {
+        if (item.type === 'dialogue') {
+          return `<div class="content-item dialogue">
+            <div class="char-name">${item.character} ${item.parenthetical ? `<span class="parenthetical">(${item.parenthetical})</span>` : ''}</div>
+            <div>${item.lines}</div>
+          </div>`;
+        } else if (item.type === 'voiceover') {
+          return `<div class="content-item voiceover">🎙 ${item.character || '旁白'}：${item.text}</div>`;
+        }
+        return `<div class="content-item action">${item.text}</div>`;
+      }).join('');
+
+      return `
+        <div class="scene-heading">${scene.heading.int_ext} · ${scene.heading.location} · ${scene.heading.time}</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;padding-left:12px">${scene.description}</div>
+        ${contentHTML}`;
+    }).join('<hr style="border:none;border-top:1px dashed var(--border);margin:16px 0">');
 
     return `
     <div class="clip-block open">
@@ -1069,9 +1277,7 @@ function renderScreenplay() {
         <span class="clip-toggle">▼</span>
       </div>
       <div class="clip-content">
-        <div class="scene-heading">${scene.heading.int_ext} · ${scene.heading.location} · ${scene.heading.time}</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;padding-left:12px">${scene.description}</div>
-        ${contentHTML}
+        ${scenesHTML}
       </div>
     </div>`;
   }).join('');
@@ -1183,6 +1389,218 @@ function renderVoiceLines() {
   }).join('');
   document.getElementById('voiceBody').innerHTML = html;
 }
+
+// ========== APPEARANCE MODAL ==========
+let _currentAppearanceChar = null;
+let _currentAppearanceIdx = 0;
+
+function openAppearanceModal(charIndex) {
+  const c = _charactersData[charIndex];
+  if (!c || !c.appearances || c.appearances.length <= 1) return;
+  _currentAppearanceChar = c;
+  _currentAppearanceIdx = 0;
+
+  document.getElementById('appearanceCharName').textContent = `${c.name} — 形象切换`;
+
+  // 构建 tabs
+  const tabsHTML = c.appearances.map((app, i) => {
+    const label = app.change_reason || `形象 ${i}`;
+    return `<div class="appearance-tab${i === 0 ? ' active' : ''}" data-idx="${i}" onclick="switchAppearance(${i})">${label}</div>`;
+  }).join('');
+  document.getElementById('appearanceTabs').innerHTML = tabsHTML;
+
+  // 渲染第一个形象
+  renderAppearanceContent(0);
+
+  document.getElementById('appearanceModal').classList.remove('hidden');
+}
+
+function closeAppearanceModal() {
+  document.getElementById('appearanceModal').classList.add('hidden');
+  _currentAppearanceChar = null;
+}
+
+function switchAppearance(idx) {
+  _currentAppearanceIdx = idx;
+  // 更新 tab 激活状态
+  document.querySelectorAll('#appearanceTabs .appearance-tab').forEach(t => {
+    t.classList.toggle('active', parseInt(t.dataset.idx) === idx);
+  });
+  renderAppearanceContent(idx);
+}
+
+function renderAppearanceContent(idx) {
+  const c = _currentAppearanceChar;
+  if (!c) return;
+  const app = c.appearances[idx];
+  if (!app) return;
+
+  const base = `projects/${currentProject}`;
+  const bust = '_t=' + Date.now();
+
+  // 构建该形象的图片候选路径
+  const candidates = [];
+  if (idx === 0) {
+    candidates.push(`${base}/assets/images/char-${c.name}-base.png`);
+    candidates.push(`${base}/assets/images/char-${c.name}.png`);
+  } else {
+    const reason = app.change_reason || '';
+    // 策略1：从 change_reason 提取关键词，逐步缩短
+    // 如 "Lv.2全频同步完全武装状态" → "全频同步完全武装" → 再按 - 分割取各段
+    const cleaned = reason.replace(/^(Lv\.?\d+|初始形象)[\s\-—·]*/i, '').replace(/[\s\-—·]*状态$/g, '').trim();
+    if (cleaned) {
+      candidates.push(`${base}/assets/images/char-${c.name}-${cleaned}.png`);
+      // 策略2：按 - 分割，取第一段（如 "半降临-三翼光甲" → "半降临"）
+      let firstPart = cleaned.split(/[\-—]/)[0].trim();
+      // 去掉"状态"、"瞬间"等后缀
+      const firstPartClean = firstPart.replace(/(?:状态|瞬间|形态|模式)$/, '').trim();
+      if (firstPart && firstPart !== cleaned) {
+        candidates.push(`${base}/assets/images/char-${c.name}-${firstPart}.png`);
+      }
+      if (firstPartClean && firstPartClean !== firstPart && firstPartClean !== cleaned) {
+        candidates.push(`${base}/assets/images/char-${c.name}-${firstPartClean}.png`);
+      }
+      // 策略3：去掉"全频同步"等修饰词，保留核心词（如 "全频同步完全武装" → "全武装"）
+      // 尝试匹配最后一个核心动词短语
+      const coreMatch = cleaned.match(/(半武装|全武装|半降临|完全降临|觉醒|变身|强化)/);
+      if (coreMatch && coreMatch[1] !== cleaned && coreMatch[1] !== firstPart) {
+        candidates.push(`${base}/assets/images/char-${c.name}-${coreMatch[1]}.png`);
+      }
+    }
+    // 策略4：完整 change_reason 去掉常见前缀
+    const full = reason.replace(/^初始形象[\s\-—·]*/i, '').replace(/[\s\-—·]*状态$/g, '').trim();
+    if (full && !candidates.some(p => p.includes(full))) {
+      candidates.push(`${base}/assets/images/char-${c.name}-${full}.png`);
+    }
+    // 策略5：用索引号
+    candidates.push(`${base}/assets/images/char-${c.name}-${idx}.png`);
+    // 最终 fallback：base 图
+    candidates.push(`${base}/assets/images/char-${c.name}-base.png`);
+    candidates.push(`${base}/assets/images/char-${c.name}.png`);
+  }
+
+  // 去重
+  const uniqueCandidates = [...new Set(candidates)];
+  const escaped = uniqueCandidates.map(p => (p + '?' + bust).replace(/'/g, "\\'"));
+  const imgSrc = escaped[0];
+  const fallbackArr = escaped.slice(1).join("','");
+  const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.opacity='0.3'}`;
+  const uploadPath = uniqueCandidates[0];
+  const clickJS = `event.stopPropagation();openLightbox(this)`;
+
+  const desc = (app.descriptions || [])[0] || '暂无描述';
+  document.getElementById('appearanceBody').innerHTML = `
+    <div class="appearance-img-wrap">
+      <img src="${imgSrc}" alt="${c.name} - ${app.change_reason}" onerror="${fallbackJS}" onclick="${clickJS}" data-upload-path="${uploadPath}" style="cursor:pointer">
+      <button class="appearance-upload-btn" onclick="event.stopPropagation();triggerAppearanceUpload(this)">📤 替换图片</button>
+      <input type="file" accept="image/*" style="display:none" onchange="handleAppearanceUpload(this)">
+    </div>
+    <div class="appearance-reason">🎭 ${app.change_reason || (idx === 0 ? '初始形象' : '形象 ' + idx)}</div>
+    <div class="appearance-desc">${desc}</div>
+  `;
+}
+
+// ========== IMAGE LIGHTBOX ==========
+let _lightboxCurrentImg = null;
+
+function openLightbox(imgEl) {
+  if (!imgEl || !imgEl.src) return;
+  _lightboxCurrentImg = imgEl;
+  const overlay = document.getElementById('lightboxOverlay');
+  const lbImg = document.getElementById('lightboxImg');
+  const label = document.getElementById('lightboxLabel');
+  lbImg.src = imgEl.src;
+  // 显示文件路径
+  const uploadPath = imgEl.dataset.uploadPath || '';
+  label.textContent = uploadPath ? uploadPath.replace(/\?.*$/, '') : (imgEl.alt || '');
+  overlay.classList.remove('hidden');
+}
+
+function closeLightbox(e) {
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains('lightbox-close')) return;
+  document.getElementById('lightboxOverlay').classList.add('hidden');
+  _lightboxCurrentImg = null;
+}
+
+function triggerUploadFromLightbox() {
+  document.getElementById('lightboxFileInput').click();
+}
+
+async function handleLightboxUpload(input) {
+  const file = input.files?.[0];
+  if (!file || !_lightboxCurrentImg) return;
+  const uploadPath = _lightboxCurrentImg.dataset.uploadPath || '';
+  if (!uploadPath) {
+    showToast('无法确定上传路径', 'error');
+    return;
+  }
+  await uploadImageFile(file, uploadPath, _lightboxCurrentImg);
+  input.value = '';
+}
+
+function triggerAppearanceUpload(btn) {
+  const fileInput = btn.parentElement.querySelector('input[type=file]');
+  if (fileInput) fileInput.click();
+}
+
+async function handleAppearanceUpload(input) {
+  const file = input.files?.[0];
+  if (!file) return;
+  const imgEl = input.parentElement.querySelector('img');
+  const uploadPath = imgEl?.dataset?.uploadPath || '';
+  if (!uploadPath) {
+    showToast('无法确定上传路径', 'error');
+    return;
+  }
+  await uploadImageFile(file, uploadPath, imgEl);
+  input.value = '';
+}
+
+async function uploadImageFile(file, uploadPath, imgEl) {
+  // 清理路径中的查询参数
+  const cleanPath = uploadPath.replace(/\?.*$/, '');
+  showToast(`正在上传 ${file.name}...`, 'info');
+  try {
+    const res = await fetch('/' + cleanPath, {
+      method: 'PUT',
+      body: file,
+      headers: { 'Content-Type': file.type || 'application/octet-stream' }
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    showToast(`上传成功！(${(data.size / 1024).toFixed(1)} KB)`, 'success');
+    // 刷新图片
+    const bust = '_t=' + Date.now();
+    if (imgEl) {
+      imgEl.src = cleanPath + '?' + bust;
+    }
+    // 如果 lightbox 打开中也刷新
+    const lbImg = document.getElementById('lightboxImg');
+    if (lbImg && !document.getElementById('lightboxOverlay').classList.contains('hidden')) {
+      lbImg.src = cleanPath + '?' + bust;
+    }
+  } catch (err) {
+    showToast(`上传失败: ${err.message}`, 'error');
+  }
+}
+
+// 关闭形象模态框
+document.addEventListener('click', e => {
+  if (e.target.id === 'appearanceModal') closeAppearanceModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    // 优先关闭 lightbox
+    if (!document.getElementById('lightboxOverlay').classList.contains('hidden')) {
+      document.getElementById('lightboxOverlay').classList.add('hidden');
+      _lightboxCurrentImg = null;
+      return;
+    }
+    if (!document.getElementById('appearanceModal').classList.contains('hidden')) {
+      closeAppearanceModal();
+    }
+  }
+});
 
 init().catch(err => console.error('Load failed:', err));
 
