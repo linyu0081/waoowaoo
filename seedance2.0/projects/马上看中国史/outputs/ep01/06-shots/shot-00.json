@@ -25,7 +25,7 @@
   ],
   "videoTask": {
     "engine": "dreamina",
-    "modelName": "seedance2.0-fast",
+    "modelName": "seedance2.0fast",
     "taskId": "c79e1332-20bd-453f-8892-ecc03cd52dd0",
     "status": "generating",
     "videoUrl": "",

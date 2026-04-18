@@ -99,11 +99,22 @@ projects/<项目>/
 | 参数 | 值 | 说明 |
 |---|---|---|
 | command | `multimodal2video` | 多模态（图+文→视频） |
-| `--model_version` | `seedance2.0` | 与 workrally Zen-SD2.0 对齐的同源能力 |
+| `--model_version` | `seedance2.0` | 见下方模型列表 |
 | `--ratio` | 取自 shot-NN.json 所在项目 config.videoRatio，默认 `16:9` | |
 | `--video_resolution` | `720p` | Seedance 2.0 仅支持 720p（CLI 参数名为 `--video_resolution`，非 `--resolution`） |
 | `--duration` | 从 `titleBar` 解析（如"15秒"→15），默认 15 | |
 | `--poll` | `180`（秒） | 上限；超时走手动 `query_result` |
+
+### 3.1 支持的模型版本（`--model_version`）
+
+| 模型值 | 说明 | 备注 |
+|---|---|---|
+| `seedance2.0` | Seedance 2.0 标准版 | 默认推荐，质量最高 |
+| `seedance2.0fast` | Seedance 2.0 快速版 | 速度更快，质量略低，适合快速预览 |
+| `seedance2.0_vip` | Seedance 2.0 VIP 版 | ⚠️ 需要 VIP 权限，普通用户勿选 |
+| `seedance2.0fast_vip` | Seedance 2.0 快速 VIP 版 | ⚠️ 需要 VIP 权限，普通用户勿选 |
+
+> ⚠️ **踩坑记录**：`seedance2.0_vip` 和 `seedance2.0fast_vip` 需要 VIP 会员权限，非 VIP 用户提交会报错或扣更多积分。日常使用请选 `seedance2.0`（质量优先）或 `seedance2.0fast`（速度优先）。
 
 ---
 
@@ -425,7 +436,7 @@ dreamina list_task --gen_status=success
 | 成本 `--model` 填 | `18`（provider id） | `dreamina-seedance2.0` |
 | tail-frame 文件命名 | `tail-shot-NN.jpg` | `tail-shot-NN.jpg` |
 | videoTask.engine | `"workrally"` | `"dreamina"` |
-| videoTask.modelName | `"Zen-SD2.0"` / `"Zen-01-1.5pro"` / `"Zen-02.3.0"` 等 | `"seedance2.0"` / `"seedance2.0-fast"` 等 |
+| videoTask.modelName | `"Zen-SD2.0"` / `"Zen-01-1.5pro"` / `"Zen-02.3.0"` 等 | `"seedance2.0"` / `"seedance2.0fast"` 等（取 `--model_version` 的值） |
 | videoTask.taskId 来源 | `task_id`（generate video 返回） | `submit_id`（multimodal2video 返回） |
 | 状态查询 | `workrally generate task <taskId> -o json` | `dreamina query_result --submit_id=<taskId>` |
 
