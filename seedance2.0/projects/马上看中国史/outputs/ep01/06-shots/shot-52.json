@@ -18,5 +18,23 @@
   "microExpressions": "马后炮头部向后扭转+双眼睁大瞳孔放大+嘴巴微张屏住呼吸+小手停在半空；赵匡胤目光如炬直视前方+下颌微抬+披风随慢动作展开+手握长兵器姿态稳定+面部坚毅；马前卒骏马四蹄离地腾空+鬃毛在慢动作中飘扬+鼻孔微张嘶鸣余音未尽。",
   "nailLines": "这镜最值钱的不是奔腾，而是时间凝固英雄登场那一帧的视觉冲击。\n升格凝固必须让观众看到粒子悬浮与披风慢展开的物理凝固质感。\n赵匡胤要又雄又稳，不靠慢动作加戏，靠披风展开与长兵器握姿。\n落幅停在升格奔腾定格，让下一镜马前卒帅气挺身勒马从动势自然承接。",
   "e15": "",
-  "assetRefs": ["{{character:马后炮}}", "{{character:赵匡胤}}", "{{character:马前卒}}", "{{scene:高平战场}}"]
+  "assetRefs": [
+    "{{character:马后炮}}",
+    "{{character:赵匡胤}}",
+    "{{character:马前卒}}",
+    "{{scene:高平战场}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }

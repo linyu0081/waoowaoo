@@ -531,6 +531,55 @@ body {
 .video-card-body { padding: 12px 16px; }
 .video-name { font-family: var(--font-mono); font-size: 14px; font-weight: 500; }
 .video-size { font-size: 11px; color: var(--text-muted); }
+.video-meta-row {
+  display: flex; flex-wrap: wrap; gap: 6px 12px;
+  font-size: 11px; color: var(--text-muted); margin-top: 6px;
+  font-family: var(--font-mono); line-height: 1.6;
+}
+.video-meta-row span { white-space: nowrap; }
+.video-status-placeholder {
+  width: 100%; aspect-ratio: 16/9;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--border); font-size: 13px; gap: 8px;
+}
+.video-status-pending { background: var(--bg-elevated); color: var(--text-muted); }
+.video-status-generating {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(59,130,246,0.15));
+  color: var(--accent-blue);
+}
+.video-status-generating .pulse-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--accent-blue);
+  animation: pulse-anim 1.4s ease-in-out infinite;
+}
+@keyframes pulse-anim {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.video-status-failed {
+  background: rgba(239,68,68,0.06); color: var(--accent-red-bright);
+}
+
+/* ======== SCREENPLAY SIDEBAR ======== */
+.sp-sidebar {
+  width: 140px; flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  padding: 12px 0; margin-right: 24px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.sp-nav-item {
+  padding: 10px 16px; font-size: 13px; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer;
+  border-radius: var(--radius); margin: 0 6px;
+  transition: all 0.15s; user-select: none;
+  white-space: nowrap;
+}
+.sp-nav-item:hover { color: var(--text-primary); background: rgba(255,255,255,0.03); }
+.sp-nav-item.active {
+  color: var(--accent-gold); background: rgba(201,168,76,0.08);
+  border-left: 2px solid var(--accent-gold); padding-left: 14px;
+}
+.sp-sub-panel { display: none; animation: fadeIn 0.3s ease; }
+.sp-sub-panel.active { display: block; }
 
 /* ======== VOICE LINES ======== */
 .voice-table { width: 100%; border-collapse: collapse; }
@@ -917,6 +966,10 @@ body {
   .header-inner { flex-wrap: wrap; height: auto; padding: 12px 0; justify-content: space-between; }
   .logo { font-size: 16px; }
   .header-actions { margin-left: 0; width: 100%; justify-content: flex-end; margin-top: 8px; }
+  .sp-sidebar { width: auto; flex-direction: row; border-right: none; border-bottom: 1px solid var(--border); margin-right: 0; margin-bottom: 16px; padding: 0; gap: 0; }
+  .sp-nav-item { padding: 8px 14px; margin: 0; border-left: none !important; padding-left: 14px !important; }
+  .sp-nav-item.active { border-bottom: 2px solid var(--accent-gold); border-left: none !important; }
+  #panel-screenplay > div:first-child { flex-direction: column; }
 }
 </style>
 </head>
@@ -1135,7 +1188,6 @@ body {
   <div class="nav-tab" data-tab="storyboard">分镜大纲</div>
   <div class="nav-tab" data-tab="seedance">分镜列表</div>
   <div class="nav-tab" data-tab="videos">视频</div>
-  <div class="nav-tab" data-tab="review">质检报告</div>
 </nav>
 
 <main class="main">
@@ -1158,8 +1210,25 @@ body {
 
   <!-- ===== SCREENPLAY ===== -->
   <div class="tab-panel" id="panel-screenplay">
-    <h2 class="section-title">剧本</h2>
-    <div id="screenplayContent"></div>
+    <div style="display:flex;gap:0;min-height:400px">
+      <!-- 左侧导航 -->
+      <nav class="sp-sidebar" id="spSidebar">
+        <div class="sp-nav-item active" data-sp="script">📜 剧本</div>
+        <div class="sp-nav-item" data-sp="review" id="spNavReview" style="display:none">📊 剧本评分</div>
+      </nav>
+      <!-- 右侧内容 -->
+      <div style="flex:1;min-width:0">
+        <div class="sp-sub-panel active" id="sp-script">
+          <h2 class="section-title">剧本</h2>
+          <div id="screenplayContent"></div>
+        </div>
+        <div class="sp-sub-panel" id="sp-review">
+          <h2 class="section-title">剧本评分</h2>
+          <p class="section-subtitle" id="reviewMeta"></p>
+          <div id="reviewContent"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ===== STORYBOARD ===== -->
@@ -1185,12 +1254,7 @@ body {
     <div class="video-grid" id="videoGrid"></div>
   </div>
 
-  <!-- ===== REVIEW (质检报告) ===== -->
-  <div class="tab-panel" id="panel-review">
-    <h2 class="section-title">质检报告</h2>
-    <p class="section-subtitle" id="reviewMeta"></p>
-    <div id="reviewContent"></div>
-  </div>
+
 </main>
 
 <script>
@@ -1407,6 +1471,15 @@ function setupTabs() {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+  // screenplay 子面板切换
+  document.querySelectorAll('.sp-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.sp-nav-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.sp-sub-panel').forEach(p => p.classList.remove('active'));
+      item.classList.add('active');
+      document.getElementById('sp-' + item.dataset.sp).classList.add('active');
     });
   });
 }
@@ -2206,33 +2279,89 @@ function renderVideos() {
     document.getElementById('videoGrid').innerHTML = '<div class="prop-desc" style="padding:40px;text-align:center;grid-column:1/-1">暂无分镜，视频无法渲染</div>';
     return;
   }
+
+  // 辅助：格式化日期为 MM-DD HH:mm
+  function fmtDate(iso) {
+    if (!iso) return '—';
+    try { const d = new Date(iso); return `${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; }
+    catch { return '—'; }
+  }
+  // 辅助：计算耗时
+  function fmtElapsed(start, end) {
+    if (!start || !end) return '';
+    try {
+      const ms = new Date(end) - new Date(start);
+      if (ms < 0) return '';
+      const sec = Math.floor(ms / 1000);
+      return sec >= 60 ? `${Math.floor(sec/60)}m${sec%60}s` : `${sec}s`;
+    } catch { return ''; }
+  }
+
   const html = shots.map(s => {
-    const fname = `shot-${String(s.index).padStart(2,'0')}.mp4`;
+    const idx = String(s.index).padStart(2,'0');
+    const fname = `shot-${idx}.mp4`;
     const src = `${epBase}/videos/${fname}`;
+    const vt = s.videoTask || {};
+    const status = vt.status || 'pending';
+    const engine = vt.engine || '';
+    const modelName = vt.modelName || '';
+    const taskId = vt.taskId || '';
+    const taskIdShort = taskId ? (taskId.length > 10 ? taskId.slice(0,10) + '…' : taskId) : '—';
+    const submitDate = fmtDate(vt.submittedAt);
+    const elapsed = fmtElapsed(vt.submittedAt, vt.completedAt);
+
+    // 元信息行
+    const metaRow = `<div class="video-meta-row">
+      ${engine ? `<span>引擎: ${engine}</span>` : ''}
+      ${modelName ? `<span>模型: ${modelName}</span>` : ''}
+      ${taskId ? `<span>任务ID: ${taskIdShort}</span>` : ''}
+      ${vt.submittedAt ? `<span>提交: ${submitDate}</span>` : ''}
+      ${elapsed ? `<span>耗时: ${elapsed}</span>` : ''}
+    </div>`;
+
+    // 视频区域：按状态渲染
+    let videoArea = '';
+    if (status === 'done') {
+      videoArea = `<video controls preload="metadata" src="${src}" onerror="this.outerHTML='<div class=video-status-placeholder\ video-status-failed><span>⚠️ 文件缺失</span></div>'"></video>`;
+    } else if (status === 'generating') {
+      videoArea = `<div class="video-status-placeholder video-status-generating"><div class="pulse-dot"></div><span>⏳ 生成中…</span></div>`;
+    } else if (status === 'failed') {
+      videoArea = `<div class="video-status-placeholder video-status-failed"><span>❌ 生成失败</span>${vt.failReason ? `<span style="font-size:11px;max-width:90%;text-align:center;word-break:break-all">${vt.failReason}</span>` : ''}</div>`;
+    } else {
+      // pending 或无 videoTask
+      videoArea = `<div class="video-status-placeholder video-status-pending"><span>⬜ 待提交</span></div>`;
+    }
+
     return `
     <div class="video-card">
-      <video controls preload="metadata" src="${src}" onerror="this.outerHTML='<div style=\\'padding:40px;text-align:center;color:var(--text-muted);font-size:12px\\'>⏳ 视频待生成</div>'"></video>
+      ${videoArea}
       <div class="video-card-body">
-        <div class="video-name">#${String(s.index).padStart(2,'0')} · ${s.shotType || '—'} · ${s.title || ''}</div>
+        <div class="video-name">#${idx} · ${s.shotType || '—'} · ${s.title || ''}</div>
         <div style="font-size:11px;color:var(--text-muted)">${fname}</div>
         ${(s.assetRefs || []).length ? `<div style="font-size:11px;color:var(--accent-gold);margin-top:4px">${s.assetRefs.join(' · ')}</div>` : ''}
+        ${metaRow}
       </div>
     </div>`;
   }).join('');
   document.getElementById('videoGrid').innerHTML = html;
 }
 
-// ========== REVIEW (质检报告) ==========
+// ========== REVIEW (剧本评分) ==========
 function renderReview() {
   const sd2 = window.__sd2 || {};
   const review = sd2.reviewJson;
   const metaEl = document.getElementById('reviewMeta');
   const contentEl = document.getElementById('reviewContent');
+  const navItem = document.getElementById('spNavReview');
   if (!review) {
-    metaEl.textContent = '暂无质检报告';
-    contentEl.innerHTML = '<div class="prop-desc" style="padding:40px;text-align:center">暂无 03-review.json</div>';
+    // 无评分数据：隐藏导航项
+    if (navItem) navItem.style.display = 'none';
+    metaEl.textContent = '';
+    contentEl.innerHTML = '';
     return;
   }
+  // 有评分数据：显示导航项
+  if (navItem) navItem.style.display = '';
 
   const statusColor = review.status === 'passed' ? 'var(--accent-gold)' : 'var(--accent-red-bright)';
   const statusText = review.status === 'passed' ? '✅ PASSED' : '❌ FAILED';

@@ -238,20 +238,99 @@
       "type": "tail-frame",
       "fromShot": 8,
       "file": "outputs/ep01/tail-frames/tail-shot-08.jpg"
+    },
+    "@图片46": {
+      "type": "tail-frame",
+      "fromShot": 10,
+      "file": "outputs/ep01/tail-frames/tail-shot-10.jpg"
+    },
+    "@图片47": {
+      "type": "tail-frame",
+      "fromShot": 11,
+      "file": "outputs/ep01/tail-frames/tail-shot-11.jpg"
+    },
+    "@图片48": {
+      "type": "tail-frame",
+      "fromShot": 14,
+      "file": "outputs/ep01/tail-frames/tail-shot-14.jpg"
+    },
+    "@图片49": {
+      "type": "tail-frame",
+      "fromShot": 15,
+      "file": "outputs/ep01/tail-frames/tail-shot-15.jpg"
+    },
+    "@图片50": {
+      "type": "tail-frame",
+      "fromShot": 19,
+      "file": "outputs/ep01/tail-frames/tail-shot-19.jpg"
+    },
+    "@图片51": {
+      "type": "tail-frame",
+      "fromShot": 20,
+      "file": "outputs/ep01/tail-frames/tail-shot-20.jpg"
+    },
+    "@图片52": {
+      "type": "tail-frame",
+      "fromShot": 21,
+      "file": "outputs/ep01/tail-frames/tail-shot-21.jpg"
+    },
+    "@图片53": {
+      "type": "tail-frame",
+      "fromShot": 22,
+      "file": "outputs/ep01/tail-frames/tail-shot-22.jpg"
+    },
+    "@图片54": {
+      "type": "tail-frame",
+      "fromShot": 23,
+      "file": "outputs/ep01/tail-frames/tail-shot-23.jpg"
+    },
+    "@图片55": {
+      "type": "tail-frame",
+      "fromShot": 24,
+      "file": "outputs/ep01/tail-frames/tail-shot-24.jpg"
+    },
+    "@图片56": {
+      "type": "tail-frame",
+      "fromShot": 25,
+      "file": "outputs/ep01/tail-frames/tail-shot-25.jpg"
+    },
+    "@图片57": {
+      "type": "tail-frame",
+      "fromShot": 40,
+      "file": "outputs/ep01/tail-frames/tail-shot-40.jpg"
+    },
+    "@图片58": {
+      "type": "tail-frame",
+      "fromShot": 41,
+      "file": "outputs/ep01/tail-frames/tail-shot-41.jpg"
+    },
+    "@图片59": {
+      "type": "tail-frame",
+      "fromShot": 42,
+      "file": "outputs/ep01/tail-frames/tail-shot-42.jpg"
+    },
+    "@图片60": {
+      "type": "tail-frame",
+      "fromShot": 54,
+      "file": "outputs/ep01/tail-frames/tail-shot-54.jpg"
     }
   },
   "voices": {
-    "@声音1": {
+    "@音频1": {
       "name": "马上",
       "file": "assets/audio/voice-马上.mp3"
     },
-    "@声音2": {
+    "@音频2": {
       "name": "马前卒",
       "file": "assets/audio/voice-马前卒.mp3"
     },
-    "@声音3": {
+    "@音频3": {
       "name": "马后炮",
       "file": "assets/audio/voice-马后炮.mp3"
+    },
+    "@音频4": {
+      "name": "赵匡胤",
+      "file": "assets/audio/voice-赵匡胤.mp3"
     }
   }
 }

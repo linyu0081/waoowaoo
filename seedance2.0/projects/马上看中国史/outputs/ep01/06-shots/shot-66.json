@@ -18,5 +18,23 @@
   "microExpressions": "两人同时睁大眼睛+瞳孔放大+嘴巴张成O形+脸部肌肉僵住+金光在脸上形成明显的上照效果+下巴略微下垂+呼吸暂停的大惊表情+身体微微后仰。",
   "nailLines": "这镜最值钱的不是金字，而是五个金字点检做天子预言显灵的历史悬念奇观。\n金字显灵必须让观众看到符文从无到有浮现的渐变过程与金光粒子质感。\n马前卒马后炮要又惊又愣，不靠台词，靠脸部金光上照与瞳孔放大呈现神谕感。\n落幅停在大惊定格，让下一镜两人瞬变舞女舞到郭荣面前自然承接。",
   "e15": "",
-  "assetRefs": ["{{character:马前卒}}", "{{character:马后炮}}", "{{scene:北征行军路}}", "{{prop:点检做天子木牌}}"]
+  "assetRefs": [
+    "{{character:马前卒}}",
+    "{{character:马后炮}}",
+    "{{scene:北征行军路}}",
+    "{{prop:点检做天子木牌}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }

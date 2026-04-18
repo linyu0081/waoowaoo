@@ -52,7 +52,9 @@
       "status": "pending",
       "produced": 0,
       "failed": 0,
-      "videoGenCount": 0,
+      "generating": 1,
+      "pending": 87,
+      "videoGenCount": 1,
       "videoUniqueShots": 0,
       "videoTotalDurationSec": 0,
       "videoTotalDurationMin": 0.0

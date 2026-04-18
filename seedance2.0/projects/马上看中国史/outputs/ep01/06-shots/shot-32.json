@@ -18,5 +18,20 @@
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是恶雕，而是从写实跨到80年代平涂动画的童年阴影风格切换。\n恶雕剪影必须让观众看到翅膀三角剪影与爪尖锋利的动画造型。\n卡通街道要又怀旧又压抑，不靠滤镜，靠平涂色块与暗调渐变。\n落幅停在恶雕俯冲定格，让下一镜恶雕利爪破窗拽人动作自然承接。",
   "e15": "",
-  "assetRefs": ["{{scene:洛阳废墟街道}}"]
+  "assetRefs": [
+    "{{scene:洛阳废墟街道}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }

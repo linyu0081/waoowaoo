@@ -18,5 +18,22 @@
   "microExpressions": "赵匡胤身姿挺拔+右手高举长兵器稳定不晃+左手拉缰绳+直视镜头+说到失去一切时嘴角微抿+眼神锋利充满沧桑+说到兵戈不止不休时双眼微眯+神情凝重目光远眺+下颌微抬+披风随风作响。",
   "nailLines": "这镜最值钱的不是呐喊，而是刀妹风阵前站位+乱世悲悯的英雄分量。\n跨马长兵器必须让观众看到英雄联盟刀妹风的经典姿态与披风猎猎反馈。\n赵匡胤要又雄又悲，不靠戏腔，靠嘴角微抿与目光远眺的细节。\n落幅停在乱世悲悯定格，让下一镜振臂高呼只为结束百年乱局的情绪升格自然承接。",
   "e15": "",
-  "assetRefs": ["{{character:赵匡胤}}", "{{character:马前卒}}", "{{scene:高平战场}}"]
+  "assetRefs": [
+    "{{character:赵匡胤}}",
+    "{{character:马前卒}}",
+    "{{scene:高平战场}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }

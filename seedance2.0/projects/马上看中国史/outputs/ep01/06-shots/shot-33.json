@@ -18,5 +18,22 @@
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是吞人，而是恶雕嚼出嘎吱嘎吱脆骨声的童年阴影质感。\n利爪破窗必须让观众看到卡通碎片爆裂与利爪锋利的平涂质感。\n马前卒马后炮要又萌又惨，不靠面部特写，靠蜷缩姿态与被拎起的动作反差。\n落幅停在恶雕合嘴咀嚼定格，让下一镜小赵匡胤窗后目睹的卡通视角自然承接。",
   "e15": "",
-  "assetRefs": ["{{character:马前卒}}", "{{character:马后炮}}", "{{scene:洛阳废墟街道}}"]
+  "assetRefs": [
+    "{{character:马前卒}}",
+    "{{character:马后炮}}",
+    "{{scene:洛阳废墟街道}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }

@@ -18,5 +18,21 @@
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是年会场景，而是土味大红金字与藩镇兵制荒诞对照。\n大红条幅必须让观众一眼看清庆功表彰大会金字的土味冲击。\n铜钱山要又密又亮，不靠粒子特效，靠成串铜钱堆积真实质感。\n落幅停在舞台左侧空位+士兵队列，让下一镜节度使登台进入空位自然承接。",
   "e15": "",
-  "assetRefs": ["{{scene:土味年会现场}}", "{{prop:铜钱山}}"]
+  "assetRefs": [
+    "{{scene:土味年会现场}}",
+    "{{prop:铜钱山}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }

@@ -1,6 +1,6 @@
-> 最后更新：2026-04-18
+> 最后更新：2026-04-19
 
-Dashboard 页面 `dashboard.html` 部署在**远程云开发机**（`allenyulin@allenyulin.devcloud.woa.com`，内网 IP `21.214.50.151`），本地 Mac 不能直接访问 `http://localhost:8765`，需要先建立网络通路。
+Dashboard 页面 `dashboard.html` 部署在**远程云开发机**（`allenyulin@allenyulin.devcloud.woa.com`，内网 IP `21.214.73.158`），本地 Mac 不能直接访问 `http://localhost:8765`，需要先建立网络通路。
 
 ---
 
@@ -11,7 +11,7 @@ Dashboard 页面 `dashboard.html` 部署在**远程云开发机**（`allenyulin@
 | 云开发机用户名 | `allenyulin` |
 | SSH 主机名 | `allenyulin.devcloud.woa.com` |
 | SSH 端口 | **36000**（非默认 22） |
-| 内网 IP | `21.214.50.151` |
+| 内网 IP | `21.214.73.158` |
 | Dashboard 文件 | `/data/workspace/waoowaoo/seedance2.0/dashboard.html` |
 | 服务端口 | `8765` |
 | 服务实现 | `serve.py`（无缓存 `Cache-Control: no-store`） |
@@ -74,7 +74,7 @@ Host devcloud
 
 如果你本地 Mac 通过公司网络或 VPN，可以直通 `21.214.50.151`：
 
-👉 **http://21.214.50.151:8765/dashboard.html**
+👉 **http://21.214.73.158:8765/dashboard.html**
 
 外网环境用不了，直接走方案 A。
 

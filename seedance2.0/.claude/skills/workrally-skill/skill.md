@@ -405,6 +405,95 @@ description: WorkRally CLI (旧名 zencli) 调用技能包。用于 AI 生图、
     workrally generate video ... -o json 2>&1 | sed '/─/,$d' | python3 -c "import sys,json;d=json.load(sys.stdin);print(d['task_ids'][0])"
     ```
 
+[videoTask 读写规范（生视频专用）]
+
+    ⚠️ 以下规范仅适用于 workrally 生视频场景（generate video），生图不涉及。
+
+    ### 每次生视频前：自动刷新"生成中"任务
+
+    扫描 `06-shots/` 下所有 shot-NN.json，对 `videoTask.status === "generating"` 的镜批量查询：
+
+    ```bash
+    workrally generate task <taskId> -o json
+    ```
+
+    根据查询结果更新 shot-NN.json 的 videoTask：
+    - **成功**（state_desc 含"成功"）→ 提取 asset_id → 下载视频 → 截尾帧 → 更新 `status="done"` + `videoUrl` + `videoFile` + `tailFrame` + `completedAt`
+    - **失败**（state_desc 含"失败"）→ 更新 `status="failed"` + `failReason` + `completedAt`
+    - **仍在处理** → 保持 `status="generating"`
+
+    刷新完毕后汇报：
+    ```
+    📊 任务状态刷新：
+     ✅ shot-03, shot-05 已生成完成（已下载+截尾帧）
+     ⏳ shot-07 仍在生成中
+     ❌ shot-09 生成失败：<原因>
+    ```
+
+    ### 提交视频后：立即写入 videoTask
+
+    提交成功拿到 task_id 后，立即更新 shot-NN.json：
+
+    ```json
+    {
+      "videoTask": {
+        "engine": "workrally",
+        "modelName": "Zen-SD2.0",
+        "taskId": "<task_id>",
+        "status": "generating",
+        "videoUrl": "",
+        "videoFile": "",
+        "tailFrame": "",
+        "failReason": "",
+        "creditCount": null,
+        "submittedAt": "<当前ISO时间>",
+        "completedAt": ""
+      }
+    }
+    ```
+
+    **modelName 取值约定**：
+    - provider 18 → `"Zen-SD2.0"`
+    - provider 2 → `"Zen-01-1.5pro"`
+    - provider 1 → `"Zen-02.3.0"`
+    - provider 202 → `"Zen-01"`
+    - 其他 → 直接填 provider id
+
+    同时更新 `manifest.stages.video`：
+    - `generating` +1、`pending` -1、`videoGenCount` +1
+
+    ### 视频下载成功后：更新 videoTask 为完成
+
+    ```json
+    {
+      "videoTask": {
+        "status": "done",
+        "videoUrl": "<远端URL>",
+        "videoFile": "outputs/<ep>/videos/shot-NN.mp4",
+        "tailFrame": "outputs/<ep>/tail-frames/tail-shot-NN.jpg",
+        "completedAt": "<当前ISO时间>"
+      }
+    }
+    ```
+
+    同时更新 `manifest.stages.video`：`produced` +1、`generating` -1
+
+    ### videoTask 字段完整定义
+
+    | 字段 | 类型 | 说明 |
+    |------|------|------|
+    | engine | string | `"workrally"` 或 `"dreamina"` |
+    | modelName | string | 模型名称，如 `"Zen-SD2.0"`、`"seedance2.0"` |
+    | taskId | string | workrally 的 task_id 或 dreamina 的 submit_id |
+    | status | string | `"pending"` / `"generating"` / `"done"` / `"failed"` |
+    | videoUrl | string | 远端视频 URL（成功后填入） |
+    | videoFile | string | 本地落盘路径 |
+    | tailFrame | string | 尾帧路径 |
+    | failReason | string | 失败原因（仅 failed 时有值） |
+    | creditCount | number/null | 消耗积分 |
+    | submittedAt | string | 提交时间 ISO |
+    | completedAt | string | 完成时间 ISO |
+
 [注意事项]
 
     1. ⚠️ 永远不要在 generate image / generate video 中使用 --poll

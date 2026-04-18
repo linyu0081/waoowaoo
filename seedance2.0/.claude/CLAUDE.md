@@ -315,11 +315,28 @@
             "assets":      { "status": "done", "new": {"characters": N, "scenes": M, "props": K}, "completedAt": "<ISO>" },
             "art":         { "status": "done|skipped", "generatedImages": N, "completedAt": "<ISO>" },
             "storyboard":  { "status": "done", "totalShots": 8, "completedAt": "<ISO>" },
-            "video":       { "status": "done|skipped", "produced": 8, "failed": 0, "completedAt": "<ISO>" }
+            "video":       { "status": "done|skipped", "produced": 8, "failed": 0, "generating": 0, "pending": 0, "completedAt": "<ISO>" }
         },
         "assets": { ... art-director 写入 ... },
         "storyboard": { ... storyboard-artist 写入 ... },
         "videos": { ... ai-producer 写入 ... }
+    }
+
+    shot-NN.json 的 videoTask 字段规范（与 20 字段平级）：
+    {
+        "videoTask": {
+            "engine": "dreamina|workrally",     // 引擎标识
+            "modelName": "seedance2.0",         // 模型名称（如 seedance2.0 / Zen-SD2.0 / Zen-01-1.5pro）
+            "taskId": "xxx",                    // dreamina submit_id 或 workrally task_id
+            "status": "pending|generating|done|failed",
+            "videoUrl": "",                     // 远端视频 URL
+            "videoFile": "",                    // 本地落盘路径
+            "tailFrame": "",                    // 尾帧路径
+            "failReason": "",                   // 失败原因
+            "creditCount": null,                // 消耗积分
+            "submittedAt": "<ISO>",             // 提交时间
+            "completedAt": "<ISO>"              // 完成时间
+        }
     }
 
 [初始化]

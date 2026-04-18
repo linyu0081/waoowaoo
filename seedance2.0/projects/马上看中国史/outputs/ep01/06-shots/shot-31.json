@@ -18,5 +18,20 @@
   "microExpressions": "小赵匡胤瞳孔从正常放大到极度放大+眼角微颤+嘴唇紧抿下唇轻咬+小手攥紧木格窗棱指节发白+呼吸屏住胸口不动+睫毛一眨停住；半张脸保持极度静止只有瞳孔有反应。",
   "nailLines": "这镜最值钱的不是惊恐，而是童眼瞳孔里倒映火光的沉默冲击。\n瞳孔火光必须让观众看到火焰在眼球反射的真实物理反光。\n小赵匡胤要又静又颤，不靠哭喊，靠瞳孔放大与指节发白的细节。\n落幅停在窗格棋盘状主观视角，让下一镜卡通街道画框分格图形匹配自然承接。",
   "e15": "",
-  "assetRefs": ["{{scene:赵匡胤洛阳宅邸}}"]
+  "assetRefs": [
+    "{{scene:赵匡胤洛阳宅邸}}"
+  ],
+  "videoTask": {
+    "engine": "",
+    "modelName": "",
+    "taskId": "",
+    "status": "pending",
+    "videoUrl": "",
+    "videoFile": "",
+    "tailFrame": "",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "",
+    "completedAt": ""
+  }
 }
