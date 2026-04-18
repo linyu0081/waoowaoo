@@ -38,6 +38,7 @@ yarn-error.log*
 .idea/
 .claude/
 !seedance/.claude/
+!seedance2.0/.claude/
 .cursor/
 .gemini/
 .artifacts/

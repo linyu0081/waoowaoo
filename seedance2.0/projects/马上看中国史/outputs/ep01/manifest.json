@@ -5,7 +5,7 @@
   "config": {
     "projectName": "马上看中国史",
     "mode": "domestic",
-    "duration": "2分钟",
+    "duration": "20分钟",
     "stylePreset": "其他",
     "customStyle": "历史故事",
     "inputSummary": "马上看中国史·宋：陈桥兵变。三位主持人（马上、马前卒、马后炮）在演播室以科普+小剧场+纪录片三种形态交替讲述赵匡胤从出生到陈桥兵变黄袍加身的一生。",
@@ -34,12 +34,18 @@
       "completedAt": "2026-04-18T12:34:00+08:00"
     },
     "art": {
-      "status": "pending",
-      "generatedImages": 0
+      "status": "done",
+      "generatedImages": 38,
+      "mainCount": 35,
+      "variantCount": 7,
+      "note": "主形象 35 张 + 衍生形象 7 张（含赵匡胤/郭威黄袍加身、郭荣病榻、三马四变体）全部完成",
+      "completedAt": "2026-04-18T15:45:00+08:00"
     },
     "storyboard": {
-      "status": "pending",
-      "totalShots": 0
+      "status": "plan-done",
+      "totalShots": 88,
+      "note": "分镜大纲 88 镜产出，对标 20 分钟单集，按剧本原文逐段拆镜；等待用户确认后逐镜生产 V2 提示词",
+      "completedAt": "2026-04-18T16:20:00+08:00"
     },
     "video": {
       "status": "pending",
@@ -49,35 +55,134 @@
   },
   "assets": {
     "charactersAll": [
-      "马上", "马前卒", "马后炮", "赵匡胤", "李嗣源", "李从珂", "郭威", "郭荣",
-      "张永德", "李处耘", "马仁瑀", "节度使", "财务", "黑马警长", "螳螂夫人"
+      "马上",
+      "马前卒",
+      "马后炮",
+      "赵匡胤",
+      "李嗣源",
+      "李从珂",
+      "郭威",
+      "郭荣",
+      "张永德",
+      "李处耘",
+      "马仁瑀",
+      "节度使",
+      "财务",
+      "黑马警长",
+      "螳螂夫人"
     ],
     "scenesAll": [
-      "演播室", "洛阳废墟街道", "洛阳城门军营", "后唐皇宫大殿", "赵匡胤洛阳宅邸",
-      "土味年会现场", "开封城街道", "高平战场", "北征行军路", "皇宫寝殿",
-      "陈桥驿军营", "雪地军帐"
+      "演播室",
+      "洛阳废墟街道",
+      "洛阳城门军营",
+      "后唐皇宫大殿",
+      "赵匡胤洛阳宅邸",
+      "土味年会现场",
+      "开封城街道",
+      "高平战场",
+      "北征行军路",
+      "皇宫寝殿",
+      "陈桥驿军营",
+      "雪地军帐"
     ],
     "propsAll": [
-      "黄色纛旗", "点检做天子木牌", "酱板鸭", "铜钱山", "殿前都点检印绶",
-      "龙袍冕冠", "契丹军报急件", "演播室话筒"
+      "黄色纛旗",
+      "点检做天子木牌",
+      "酱板鸭",
+      "铜钱山",
+      "殿前都点检印绶",
+      "龙袍冕冠",
+      "契丹军报急件",
+      "演播室话筒"
     ],
     "newThisEpisode": {
       "characters": [
-        "马上", "马前卒", "马后炮", "赵匡胤", "李嗣源", "李从珂", "郭威", "郭荣",
-        "张永德", "李处耘", "马仁瑀", "节度使", "财务", "黑马警长", "螳螂夫人"
+        "马上",
+        "马前卒",
+        "马后炮",
+        "赵匡胤",
+        "李嗣源",
+        "李从珂",
+        "郭威",
+        "郭荣",
+        "张永德",
+        "李处耘",
+        "马仁瑀",
+        "节度使",
+        "财务",
+        "黑马警长",
+        "螳螂夫人"
       ],
       "scenes": [
-        "演播室", "洛阳废墟街道", "洛阳城门军营", "后唐皇宫大殿", "赵匡胤洛阳宅邸",
-        "土味年会现场", "开封城街道", "高平战场", "北征行军路", "皇宫寝殿",
-        "陈桥驿军营", "雪地军帐"
+        "演播室",
+        "洛阳废墟街道",
+        "洛阳城门军营",
+        "后唐皇宫大殿",
+        "赵匡胤洛阳宅邸",
+        "土味年会现场",
+        "开封城街道",
+        "高平战场",
+        "北征行军路",
+        "皇宫寝殿",
+        "陈桥驿军营",
+        "雪地军帐"
       ],
       "props": [
-        "黄色纛旗", "点检做天子木牌", "酱板鸭", "铜钱山", "殿前都点检印绶",
-        "龙袍冕冠", "契丹军报急件", "演播室话筒"
+        "黄色纛旗",
+        "点检做天子木牌",
+        "酱板鸭",
+        "铜钱山",
+        "殿前都点检印绶",
+        "龙袍冕冠",
+        "契丹军报急件",
+        "演播室话筒"
       ]
     },
-    "images": {}
+    "images": {
+      "char-张永德": "../../assets/images/char-张永德.png",
+      "char-李从珂": "../../assets/images/char-李从珂.png",
+      "char-李嗣源": "../../assets/images/char-李嗣源.png",
+      "char-李处耘": "../../assets/images/char-李处耘.png",
+      "char-节度使": "../../assets/images/char-节度使.png",
+      "char-螳螂夫人": "../../assets/images/char-螳螂夫人.png",
+      "char-财务": "../../assets/images/char-财务.png",
+      "char-赵匡胤": "../../assets/images/char-赵匡胤.png",
+      "char-赵匡胤·黄袍加身": "../../assets/images/char-赵匡胤·黄袍加身.png",
+      "char-郭威": "../../assets/images/char-郭威.png",
+      "char-郭威·黄袍加身": "../../assets/images/char-郭威·黄袍加身.png",
+      "char-郭荣": "../../assets/images/char-郭荣.png",
+      "char-郭荣·病榻": "../../assets/images/char-郭荣·病榻.png",
+      "char-马上": "../../assets/images/char-马上.png",
+      "char-马仁瑀": "../../assets/images/char-马仁瑀.png",
+      "char-马前卒": "../../assets/images/char-马前卒.png",
+      "char-马后炮": "../../assets/images/char-马后炮.png",
+      "char-黑马警长": "../../assets/images/char-黑马警长.png",
+      "prop-契丹军报急件": "../../assets/images/prop-契丹军报急件.png",
+      "prop-殿前都点检印绶": "../../assets/images/prop-殿前都点检印绶.png",
+      "prop-演播室话筒": "../../assets/images/prop-演播室话筒.png",
+      "prop-点检做天子木牌": "../../assets/images/prop-点检做天子木牌.png",
+      "prop-酱板鸭": "../../assets/images/prop-酱板鸭.png",
+      "prop-铜钱山": "../../assets/images/prop-铜钱山.png",
+      "prop-黄色纛旗": "../../assets/images/prop-黄色纛旗.png",
+      "prop-龙袍冕冠": "../../assets/images/prop-龙袍冕冠.png",
+      "scene-北征行军路": "../../assets/images/scene-北征行军路.png",
+      "scene-后唐皇宫大殿": "../../assets/images/scene-后唐皇宫大殿.png",
+      "scene-土味年会现场": "../../assets/images/scene-土味年会现场.png",
+      "scene-开封城街道": "../../assets/images/scene-开封城街道.png",
+      "scene-洛阳城门军营": "../../assets/images/scene-洛阳城门军营.png",
+      "scene-洛阳废墟街道": "../../assets/images/scene-洛阳废墟街道.png",
+      "scene-演播室": "../../assets/images/scene-演播室.png",
+      "scene-皇宫寝殿": "../../assets/images/scene-皇宫寝殿.png",
+      "scene-赵匡胤洛阳宅邸": "../../assets/images/scene-赵匡胤洛阳宅邸.png",
+      "scene-陈桥驿军营": "../../assets/images/scene-陈桥驿军营.png",
+      "scene-雪地军帐": "../../assets/images/scene-雪地军帐.png",
+      "scene-高平战场": "../../assets/images/scene-高平战场.png"
+    }
   },
-  "storyboard": {},
+  "storyboard": {
+    "planPath": "outputs/ep01/05-storyboard-plan.json",
+    "assetMapPath": "outputs/ep01/asset-map.json",
+    "totalShots": 88
+  },
   "videos": {}
 }

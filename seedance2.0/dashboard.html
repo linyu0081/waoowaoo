@@ -162,6 +162,80 @@ body {
 }
 .asset-card-img:hover { filter: brightness(1.1); }
 .asset-card-img.landscape { aspect-ratio: 16/9; }
+
+/* ======== ASSET IMAGE WRAP（支持无图占位 + 上传） ======== */
+.asset-card-img-wrap {
+  position: relative; width: 100%; aspect-ratio: 16/9;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated); overflow: hidden;
+}
+.asset-card-img-wrap .asset-card-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border-bottom: none;
+}
+.asset-card-img-wrap .asset-card-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; cursor: pointer;
+  color: var(--text-muted); font-size: 13px;
+  background: repeating-linear-gradient(45deg,
+    var(--bg-elevated) 0 10px,
+    rgba(201,168,76,0.04) 10px 20px);
+  transition: background 0.2s, color 0.2s;
+}
+.asset-card-img-wrap .asset-card-placeholder:hover {
+  color: var(--accent-gold);
+  background: repeating-linear-gradient(45deg,
+    var(--bg-elevated) 0 10px,
+    rgba(201,168,76,0.12) 10px 20px);
+}
+.asset-card-img-wrap .asset-card-placeholder .ph-icon { font-size: 34px; opacity: 0.8; }
+.asset-card-img-wrap .asset-card-placeholder .ph-label {
+  font-family: var(--font-mono);
+  padding: 4px 10px; border: 1px dashed var(--accent-gold-dim); border-radius: 4px;
+}
+
+/* ======== AI PROMPT BOX (shared) ======== */
+.ai-prompt-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 6px; margin-bottom: 4px;
+}
+.ai-prompt-label {
+  color: var(--accent-gold); font-weight: 700;
+  font-size: 12px;
+}
+.ai-prompt-box {
+  position: relative;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.ai-prompt-box-toolbar {
+  margin-left: auto;
+  display: flex; gap: 4px;
+}
+.ai-prompt-btn {
+  background: var(--bg-card); color: var(--text-secondary);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 3px 8px; font-size: 11px; cursor: pointer;
+  font-family: var(--font-mono); transition: all 0.15s;
+  line-height: 1.4;
+}
+.ai-prompt-btn:hover { color: var(--accent-gold); border-color: var(--accent-gold-dim); }
+.ai-prompt-text {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-secondary); line-height: 1.7;
+  white-space: pre-wrap; word-break: break-word;
+}
+.ai-prompt-textarea {
+  width: 100%; min-height: 160px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-primary); background: var(--bg-deep);
+  border: 1px solid var(--accent-gold-dim); border-radius: var(--radius);
+  padding: 10px; line-height: 1.7; resize: vertical;
+  box-sizing: border-box;
+}
 .asset-card-body { padding: 16px; }
 .asset-card-name {
   font-family: var(--font-display); font-size: 18px; font-weight: 700;
@@ -233,6 +307,137 @@ body {
 .content-item.dialogue .char-name { color: var(--accent-gold); font-weight: 700; font-size: 12px; }
 .content-item.dialogue .parenthetical { color: var(--text-muted); font-size: 11px; font-style: italic; }
 .content-item.voiceover { color: var(--accent-gold-dim); font-style: italic; }
+
+/* ======== SCREENPLAY .md-body（剧本正文阅读优化） ======== */
+.md-body {
+  background: var(--bg-card);
+  padding: 32px 44px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  color: #e9e4d6;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN",
+               "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+  font-size: 15.5px;
+  line-height: 2.05;
+  letter-spacing: 0.02em;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.md-body p {
+  margin: 0 0 14px 0;
+  color: #e9e4d6;
+}
+.md-body strong {
+  color: #fff1c2;
+  font-weight: 700;
+}
+.md-body em {
+  color: var(--accent-gold);
+  font-style: italic;
+}
+.md-body .md-h1 {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 800;
+  color: var(--accent-gold);
+  text-align: center;
+  padding: 8px 0 10px;
+  margin: 6px 0 22px;
+  border-bottom: 1px solid var(--accent-gold-dim);
+  letter-spacing: 0.06em;
+}
+.md-body .md-h2 {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  color: #ffe9a3;
+  margin: 30px 0 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent-gold);
+}
+.md-body h3 {
+  font-size: 17px; font-weight: 700;
+  color: #ffe9a3;
+  margin: 22px 0 10px;
+}
+.md-body h4, .md-body h5, .md-body h6 {
+  font-size: 15px; font-weight: 700;
+  color: var(--accent-gold-dim);
+  margin: 18px 0 8px;
+}
+.md-body .md-hr {
+  border: none;
+  border-top: 1px dashed var(--accent-gold-dim);
+  margin: 26px 0;
+  opacity: 0.6;
+}
+.md-body .md-quote {
+  margin: 14px 0;
+  padding: 10px 16px;
+  color: #d6cfb8;
+  background: rgba(201,168,76,0.06);
+  border-left: 3px solid var(--accent-gold-dim);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+}
+/* 场景块标题："片头 / 演播室 / 纪录片 / 小剧场 ..." */
+.md-body .md-scene-block {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+  color: var(--bg-deep);
+  background: linear-gradient(90deg, var(--accent-gold) 0%, #e0c069 100%);
+  padding: 8px 18px;
+  margin: 32px 0 18px;
+  border-radius: var(--radius);
+  display: inline-block;
+  letter-spacing: 0.2em;
+  box-shadow: 0 2px 8px rgba(201,168,76,0.25);
+}
+/* △ 场景/镜头动作行 */
+.md-body .md-cam {
+  color: #ffd98a;
+  background: rgba(201,168,76,0.10);
+  border-left: 3px solid var(--accent-gold);
+  padding: 10px 16px;
+  margin: 12px 0 12px 6px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.95;
+  font-weight: 500;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+/* 🎣 钩子 */
+.md-body .md-hook {
+  color: var(--accent-red-bright);
+  background: rgba(220,60,60,0.08);
+  padding: 8px 14px;
+  margin: 12px 0;
+  border-left: 3px solid var(--accent-red-bright);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-weight: 600;
+}
+/* 对白："角色：台词" */
+.md-body .dialog-line {
+  margin: 8px 0;
+  padding: 4px 0 4px 8px;
+  display: block;
+}
+.md-body .dialog-line .dialog-name {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-family: var(--font-display);
+  margin-right: 8px;
+  letter-spacing: 0.04em;
+}
+.md-body .dialog-line .dialog-body {
+  color: #f0ead9;
+}
+/* （括号注释） */
+.md-body .parenthetical {
+  color: #a39c87;
+  font-size: 13px;
+  font-style: italic;
+  margin: 0 2px;
+}
 
 /* ======== STORYBOARD ======== */
 .storyboard-clip { margin-bottom: 40px; }
@@ -370,10 +575,11 @@ body {
   color: var(--text-secondary); font-size: 13px; border-radius: 0 var(--radius) var(--radius) 0;
 }
 .md-body .md-cam {
-  font-family: var(--font-mono); font-size: 12px;
-  color: var(--accent-blue); background: rgba(42,74,122,0.12);
-  padding: 6px 12px; border-radius: var(--radius);
-  margin: 8px 0; border-left: 2px solid var(--accent-blue);
+  font-family: inherit; font-size: 14.5px; font-style: italic; font-weight: 500;
+  color: #ffd98a; background: rgba(201,168,76,0.10);
+  padding: 10px 16px; border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 12px 0 12px 6px; border-left: 3px solid var(--accent-gold);
+  line-height: 1.95; text-shadow: 0 1px 0 rgba(0,0,0,0.25);
 }
 .md-body .md-hook {
   font-size: 14px; font-weight: 700; color: var(--accent-red-bright);
@@ -624,6 +830,19 @@ body {
 .btn-appearance:hover {
   background: rgba(201,168,76,0.18); border-color: var(--accent-gold);
 }
+.btn-voice {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: var(--radius);
+  font-size: 11px; font-family: var(--font-body);
+  font-weight: 500; cursor: pointer; transition: all 0.2s;
+  border: 1px solid rgba(139,98,255,0.4);
+  background: rgba(139,98,255,0.08); color: #b497ff;
+  margin-top: 8px; margin-left: 6px;
+}
+.btn-voice:hover { background: rgba(139,98,255,0.18); border-color: #b497ff; }
+.btn-voice.has-voice { border-color: var(--accent-green); color: var(--accent-green); background: rgba(76,201,124,0.08); }
+.char-voice-player { margin-top: 8px; width: 100%; height: 28px; }
+.char-voice-player::-webkit-media-controls-panel { background: var(--bg-elevated); }
 
 /* ======== IMAGE LIGHTBOX ======== */
 .lightbox-overlay {
@@ -892,6 +1111,20 @@ body {
   </div>
 </div>
 
+<!-- ======== ASSET MAP MODAL ======== -->
+<div class="modal-overlay hidden" id="assetMapModal" onclick="closeAssetMapModal(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="assetMapTitle" style="max-width:920px;width:92vw" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">
+        <div class="modal-title-icon"></div>
+        <span id="assetMapTitle">集级素材映射表</span>
+      </div>
+      <button class="modal-close" onclick="closeAssetMapModal()" aria-label="关闭">✕</button>
+    </div>
+    <div class="modal-body" id="assetMapBody" style="max-height:72vh;overflow:auto"></div>
+  </div>
+</div>
+
 <!-- ======== TOAST CONTAINER ======== -->
 <div class="toast-container" id="toastContainer"></div>
 
@@ -899,8 +1132,8 @@ body {
   <div class="nav-tab active" data-tab="overview">总览</div>
   <div class="nav-tab" data-tab="assets">资产库</div>
   <div class="nav-tab" data-tab="screenplay">剧本</div>
-  <div class="nav-tab" data-tab="storyboard">分镜</div>
-  <div class="nav-tab" data-tab="seedance">Seedance 提示词</div>
+  <div class="nav-tab" data-tab="storyboard">分镜大纲</div>
+  <div class="nav-tab" data-tab="seedance">分镜列表</div>
   <div class="nav-tab" data-tab="videos">视频</div>
   <div class="nav-tab" data-tab="review">质检报告</div>
 </nav>
@@ -938,8 +1171,11 @@ body {
 
   <!-- ===== SEEDANCE PROMPTS ===== -->
   <div class="tab-panel" id="panel-seedance">
-    <h2 class="section-title">分镜提示词（V2 · 20 字段）</h2>
+    <h2 class="section-title">分镜列表（V2 · 20 字段）</h2>
     <p class="section-subtitle" id="seedanceMeta"></p>
+    <div style="margin-bottom:12px">
+      <button class="ai-prompt-btn" onclick="showAssetMap()">🗺 查看集级素材映射表</button>
+    </div>
     <div class="seg-grid" id="seedanceGrid"></div>
   </div>
 
@@ -1068,7 +1304,7 @@ async function loadEpisode(projectName, episode) {
     //  - 本集新增：04-new-assets.json
     //  - 分镜大纲：05-storyboard-plan.json
     //  - 每镜：06-shots/shot-NN.json（聚合为数组）
-    const [manifestRaw, chRaw, scRaw, prRaw, planningTxt, scriptMd, reviewJson, newAssetsJson, boardPlan] = await Promise.all([
+    const [manifestRaw, chRaw, scRaw, prRaw, planningTxt, scriptMd, reviewJson, newAssetsJson, boardPlan, assetMapRaw] = await Promise.all([
       loadJSON(`${epBase}/manifest.json`).catch(() => ({})),
       loadJSON(`${base}/assets/characters.json`).catch(() => []),
       loadJSON(`${base}/assets/scenes.json`).catch(() => []),
@@ -1078,15 +1314,27 @@ async function loadEpisode(projectName, episode) {
       loadJSON(`${epBase}/03-review.json`).catch(() => null),
       loadJSON(`${epBase}/04-new-assets.json`).catch(() => ({characters:[],scenes:[],props:[]})),
       loadJSON(`${epBase}/05-storyboard-plan.json`).catch(() => null),
+      loadJSON(`${epBase}/asset-map.json`).catch(() => null),
     ]);
 
     // 聚合 06-shots/shot-NN.json
+    // 注意：shot 文件本身不带 index/title 字段（只有 titleBar），
+    // 这里必须把大纲的 index/title 补回去，否则 UI 会渲染出 #undefined。
     let shots = [];
     if (boardPlan && Array.isArray(boardPlan.shots)) {
       const shotFiles = await Promise.all(
         boardPlan.shots.map((s, i) => loadJSON(`${epBase}/06-shots/shot-${String(i).padStart(2,'0')}.json`).catch(() => null))
       );
-      shots = shotFiles.map((sf, i) => sf || { index: i, title: boardPlan.shots[i]?.title || '', shotType: boardPlan.shots[i]?.shotType || '', _missing: !sf });
+      shots = shotFiles.map((sf, i) => {
+        const planItem = boardPlan.shots[i] || {};
+        if (!sf) return { index: i, title: planItem.title || '', shotType: planItem.shotType || '', _missing: true };
+        return {
+          ...sf,
+          index: sf.index != null ? sf.index : i,
+          title: sf.title || planItem.title || '',
+          shotType: sf.shotType || planItem.shotType || '',
+        };
+      });
     }
 
     manifest = manifestRaw || {};
@@ -1102,7 +1350,8 @@ async function loadEpisode(projectName, episode) {
       reviewJson,
       newAssets: newAssetsJson || {characters:[],scenes:[],props:[]},
       boardPlan,
-      shots
+      shots,
+      assetMap: assetMapRaw
     };
 
     // 兼容旧变量（部分 UI 还在读）
@@ -1196,7 +1445,7 @@ function renderOverview() {
     { key: 'script',     label: '剧本',   icon: '✍️' },
     { key: 'assets',     label: '资产',   icon: '🎨' },
     { key: 'art',        label: '生图',   icon: '🖼️' },
-    { key: 'storyboard', label: '分镜',   icon: '🎞️' },
+    { key: 'storyboard', label: '分镜大纲',   icon: '🎞️' },
     { key: 'video',      label: '视频',   icon: '📹' },
   ];
   const stageColor = (s) => s === 'done' ? 'var(--accent-gold)' : s === 'in_progress' ? 'var(--accent-blue)' : s === 'skipped' ? 'var(--text-muted)' : 'var(--border)';
@@ -1255,32 +1504,207 @@ function renderOverview() {
 }
 
 // ========== ASSETS ==========
-// 智能图片路径：尝试多个候选路径，找到第一个可用的
-// uploadPath: 上传替换时使用的服务器路径（不含时间戳）
+// 智能图片路径：尝试多个候选路径；全部失败则显示占位 + 上传按钮
+// uploadPath: 上传替换时使用的服务器路径（不含时间戳）；必传
 function buildImgWithFallback(candidates, alt, extraClass = '', uploadPath = '') {
-  // 所有图片 URL 追加时间戳参数，绕过缓存
   const bust = '_t=' + Date.now();
   const escaped = candidates.map(c => (c + (c.includes('?') ? '&' : '?') + bust).replace(/'/g, "\\'"));
-  // onerror 时根据递增索引依次尝试下一个候选路径
-  const fallbackArr = escaped.slice(1).map(c => c).join("','");
-  // onerror fallback: 尝试下一个候选路径
-  const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.display='none'}`;
-  // onload: 图片成功加载后，从 src 中提取实际路径更新 data-upload-path
-  const onloadJS = `try{this.dataset.uploadPath=decodeURIComponent(this.src.replace(/\\?.*$/,'').replace(location.origin+'/','').replace(/^\\//, ''))}catch(e){}`;
-  const upAttr = uploadPath ? ` data-upload-path="${uploadPath}"` : ` data-upload-path="${candidates[0] || ''}"`;
+  const fallbackArr = escaped.slice(1).join("','");
+  const finalUploadPath = uploadPath || candidates[0] || '';
+  const encUp = String(finalUploadPath).replace(/"/g, '&quot;');
+  // onerror：依次尝试下一个候选；都失败则隐藏 img 并显示占位层
+  const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.display='none';var p=this.parentElement.querySelector('.asset-card-placeholder');if(p)p.style.display='flex'}`;
+  // onload：图加载成功 → 隐藏占位层 + 更新 data-upload-path
+  const onloadJS = `try{this.dataset.uploadPath=decodeURIComponent(this.src.replace(/\\?.*$/,'').replace(location.origin+'/','').replace(/^\\//, ''));var p=this.parentElement.querySelector('.asset-card-placeholder');if(p)p.style.display='none';this.style.display='block'}catch(e){}`;
   const clickJS = `event.stopPropagation();openLightbox(this)`;
-  return `<img class="asset-card-img${extraClass ? ' '+extraClass : ''}" src="${escaped[0]}" alt="${alt}" loading="lazy" onerror="${fallbackJS}" onload="${onloadJS}" onclick="${clickJS}"${upAttr}>`;
+  return `<div class="asset-card-img-wrap" onclick="event.stopPropagation()">
+    <img class="asset-card-img${extraClass ? ' '+extraClass : ''}" src="${escaped[0]}" alt="${alt}" loading="lazy"
+      onerror="${fallbackJS}" onload="${onloadJS}" onclick="${clickJS}" data-upload-path="${finalUploadPath}">
+    <div class="asset-card-placeholder" style="display:none" onclick="event.stopPropagation();triggerAssetUpload(this)" title="点击上传图片" data-upload-path="${encUp}">
+      <div class="ph-icon">🖼️</div>
+      <div class="ph-label">📤 点击上传</div>
+    </div>
+    <input type="file" accept="image/*" style="display:none" onchange="handleAssetUpload(this)">
+  </div>`;
+}
+
+// 点击占位层 → 触发同级 input
+function triggerAssetUpload(placeholderEl) {
+  const wrap = placeholderEl.closest('.asset-card-img-wrap');
+  const input = wrap.querySelector('input[type=file]');
+  if (input) input.click();
+}
+
+// 上传完成 → 走统一的 uploadImageFile，成功后把图片刷回来并隐藏占位
+async function handleAssetUpload(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const wrap = input.closest('.asset-card-img-wrap');
+  const img = wrap.querySelector('img.asset-card-img');
+  const placeholder = wrap.querySelector('.asset-card-placeholder');
+  const uploadPath = (img && img.dataset.uploadPath) || (placeholder && placeholder.dataset.uploadPath) || '';
+  if (!uploadPath) { showToast('无法确定上传路径', 'error'); input.value = ''; return; }
+  await uploadImageFile(file, uploadPath, img);
+  // 上传成功后强制把 img 显示出来、占位隐藏（uploadImageFile 已经更新了 img.src）
+  if (img) img.style.display = 'block';
+  if (placeholder) placeholder.style.display = 'none';
+  input.value = '';
 }
 
 // 全局存储角色数据
 let _charactersData = [];
+
+// ========== AI PROMPT BOX：支持一键复制 + 就地编辑保存 ==========
+// kind: 'character' | 'location' | 'prop'；name 用于定位并保存
+function renderAiPromptBox(kind, name, text) {
+  const safeText = (text == null ? '' : String(text));
+  const htmlText = safeText.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const encName = name.replace(/"/g,'&quot;');
+  return `<div class="ai-prompt-wrap" data-kind="${kind}" data-name="${encName}" onclick="event.stopPropagation()">
+    <div class="ai-prompt-header">
+      <span class="ai-prompt-label">AI 提示词：</span>
+      <div class="ai-prompt-box-toolbar">
+        <button class="ai-prompt-btn" title="复制" onclick="copyAiPrompt(this)">📋 复制</button>
+        <button class="ai-prompt-btn" title="编辑" onclick="startEditAiPrompt(this)">✏️ 编辑</button>
+      </div>
+    </div>
+    <div class="ai-prompt-box">
+      <div class="ai-prompt-text">${htmlText || '—'}</div>
+    </div>
+  </div>`;
+}
+
+function copyAiPrompt(btn) {
+  const wrap = btn.closest('.ai-prompt-wrap');
+  const textEl = wrap.querySelector('.ai-prompt-text, .ai-prompt-textarea');
+  const text = textEl.tagName === 'TEXTAREA' ? textEl.value : textEl.textContent;
+  navigator.clipboard.writeText(text).then(
+    () => showToast('已复制到剪贴板', 'success', 1500),
+    () => showToast('复制失败，请手动选中', 'error')
+  );
+}
+
+function startEditAiPrompt(btn) {
+  const wrap = btn.closest('.ai-prompt-wrap');
+  if (wrap.querySelector('.ai-prompt-textarea')) return; // 已在编辑
+  const textEl = wrap.querySelector('.ai-prompt-text');
+  const raw = textEl.textContent === '—' ? '' : textEl.textContent;
+  const ta = document.createElement('textarea');
+  ta.className = 'ai-prompt-textarea';
+  ta.value = raw;
+  textEl.replaceWith(ta);
+  // 切换工具栏按钮
+  const toolbar = wrap.querySelector('.ai-prompt-box-toolbar');
+  toolbar.innerHTML = `
+    <button class="ai-prompt-btn" title="保存" onclick="saveAiPromptEdit(this)" style="color:var(--accent-gold);border-color:var(--accent-gold-dim)">💾 保存</button>
+    <button class="ai-prompt-btn" title="取消" onclick="cancelAiPromptEdit(this)">✕ 取消</button>
+  `;
+  ta.focus();
+}
+
+function cancelAiPromptEdit(btn) {
+  const wrap = btn.closest('.ai-prompt-wrap');
+  const ta = wrap.querySelector('.ai-prompt-textarea');
+  const kind = wrap.dataset.kind;
+  const name = wrap.dataset.name;
+  // 找回原文本
+  let orig = '';
+  if (kind === 'character') orig = (_charactersData.find(x => x.name === name) || {}).aiPrompt || '';
+  else if (kind === 'location') orig = ((locations.locations || []).find(x => x.name === name) || {}).aiPrompt || '';
+  else if (kind === 'prop') orig = ((props.props || []).find(x => x.name === name) || {}).aiPrompt || '';
+  const htmlText = String(orig).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const div = document.createElement('div');
+  div.className = 'ai-prompt-text';
+  div.innerHTML = htmlText || '—';
+  ta.replaceWith(div);
+  const toolbar = wrap.querySelector('.ai-prompt-box-toolbar');
+  toolbar.innerHTML = `
+    <button class="ai-prompt-btn" title="复制" onclick="copyAiPrompt(this)">📋 复制</button>
+    <button class="ai-prompt-btn" title="编辑" onclick="startEditAiPrompt(this)">✏️ 编辑</button>
+  `;
+}
+
+async function saveAiPromptEdit(btn) {
+  const wrap = btn.closest('.ai-prompt-wrap');
+  const ta = wrap.querySelector('.ai-prompt-textarea');
+  const newText = ta.value;
+  const kind = wrap.dataset.kind;
+  const name = wrap.dataset.name;
+  let pathRel = '';
+  let arrRef = null;
+  if (kind === 'character') {
+    arrRef = _charactersData;
+    pathRel = `projects/${currentProject}/assets/characters.json`;
+  } else if (kind === 'location') {
+    arrRef = locations.locations || [];
+    pathRel = `projects/${currentProject}/assets/scenes.json`;
+  } else if (kind === 'prop') {
+    arrRef = props.props || [];
+    pathRel = `projects/${currentProject}/assets/props.json`;
+  }
+  const item = (arrRef || []).find(x => x.name === name);
+  if (!item) { showToast('找不到对应资产', 'error'); return; }
+  const oldVal = item.aiPrompt;
+  item.aiPrompt = newText;
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/save-json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ path: pathRel, content: arrRef })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+    showToast('已保存', 'success', 1500);
+    // 替换回只读态
+    const htmlText = String(newText).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const div = document.createElement('div');
+    div.className = 'ai-prompt-text';
+    div.innerHTML = htmlText || '—';
+    ta.replaceWith(div);
+    const toolbar = wrap.querySelector('.ai-prompt-box-toolbar');
+    toolbar.innerHTML = `
+      <button class="ai-prompt-btn" title="复制" onclick="copyAiPrompt(this)">📋 复制</button>
+      <button class="ai-prompt-btn" title="编辑" onclick="startEditAiPrompt(this)">✏️ 编辑</button>
+    `;
+  } catch (err) {
+    item.aiPrompt = oldVal; // 回滚
+    showToast('保存失败: ' + err.message, 'error');
+    btn.disabled = false;
+  }
+}
 
 function renderAssets() {
   const base = `projects/${currentProject}`;
 
   // ---------- 角色 ----------
   _charactersData = characters.characters || [];
-  const charHTML = _charactersData.map((c) => {
+
+  // 按 baseCharacter 分组：主角色对应一个 group，变体挂到主角色的 variants[]
+  const nameToIdx = new Map();
+  _charactersData.forEach((c, i) => nameToIdx.set(c.name, i));
+  const groups = []; // { primary, primaryIdx, variants:[{char, idx}] }
+  const usedAsVariant = new Set();
+  _charactersData.forEach((c, i) => {
+    if (!c.baseCharacter) {
+      groups.push({ primary: c, primaryIdx: i, variants: [] });
+    }
+  });
+  // 把变体挂到对应组；找不到主角色的视为孤立，单独成组
+  _charactersData.forEach((c, i) => {
+    if (!c.baseCharacter) return;
+    const g = groups.find(g => g.primary.name === c.baseCharacter);
+    if (g) {
+      g.variants.push({ char: c, idx: i });
+      usedAsVariant.add(i);
+    } else {
+      // 孤立变体，作为独立卡片展示并打上警告徽章
+      groups.push({ primary: c, primaryIdx: i, variants: [], orphan: true });
+    }
+  });
+
+  const charHTML = groups.map(g => {
+    const c = g.primary;
     const candidates = [
       `${base}/assets/images/char-${c.name}.png`,
       `${base}/assets/images/char-${c.name}-base.png`,
@@ -1289,11 +1713,33 @@ function renderAssets() {
     const aliases = (c.aliases || []).filter(Boolean);
     const personalityTags = (c.personality || '').split(/[,，、\s]+/).filter(Boolean).slice(0, 6);
     const firstEp = c.firstAppearInEpisode ? `<span style="font-size:10px;padding:2px 6px;border-radius:10px;background:var(--accent-blue);color:#fff;margin-left:6px">${c.firstAppearInEpisode}</span>` : '';
+    const variantCount = g.variants.length;
+    const variantBtn = variantCount > 0
+      ? `<button class="btn-appearance" onclick="event.stopPropagation();openAppearanceModal(${g.primaryIdx})">🎭 形象（${variantCount + 1}）</button>`
+      : '';
+    const orphanBadge = g.orphan ? `<span style="font-size:10px;padding:2px 6px;border-radius:10px;background:var(--accent-red-bright);color:#fff;margin-left:6px" title="baseCharacter 指向的主角色未找到">⚠ 孤立变体</span>` : '';
+    const variantTypeBadge = c.variantType ? `<span style="font-size:10px;padding:2px 6px;border-radius:10px;background:var(--accent-purple);color:#fff;margin-left:6px">${c.variantType}</span>` : '';
+
+    // 声线上传/替换按钮（mp3/wav/m4a 均可，固定落盘路径：assets/audio/voice-<name>.mp3/wav/...）
+    // 按钮会在页面首次渲染后由 probeVoiceFile 自动探测并切换 "已有声线" 态
+    const voicePathBase = `${base}/assets/audio/voice-${c.name}`;
+    const encVoiceBase = voicePathBase.replace(/"/g, '&quot;');
+    const encName = c.name.replace(/"/g, '&quot;');
+    const voiceBtn = `
+      <button class="btn-voice" data-voice-btn="${encName}" data-voice-base="${encVoiceBase}"
+        onclick="event.stopPropagation();triggerCharacterVoiceUpload(this)" title="上传/更换该角色的声线文件（MP3/WAV/M4A）">
+        🎙️ 音频
+      </button>
+      <input type="file" accept=".mp3,.wav,.m4a,audio/*" style="display:none"
+        onchange="handleCharacterVoiceUpload(this)" onclick="event.stopPropagation()">
+      <div data-voice-player="${encName}" style="display:none;margin-top:6px"></div>
+    `;
+
     return `
     <div class="asset-card" onclick="this.classList.toggle('expanded')">
       ${buildImgWithFallback(candidates, c.name, '', uploadPath)}
       <div class="asset-card-body">
-        <div class="asset-card-name">${c.name}${firstEp}</div>
+        <div class="asset-card-name">${c.name}${firstEp}${variantTypeBadge}${orphanBadge}</div>
         <div class="asset-card-meta">
           <span>${c.role || '—'}</span>
           ${aliases.length ? `<span style="color:var(--text-muted)">别名：${aliases.join(' / ')}</span>` : ''}
@@ -1303,16 +1749,22 @@ function renderAssets() {
           ${personalityTags.map(t => `<span style="font-size:10px;padding:2px 6px;border-radius:10px;background:var(--bg-elevated);color:var(--accent-gold);font-family:var(--font-mono)">${t}</span>`).join('')}
         </div>
         ${c.colorPalette ? `<div style="font-size:11px;color:var(--text-muted)">🎨 ${c.colorPalette}</div>` : ''}
+        <div style="display:flex;flex-wrap:wrap;align-items:center">
+          ${variantBtn}
+          ${voiceBtn}
+        </div>
         <div class="toggle-desc">▼ 展开外貌 / 服装 / AI 提示词</div>
         <div class="asset-card-desc">
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">外貌：</b>${c.appearance || '—'}</div>
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">服装：</b>${c.clothing || '—'}</div>
-          <div><b style="color:var(--accent-gold)">AI 提示词：</b><div style="font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);margin-top:4px;line-height:1.7">${c.aiPrompt || '—'}</div></div>
+          ${renderAiPromptBox('character', c.name, c.aiPrompt)}
         </div>
       </div>
     </div>`;
   }).join('');
   document.getElementById('characterGrid').innerHTML = charHTML || '<div class="prop-desc">暂无角色</div>';
+  // 异步探测每个角色的声线文件存在性，存在则按钮切 "已有声线" 态 + 挂上播放器
+  probeAllCharacterVoices();
 
   // ---------- 场景 ----------
   const locHTML = (locations.locations || []).map(l => {
@@ -1337,7 +1789,7 @@ function renderAssets() {
         <div class="asset-card-desc">
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">材质：</b>${l.materials || '—'}</div>
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">视觉锚：</b>${l.visualAnchor || '—'}</div>
-          <div><b style="color:var(--accent-gold)">AI 提示词：</b><div style="font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);margin-top:4px;line-height:1.7">${l.aiPrompt || '—'}</div></div>
+          ${renderAiPromptBox('location', l.name, l.aiPrompt)}
         </div>
       </div>
     </div>`;
@@ -1365,7 +1817,7 @@ function renderAssets() {
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">形态：</b>${p.form || '—'}</div>
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">表面状态：</b>${p.surfaceState || '—'}</div>
           <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">视觉锚：</b>${p.visualAnchor || '—'}</div>
-          <div><b style="color:var(--accent-gold)">AI 提示词：</b><div style="font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);margin-top:4px;line-height:1.7">${p.aiPrompt || '—'}</div></div>
+          ${renderAiPromptBox('prop', p.name, p.aiPrompt)}
         </div>
       </div>
     </div>`;
@@ -1392,7 +1844,7 @@ function mdToHtmlSimple(md) {
   // 水平分隔线
   s = s.replace(/^\s*---+\s*$/gm, '<hr class="md-hr">');
   // 引用
-  s = s.replace(/^>\s?(.+)$/gm, '<blockquote class="md-quote">$1</blockquote>');
+  s = s.replace(/^&gt;\s?(.+)$/gm, '<blockquote class="md-quote">$1</blockquote>');
   // 粗体
   s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   // 斜体
@@ -1401,6 +1853,18 @@ function mdToHtmlSimple(md) {
   s = s.replace(/^△\s?(.+)$/gm, '<div class="md-cam">△ $1</div>');
   // 🎣 钩子标记
   s = s.replace(/^🎣\s?(.+)$/gm, '<div class="md-hook">🎣 $1</div>');
+  // 场景块标题单行（片头 / 片尾 / 演播室 / 纪录片 / 小剧场 / 彩蛋 等短词单独成行）
+  s = s.replace(/^(片头|片尾|演播室|纪录片|小剧场|过场|彩蛋|预告|字幕|开场|结尾|尾声|字幕卡)\s*$/gm,
+                '<div class="md-scene-block">$1</div>');
+  // "角色名：台词" 行 —— 角色名不超过 10 字，首字不为 △ / 🎣
+  s = s.replace(/^([^△🎣\s<][^：:\n]{0,15})([：:])\s*(.*)$/gm, (full, name, colon, body) => {
+    // 已被前面的 div/h 吃掉的行不会进来；body 可以为空字符串
+    // 排除 name 里出现标点的情况
+    if (/[<>]/.test(name)) return full;
+    // 处理行内 "（...）" 括注
+    const bodyHTML = body.replace(/（([^（）\n]+)）/g, '<span class="parenthetical">（$1）</span>');
+    return `<div class="dialog-line"><span class="dialog-name">${name}${colon}</span><span class="dialog-body">${bodyHTML}</span></div>`;
+  });
   // 段落：用两个换行分段，单换行→<br>
   s = s.split(/\n{2,}/).map(blk => {
     if (/^\s*<(h\d|blockquote|hr|div)/.test(blk.trim())) return blk;
@@ -1426,7 +1890,7 @@ function renderScreenplay() {
     : '';
 
   const scriptHTML = scriptMd
-    ? `<div class="md-body" style="background:var(--bg-card);padding:28px 36px;border-radius:var(--radius-lg);border:1px solid var(--border);line-height:1.9;font-size:14px">
+    ? `<div class="md-body">
         ${mdToHtmlSimple(scriptMd)}
        </div>`
     : '<div class="prop-desc">暂无 02-script.md</div>';
@@ -1543,6 +2007,7 @@ function renderSeedance() {
       <div class="seg-header">
         <span class="seg-id">#${String(s.index).padStart(2,'0')} · ${s.shotType || '—'}</span>
         <span class="seg-meta">${s.title || ''}</span>
+        <button class="ai-prompt-btn" title="复制整镜 20 字段提示词" onclick="copyShotPrompt(${s.index})" style="margin-left:auto">📋 复制提示词</button>
       </div>
       <div class="seg-refs" style="margin-bottom:10px">${refs}</div>
       <details>
@@ -1552,6 +2017,181 @@ function renderSeedance() {
     </div>`;
   }).join('');
   document.getElementById('seedanceGrid').innerHTML = html;
+}
+
+// 把某镜的 20 字段按「【字段名】内容」格式拼接后复制（与 skill 中 2000 字统计口径一致）
+function copyShotPrompt(index) {
+  const sd2 = window.__sd2 || {};
+  const s = (sd2.shots || []).find(x => x.index === index);
+  if (!s) { showToast('未找到该分镜数据', 'error'); return; }
+  const ORDER = [
+    ['titleBar','标题栏'], ['mount','挂载'], ['camera','相机'], ['openingFrame','起幅'],
+    ['closingFrame','落幅'], ['connection','承接'], ['transition','过门'], ['dualAnchor','双版本锚'],
+    ['mainPrompt','正文'], ['compulsoryDeclaration','强制声明'], ['mustShow','Must-Show'],
+    ['qualityRoute','画质路线'], ['imagingStyle','成像个性'], ['qualityBaseline','画质底线'],
+    ['reference','参照'], ['microExpressions','微表情'], ['nailLines','钉子4行'], ['e15','E15'],
+  ];
+  const text = ORDER.map(([k,label]) => {
+    const v = s[k];
+    if (v === undefined || v === null || v === '') return '';
+    return `【${label}】${v}`;
+  }).filter(Boolean).join('\n');
+  navigator.clipboard.writeText(text).then(
+    () => showToast(`已复制分镜 #${String(index).padStart(2,'0')} 提示词（${text.length} 字）`, 'success', 2000),
+    () => showToast('复制失败，请手动选中', 'error')
+  );
+}
+
+// ========== ASSET MAP（集级素材映射表弹窗） ==========
+function showAssetMap() {
+  const sd2 = window.__sd2 || {};
+  const map = sd2.assetMap;
+  const body = document.getElementById('assetMapBody');
+  if (!map || !map.images) {
+    body.innerHTML = '<div class="prop-desc" style="padding:40px;text-align:center">本集尚未生成 asset-map.json</div>';
+  } else {
+    const typeLabel = {
+      'character': '人物参考',
+      'character-variant': '人物变体',
+      'scene': '场景参考',
+      'prop': '道具参考',
+      'tail-frame': '前镜尾帧（动态生成）'
+    };
+    const imgRows = Object.entries(map.images).map(([code, info]) => {
+      const name = info.name || (info.type === 'tail-frame' ? `tail-shot-${String(info.fromShot).padStart(2,'0')}` : '—');
+      const extra = info.baseCharacter ? `（基于 ${info.baseCharacter}）` : (info.timeOfDay ? `-${info.timeOfDay}` : '');
+      const safeFile = String(info.file || '').replace(/</g, '&lt;');
+      return `<tr>
+        <td style="color:var(--accent-gold);font-family:var(--font-mono);white-space:nowrap">${code}</td>
+        <td style="color:var(--text-muted);font-size:11px">${typeLabel[info.type] || info.type}</td>
+        <td style="color:var(--text-primary)">${name}${extra}</td>
+        <td style="color:var(--text-muted);font-family:var(--font-mono);font-size:11px">${safeFile}</td>
+      </tr>`;
+    }).join('');
+    const voiceRows = Object.entries(map.voices || {}).map(([code, info]) => {
+      const safeFile = String(info.file || '').replace(/</g, '&lt;');
+      return `<tr>
+        <td style="color:var(--accent-gold);font-family:var(--font-mono);white-space:nowrap">${code}</td>
+        <td style="color:var(--text-muted);font-size:11px">角色声线</td>
+        <td style="color:var(--text-primary)">${info.name || '—'}</td>
+        <td style="color:var(--text-muted);font-family:var(--font-mono);font-size:11px">${safeFile}</td>
+      </tr>`;
+    }).join('');
+    const imgCount = Object.keys(map.images).length;
+    const voiceCount = Object.keys(map.voices || {}).length;
+    body.innerHTML = `
+      <p class="section-subtitle" style="margin-bottom:12px">集数 <b style="color:var(--accent-gold)">${map.episode || currentEpisode}</b> · 共 <b>${imgCount}</b> 条图片引用，<b>${voiceCount}</b> 条声线引用。所有分镜 mount 中的 <code>@图片N</code> / <code>@声音N</code> 均按此表解析。</p>
+      <h3 class="section-title" style="font-size:14px;margin:12px 0 8px">图片引用（@图片N）</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead><tr style="border-bottom:1px solid var(--border);color:var(--text-muted)">
+          <th style="text-align:left;padding:8px 6px">引用编号</th>
+          <th style="text-align:left;padding:8px 6px">素材类型</th>
+          <th style="text-align:left;padding:8px 6px">名称</th>
+          <th style="text-align:left;padding:8px 6px">文件路径</th>
+        </tr></thead>
+        <tbody style="vertical-align:top">${imgRows.replace(/<tr>/g,'<tr style="border-bottom:1px dashed var(--border)">')}</tbody>
+      </table>
+      <h3 class="section-title" style="font-size:14px;margin:20px 0 8px">声音引用（@声音N）</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead><tr style="border-bottom:1px solid var(--border);color:var(--text-muted)">
+          <th style="text-align:left;padding:8px 6px">引用编号</th>
+          <th style="text-align:left;padding:8px 6px">素材类型</th>
+          <th style="text-align:left;padding:8px 6px">名称</th>
+          <th style="text-align:left;padding:8px 6px">文件路径</th>
+        </tr></thead>
+        <tbody style="vertical-align:top">${voiceRows.replace(/<tr>/g,'<tr style="border-bottom:1px dashed var(--border)">') || '<tr><td colspan="4" style="padding:16px;text-align:center;color:var(--text-muted)">暂无声线素材</td></tr>'}</tbody>
+      </table>
+    `;
+  }
+  document.getElementById('assetMapModal').classList.remove('hidden');
+}
+function closeAssetMapModal(event) {
+  // 背景点击：仅当点到 overlay 本身才关；按钮点击：无 event 或 target 是按钮本身时关
+  if (event && event.target && event.target.id && event.target.id !== 'assetMapModal') return;
+  document.getElementById('assetMapModal').classList.add('hidden');
+}
+
+// ========== CHARACTER VOICE（角色声线文件，手动上传，系统不自动生成） ==========
+// 存储约定：projects/<项目名>/assets/audio/voice-<角色名>.<ext>
+// 前端通过 HEAD 探测 mp3/wav/m4a 哪个存在；按钮文案随之切换 "已有声线 ✓"
+async function probeAllCharacterVoices() {
+  const btns = document.querySelectorAll('[data-voice-btn]');
+  await Promise.all(Array.from(btns).map(async btn => {
+    const base = btn.dataset.voiceBase;
+    const name = btn.dataset.voiceBtn;
+    const exts = ['mp3', 'wav', 'm4a'];
+    for (const ext of exts) {
+      const url = encodeURI('/' + base + '.' + ext);
+      try {
+        const res = await fetch(url, { method: 'HEAD' });
+        if (res.ok) {
+          btn.classList.add('has-voice');
+          btn.innerHTML = '🎙️ 声线 ✓';
+          btn.title = `点击更换声线（当前：voice-${name}.${ext}）`;
+          const player = document.querySelector(`[data-voice-player="${CSS.escape(name)}"]`);
+          if (player) {
+            player.style.display = 'block';
+            player.innerHTML = `<audio class="char-voice-player" controls preload="none" src="${url}?_t=${Date.now()}"></audio>`;
+          }
+          return;
+        }
+      } catch (_) { /* ignore */ }
+    }
+  }));
+}
+
+function triggerCharacterVoiceUpload(btn) {
+  const input = btn.parentElement.querySelector('input[type=file]');
+  if (input) input.click();
+}
+
+async function handleCharacterVoiceUpload(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const btn = input.parentElement.querySelector('[data-voice-btn]');
+  if (!btn) { input.value = ''; return; }
+  // 根据上传的文件扩展名决定落盘的扩展
+  const rawExt = (file.name.split('.').pop() || 'mp3').toLowerCase();
+  const ext = ['mp3', 'wav', 'm4a', 'ogg'].includes(rawExt) ? rawExt : 'mp3';
+  const uploadPath = btn.dataset.voiceBase + '.' + ext;
+  try {
+    showToast(`正在上传 ${file.name}...`, 'info');
+    // 先试 PUT；失败降级 POST multipart
+    let res;
+    try {
+      res = await fetch(encodeURI('/' + uploadPath), {
+        method: 'PUT',
+        body: file,
+        headers: { 'Content-Type': file.type || 'application/octet-stream' }
+      });
+    } catch (_) { res = null; }
+    if (!res || [404, 405, 501, 400].includes(res.status)) {
+      const fd = new FormData();
+      fd.append('path', uploadPath);
+      fd.append('file', file, file.name);
+      res = await fetch('/api/upload', { method: 'POST', body: fd });
+    }
+    if (!res.ok) {
+      let errMsg = `HTTP ${res.status}`;
+      try { const j = await res.json(); if (j && j.error) errMsg = j.error; } catch (_) {}
+      throw new Error(errMsg);
+    }
+    showToast(`声线上传成功！(${(file.size / 1024).toFixed(1)} KB)`, 'success');
+    // 刷新按钮态 + 播放器
+    btn.classList.add('has-voice');
+    btn.innerHTML = '🎙️ 声线 ✓';
+    const name = btn.dataset.voiceBtn;
+    btn.title = `点击更换声线（当前：voice-${name}.${ext}）`;
+    const player = document.querySelector(`[data-voice-player="${CSS.escape(name)}"]`);
+    if (player) {
+      player.style.display = 'block';
+      player.innerHTML = `<audio class="char-voice-player" controls preload="none" src="/${encodeURI(uploadPath)}?_t=${Date.now()}"></audio>`;
+    }
+  } catch (err) {
+    showToast(`上传失败: ${err.message}（如近期更新过 serve.py 请重启 python3 serve.py）`, 'error', 5000);
+  } finally {
+    input.value = '';
+  }
 }
 
 // ========== VIDEOS ==========
@@ -1661,38 +2301,44 @@ function renderReview() {
 }
 
 // ========== APPEARANCE MODAL ==========
-let _currentAppearanceChar = null;
+// 2.0 结构：主角色自身 + 所有 baseCharacter === 主角色 name 的变体
+let _currentAppearanceChar = null;      // 当前 modal 展示的主角色对象
+let _currentAppearanceList = [];        // [主角色, 变体1, 变体2, ...]
 let _currentAppearanceIdx = 0;
 
 function openAppearanceModal(charIndex) {
-  const c = _charactersData[charIndex];
-  if (!c || !c.appearances || c.appearances.length <= 1) return;
-  _currentAppearanceChar = c;
+  const primary = _charactersData[charIndex];
+  if (!primary) return;
+  // 收集：主角色 + 所有变体
+  const variants = _charactersData.filter(x => x.baseCharacter === primary.name);
+  if (variants.length === 0) return; // 没有变体就不开
+  _currentAppearanceList = [primary, ...variants];
+  _currentAppearanceChar = primary;
   _currentAppearanceIdx = 0;
 
-  document.getElementById('appearanceCharName').textContent = `${c.name} — 形象切换`;
+  document.getElementById('appearanceCharName').textContent = `${primary.name} — 形象切换（${_currentAppearanceList.length}）`;
 
   // 构建 tabs
-  const tabsHTML = c.appearances.map((app, i) => {
-    const label = app.change_reason || `形象 ${i}`;
+  const tabsHTML = _currentAppearanceList.map((x, i) => {
+    const label = i === 0
+      ? '主形象'
+      : (x.variantType || x.name.split('·').slice(1).join('·') || `形象 ${i}`);
     return `<div class="appearance-tab${i === 0 ? ' active' : ''}" data-idx="${i}" onclick="switchAppearance(${i})">${label}</div>`;
   }).join('');
   document.getElementById('appearanceTabs').innerHTML = tabsHTML;
 
-  // 渲染第一个形象
   renderAppearanceContent(0);
-
   document.getElementById('appearanceModal').classList.remove('hidden');
 }
 
 function closeAppearanceModal() {
   document.getElementById('appearanceModal').classList.add('hidden');
   _currentAppearanceChar = null;
+  _currentAppearanceList = [];
 }
 
 function switchAppearance(idx) {
   _currentAppearanceIdx = idx;
-  // 更新 tab 激活状态
   document.querySelectorAll('#appearanceTabs .appearance-tab').forEach(t => {
     t.classList.toggle('active', parseInt(t.dataset.idx) === idx);
   });
@@ -1700,77 +2346,49 @@ function switchAppearance(idx) {
 }
 
 function renderAppearanceContent(idx) {
-  const c = _currentAppearanceChar;
-  if (!c) return;
-  const app = c.appearances[idx];
-  if (!app) return;
-
+  const item = _currentAppearanceList[idx];
+  if (!item) return;
   const base = `projects/${currentProject}`;
   const bust = '_t=' + Date.now();
 
-  // 构建该形象的图片候选路径
+  // 候选图路径：主形象 char-<primary>.png → char-<primary>-base.png；变体 char-<variantFullName>.png
   const candidates = [];
+  candidates.push(`${base}/assets/images/char-${item.name}.png`);
   if (idx === 0) {
-    candidates.push(`${base}/assets/images/char-${c.name}-base.png`);
-    candidates.push(`${base}/assets/images/char-${c.name}.png`);
-  } else {
-    const reason = app.change_reason || '';
-    // 策略1：从 change_reason 提取关键词，逐步缩短
-    // 如 "Lv.2全频同步完全武装状态" → "全频同步完全武装" → 再按 - 分割取各段
-    const cleaned = reason.replace(/^(Lv\.?\d+|初始形象)[\s\-—·]*/i, '').replace(/[\s\-—·]*状态$/g, '').trim();
-    if (cleaned) {
-      candidates.push(`${base}/assets/images/char-${c.name}-${cleaned}.png`);
-      // 策略2：按 - 分割，取第一段（如 "半降临-三翼光甲" → "半降临"）
-      let firstPart = cleaned.split(/[\-—]/)[0].trim();
-      // 去掉"状态"、"瞬间"等后缀
-      const firstPartClean = firstPart.replace(/(?:状态|瞬间|形态|模式)$/, '').trim();
-      if (firstPart && firstPart !== cleaned) {
-        candidates.push(`${base}/assets/images/char-${c.name}-${firstPart}.png`);
-      }
-      if (firstPartClean && firstPartClean !== firstPart && firstPartClean !== cleaned) {
-        candidates.push(`${base}/assets/images/char-${c.name}-${firstPartClean}.png`);
-      }
-      // 策略3：去掉"全频同步"等修饰词，保留核心词（如 "全频同步完全武装" → "全武装"）
-      // 尝试匹配最后一个核心动词短语
-      const coreMatch = cleaned.match(/(半武装|全武装|半降临|完全降临|觉醒|变身|强化)/);
-      if (coreMatch && coreMatch[1] !== cleaned && coreMatch[1] !== firstPart) {
-        candidates.push(`${base}/assets/images/char-${c.name}-${coreMatch[1]}.png`);
-      }
-    }
-    // 策略4：完整 change_reason 去掉常见前缀
-    const full = reason.replace(/^初始形象[\s\-—·]*/i, '').replace(/[\s\-—·]*状态$/g, '').trim();
-    if (full && !candidates.some(p => p.includes(full))) {
-      candidates.push(`${base}/assets/images/char-${c.name}-${full}.png`);
-    }
-    // 策略5：用索引号
-    candidates.push(`${base}/assets/images/char-${c.name}-${idx}.png`);
-    // 最终 fallback：base 图
-    candidates.push(`${base}/assets/images/char-${c.name}-base.png`);
-    candidates.push(`${base}/assets/images/char-${c.name}.png`);
+    candidates.push(`${base}/assets/images/char-${item.name}-base.png`);
   }
 
-  // 去重
   const uniqueCandidates = [...new Set(candidates)];
   const escaped = uniqueCandidates.map(p => (p + '?' + bust).replace(/'/g, "\\'"));
   const imgSrc = escaped[0];
   const fallbackArr = escaped.slice(1).join("','");
-  // onerror fallback: 尝试下一个候选路径
   const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.opacity='0.3'}`;
-  // onload: 图片成功加载后，从 src 中提取实际路径更新 data-upload-path
   const onloadJS = `try{this.dataset.uploadPath=decodeURIComponent(this.src.replace(/\\?.*$/,'').replace(location.origin+'/','').replace(/^\\//, ''))}catch(e){}`;
   const uploadPath = uniqueCandidates[0];
   const clickJS = `event.stopPropagation();openLightbox(this)`;
 
-  const desc = (app.descriptions || [])[0] || '暂无描述';
-  document.getElementById('appearanceBody').innerHTML = `
+  const variantTag = idx === 0
+    ? '主形象'
+    : `${item.variantType || '变体'}${item.baseCharacter ? ` · 基于 <b style="color:var(--accent-gold)">${item.baseCharacter}</b>` : ''}`;
+
+  const aliases = (item.aliases || []).filter(Boolean);
+  const body = `
     <div class="appearance-img-wrap">
-      <img src="${imgSrc}" alt="${c.name} - ${app.change_reason}" onerror="${fallbackJS}" onload="${onloadJS}" onclick="${clickJS}" data-upload-path="${uploadPath}" style="cursor:pointer">
+      <img src="${imgSrc}" alt="${item.name}" onerror="${fallbackJS}" onload="${onloadJS}" onclick="${clickJS}" data-upload-path="${uploadPath}" style="cursor:pointer">
       <button class="appearance-upload-btn" onclick="event.stopPropagation();triggerAppearanceUpload(this)">📤 替换图片</button>
       <input type="file" accept="image/*" style="display:none" onchange="handleAppearanceUpload(this)">
     </div>
-    <div class="appearance-reason">🎭 ${app.change_reason || (idx === 0 ? '初始形象' : '形象 ' + idx)}</div>
-    <div class="appearance-desc">${desc}</div>
+    <div class="appearance-reason">🎭 ${variantTag}</div>
+    <div class="appearance-desc">
+      <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">名称：</b>${item.name}${aliases.length ? `　<span style="color:var(--text-muted)">别名：${aliases.join(' / ')}</span>` : ''}</div>
+      <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">外貌：</b>${item.appearance || '—'}</div>
+      <div style="margin-bottom:10px"><b style="color:var(--accent-gold)">服装：</b>${item.clothing || '—'}</div>
+      ${item.visualAnchor ? `<div style="margin-bottom:10px"><b style="color:var(--accent-gold)">视觉锚：</b>${item.visualAnchor}</div>` : ''}
+      ${item.colorPalette ? `<div style="margin-bottom:10px"><b style="color:var(--accent-gold)">配色：</b>${item.colorPalette}</div>` : ''}
+      ${renderAiPromptBox('character', item.name, item.aiPrompt)}
+    </div>
   `;
+  document.getElementById('appearanceBody').innerHTML = body;
 }
 
 // ========== IMAGE LIGHTBOX ==========
@@ -1833,15 +2451,45 @@ async function uploadImageFile(file, uploadPath, imgEl) {
   // 清理路径中的查询参数
   const cleanPath = uploadPath.replace(/\?.*$/, '');
   showToast(`正在上传 ${file.name}...`, 'info');
-  try {
+
+  // 走两种上传通道：先试 PUT /<path>，501/405/404/400 下降级 POST /api/upload multipart
+  async function tryPut() {
     const res = await fetch(encodeURI('/' + cleanPath), {
       method: 'PUT',
       body: file,
       headers: { 'Content-Type': file.type || 'application/octet-stream' }
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    showToast(`上传成功！(${(data.size / 1024).toFixed(1)} KB)`, 'success');
+    return res;
+  }
+  async function tryPostMultipart() {
+    const fd = new FormData();
+    fd.append('path', cleanPath);
+    fd.append('file', file, file.name);
+    const res = await fetch('/api/upload', { method: 'POST', body: fd });
+    return res;
+  }
+
+  try {
+    let res, data, sizeBytes = 0;
+    // ---- Step 1: PUT ----
+    try {
+      res = await tryPut();
+    } catch (netErr) {
+      res = null;
+    }
+    if (!res || [404, 405, 501, 400].includes(res.status)) {
+      // ---- Step 2: 降级 POST multipart ----
+      res = await tryPostMultipart();
+    }
+    if (!res.ok) {
+      // 尝试解析错误体
+      let errMsg = `HTTP ${res.status}`;
+      try { const j = await res.json(); if (j && j.error) errMsg = j.error; } catch (_) {}
+      throw new Error(errMsg);
+    }
+    try { data = await res.json(); } catch (_) { data = {}; }
+    sizeBytes = data.size || data.bytes || file.size || 0;
+    showToast(`上传成功！(${(sizeBytes / 1024).toFixed(1)} KB)`, 'success');
     // 刷新图片
     const bust = '_t=' + Date.now();
     if (imgEl) {
@@ -1853,7 +2501,7 @@ async function uploadImageFile(file, uploadPath, imgEl) {
       lbImg.src = cleanPath + '?' + bust;
     }
   } catch (err) {
-    showToast(`上传失败: ${err.message}`, 'error');
+    showToast(`上传失败: ${err.message}（如近期更新过 serve.py 请重启 python3 serve.py）`, 'error', 5000);
   }
 }
 
