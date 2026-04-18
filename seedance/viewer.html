@@ -1170,10 +1170,13 @@ function buildImgWithFallback(candidates, alt, extraClass = '', uploadPath = '')
   const escaped = candidates.map(c => (c + (c.includes('?') ? '&' : '?') + bust).replace(/'/g, "\\'"));
   // onerror 时根据递增索引依次尝试下一个候选路径
   const fallbackArr = escaped.slice(1).map(c => c).join("','");
+  // onerror fallback: 尝试下一个候选路径
   const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.display='none'}`;
+  // onload: 图片成功加载后，从 src 中提取实际路径更新 data-upload-path
+  const onloadJS = `try{this.dataset.uploadPath=decodeURIComponent(this.src.replace(/\\?.*$/,'').replace(location.origin+'/','').replace(/^\\//, ''))}catch(e){}`;
   const upAttr = uploadPath ? ` data-upload-path="${uploadPath}"` : ` data-upload-path="${candidates[0] || ''}"`;
   const clickJS = `event.stopPropagation();openLightbox(this)`;
-  return `<img class="asset-card-img${extraClass ? ' '+extraClass : ''}" src="${escaped[0]}" alt="${alt}" loading="lazy" onerror="${fallbackJS}" onclick="${clickJS}"${upAttr}>`;
+  return `<img class="asset-card-img${extraClass ? ' '+extraClass : ''}" src="${escaped[0]}" alt="${alt}" loading="lazy" onerror="${fallbackJS}" onload="${onloadJS}" onclick="${clickJS}"${upAttr}>`;
 }
 
 // 全局存储角色数据，供模态框使用
@@ -1484,14 +1487,17 @@ function renderAppearanceContent(idx) {
   const escaped = uniqueCandidates.map(p => (p + '?' + bust).replace(/'/g, "\\'"));
   const imgSrc = escaped[0];
   const fallbackArr = escaped.slice(1).join("','");
+  // onerror fallback: 尝试下一个候选路径
   const fallbackJS = `var a=['${fallbackArr}'],i=+(this.dataset.fi||0);if(i<a.length){this.dataset.fi=i+1;this.src=a[i]}else{this.style.opacity='0.3'}`;
+  // onload: 图片成功加载后，从 src 中提取实际路径更新 data-upload-path
+  const onloadJS = `try{this.dataset.uploadPath=decodeURIComponent(this.src.replace(/\\?.*$/,'').replace(location.origin+'/','').replace(/^\\//, ''))}catch(e){}`;
   const uploadPath = uniqueCandidates[0];
   const clickJS = `event.stopPropagation();openLightbox(this)`;
 
   const desc = (app.descriptions || [])[0] || '暂无描述';
   document.getElementById('appearanceBody').innerHTML = `
     <div class="appearance-img-wrap">
-      <img src="${imgSrc}" alt="${c.name} - ${app.change_reason}" onerror="${fallbackJS}" onclick="${clickJS}" data-upload-path="${uploadPath}" style="cursor:pointer">
+      <img src="${imgSrc}" alt="${c.name} - ${app.change_reason}" onerror="${fallbackJS}" onload="${onloadJS}" onclick="${clickJS}" data-upload-path="${uploadPath}" style="cursor:pointer">
       <button class="appearance-upload-btn" onclick="event.stopPropagation();triggerAppearanceUpload(this)">📤 替换图片</button>
       <input type="file" accept="image/*" style="display:none" onchange="handleAppearanceUpload(this)">
     </div>
@@ -1561,7 +1567,7 @@ async function uploadImageFile(file, uploadPath, imgEl) {
   const cleanPath = uploadPath.replace(/\?.*$/, '');
   showToast(`正在上传 ${file.name}...`, 'info');
   try {
-    const res = await fetch('/' + cleanPath, {
+    const res = await fetch(encodeURI('/' + cleanPath), {
       method: 'PUT',
       body: file,
       headers: { 'Content-Type': file.type || 'application/octet-stream' }

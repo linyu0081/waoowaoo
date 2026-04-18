@@ -5,10 +5,10 @@ import os
 import time
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 try:
-    from urllib.parse import urlparse, parse_qs, urlencode
+    from urllib.parse import urlparse, parse_qs, urlencode, unquote
 except ImportError:
     from urlparse import urlparse, parse_qs
-    from urllib import urlencode
+    from urllib import urlencode, unquote
 
 class NoCacheHandler(SimpleHTTPRequestHandler):
     """所有响应都带 Cache-Control: no-store，彻底禁止浏览器缓存。
@@ -18,7 +18,7 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
     def do_PUT(self):
         """处理文件上传/替换请求"""
         parsed = urlparse(self.path)
-        clean_path = parsed.path.lstrip('/')
+        clean_path = unquote(parsed.path.lstrip('/'))
         # 安全检查：只允许上传到 projects/ 目录下的 images 文件夹
         if '..' in clean_path or not clean_path.startswith('projects/'):
             self.send_response(403)
@@ -36,10 +36,25 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         body = self.rfile.read(content_length)
         file_path = os.path.join(os.getcwd(), clean_path)
         dir_path = os.path.dirname(file_path)
-        if not os.path.isdir(dir_path):
-            os.makedirs(dir_path, exist_ok=True)
-        with open(file_path, 'wb') as f:
-            f.write(body)
+        try:
+            if not os.path.isdir(dir_path):
+                os.makedirs(dir_path, exist_ok=True)
+            with open(file_path, 'wb') as f:
+                f.write(body)
+        except PermissionError:
+            self.send_response(403)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(('{"error":"Permission denied: %s"}' % clean_path).encode())
+            return
+        except Exception as e:
+            self.send_response(500)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(('{"error":"%s"}' % str(e).replace('"', '\\"')).encode())
+            return
         self.send_response(200)
         self.send_header('Content-Type', 'application/json')
         self.send_header('Access-Control-Allow-Origin', '*')

@@ -21,19 +21,19 @@
     },
     "零号频率": {
       "currentEpisode": "ep01",
-      "currentStage": "art_design_done",
+      "currentStage": "storyboard_done",
       "agents": {
         "screenwriter": "done",
         "art-director": "done",
-        "storyboard-artist": "",
+        "storyboard-artist": "done",
         "ai-video-director": "",
         "video-director": ""
       },
       "episodes": {
         "ep01": {
           "status": "in_progress",
-          "completedStages": ["script_analysis", "art_design"],
-          "note": "美术总监设计+生图完成，两步审核通过"
+          "completedStages": ["script_analysis", "art_design", "storyboard"],
+          "note": "分镜完成：10 clips / 114 panels / 664s(11.1min)，台词分析82条，待进入AI视频导演阶段"
         }
       }
     }

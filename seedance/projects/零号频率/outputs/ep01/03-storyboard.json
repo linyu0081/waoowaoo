@@ -1,0 +1,2234 @@
+[
+  {
+    "clip_id": "clip-01",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "俯拍大远景",
+        "camera_move": "缓缓升起俯瞰",
+        "connect_camera_move": "硬切",
+        "description": "曙光城中央广场俯瞰全景，十万白袍信众跪满方圆两公里地面，六芒星祭坛悬浮三十米高空，六座频率放大塔光柱交汇成巨大几何符阵，金色光粒子如雪飘落",
+        "video_prompt": "超广角俯拍，宏伟广场上白袍人群如白色海洋铺满地面，中央三十米高空悬浮六芒星平台，六道白色光柱从塔尖射向天穹交汇成旋转几何符阵，金色光粒子无声飘落，镜头缓缓升起俯瞰，史诗级电影画质，虚幻引擎5写实渲染",
+        "sync_video_prompt": "超广角俯拍，宏伟广场上白袍人群如白色海洋铺满地面，中央三十米高空悬浮六芒星平台，六道白色光柱从塔尖射向天穹交汇成旋转几何符阵，金色光粒子无声飘落，镜头缓缓升起俯瞰，史诗级电影画质，虚幻引擎5写实渲染",
+        "duration_sec": 7,
+        "characters": [],
+        "location": "曙光城中央广场_黄昏",
+        "scene_type": "epic",
+        "source_text": "十万人在祈祷。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "平视远景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "缓缓推近",
+        "description": "广场地面平视远景，白袍信众密密麻麻跪满地面，声音汇成嗡鸣河流，旗帜上的金线在无风中飘扬，背景六芒星祭坛悬浮高空",
+        "video_prompt": "平视远景，白袍人群密密麻麻跪满广场地面，嗡鸣声震颤空气，旗帜金线无风飘扬，背景六芒星祭坛悬浮高空，镜头缓缓推近，黄昏金光，史诗级电影画质",
+        "sync_video_prompt": "平视远景，白袍人群密密麻麻跪满广场地面，嗡鸣声震颤空气，旗帜金线无风飘扬，背景六芒星祭坛悬浮高空，镜头缓缓推近，黄昏金光，史诗级电影画质",
+        "duration_sec": 6,
+        "characters": [],
+        "location": "曙光城中央广场_黄昏",
+        "scene_type": "epic",
+        "source_text": "曙光城中央广场，白袍信众从城市的每一条街道汇聚而来，跪满了祭坛周围方圆两公里的地面。他们的声音汇成一条嗡鸣的河流，频率共振让空气本身都在震颤——杯中的水在抖，旗帜上的金线在无风中飘扬。"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "仰拍全景",
+        "camera_move": "缓缓上摇",
+        "connect_camera_move": "硬切",
+        "description": "仰拍六芒星祭坛全景，悬浮平台在三十米高空，六座频率放大塔矗立六角，塔尖白色光柱交汇天穹，金色光粒子如雪无声落下，浮空圣城Sanctum投影悬挂天际线",
+        "video_prompt": "仰拍全景，六芒星白金平台悬浮三十米高空，六座高塔矗立六角，塔尖白色光柱交汇天穹形成旋转几何符阵，金色光粒子如雪飘落，远处浮空圣城投影若隐若现，镜头缓缓上摇，黄昏夕阳，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，六芒星白金平台悬浮三十米高空，六座高塔矗立六角，塔尖白色光柱交汇天穹形成旋转几何符阵，金色光粒子如雪飘落，远处浮空圣城投影若隐若现，镜头缓缓上摇，黄昏夕阳，史诗级电影画质",
+        "duration_sec": 6,
+        "characters": [],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "epic",
+        "source_text": "祭坛是一座六芒星平台，悬浮在广场中央三十米的高空。六座频率放大塔矗立在六个顶点上，塔尖射出的白色光柱在天穹交汇成一个巨大的几何符阵。金色的光粒子像雪从天上无声地落下来。"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "祭坛中央，灵曦站在光柱交汇点悬浮，穿白色丝绸仪式礼服覆金纹圣甲，头戴细金链圣冠，银白长发被频率场扬起，眼睛闭着，赤足踩在凝固的光上",
+        "video_prompt": "平视中景，年轻女子穿白色丝绸仪式礼服覆金纹圣甲，头戴细金链圣冠，银白长发被频率场扬起飘散，眼睛闭着，赤足悬浮踩在凝固的光上，周围白金光柱交汇，镜头缓缓推近，黄昏圣光，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦穿白色丝绸仪式礼服覆金纹圣甲，头戴细金链圣冠，银白长发被频率场扬起飘散，眼睛闭着，赤足悬浮踩在凝固的光上，周围白金光柱交汇，镜头缓缓推近，黄昏圣光，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "0",
+            "slot": "祭坛正中央光柱交汇点的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "epic",
+        "source_text": "祭坛中央，灵曦站在光柱的交汇点上。她穿着圣女的全套仪式礼服——白色丝绸长袍外覆金纹圣甲，头戴镶嵌了九颗频率共振晶体的细金链圣冠。银白色的长发被频率场扬起。她悬浮着，赤足踩在凝固的光上。她的眼睛闭着。"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "平视近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "灵曦面部近景，眼睛闭着，表情平静虔诚，银白长发飘扬，眉心隐有金色六芒纹印，周围白金光芒流动",
+        "video_prompt": "近景，年轻女子面部，眼睛闭着表情平静虔诚，银白长发飘扬，眉心有金色六芒纹印，周围白金光芒流动，固定镜头，黄昏圣光，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦面部，眼睛闭着表情平静虔诚，银白长发飘扬，眉心有金色六芒纹印，周围白金光芒流动，固定镜头，黄昏圣光，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "0",
+            "slot": "祭坛正中央光柱交汇点的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "emotion",
+        "source_text": "从十九年前第一次被带进教团的那天起，她就知道自己存在的意义。所有的训练、所有的祈祷，都是为了此刻。降临。炽天使将通过她降临人间。她信。她真的信。"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "祭坛边缘，大祭司光耀举起双手，穿白色丝绸祭司长袍，金纹华贵，身后是广场十万信众，他开口说话",
+        "video_prompt": "平视中景，老年男子穿白色丝绸祭司长袍金纹华贵，站在祭坛边缘举起双手，开口说话，身后是广场十万白袍信众，镜头缓缓推近，黄昏金光，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，大祭司光耀穿白色丝绸祭司长袍金纹华贵，站在祭坛边缘举起双手，大祭司光耀说道：「光之子民！今日，我们将见证——」身后是广场十万白袍信众，镜头缓缓推近，黄昏金光，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "大祭司光耀",
+            "appearance": "0",
+            "slot": "祭坛边缘靠近频率放大塔的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "epic",
+        "source_text": "祭坛边缘，大祭司光耀举起双手。「光之子民！今日，我们将见证——」"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "仰拍全景",
+        "camera_move": "急速拉远",
+        "connect_camera_move": "硬切",
+        "description": "降临开始，灵曦头顶光环暴涨从一米膨胀到二十米，白金色火焰文字在光环表面疯狂流转，从光环中央一个六翼巨大轮廓正在向人间挤过来",
+        "video_prompt": "仰拍全景，年轻女子头顶光环暴涨膨胀至二十米直径，白金色火焰文字在光环表面疯狂流转，光环中央一个六翼巨大轮廓正在向下挤压，翼展惊人，镜头急速拉远展现规模，黄昏圣光爆发，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，灵曦头顶光环暴涨膨胀至二十米直径，白金色火焰文字在光环表面疯狂流转，光环中央一个六翼巨大轮廓正在向下挤压，翼展惊人，镜头急速拉远展现规模，黄昏圣光爆发，史诗级电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "0",
+            "slot": "祭坛正中央光柱交汇点的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "epic",
+        "source_text": "灵曦头顶的光环突然暴涨——从一米直径膨胀到五米、十米、二十米，白金色的火焰文字在光环表面疯狂流转。从光环中央，一个巨大的轮廓正在向人间「挤」过来——六翼。"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "灵曦身体开始改变，白金色光甲从右肩开始生长，三翼从背后绽开，大祭司光耀站在祭坛边缘双手垂下，脸上没有敬畏",
+        "video_prompt": "平视中景，年轻女子右肩开始生长白金色光甲，三翼从背后绽开，背景老年男子站在祭坛边缘双手垂下表情冷静，镜头缓缓推近，黄昏圣光，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦右肩开始生长白金色光甲，三翼从背后绽开，背景大祭司光耀站在祭坛边缘双手垂下表情冷静，镜头缓缓推近，黄昏圣光，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "祭坛正中央光柱交汇点的位置"
+          },
+          {
+            "name": "大祭司光耀",
+            "appearance": "0",
+            "slot": "祭坛边缘靠近频率放大塔的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "epic",
+        "source_text": "灵曦的身体开始改变。白金色的光甲从她的右肩开始生长。三对翅翼从她背后绽开——但只展开了一对半，三翼。大祭司光耀站在祭坛边缘，双手垂下。他的脸上没有敬畏。"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "技术人员面部近景，低头盯着监测设备，低声报数「同步率五十二……五十三……」",
+        "video_prompt": "近景，年轻男子戴眼镜低头盯着监测设备，嘴唇轻动低声报数，背景祭坛白金光芒，固定镜头，黄昏光，写实CGI电影画质",
+        "sync_video_prompt": "近景，技术人员戴眼镜低头盯着监测设备，技术人员低声道：「同步率五十二……五十三……」背景祭坛白金光芒，固定镜头，黄昏光，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "技术人员",
+            "appearance": "0",
+            "slot": "祭坛后方技术监控位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "suspense",
+        "source_text": "「同步率五十二……五十三……」"
+      },
+      {
+        "panel_number": 10,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "大祭司光耀面部近景，眼神深邃冷酷，嘴唇微动低语「再给我三分钟。」",
+        "video_prompt": "近景，老年男子面部，眼神深邃冷酷，嘴唇微动低语，固定镜头，黄昏光，写实CGI电影画质",
+        "sync_video_prompt": "近景，大祭司光耀面部，眼神深邃冷酷，嘴唇微动，大祭司光耀低语道：「再给我三分钟。」固定镜头，黄昏光，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "大祭司光耀",
+            "appearance": "0",
+            "slot": "祭坛边缘靠近频率放大塔的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "suspense",
+        "source_text": "光耀微微眯起眼睛。他的嘴唇动了动。「再给我三分钟。」"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-02",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "平视中景",
+        "camera_move": "急速推近",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者站在祭坛北侧护卫位，猛然抬头，频率感知被拔掉插头般彻底空白，背景浮空巡逻舰警报灯闪烁，废土飞行器从盲区撕裂进来",
+        "video_prompt": "平视中景，壮硕男子穿赤金色天使战甲猛然抬头，眼神警觉，背景浮空巡逻舰警报灯闪烁，一架废土飞行器从远处高速冲入，镜头急速推近，黄昏夜色交界，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，米迦勒持有者穿赤金色天使战甲猛然抬头，眼神警觉，背景浮空巡逻舰警报灯闪烁，一架废土飞行器从远处高速冲入，镜头急速推近，黄昏夜色交界，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0",
+            "slot": "祭坛北侧护卫站位"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "他没能等到第三分钟。米迦勒频率持有者站在祭坛北侧护卫位上。他猛然抬头——他的频率感知在那一瞬间像被人拔掉了插头一样，彻底空白了。浮空巡逻舰的警报响了零点三秒——一架废土飞行器从频率屏蔽阵列的盲区撕裂进来。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "仰拍全景",
+        "camera_move": "手持晃动跟随",
+        "connect_camera_move": "急速推近",
+        "description": "废土飞行器在距祭坛两百米高度主动解体，驾驶者从座舱跳出，碎片和烟雾之间叶烬展开六翼，三对黑灰色羽翼撕裂而出，头顶碎裂光环亮起只剩半圈",
+        "video_prompt": "仰拍全景，废土飞行器在高空爆炸解体，驾驶者从座舱跳出，碎片烟雾中人形轮廓展开六翼，三对黑灰色羽翼撕裂而出，头顶碎裂光环亮起，镜头手持晃动仰拍跟随，黄昏爆炸光，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，废土飞行器在高空爆炸解体，叶烬从座舱跳出，碎片烟雾中展开六翼，三对黑灰色羽翼撕裂而出，头顶碎裂光环亮起，镜头手持晃动仰拍跟随，黄昏爆炸光，史诗级电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "巡逻舰的炮塔转向，三道能量束同时射出。飞行器在距离祭坛两百米高度的位置，主动解体了。驾驶者从座舱里跳了出来。在碎片和烟雾之间，一个人形的轮廓正在展开翅膀。六翼。三对黑灰色的羽翼撕裂而出。头顶，一圈碎裂的光环亮起来。只剩半圈。"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "仰拍中景",
+        "camera_move": "急速俯冲",
+        "connect_camera_move": "急速推近",
+        "description": "叶烬落在祭坛中央，落地冲击波以他为圆心炸开，四名天使护卫被气浪掀飞，两座频率放大塔过载炸裂",
+        "video_prompt": "仰拍中景，年轻男子穿破旧夹克六翼展开落地，冲击波从脚下炸开，四名白银战甲护卫被气浪掀飞，背景两座高塔爆炸炸裂，镜头急速俯冲，爆炸光，史诗级电影画质",
+        "sync_video_prompt": "仰拍中景，叶烬穿破旧夹克六翼展开落地，冲击波从脚下炸开，四名天使护卫被气浪掀飞，背景两座频率放大塔爆炸炸裂，镜头急速俯冲，爆炸光，史诗级电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "天使护卫",
+            "appearance": "0"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "叶烬落在祭坛中央。落地的冲击波以他为圆心炸开——最近的四名天使护卫直接被气浪掀飞。六座频率放大塔中两座当场过载炸裂。十万信众的祈祷声在这一秒集体中断。然后是寂静。然后是尖叫。"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "叶烬站在灵曦面前，灵曦眼睛还闭着，身后炽天使虚影正在剧烈扭曲，叶烬面带漫不经心的表情说「嘿。」",
+        "video_prompt": "平视中景，年轻男子穿破旧夹克站在年轻女子面前，女子眼睛闭着身后六翼虚影扭曲，男子面带漫不经心表情说话，镜头缓缓推近，黄昏光，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬穿破旧夹克站在灵曦面前，灵曦眼睛闭着身后六翼虚影扭曲，叶烬说道：「嘿。」镜头缓缓推近，黄昏光，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "祭坛正中央光柱交汇点的位置"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "叶烬站在灵曦面前。她的眼睛还闭着。但她身后的炽天使虚影正在剧烈扭曲。「嘿。」"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "叶烬右手按上灵曦额头细金链圣冠，九颗频率共振晶体同时碎裂，炽天使虚影发出尖啸从边缘开始崩解",
+        "video_prompt": "近景，年轻男子右手按上年轻女子额头圣冠，九颗晶体同时碎裂，背景六翼虚影痉挛崩解，固定镜头，爆裂光效，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬右手按上灵曦额头圣冠，九颗晶体同时碎裂，背景炽天使虚影痉挛崩解，固定镜头，爆裂光效，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "然后右手按上了她额头上的细金链圣冠。圣冠上九颗频率共振晶体同时碎裂。频率链接断裂。炽天使虚影发出一道不属于人间音域的尖啸。虚影的六翼痉挛了一下。然后像碎玻璃一样，从边缘开始崩解。"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦眼睛猛然睁开，冰蓝色瞳孔里金色六芒星纹路还在挣扎闪烁",
+        "video_prompt": "近景，年轻女子眼睛猛然睁开，冰蓝色瞳孔里金色六芒星纹路闪烁，表情从空白到困惑，固定镜头，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦眼睛猛然睁开，冰蓝色瞳孔里金色六芒星纹路闪烁，表情从空白到困惑，固定镜头，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "emotion",
+        "source_text": "灵曦的眼睛猛然睁开。冰蓝色的瞳孔里，金色六芒星纹路还在挣扎闪烁。"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "叶烬单手把灵曦从光柱上扛下来，灵曦挣扎，叶烬面带痞气笑容说「早上好，圣女大人。仪式取消了。」",
+        "video_prompt": "平视中景，年轻男子单手把年轻女子从光柱上扛下来，女子挣扎，男子面带痞气笑容说话，镜头缓缓推近，黄昏光，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬单手把灵曦从光柱上扛下来，灵曦挣扎，叶烬面带痞气笑容，叶烬说道：「早上好，圣女大人。仪式取消了。」镜头缓缓推近，黄昏光，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "「早上好，圣女大人。仪式取消了。」灵曦的右手以半降临炽天使的速度抓向叶烬的喉咙。叶烬偏头躲过。「好快。」然后他单手把她从光柱上扛了下来。"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦挣扎着愤怒喊「放开我！你知道你在做什么吗？你在亵渎——」，眼中金色六芒星纹路闪烁",
+        "video_prompt": "近景，年轻女子挣扎着愤怒喊话，眼中金色纹路闪烁，固定镜头，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦挣扎着愤怒，灵曦怒喝道：「放开我！你知道你在做什么吗？你在亵渎——」眼中金色六芒星纹路闪烁，固定镜头，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "「放开我！你知道你在做什么吗？你在亵渎——」"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬打断灵曦，说「我在救你的命。细节以后再说。现在——」，背景米迦勒持有者赤金色炎剑火焰亮起",
+        "video_prompt": "近景，年轻男子打断对方说话，面带漫不经心，背景赤金色炎剑火焰亮起，固定镜头，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬打断灵曦，叶烬说道：「我在救你的命。细节以后再说。现在——」背景米迦勒持有者赤金色炎剑火焰亮起，固定镜头，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "「我在救你的命。细节以后再说。现在——」米迦勒频率持有者的赤金色炎剑火焰在祭坛对面亮起。"
+      },
+      {
+        "panel_number": 10,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者降落，炎剑举起，说「放下圣女。这是你唯一的机会。」，叶烬和灵曦在画面另一侧",
+        "video_prompt": "平视中景，壮硕男子穿赤金色天使战甲降落，举起炎剑，正在说话，对面年轻男子和年轻女子，镜头缓缓推近，黄昏光，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，米迦勒持有者穿赤金色天使战甲降落，举起炎剑，米迦勒持有者说道：「放下圣女。这是你唯一的机会。」对面叶烬和灵曦，镜头缓缓推近，黄昏光，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0",
+            "slot": "祭坛北侧护卫站位"
+          },
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "「放下圣女。这是你唯一的机会。」"
+      },
+      {
+        "panel_number": 11,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬面对米迦勒持有者，嘴角带着漫不经心的笑，说「从来不是。」",
+        "video_prompt": "近景，年轻男子嘴角带漫不经心的笑，说话，固定镜头，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬嘴角带漫不经心的笑，叶烬说道：「从来不是。」固定镜头，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "「从来不是。」"
+      },
+      {
+        "panel_number": 12,
+        "shot_type": "仰拍全景",
+        "camera_move": "急速俯冲跟随",
+        "connect_camera_move": "硬切",
+        "description": "叶烬抱紧灵曦，六翼猛然拍下，两人从祭坛边缘一跃而下，坠入三十米下的曙光城街道",
+        "video_prompt": "仰拍全景，年轻男子抱紧年轻女子六翼猛然拍下，两人从三十米高空祭坛边缘跃下坠落，背景赤金色战甲男子和白银护卫，镜头急速俯冲跟随，黄昏夜色，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，叶烬抱紧灵曦六翼猛然拍下，两人从三十米高空祭坛边缘跃下坠落，背景米迦勒持有者和天使护卫，镜头急速俯冲跟随，黄昏夜色，史诗级电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          },
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "天使护卫",
+            "appearance": "0"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "他抱紧灵曦，六翼猛然拍下——两个人从祭坛边缘一跃而下，坠入三十米下的曙光城街道。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-03",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "仰拍全景",
+        "camera_move": "急速俯冲",
+        "connect_camera_move": "硬切",
+        "description": "叶烬六翼在距地面五米处猛然张开制动，两人撞上曙光城主干道路面，叶烬放下灵曦，灵曦立刻拉开距离展开三翼防御姿态",
+        "video_prompt": "仰拍全景，年轻男子六翼猛然张开制动，两人撞上宽阔街道路面，男子放下女子，女子立刻拉开距离展开三翼防御，镜头急速俯冲，夜晚路灯，写实CGI电影画质",
+        "sync_video_prompt": "仰拍全景，叶烬六翼猛然张开制动，两人撞上曙光城主干道路面，叶烬放下灵曦，灵曦立刻拉开距离展开三翼防御，镜头急速俯冲，夜晚路灯，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道中央叶烬落地点的位置"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "action",
+        "source_text": "叶烬的六翼在距地面五米处猛然张开制动。两个人撞上了曙光城主干道的路面。叶烬放下灵曦。灵曦落地的一瞬间就拉开了距离，三翼展开成防御姿态——圣翼护盾。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "越肩近景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "灵曦面对叶烬，三翼展开防御，质问「你到底是什么？我的审判之眼——我看不到你的频率属性。什么都看不到。」",
+        "video_prompt": "越肩近景，年轻女子三翼展开防御，面对前方质问，镜头缓缓推近，夜晚路灯，写实CGI电影画质",
+        "sync_video_prompt": "越肩近景，灵曦三翼展开防御，面对叶烬，灵曦质问道：「你到底是什么？我的审判之眼——我看不到你的频率属性。什么都看不到。」镜头缓缓推近，夜晚路灯，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你到底是什么？我的审判之眼——我看不到你的频率属性。什么都看不到。」"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬面对灵曦，低声说「变了。」，表情漫不经心，眼神深邃",
+        "video_prompt": "近景，年轻男子面对前方，低声说话，表情漫不经心眼神深邃，固定镜头，夜晚路灯，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬面对灵曦，叶烬低声道：「变了。」表情漫不经心眼神深邃，固定镜头，夜晚路灯，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「变了。」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "平视全景",
+        "camera_move": "手持晃动",
+        "connect_camera_move": "硬切",
+        "description": "街道左侧建筑外墙整面炸开，可视化音波射出，灵曦三翼护盾迎上被推退五米，碎墙后彼列持有者双面人形态展开，安度西亚斯和梦魇跟随",
+        "video_prompt": "平视全景，街道左侧建筑外墙整面炸开，可视化音波射出，年轻女子三翼护盾迎上被推退，碎墙后三个人影走出，最前方男子左右脸截然不同，镜头手持晃动，夜晚爆炸光，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，街道左侧建筑外墙整面炸开，可视化音波射出，灵曦三翼护盾迎上被推退，碎墙后彼列持有者双面人形态展开，安度西亚斯持有者和梦魇持有者跟随，镜头手持晃动，夜晚爆炸光，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          },
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道中央叶烬落地点的位置"
+          },
+          {
+            "name": "彼列持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "安度西亚斯持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "梦魇持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "action",
+        "source_text": "街道左侧的一栋建筑的外墙突然整面炸开。一道可视化的音波从碎裂的墙壁后面射出。灵曦的三翼护盾迎上音波冲击，被推得向后滑了五米。碎墙之后，三个人影走了出来。最前面的彼列持有者，双面人形态展开——左半边是英俊温柔的年轻男人，右半边是灰白皮肤、竖瞳的恶魔面孔。"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "彼列持有者双面人形态近景，双声叠加说「噢。看来我们不是唯一想抢这笔买卖的人。」",
+        "video_prompt": "近景，男子左半脸英俊温柔右半脸灰白恶魔竖瞳，双声叠加说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，彼列持有者左半脸英俊温柔右半脸灰白恶魔竖瞳，彼列持有者双声叠加道：「噢。看来我们不是唯一想抢这笔买卖的人。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "彼列持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「噢。看来我们不是唯一想抢这笔买卖的人。」"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦看向彼列持有者，眼中有被背叛的愤怒，说「你……」",
+        "video_prompt": "近景，年轻女子看向前方，眼中有愤怒，嘴唇微动，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦看向彼列持有者，眼中有被背叛的愤怒，灵曦愤怒道：「你……」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「你……」"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "彼列持有者嘲讽说「别激动，甜心。我们只是来完成工作的。杀死你——阻止炽天使降临——对每个人都好。嗯，除了你。」",
+        "video_prompt": "近景，双面人男子嘲讽说话，嘴角带扭曲笑容，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，彼列持有者嘲讽，彼列持有者说道：「别激动，甜心。我们只是来完成工作的。杀死你——阻止炽天使降临——对每个人都好。嗯，除了你。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {
+            "name": "彼列持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「别激动，甜心。我们只是来完成工作的。杀死你——阻止炽天使降临——对每个人都好。嗯，除了你。」"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "叶烬往前走一步挡在灵曦身前，说「三打一？还是三打二？如果你算她的话。虽然她现在大概更想打我。」",
+        "video_prompt": "平视中景，年轻男子往前走一步挡在年轻女子身前，面对前方说话，背景女子三翼展开，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬往前走一步挡在灵曦身前，叶烬说道：「三打一？还是三打二？如果你算她的话。虽然她现在大概更想打我。」背景灵曦三翼展开，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道中央叶烬落地点的位置"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "action",
+        "source_text": "叶烬往前走了一步，挡在灵曦身前。「三打一？还是三打二？如果你算她的话。虽然她现在大概更想打我。」"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "叶烬抓住灵曦手腕说「跑。」，拽着灵曦冲向西侧居民区，彼列持有者喊「追。圣女必须死——不管先杀谁。」，三个恶魔暗影紧随追击",
+        "video_prompt": "平视中景，年轻男子抓住年轻女子手腕拽着她快速奔跑，背景三个暗影紧随追击，镜头手持跟随，夜晚街道，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬抓住灵曦手腕，叶烬说道：「跑。」拽着灵曦冲向西侧居民区，彼列持有者喊道：「追。圣女必须死——不管先杀谁。」三个恶魔暗影紧随追击，镜头手持跟随，夜晚街道，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          },
+          {
+            "name": "彼列持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "安度西亚斯持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "梦魇持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城主干道_夜晚",
+        "scene_type": "action",
+        "source_text": "他抓住灵曦的手腕。「跑。」然后他拽着灵曦冲向西侧居民区。「追。圣女必须死——不管先杀谁。」三个暗影消失在街道上。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-04",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "仰拍全景",
+        "camera_move": "缓缓升起",
+        "connect_camera_move": "硬切",
+        "description": "祭坛方向，米迦勒持有者从三十米高的祭坛上一跃而下，身后十二名天使护卫展开翅翼，在夜空中排成追击阵型",
+        "video_prompt": "仰拍全景，壮硕男子穿赤金色天使战甲从高空祭坛跃下，身后十二名白银战甲护卫展开翅翼排成追击阵型，镜头缓缓升起，夜晚，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，米迦勒持有者穿赤金色天使战甲从高空祭坛跃下，身后十二名天使护卫展开翅翼排成追击阵型，镜头缓缓升起，夜晚，史诗级电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "天使护卫",
+            "appearance": "0"
+          }
+        ],
+        "location": "六芒星祭坛_黄昏",
+        "scene_type": "action",
+        "source_text": "祭坛方向，米迦勒持有者从三十米高的祭坛上一跃而下。他身后，十二名全武装的天使护卫展开翅翼，在夜空中排成追击阵型。追逐开始了。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "叶烬拽着灵曦在曙光城街巷里跑，第一个路口急转弯，身后一道能量束从巡逻舰上射下来，正中他们半秒前站着的位置",
+        "video_prompt": "平视中景，年轻男子拽着年轻女子在狭窄街巷里快速奔跑，急转弯，身后能量束击中地面，镜头手持跟随，夜晚街巷，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬拽着灵曦在曙光城街巷里快速奔跑，急转弯，身后能量束击中地面，镜头手持跟随，夜晚街巷，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城街巷_夜晚",
+        "scene_type": "action",
+        "source_text": "叶烬拽着灵曦在曙光城的街巷里跑。第一个路口急转弯——身后一道能量束从巡逻舰上射下来，正中他们半秒前站着的位置。"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦在奔跑中喊「放手！我自己能跑！」",
+        "video_prompt": "近景，年轻女子在奔跑中喊话，表情倔强，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦在奔跑中，灵曦喊道：「放手！我自己能跑！」表情倔强，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城街巷_夜晚",
+        "scene_type": "action",
+        "source_text": "「放手！我自己能跑！」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬回应「随你。跟紧，往西。」，继续奔跑",
+        "video_prompt": "近景，年轻男子奔跑中回头说话，表情漫不经心，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬奔跑中回头，叶烬说道：「随你。跟紧，往西。」表情漫不经心，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城街巷_夜晚",
+        "scene_type": "action",
+        "source_text": "「随你。跟紧，往西。」"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "灵曦在跑动中喊「你闯入仪式，打断了降临——我为什么要跟你走？」，叶烬在前方低头穿过断裂的高架廊桥",
+        "video_prompt": "平视中景，年轻女子在跑动中喊话，前方年轻男子低头穿过断裂廊桥，镜头手持跟随，夜晚街巷，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦在跑动中喊话，灵曦喊道：「你闯入仪式，打断了降临——我为什么要跟你走？」前方叶烬低头穿过断裂廊桥，镜头手持跟随，夜晚街巷，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          },
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城街巷_夜晚",
+        "scene_type": "action",
+        "source_text": "「你闯入仪式，打断了降临——我为什么要跟你走？」叶烬在前方低头穿过一道断裂的高架廊桥——扯下仪式横幅遮住身后追兵的视线。"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「后面的恶魔想杀你。」，拐进一条窄巷，频率净化路灯在他经过时一盏接一盏炸裂",
+        "video_prompt": "近景，年轻男子奔跑中说话，背景路灯依次炸裂，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬奔跑中，叶烬说道：「后面的恶魔想杀你。」背景路灯依次炸裂，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城街巷_夜晚",
+        "scene_type": "action",
+        "source_text": "「后面的恶魔想杀你。」拐进一条窄巷。频率净化路灯在叶烬经过时一盏接一盏地炸裂。"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬继续说「你后面的那些天使——他们也不会让你活。」",
+        "video_prompt": "近景，年轻男子奔跑中说话，表情冷静，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬奔跑中，叶烬说道：「你后面的那些天使——他们也不会让你活。」表情冷静，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城街巷_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你后面的那些天使——他们也不会让你活。」"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "平视全景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "前方是宽阔商业街，散落着信众恐慌逃离时留下的祈祷垫、频率感应徽章、踩碎的圣光纪念品，叶烬和灵曦跑入商业街",
+        "video_prompt": "平视全景，宽阔商业街上散落着祈祷垫、徽章、纪念品，年轻男子和年轻女子跑入，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，宽阔商业街上散落着祈祷垫、徽章、纪念品，叶烬和灵曦跑入，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "action",
+        "source_text": "前方是一条宽阔的商业街——街上散落着信众恐慌逃离时留下的东西：祈祷垫、频率感应徽章、踩碎的圣光纪念品。"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「仪式中断了，你对教团来说已经从「容器」变成了「失败品」。你觉得他们会怎么处理一个用不上的容器？」",
+        "video_prompt": "近景，年轻男子奔跑中说话，表情冷静，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬奔跑中，叶烬说道：「仪式中断了，你对教团来说已经从「容器」变成了「失败品」。你觉得他们会怎么处理一个用不上的容器？」表情冷静，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「仪式中断了，你对教团来说已经从「容器」变成了「失败品」。你觉得他们会怎么处理一个用不上的容器？」"
+      },
+      {
+        "panel_number": 10,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦的余光扫过脚下旗帜——她的脸被印在上面，下面写着「光之容器·灵曦」，她的眼神微微一顿",
+        "video_prompt": "近景，年轻女子奔跑中余光扫过脚下旗帜，旗帜上印着她的脸，眼神微微一顿，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦奔跑中余光扫过脚下旗帜，旗帜上印着她的脸和「光之容器·灵曦」字样，眼神微微一顿，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "emotion",
+        "source_text": "灵曦的余光扫过脚下那面旗帜——她的脸被印在上面，下面写着「光之容器·灵曦」。容器。这个词她听了十九年。"
+      },
+      {
+        "panel_number": 11,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "探照灯光柱扫过来，叶烬猛地拉住灵曦闪进一个门洞，两人背贴背躲在阴影里",
+        "video_prompt": "平视中景，年轻男子猛地拉住年轻女子闪进门洞，两人背贴背躲在阴影里，探照灯光柱从外面扫过，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬猛地拉住灵曦闪进门洞，两人背贴背躲在阴影里，探照灯光柱从外面扫过，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道深处建筑门洞阴影处"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "街道深处建筑门洞阴影处"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "suspense",
+        "source_text": "探照灯的光柱扫过来了——叶烬猛地拉住灵曦闪进一个门洞，两个人背贴背躲在阴影里。"
+      },
+      {
+        "panel_number": 12,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "灵曦声音很轻地说「……你在骗我。」",
+        "video_prompt": "近景，年轻女子靠在门洞阴影里，声音很轻地说话，表情复杂，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦靠在门洞阴影里，灵曦轻声道：「……你在骗我。」表情复杂，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「……你在骗我。」"
+      },
+      {
+        "panel_number": 13,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「你可以回去验证。但你只有一次机会。」",
+        "video_prompt": "近景，年轻男子靠在门洞阴影里，平静说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬靠在门洞阴影里，叶烬说道：「你可以回去验证。但你只有一次机会。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你可以回去验证。但你只有一次机会。」"
+      },
+      {
+        "panel_number": 14,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "光柱扫走，街道尽头爆炸声响起，叶烬冲出门洞，灵曦咬了咬牙，然后跑起来，方向西，她跑在叶烬旁边而不是身后",
+        "video_prompt": "平视中景，年轻男子冲出门洞，年轻女子咬牙跟上，两人并排向西奔跑，背景爆炸光，镜头手持跟随，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬冲出门洞，灵曦咬牙跟上，两人并排向西奔跑，背景爆炸光，镜头手持跟随，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城商业街_夜晚",
+        "scene_type": "action",
+        "source_text": "光柱扫走了。街道尽头爆炸声响起——恶魔潜入组抄了近路。叶烬冲出门洞。灵曦咬了咬牙。然后她跑起来了。方向：西。但她没有跑在叶烬身后。她跑在他旁边。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-05",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "平视全景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "曙光城西门，巨型频率屏蔽护盾从城墙顶端垂落，三百米高的发光之墙封锁出口，叶烬和灵曦到达城门前",
+        "video_prompt": "平视全景，宽阔城门前，三百米高的半透明频率护盾从城墙垂落如发光之墙，年轻男子和年轻女子到达城门前，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，曙光城西门前，三百米高的半透明频率护盾从城墙垂落如发光之墙，叶烬和灵曦到达城门前，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道中央面向护盾的位置"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "街道中央面向护盾的位置"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "epic",
+        "source_text": "他们没有跑出去。曙光城的西门在他们到达之前三分钟就被关闭了。巨型频率屏蔽护盾从城墙顶端垂落——三百米高的发光之墙。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "叶烬看着护盾说「不好搞。」",
+        "video_prompt": "近景，年轻男子看着前方护盾，说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬看着护盾，叶烬说道：「不好搞。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「不好搞。」"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦语气讽刺说「你的计划不包括这个？」",
+        "video_prompt": "近景，年轻女子语气讽刺说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦语气讽刺，灵曦说道：「你的计划不包括这个？」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你的计划不包括这个？」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「我的计划是在他们启动闭锁之前出城。多了几个变数。」",
+        "video_prompt": "近景，年轻男子平静说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静说道：「我的计划是在他们启动闭锁之前出城。多了几个变数。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「我的计划是在他们启动闭锁之前出城。多了几个变数。」"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "灵曦说「这东西的发生器在城墙四个角各有一个节点。打掉任意一个，护盾就会出现缺口。」，叶烬问「你怎么知道的？」",
+        "video_prompt": "平视中景，年轻女子说话，年轻男子听着，背景是护盾发光之墙，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦说道：「这东西的发生器在城墙四个角各有一个节点。打掉任意一个，护盾就会出现缺口。」叶烬问道：「你怎么知道的？」背景是护盾发光之墙，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "街道中央面向护盾的位置"
+          },
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道中央面向护盾的位置"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「这东西的发生器在城墙四个角各有一个节点。打掉任意一个，护盾就会出现缺口。」「你怎么知道的？」"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦说「我是圣女。教团的城防设施我全都参观过。实际上我记忆力很好。」",
+        "video_prompt": "近景，年轻女子平静说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦平静说道：「我是圣女。教团的城防设施我全都参观过。实际上我记忆力很好。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「我是圣女。教团的城防设施我全都参观过。实际上我记忆力很好。」"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "平视全景",
+        "camera_move": "手持晃动",
+        "connect_camera_move": "硬切",
+        "description": "一柄炎剑从天而降，劈在叶烬和灵曦之间的地面上，米迦勒持有者从天空中降落，三方势力在街道上形成三角形对峙",
+        "video_prompt": "平视全景，炎剑从天而降劈在地面，壮硕男子穿赤金色战甲从天降落，街道上三方势力形成三角形对峙，镜头手持晃动，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，炎剑从天而降劈在地面，米迦勒持有者穿赤金色战甲从天降落，街道上叶烬、灵曦、米迦勒持有者、彼列持有者等三方势力形成三角形对峙，镜头手持晃动，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道西侧城门护盾前方空地"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "街道西侧城门护盾前方空地"
+          },
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0",
+            "slot": "街道北侧靠近建筑墙角的位置"
+          },
+          {
+            "name": "彼列持有者",
+            "appearance": "0",
+            "slot": "街道东侧巷口边缘的位置"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "她没说完。因为一柄炎剑从天而降，劈在他们之间的地面上。米迦勒持有者从天空中降落。"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者看向灵曦，炎剑举起，说「圣女。离开那个异端。回到我身边。」",
+        "video_prompt": "近景，壮硕男子穿赤金色战甲，举起炎剑，目光看向前方，正在说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，米迦勒持有者穿赤金色战甲，举起炎剑，米迦勒持有者说道：「圣女。离开那个异端。回到我身边。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「圣女。离开那个异端。回到我身边。」"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬问「你的大祭司知道降临仪式会杀了她吧？你也知道？」",
+        "video_prompt": "近景，年轻男子平静问话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静问道：「你的大祭司知道降临仪式会杀了她吧？你也知道？」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你的大祭司知道降临仪式会杀了她吧？你也知道？」"
+      },
+      {
+        "panel_number": 10,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者沉默，没有回答，灵曦的心沉了一下，这个沉默比任何回答都要响亮",
+        "video_prompt": "近景，壮硕男子沉默，嘴唇紧抿，眼神闪烁，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，米迦勒持有者沉默，嘴唇紧抿，眼神闪烁，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "emotion",
+        "source_text": "沉默。米迦勒持有者没有回答。灵曦的心沉了一下。这个沉默比任何回答都要响亮。"
+      },
+      {
+        "panel_number": 11,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦面部近景，眼神复杂，心沉了一下",
+        "video_prompt": "近景，年轻女子面部，眼神复杂，嘴唇微微颤抖，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦面部，眼神复杂，嘴唇微微颤抖，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "emotion",
+        "source_text": "灵曦的心沉了一下。这个沉默比任何回答都要响亮。"
+      },
+      {
+        "panel_number": 12,
+        "shot_type": "平视全景",
+        "camera_move": "手持晃动",
+        "connect_camera_move": "硬切",
+        "description": "彼列持有者从阴影中说「噢，天使大人也来了。这下可热闹了。」，三方势力完整对峙，混战爆发",
+        "video_prompt": "平视全景，三方势力在街道上对峙，双面人男子从阴影中说话，混战爆发，镜头手持晃动，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，三方势力在街道上对峙，彼列持有者从阴影中说道：「噢，天使大人也来了。这下可热闹了。」混战爆发，镜头手持晃动，夜晚，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道西侧城门护盾前方空地"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1",
+            "slot": "街道西侧城门护盾前方空地"
+          },
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0",
+            "slot": "街道北侧靠近建筑墙角的位置"
+          },
+          {
+            "name": "彼列持有者",
+            "appearance": "0",
+            "slot": "街道东侧巷口边缘的位置"
+          },
+          {
+            "name": "安度西亚斯持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "梦魇持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "天使护卫",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「噢，天使大人也来了。这下可热闹了。」三方势力在街道上形成三角形。混战爆发。"
+      },
+      {
+        "panel_number": 13,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "叶烬右手具现暗焰爪迎上音波，对灵曦喊「灵曦！护盾节点——你去，我拖住他们！」",
+        "video_prompt": "平视中景，年轻男子右手具现暗焰爪迎上音波，回头喊话，背景混战，镜头手持跟随，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬右手具现暗焰爪迎上音波，叶烬喊道：「灵曦！护盾节点——你去，我拖住他们！」背景混战，镜头手持跟随，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "叶烬右手具现暗焰爪，迎上音波。「灵曦！护盾节点——你去，我拖住他们！」"
+      },
+      {
+        "panel_number": 14,
+        "shot_type": "平视中景",
+        "camera_move": "手持晃动",
+        "connect_camera_move": "硬切",
+        "description": "梦魇化为暗影直奔灵曦，灵曦三翼护盾迎上，梦魇利爪在她左肩撕开一道口子",
+        "video_prompt": "平视中景，暗影形态生物直扑年轻女子，女子三翼护盾迎上，左肩被利爪撕开，镜头手持晃动，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，梦魇持有者化为暗影直扑灵曦，灵曦三翼护盾迎上，左肩被利爪撕开，镜头手持晃动，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          },
+          {
+            "name": "梦魇持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "梦魇化为暗影直奔灵曦。灵曦转身，三翼护盾迎上。梦魇的利爪在她左肩撕开一道口子。"
+      },
+      {
+        "panel_number": 15,
+        "shot_type": "平视中景",
+        "camera_move": "急速推近",
+        "connect_camera_move": "硬切",
+        "description": "灵曦眼睛里金色六芒星纹路陡然亮起，右手猛然抬起掌心出现净化之焰，一道白金色火柱直扑梦魇，梦魇左臂被烧成灰",
+        "video_prompt": "平视中景，年轻女子眼中金色纹路亮起，右手掌心白金色火柱喷射而出，暗影生物左臂被烧成灰，镜头急速推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦眼中金色六芒星纹路亮起，右手掌心净化之焰白金色火柱喷射而出，梦魇持有者左臂被烧成灰，镜头急速推近，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          },
+          {
+            "name": "梦魇持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "灵曦的眼睛里金色六芒星纹路陡然亮起。她的右手猛然抬起，掌心出现净化之焰。一道白金色火柱直扑梦魇。梦魇左臂被烧成了灰。"
+      },
+      {
+        "panel_number": 16,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬在混战中笑着喊「能打就别愣着！」",
+        "video_prompt": "近景，年轻男子在混战中笑着喊话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬在混战中笑着，叶烬喊道：「能打就别愣着！」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「能打就别愣着！」他正在同时应付米迦勒持有者和安度西亚斯。他在笑。"
+      },
+      {
+        "panel_number": 17,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "灵曦看了一眼西南方向护盾节点，然后跑了，向西南",
+        "video_prompt": "平视中景，年轻女子看了一眼西南方向，然后快速向西南奔跑，背景混战，镜头手持跟随，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦看了一眼西南方向护盾节点，然后快速向西南奔跑，背景混战，镜头手持跟随，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "灵曦",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "灵曦看了一眼西南方向——护盾节点。然后她跑了。向西南。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-06",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "平视全景",
+        "camera_move": "手持晃动",
+        "connect_camera_move": "硬切",
+        "description": "叶烬独自面对三方，米迦勒持有者是最大威胁，叶烬在Lv.1半武装状态下每次刀剑碰撞都被推退半步",
+        "video_prompt": "平视全景，年轻男子独自面对三方敌人，每次碰撞都被推退，镜头手持晃动，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，叶烬独自面对米迦勒持有者、彼列持有者、安度西亚斯持有者三方，每次碰撞都被推退，镜头手持晃动，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1",
+            "slot": "街道中央面向护盾的位置"
+          },
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0",
+            "slot": "街道北侧靠近建筑墙角的位置"
+          },
+          {
+            "name": "彼列持有者",
+            "appearance": "0",
+            "slot": "街道东侧巷口边缘的位置"
+          },
+          {
+            "name": "安度西亚斯持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "叶烬独自面对三方。米迦勒持有者是最大的威胁。叶烬在Lv.1半武装状态下差距明显。每一次刀剑碰撞，都会被推退半步。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者问「你的频率……不是天使，也不是恶魔。但两种都有。你到底是什么？」",
+        "video_prompt": "近景，壮硕男子穿赤金色战甲，眉头紧锁问话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，米迦勒持有者穿赤金色战甲，眉头紧锁，米迦勒持有者问道：「你的频率……不是天使，也不是恶魔。但两种都有。你到底是什么？」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你的频率……不是天使，也不是恶魔。但两种都有。你到底是什么？」"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬边打边说「问这个问题的人太多了。我收会员费的话早就财务自由了。」",
+        "video_prompt": "近景，年轻男子边打斗边说话，嘴角带痞气笑容，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬边打斗边说话，叶烬说道：「问这个问题的人太多了。我收会员费的话早就财务自由了。」嘴角带痞气笑容，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「问这个问题的人太多了。我收会员费的话早就财务自由了。」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "平视中景",
+        "camera_move": "手持晃动",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒的一记劈斩在叶烬左肩甲上留下灼伤痕迹，叶烬脸上终于没了笑容",
+        "video_prompt": "平视中景，壮硕男子一记劈斩击中年轻男子左肩，年轻男子脸上笑容消失，镜头手持晃动，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，米迦勒持有者一记劈斩击中叶烬左肩甲留下灼伤，叶烬脸上笑容消失，镜头手持晃动，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "他开始挨打。米迦勒的一记劈斩在他左肩甲上留下灼伤痕迹。叶烬的脸上终于没了笑容。"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者说「承认吧。你一个人打不过我们所有人。你在等什么？」",
+        "video_prompt": "近景，壮硕男子说话，眼神逼迫，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，米迦勒持有者说道：「承认吧。你一个人打不过我们所有人。你在等什么？」眼神逼迫，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「承认吧。你一个人打不过我们所有人。你在等什么？」"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「等你们互相打起来。」",
+        "video_prompt": "近景，年轻男子平静说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静说道：「等你们互相打起来。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「等你们互相打起来。」"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "平视全景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "远处传来一道白金色的光柱冲天而起——灵曦到达了护盾节点",
+        "video_prompt": "平视全景，远处一道白金色光柱冲天而起，混战中的众人都注意到，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，远处一道白金色光柱冲天而起——灵曦到达了护盾节点，混战中的众人都注意到，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {
+            "name": "叶烬",
+            "appearance": "1"
+          },
+          {
+            "name": "米迦勒持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "彼列持有者",
+            "appearance": "0"
+          },
+          {
+            "name": "安度西亚斯持有者",
+            "appearance": "0"
+          }
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "epic",
+        "source_text": "但没有人应答。远处传来一道白金色的光柱冲天而起——灵曦到达了护盾节点。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-07",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "彼列持有者感知到梦魇被打，对叶烬说「安度西亚斯——转向，追圣女。我来处理这个黑翼的。」",
+        "video_prompt": "近景，双面人男子说话，眼神转变，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，彼列持有者说道：「安度西亚斯——转向，追圣女。我来处理这个黑翼的。」眼神转变，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "彼列持有者", "appearance": "0"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "梦魇被灵曦打了。彼列对叶烬的判断从「障碍」修正为「威胁」。「安度西亚斯——转向，追圣女。我来处理这个黑翼的。」"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者说「你哪也去不了。」，彼列持有者说「一对二。看看你还能耍多少花招。」",
+        "video_prompt": "近景，壮硕男子说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，米迦勒持有者说道：「你哪也去不了。」彼列持有者接道：「一对二。看看你还能耍多少花招。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {"name": "米迦勒持有者", "appearance": "0"},
+          {"name": "彼列持有者", "appearance": "0"}
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「你哪也去不了。」「一对二。看看你还能耍多少花招。」"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬闭了一下眼睛，然后睁开，灰烬色的瞳孔变了——一丝暗金色从瞳孔中央向外扩散，零号频率Lv.2全频同步启动",
+        "video_prompt": "近景，年轻男子闭眼再睁开，灰色瞳孔中暗金色光芒从中央向外扩散，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬闭眼再睁开，灰烬色瞳孔中暗金色光芒从中央向外扩散，零号频率Lv.2全频同步启动，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "叶烬", "appearance": "1"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "epic",
+        "source_text": "叶烬闭了一下眼睛。然后睁开。灰烬色的瞳孔变了——一丝暗金色从瞳孔中央向外扩散。零号频率——Lv.2，全频同步。"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "仰拍全景",
+        "camera_move": "缓缓升起",
+        "connect_camera_move": "急速推近",
+        "description": "叶烬变身从心脏开始，半武装扩张为全覆盖，六翼完全展开，左手手套碎裂露出黑色硬质甲壳覆盖的手指",
+        "video_prompt": "仰拍全景，年轻男子全身铠甲从心脏向外扩张覆盖全身，六翼完全展开，左手手套碎裂露出黑色甲壳手指，镜头缓缓升起，夜晚，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，叶烬全身铠甲从心脏向外扩张覆盖全身，六翼完全展开，左手手套碎裂露出黑色甲壳手指，镜头缓缓升起，夜晚，史诗级电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "叶烬", "appearance": "2"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "epic",
+        "source_text": "变身从心脏开始。半武装扩张为全覆盖。六翼完全展开。他的左手手套碎裂了——露出黑色硬质甲壳覆盖的手指。这就是零号频率的代价。"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「不好意思，前面一直在热身。」，嘴角带着痞气笑容",
+        "video_prompt": "近景，年轻男子全甲状态，嘴角带痞气笑容说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬全甲状态，叶烬说道：「不好意思，前面一直在热身。」嘴角带痞气笑容，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "叶烬", "appearance": "2"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「不好意思，前面一直在热身。」"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "平视中景",
+        "camera_move": "手持晃动跟随",
+        "connect_camera_move": "硬切",
+        "description": "叶烬速度完全不在一个层级，左手天使系光刃格住炎剑没有被推退，右手具现恶魔系镰刀，三记连击后融合技，一道暗金色冲击波从掌心射出",
+        "video_prompt": "平视中景，年轻男子全甲状态速度极快，左手光刃格住炎剑，右手镰刀三连击，掌心射出暗金色冲击波，镜头手持晃动跟随，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬全甲状态速度极快，左手天使系光刃格住米迦勒持有者炎剑，右手恶魔系镰刀三连击，掌心射出暗金色冲击波，镜头手持晃动跟随，夜晚，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {"name": "叶烬", "appearance": "2"},
+          {"name": "米迦勒持有者", "appearance": "0"},
+          {"name": "彼列持有者", "appearance": "0"}
+        ],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "然后他动了。速度完全不在一个层级了。左手天使系光刃格住炎剑——这一次没有被推退。叶烬右手具现恶魔系镰刀。三记连击后——融合技。一道暗金色的冲击波从他的掌心射出——是零号频率的原始形态。"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "平视中景",
+        "camera_move": "急速推近",
+        "connect_camera_move": "硬切",
+        "description": "米迦勒持有者的炎剑上的火焰熄灭了，他被打飞",
+        "video_prompt": "平视中景，壮硕男子炎剑火焰熄灭，被冲击波打飞，镜头急速推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，米迦勒持有者炎剑火焰熄灭，被暗金色冲击波打飞，镜头急速推近，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [{"name": "米迦勒持有者", "appearance": "0"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "米迦勒持有者的炎剑上的火焰熄灭了。他被打飞了。"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "彼列持有者忌惮地说「零号频率。原来传说是真的。」",
+        "video_prompt": "近景，双面人男子忌惮说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，彼列持有者忌惮，彼列持有者说道：「零号频率。原来传说是真的。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "彼列持有者", "appearance": "0"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「零号频率。原来传说是真的。」"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬问「你还要打？」，彼列持有者的幻境在接触叶烬时碎了",
+        "video_prompt": "近景，年轻男子全甲状态平静问话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬全甲状态平静问道：「你还要打？」彼列持有者的幻境在接触叶烬时碎了，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "叶烬", "appearance": "2"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「你还要打？」彼列持有者的幻境在接触叶烬时碎了。零号频率的被动效果：频率归零场。"
+      },
+      {
+        "panel_number": 10,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "彼列持有者转身就跑，说「告辞。我们会再见的，零号。」",
+        "video_prompt": "近景，双面人男子转身逃跑，回头说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，彼列持有者转身逃跑，彼列持有者说道：「告辞。我们会再见的，零号。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "彼列持有者", "appearance": "0"}],
+        "location": "曙光城西门_夜晚",
+        "scene_type": "action",
+        "source_text": "「告辞。我们会再见的，零号。」"
+      },
+      {
+        "panel_number": 11,
+        "shot_type": "平视全景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "护盾节点处，灵曦独自面对安度西亚斯，她已用净化之焰烧穿节点外层防护装甲，内核还在运转",
+        "video_prompt": "平视全景，年轻女子独自面对壮硕男子，背景护盾节点装置外层装甲被烧穿，内核发光，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，灵曦独自面对安度西亚斯持有者，背景护盾节点装置外层装甲被烧穿，内核发光，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {"name": "灵曦", "appearance": "1", "slot": "节点装置正前方的空地"},
+          {"name": "安度西亚斯持有者", "appearance": "0", "slot": "节点右侧废墟碎石旁的位置"}
+        ],
+        "location": "护盾节点_夜晚",
+        "scene_type": "action",
+        "source_text": "灵曦独自面对安度西亚斯。她已经用净化之焰烧穿了节点的外层防护装甲——但内核还在运转。她只有一个选择：释放百分之一百。"
+      },
+      {
+        "panel_number": 12,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "安度西亚斯持有者说「你比预想中能打。但你撑不了多久。半降临——频率不稳定，用一次少一次。」",
+        "video_prompt": "近景，壮硕男子独角兽头盔，说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，安度西亚斯持有者独角兽头盔，说道：「你比预想中能打。但你撑不了多久。半降临——频率不稳定，用一次少一次。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [{"name": "安度西亚斯持有者", "appearance": "0"}],
+        "location": "护盾节点_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你比预想中能打。但你撑不了多久。半降临——频率不稳定，用一次少一次。」"
+      },
+      {
+        "panel_number": 13,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦的眼睛在这一瞬间从冰蓝色变成了纯金色，三翼变六翼，完整的炽天使光环从头顶涌出，完全降临",
+        "video_prompt": "近景，年轻女子眼睛从冰蓝变为纯金色，三翼暴涨为六翼，完整炽天使光环从头顶涌出，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦眼睛从冰蓝变为纯金色，三翼暴涨为六翼，完整炽天使光环从头顶涌出，完全降临，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "灵曦", "appearance": "2"}],
+        "location": "护盾节点_夜晚",
+        "scene_type": "epic",
+        "source_text": "灵曦的眼睛在这一瞬间从冰蓝色变成了纯金色。三翼变六翼。完整的炽天使光环从头顶涌出。半降临变成了完全降临。"
+      },
+      {
+        "panel_number": 14,
+        "shot_type": "仰拍全景",
+        "camera_move": "急速拉远",
+        "connect_camera_move": "急速推近",
+        "description": "一道白金色的光洪从灵曦掌心喷射而出，直径三米，安度西亚斯被推飞，光洪命中护盾节点，节点爆炸，护盾崩解，出口打开",
+        "video_prompt": "仰拍全景，年轻女子掌心喷射白金色光洪，壮硕男子被推飞，光洪命中节点装置爆炸，护盾崩解，镜头急速拉远，夜晚，史诗级电影画质",
+        "sync_video_prompt": "仰拍全景，灵曦掌心喷射白金色光洪，安度西亚斯持有者被推飞，光洪命中护盾节点爆炸，护盾崩解出口打开，镜头急速拉远，夜晚，史诗级电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {"name": "灵曦", "appearance": "2"},
+          {"name": "安度西亚斯持有者", "appearance": "0"}
+        ],
+        "location": "护盾节点_夜晚",
+        "scene_type": "epic",
+        "source_text": "一道白金色的光洪从她的掌心喷射而出——直径三米。安度西亚斯被推飞。然后光洪命中护盾节点。节点爆炸。护盾崩解。出口打开了。"
+      },
+      {
+        "panel_number": 15,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦六翼立刻收回三翼，身体撑不住了，鼻子流血，但没有倒下，三秒后叶烬落在她面前",
+        "video_prompt": "近景，年轻女子六翼收回三翼，鼻子流血但没有倒下，背景年轻男子全甲状态落在她面前，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦六翼收回三翼，鼻子流血但没有倒下，背景叶烬全甲状态落在她面前，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [
+          {"name": "灵曦", "appearance": "1"},
+          {"name": "叶烬", "appearance": "2"}
+        ],
+        "location": "护盾节点_夜晚",
+        "scene_type": "emotion",
+        "source_text": "灵曦的六翼立刻收回三翼——身体撑不住了。她的鼻子流血了。但她没有倒下。三秒后，叶烬落在她面前。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-08",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "叶烬看着灵曦说「你用了百分之百。」，然后说「走。出城。」，两人穿过崩塌的护盾缺口进入废土带",
+        "video_prompt": "平视中景，年轻男子看着年轻女子说话，两人穿过崩塌的护盾缺口，进入废土带，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬看着灵曦，叶烬说道：「你用了百分之百。」然后说：「走。出城。」两人穿过崩塌的护盾缺口进入废土带，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {"name": "叶烬", "appearance": "2"},
+          {"name": "灵曦", "appearance": "1"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「你用了百分之百。」「走。出城。」他们跑出了曙光城。穿过崩塌的护盾缺口，进入城外的废土带——青绿色的雾霾、生锈的钢铁废墟、坍塌的高架桥、覆盖着异变藤蔓的废弃建筑。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "平视全景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "缓缓推近",
+        "description": "废土带夜景，青绿色雾霾弥漫，生锈钢铁废墟，坍塌高架桥，覆盖异变藤蔓的废弃建筑，叶烬解除完全武装，从夹克内袋掏出新的黑手套套上左手",
+        "video_prompt": "平视全景，废土带夜景，青绿色雾霾弥漫，生锈废墟和异变藤蔓，年轻男子解除铠甲，从夹克内袋掏出黑手套套上左手，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，废土带夜景，青绿色雾霾弥漫，生锈废墟和异变藤蔓，叶烬解除完全武装，从夹克内袋掏出新的黑手套套上左手，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [
+          {"name": "叶烬", "appearance": "0"},
+          {"name": "灵曦", "appearance": "1"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "daily",
+        "source_text": "叶烬解除了完全武装。他从夹克内袋里掏出一只新的黑手套，套上左手。"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦试图解除半降临失败，一小块光甲从右手手背延伸到手腕消不掉了，手指微微发抖说「消不掉了。」",
+        "video_prompt": "近景，年轻女子看着右手手背光甲，手指微微发抖，说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦看着右手手背光甲，手指微微发抖，灵曦说道：「消不掉了。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "灵曦试图解除半降临——但失败了。一小块光甲从右手手背延伸到手腕，消不掉了。「消不掉了。」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「侵蚀度。每次使用都会留下一点。」",
+        "video_prompt": "近景，年轻男子平静说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静说道：「侵蚀度。每次使用都会留下一点。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "叶烬", "appearance": "0"}],
+        "location": "废土带_夜晚",
+        "scene_type": "daily",
+        "source_text": "「侵蚀度。每次使用都会留下一点。」"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "两人在坍塌高架桥下找了临时遮蔽点，灵曦站在三米外保持距离，说「你欠我一个解释。你打断了降临仪式。你说你在救我的命。为什么？」",
+        "video_prompt": "平视中景，年轻女子站在三米外，面对年轻男子，说话，背景坍塌高架桥，镜头缓缓推近，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦站在三米外，面对叶烬，灵曦说道：「你欠我一个解释。你打断了降临仪式。你说你在救我的命。为什么？」背景坍塌高架桥，镜头缓缓推近，夜晚废土，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {"name": "灵曦", "appearance": "1", "slot": "断裂钢梁旁可坐下的位置"},
+          {"name": "叶烬", "appearance": "0", "slot": "坍塌高架桥下的遮蔽处"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「你欠我一个解释。你打断了降临仪式。你说你在救我的命。为什么？」"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「你知道降临仪式的过程吗？真实的过程。频率层面。炽天使频率和人体频率同步到百分之百的时候，不是「融合」。是覆写。你的记忆、你的性格、你的灵魂——全部删除，格式化。」",
+        "video_prompt": "近景，年轻男子平静说话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静说道：「你知道降临仪式的过程吗？真实的过程。频率层面。炽天使频率和人体频率同步到百分之百的时候，不是「融合」。是覆写。你的记忆、你的性格、你的灵魂——全部删除，格式化。」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 12,
+        "characters": [{"name": "叶烬", "appearance": "0"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「你知道降临仪式的过程吗？真实的过程。频率层面。炽天使频率和人体频率同步到百分之百的时候，不是「融合」。是覆写。你的记忆、你的性格、你的灵魂——全部删除，格式化。」"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦呼吸停了一拍，说「你在说……降临仪式会杀了我。」",
+        "video_prompt": "近景，年轻女子呼吸停了一拍，说话，眼神震惊，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦呼吸停了一拍，灵曦震惊道：「你在说……降临仪式会杀了我。」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「你在说……降临仪式会杀了我。」"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「不是「会」。是「就是在」。百分之五十六的时候我打断了。如果让它走到百分之一百——你就不在了。」",
+        "video_prompt": "近景，年轻男子平静说话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静说道：「不是「会」。是「就是在」。百分之五十六的时候我打断了。如果让它走到百分之一百——你就不在了。」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [{"name": "叶烬", "appearance": "0"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「不是「会」。是「就是在」。百分之五十六的时候我打断了。如果让它走到百分之一百——你就不在了。」"
+      },
+      {
+        "panel_number": 9,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦问「你怎么知道的？」",
+        "video_prompt": "近景，年轻女子问话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦问道：「你怎么知道的？」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「你怎么知道的？」"
+      },
+      {
+        "panel_number": 10,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬声音很平地说「因为第一个容器叫苏菲。十七岁。我没来得及。」",
+        "video_prompt": "近景，年轻男子声音很平说话，眼神深处有沉重，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬声音很平，叶烬说道：「因为第一个容器叫苏菲。十七岁。我没来得及。」眼神深处有沉重，固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [{"name": "叶烬", "appearance": "0"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「因为第一个容器叫苏菲。十七岁。我没来得及。」"
+      },
+      {
+        "panel_number": 11,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦说「我需要时间。我需要——确认。」",
+        "video_prompt": "近景，年轻女子说话，眼神复杂，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦说道：「我需要时间。我需要——确认。」眼神复杂，固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「我需要时间。我需要——确认。」"
+      },
+      {
+        "panel_number": 12,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「你有时间。但不是现在。现在我们得在教团的搜索队找到我们之前走远一点。」",
+        "video_prompt": "近景，年轻男子说话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬说道：「你有时间。但不是现在。现在我们得在教团的搜索队找到我们之前走远一点。」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [{"name": "叶烬", "appearance": "0"}],
+        "location": "废土带_夜晚",
+        "scene_type": "daily",
+        "source_text": "「你有时间。但不是现在。现在我们得在教团的搜索队找到我们之前走远一点。」"
+      },
+      {
+        "panel_number": 13,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦问「你还没回答我最重要的问题。你到底是什么？」",
+        "video_prompt": "近景，年轻女子问话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦问道：「你还没回答我最重要的问题。你到底是什么？」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「你还没回答我最重要的问题。你到底是什么？」"
+      },
+      {
+        "panel_number": 14,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「零号。在天使和恶魔还不存在的时候，有一个人碰到了那个原始信号。在它分裂成两半之前。或者说——是他让它分裂成了两半。」",
+        "video_prompt": "近景，年轻男子平静说话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，叶烬平静说道：「零号。在天使和恶魔还不存在的时候，有一个人碰到了那个原始信号。在它分裂成两半之前。或者说——是他让它分裂成了两半。」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 10,
+        "characters": [{"name": "叶烬", "appearance": "0"}],
+        "location": "废土带_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「零号。在天使和恶魔还不存在的时候，有一个人碰到了那个原始信号。在它分裂成两半之前。或者说——是他让它分裂成了两半。」"
+      },
+      {
+        "panel_number": 15,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦说「所以你是……你是第一个？」",
+        "video_prompt": "近景，年轻女子震惊问话，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦震惊问道：「所以你是……你是第一个？」固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「所以你是……你是第一个？」"
+      },
+      {
+        "panel_number": 16,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "叶烬说「最后再问你一次。你可以回去。回去当你的圣女。或者跟我走。」，背对灵曦",
+        "video_prompt": "平视中景，年轻男子背对年轻女子说话，背景废土带夜景，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬背对灵曦说道：「最后再问你一次。你可以回去。回去当你的圣女。或者跟我走。」背景废土带夜景，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {"name": "叶烬", "appearance": "0"},
+          {"name": "灵曦", "appearance": "1"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "「最后再问你一次。你可以回去。回去当你的圣女。或者跟我走。」"
+      },
+      {
+        "panel_number": 17,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "灵曦看着叶烬的背影，然后抬头看向曙光城，浮空巡逻舰的灯光在夜空中扫来扫去",
+        "video_prompt": "近景，年轻女子看着前方背影，然后抬头看向远处城市灯光，固定镜头，夜晚废土，写实CGI电影画质",
+        "sync_video_prompt": "近景，灵曦看着叶烬的背影，然后抬头看向曙光城，浮空巡逻舰的灯光在夜空中扫来扫去，固定镜头，夜晚废土，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "灵曦看着他的背影。然后她抬头，看向曙光城。浮空巡逻舰的灯光在夜空中扫来扫去。"
+      },
+      {
+        "panel_number": 18,
+        "shot_type": "平视中景",
+        "camera_move": "手持跟随",
+        "connect_camera_move": "硬切",
+        "description": "灵曦的脚步动了，她没有回头，方向前方，废土，未知",
+        "video_prompt": "平视中景，年轻女子脚步动了，没有回头，向前走去，背景废土带夜景，镜头手持跟随，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，灵曦脚步动了，没有回头，向前走去，背景废土带夜景，镜头手持跟随，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "灵曦", "appearance": "1"}],
+        "location": "废土带_夜晚",
+        "scene_type": "emotion",
+        "source_text": "灵曦的脚步动了。她没有回头。方向：前方。废土。未知。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-09",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "俯拍远景",
+        "camera_move": "缓缓升起",
+        "connect_camera_move": "硬切",
+        "description": "废墟塔顶，嫉妒冠持有者站在一公里外的废墟塔顶，俯瞰远处曙光城，镜面质感的身体流动着无数张面孔",
+        "video_prompt": "俯拍远景，废墟塔顶，身体表面如流动镜面的人影站在塔顶边缘，远处曙光城灯光如孤岛，镜头缓缓升起，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "俯拍远景，废墟塔顶，嫉妒冠持有者身体表面如流动镜面站在塔顶边缘，远处曙光城灯光如孤岛，镜头缓缓升起，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "嫉妒冠持有者", "appearance": "0", "slot": "塔顶边缘俯瞰城市的位置"}],
+        "location": "废墟塔顶_夜晚",
+        "scene_type": "suspense",
+        "source_text": "远处的黑暗中，一个观察者目睹了一切。嫉妒冠持有者站在一公里外的废墟塔顶。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "彼列持有者通讯汇报「任务失败。圣女逃脱。安度西亚斯重伤，梦魇失踪。」",
+        "video_prompt": "近景，双面人男子通讯说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，彼列持有者通讯，彼列持有者说道：「任务失败。圣女逃脱。安度西亚斯重伤，梦魇失踪。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "彼列持有者", "appearance": "0"}],
+        "location": "废墟塔顶_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「任务失败。圣女逃脱。安度西亚斯重伤，梦魇失踪。」"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "嫉妒冠持有者说「不，不是失败。零号频率终于现身了。告诉傲慢冠——猎物比我们以为的更有价值。」",
+        "video_prompt": "近景，镜面质感人影说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，嫉妒冠持有者说道：「不，不是失败。零号频率终于现身了。告诉傲慢冠——猎物比我们以为的更有价值。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [{"name": "嫉妒冠持有者", "appearance": "0"}],
+        "location": "废墟塔顶_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「不，不是失败。零号频率终于现身了。告诉傲慢冠——猎物比我们以为的更有价值。」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓拉远",
+        "connect_camera_move": "硬切",
+        "description": "嫉妒冠持有者的身体像一面碎裂的镜子一样消散在夜色中",
+        "video_prompt": "平视中景，镜面质感人影身体像碎裂的镜子一样消散在夜色中，镜头缓缓拉远，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，嫉妒冠持有者的身体像一面碎裂的镜子一样消散在夜色中，镜头缓缓拉远，夜晚，写实CGI电影画质",
+        "duration_sec": 5,
+        "characters": [{"name": "嫉妒冠持有者", "appearance": "0"}],
+        "location": "废墟塔顶_夜晚",
+        "scene_type": "suspense",
+        "source_text": "然后他的身体像一面碎裂的镜子一样消散在了夜色中。"
+      }
+    ]
+  },
+  {
+    "clip_id": "clip-10",
+    "panels": [
+      {
+        "panel_number": 1,
+        "shot_type": "平视全景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "硬切",
+        "description": "祭坛废墟，大祭司光耀站在碎裂的六芒星平台上，裂纹如蛛网辐射，两座炸毁的放大塔只剩骨架，金色光粒子余烬飘落",
+        "video_prompt": "平视全景，老年男子穿白色祭司袍站在碎裂的六芒星平台上，裂纹辐射，炸毁的塔骨架，金色光粒子余烬飘落，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视全景，大祭司光耀穿白色祭司袍站在碎裂的六芒星平台上，裂纹辐射，炸毁的塔骨架，金色光粒子余烬飘落，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "大祭司光耀", "appearance": "0", "slot": "碎裂平台中央的位置"}],
+        "location": "祭坛废墟_夜晚",
+        "scene_type": "suspense",
+        "source_text": "曙光城·祭坛废墟。大祭司光耀站在碎裂的六芒星平台上。"
+      },
+      {
+        "panel_number": 2,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "缓缓推近",
+        "description": "大祭司光耀说「报告。」，眼神冷静笃定",
+        "video_prompt": "近景，老年男子眼神冷静笃定，说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，大祭司光耀眼神冷静笃定，大祭司光耀说道：「报告。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 4,
+        "characters": [{"name": "大祭司光耀", "appearance": "0"}],
+        "location": "祭坛废墟_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「报告。」"
+      },
+      {
+        "panel_number": 3,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "大祭司光耀听到「零号频率」三个字，闭上了眼睛，在黑暗中一个不请自来的画面闪过——灵曦六岁的样子被带进教团的第一天",
+        "video_prompt": "近景，老年男子闭上眼睛，画面闪回一个六岁小女孩被带进教团，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，大祭司光耀闭上眼睛，画面闪回六岁的灵曦被带进教团的第一天，固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "大祭司光耀", "appearance": "0"}],
+        "location": "祭坛废墟_夜晚",
+        "scene_type": "emotion",
+        "source_text": "大祭司闭上了眼睛。在黑暗中，一个不请自来的画面闪过——灵曦六岁的样子。被带进教团的第一天。「光耀爷爷，天使真的会来吗？」"
+      },
+      {
+        "panel_number": 4,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "大祭司光耀再次睁开眼睛，眼神没有任何变化——冷静、笃定，问「圣女的同步率在中断时是多少？」",
+        "video_prompt": "近景，老年男子睁开眼睛，眼神冷静笃定，说话，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，大祭司光耀睁开眼睛，眼神冷静笃定，大祭司光耀问道：「圣女的同步率在中断时是多少？」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 6,
+        "characters": [{"name": "大祭司光耀", "appearance": "0"}],
+        "location": "祭坛废墟_夜晚",
+        "scene_type": "suspense",
+        "source_text": "当他再次睁开眼睛的时候，他的眼神没有任何变化——冷静、笃定。「圣女的同步率在中断时是多少？」"
+      },
+      {
+        "panel_number": 5,
+        "shot_type": "近景",
+        "camera_move": "固定",
+        "connect_camera_move": "硬切",
+        "description": "大祭司光耀说「三十天。找到她。活着带回来。至于零号频率——如果无法活捉——消灭。」",
+        "video_prompt": "近景，老年男子冷静下令，固定镜头，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "近景，大祭司光耀冷静下令，大祭司光耀说道：「三十天。找到她。活着带回来。至于零号频率——如果无法活捉——消灭。」固定镜头，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [{"name": "大祭司光耀", "appearance": "0"}],
+        "location": "祭坛废墟_夜晚",
+        "scene_type": "suspense",
+        "source_text": "「三十天。找到她。活着带回来。至于零号频率——如果无法活捉——消灭。」"
+      },
+      {
+        "panel_number": 6,
+        "shot_type": "俯拍远景",
+        "camera_move": "缓缓升起俯瞰",
+        "connect_camera_move": "硬切",
+        "description": "废土带夜幕下，两个人影在雾霾中越走越远，一个堕天使，一个半降临的圣女，背景是曙光城的灯光",
+        "video_prompt": "俯拍远景，废土带夜幕下，两个人影在青绿色雾霾中越走越远，背景是曙光城的灯光如孤岛，镜头缓缓升起俯瞰，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "俯拍远景，废土带夜幕下，叶烬和灵曦两个人影在青绿色雾霾中越走越远，背景是曙光城的灯光如孤岛，镜头缓缓升起俯瞰，夜晚，写实CGI电影画质",
+        "duration_sec": 7,
+        "characters": [
+          {"name": "叶烬", "appearance": "0"},
+          {"name": "灵曦", "appearance": "1"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "epic",
+        "source_text": "夜幕下的废土带，两个人影在雾霾中越走越远。一个堕天使。一个半降临的圣女。"
+      },
+      {
+        "panel_number": 7,
+        "shot_type": "平视中景",
+        "camera_move": "缓缓推近",
+        "connect_camera_move": "缓缓推近",
+        "description": "叶烬走在前面，灵曦跟在两步之后，谁也没有说话，废土带的风吹过来，带着频率污染特有的金属味，远处地平线上青绿色雾霾和橙色旧工业废光交织",
+        "video_prompt": "平视中景，年轻男子走在前面，年轻女子跟在两步之后，谁也没有说话，废土带风吹过，远处地平线青绿色雾霾和橙色废光交织，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "sync_video_prompt": "平视中景，叶烬走在前面，灵曦跟在两步之后，谁也没有说话，废土带风吹过，远处地平线青绿色雾霾和橙色废光交织，镜头缓缓推近，夜晚，写实CGI电影画质",
+        "duration_sec": 8,
+        "characters": [
+          {"name": "叶烬", "appearance": "0"},
+          {"name": "灵曦", "appearance": "1"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "epic",
+        "source_text": "叶烬走在前面。灵曦跟在两步之后。谁也没有说话。废土带的风吹过来，带着频率污染特有的金属味。远处的地平线上，青绿色的雾霾和橙色的旧世界工业废光交织在一起。"
+      },
+      {
+        "panel_number": 8,
+        "shot_type": "俯拍大远景",
+        "camera_move": "缓缓升起",
+        "connect_camera_move": "缓缓拉远",
+        "description": "最终大远景，两个渺小的人影在广阔废土中并肩前行，他们是彼此唯一的同伴，属于零号频率的故事刚刚开始",
+        "video_prompt": "俯拍大远景，两个渺小人影在广阔废土中并肩前行，背景是曙光城的灯光和青绿色雾霾，镜头缓缓升起，夜晚，史诗级电影画质，虚幻引擎5写实渲染",
+        "sync_video_prompt": "俯拍大远景，叶烬和灵曦两个渺小人影在广阔废土中并肩前行，背景是曙光城的灯光和青绿色雾霾，镜头缓缓升起，夜晚，史诗级电影画质，虚幻引擎5写实渲染",
+        "duration_sec": 10,
+        "characters": [
+          {"name": "叶烬", "appearance": "0"},
+          {"name": "灵曦", "appearance": "1"}
+        ],
+        "location": "废土带_夜晚",
+        "scene_type": "epic",
+        "source_text": "他们是彼此唯一的同伴。在那幅画的最深处，属于零号频率的故事刚刚开始。"
+      }
+    ]
+  }
+]
