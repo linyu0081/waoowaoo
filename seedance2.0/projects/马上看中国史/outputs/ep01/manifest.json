@@ -1,0 +1,83 @@
+{
+  "version": "2.0",
+  "projectName": "马上看中国史",
+  "episode": "ep01",
+  "config": {
+    "projectName": "马上看中国史",
+    "mode": "domestic",
+    "duration": "2分钟",
+    "stylePreset": "其他",
+    "customStyle": "历史故事",
+    "inputSummary": "马上看中国史·宋：陈桥兵变。三位主持人（马上、马前卒、马后炮）在演播室以科普+小剧场+纪录片三种形态交替讲述赵匡胤从出生到陈桥兵变黄袍加身的一生。",
+    "hasExistingScript": true,
+    "existingScriptPath": "projects/马上看中国史/script/ep01-马上看中国史.md",
+    "videoRatio": "16:9",
+    "videoEngine": "workrally"
+  },
+  "createdAt": "2026-04-18T12:32:19+08:00",
+  "stages": {
+    "script": {
+      "status": "done",
+      "score": null,
+      "retries": 0,
+      "source": "external-import",
+      "note": "外部导入剧本，跳过编剧三阶段",
+      "completedAt": "2026-04-18T12:33:00+08:00"
+    },
+    "assets": {
+      "status": "done",
+      "new": {
+        "characters": 15,
+        "scenes": 12,
+        "props": 8
+      },
+      "completedAt": "2026-04-18T12:34:00+08:00"
+    },
+    "art": {
+      "status": "pending",
+      "generatedImages": 0
+    },
+    "storyboard": {
+      "status": "pending",
+      "totalShots": 0
+    },
+    "video": {
+      "status": "pending",
+      "produced": 0,
+      "failed": 0
+    }
+  },
+  "assets": {
+    "charactersAll": [
+      "马上", "马前卒", "马后炮", "赵匡胤", "李嗣源", "李从珂", "郭威", "郭荣",
+      "张永德", "李处耘", "马仁瑀", "节度使", "财务", "黑马警长", "螳螂夫人"
+    ],
+    "scenesAll": [
+      "演播室", "洛阳废墟街道", "洛阳城门军营", "后唐皇宫大殿", "赵匡胤洛阳宅邸",
+      "土味年会现场", "开封城街道", "高平战场", "北征行军路", "皇宫寝殿",
+      "陈桥驿军营", "雪地军帐"
+    ],
+    "propsAll": [
+      "黄色纛旗", "点检做天子木牌", "酱板鸭", "铜钱山", "殿前都点检印绶",
+      "龙袍冕冠", "契丹军报急件", "演播室话筒"
+    ],
+    "newThisEpisode": {
+      "characters": [
+        "马上", "马前卒", "马后炮", "赵匡胤", "李嗣源", "李从珂", "郭威", "郭荣",
+        "张永德", "李处耘", "马仁瑀", "节度使", "财务", "黑马警长", "螳螂夫人"
+      ],
+      "scenes": [
+        "演播室", "洛阳废墟街道", "洛阳城门军营", "后唐皇宫大殿", "赵匡胤洛阳宅邸",
+        "土味年会现场", "开封城街道", "高平战场", "北征行军路", "皇宫寝殿",
+        "陈桥驿军营", "雪地军帐"
+      ],
+      "props": [
+        "黄色纛旗", "点检做天子木牌", "酱板鸭", "铜钱山", "殿前都点检印绶",
+        "龙袍冕冠", "契丹军报急件", "演播室话筒"
+      ]
+    },
+    "images": {}
+  },
+  "storyboard": {},
+  "videos": {}
+}

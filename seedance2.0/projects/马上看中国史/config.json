@@ -1,0 +1,13 @@
+{
+    "projectName": "马上看中国史",
+    "mode": "domestic",
+    "duration": "2分钟",
+    "stylePreset": "其他",
+    "customStyle": "历史故事",
+    "inputSummary": "马上看中国史·宋：陈桥兵变。三位主持人（马上、马前卒、马后炮）在演播室以科普+小剧场+纪录片三种形态交替讲述赵匡胤从出生到陈桥兵变黄袍加身的一生，科普五代十国兵变乱局与宋朝建立的历史必然性。",
+    "hasExistingScript": true,
+    "existingScriptPath": "projects/马上看中国史/script/ep01-马上看中国史.md",
+    "videoRatio": "16:9",
+    "videoEngine": "workrally",
+    "createdAt": "2026-04-18T12:32:19+08:00"
+}
