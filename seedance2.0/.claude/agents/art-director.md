@@ -58,6 +58,8 @@ skills: character-extract-skill, scene-extract-skill, prop-extract-skill, workra
   - 保留旧记录不改写（保持跨集视觉一致）
   - 不计入 newCharacters
 
+**🆕 角色变体处理**：variant（`baseCharacter` 字段非空的条目）与主角色**同样按 name 去重**，作为顶层独立条目存在于 `characters.json` 中；但 `baseCharacter` 必须指向一个已经存在于 `characters.json` 或本批次新角色中的主角色 name，否则视为孤立变体，在返回值 `warnings` 中标记并丢弃该变体。
+
 场景、道具同理。
 
 把合并后的完整数组覆盖写回：
@@ -82,15 +84,22 @@ skills: character-extract-skill, scene-extract-skill, prop-extract-skill, workra
 只为"本集新增"的资产生成图（已存在的跨集资产不重复生成）。检查 `projects/<项目名>/assets/images/` 是否已有同名 png，有则跳过。
 
 按以下命名约定：
-- 角色 → `assets/images/char-<角色名>.png`
+- 角色 → `assets/images/char-<角色名>.png`（变体也用此命名，`name` 已含"·变体标签"）
 - 场景 → `assets/images/scene-<场景名>.png`
 - 道具 → `assets/images/prop-<道具名>.png`
 
-对每个新增资产：
-1. 从 `characters.json / scenes.json / props.json` 取 `aiPrompt` 字段
-2. 按 `imageOptions.engine` 调用对应 skill：
-   - `workrally` → `workrally-skill`（读取 `$WORKRALLY_API_KEY`）
-3. 下载图片到目标路径
+**🆕 角色生图顺序（强约束，避免视觉漂移）**：
+
+1. **分组**：把本集新增角色分成两批 —— `primaryChars`（`baseCharacter` 为空）与 `variantChars`（`baseCharacter` 非空）。
+2. **第一轮 · 主角色**：对每个 `primaryChars` 取 `aiPrompt` 字段，调用 `workrally-skill` 生图（无参考图），落盘到 `char-<name>.png`。
+3. **第二轮 · 变体**：对每个 `variantChars` 按以下流程：
+   - 找到其 `baseCharacter` 指向的主角色图片路径：`assets/images/char-<baseCharacter>.png`
+   - 若主角色图不存在（既未在本轮生成也不在历史资产池中），该变体跳过并记入 `warnings`
+   - 调用 `workrally-skill`，`prompt = <变体 aiPrompt>`，`reference_images = [<主角色图绝对路径>]`
+   - 落盘到 `char-<variant name>.png`
+4. **场景 / 道具**：无参考图依赖，正常单路生图即可。
+
+> 变体 aiPrompt 已由 character-extract-skill 强制以"参考上传图片角色，生成……"开头，美术指导只需负责**把正确的参考图传进去**，不要改写 prompt 本身。
 
 ### 第五步 · 更新 manifest
 
@@ -129,6 +138,9 @@ skills: character-extract-skill, scene-extract-skill, prop-extract-skill, workra
   },
   "imageGenerated": 5,
   "imageSkipped": 2,
+  "warnings": [
+    "variant '<name>' 的 baseCharacter '<xxx>' 未找到，已丢弃"
+  ],
   "files": {
     "characters": "projects/<项目名>/assets/characters.json",
     "scenes": "projects/<项目名>/assets/scenes.json",
@@ -145,3 +157,5 @@ skills: character-extract-skill, scene-extract-skill, prop-extract-skill, workra
 3. 图片仅为新增资产生成，不重复
 4. extract 阶段三路必须并行，不得串行
 5. 若某 skill 返回 JSON 解析失败，尝试剥离 markdown 代码块包装再解析；仍失败则把问题上报给导演
+6. 🆕 **角色变体生图必须串行两阶段**：先主角色生图完成后，才能开始变体生图；变体调用 workrally 时必须把主角色图作为参考图传入，且不得覆盖变体 aiPrompt 的首句"参考上传图片角色，生成……"
+7. 🆕 孤立变体（`baseCharacter` 指向不存在的主角色）不写入 `characters.json`，改写入返回值 `warnings` 并提示导演

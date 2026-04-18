@@ -3,15 +3,15 @@
     "projects": {
         "马上看中国史": {
             "currentEpisode": "ep01",
-            "currentStage": "art",
+            "currentStage": "storyboard",
             "episodes": {
                 "ep01": {
                     "status": "in_progress",
-                    "completedStages": ["script", "assets"],
+                    "completedStages": ["script", "assets", "art"],
                     "reviewScore": null,
                     "reviewRetries": 0,
-                    "lastUpdated": "2026-04-18T12:34:00+08:00",
-                    "notes": "外部导入剧本，跳过编剧三阶段；资产提取完成，等待用户决定是否生图"
+                    "lastUpdated": "2026-04-18T16:20:00+08:00",
+                    "notes": "脚本外部导入+资产提取+生图完成；分镜大纲 88 镜已产出，待用户确认后逐镜生产 V2 提示词"
                 }
             }
         }

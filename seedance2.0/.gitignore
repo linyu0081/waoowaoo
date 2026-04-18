@@ -1,10 +1,13 @@
-### 产物与素材（大文件，不进仓库，应在本地或 CDN）
-**/assets/images/
-**/assets/audio/
-**/outputs/**/tail-frames/
-**/outputs/**/videos/
+### 产物与素材
+# 🆕 为方便换机器直接拉项目，现在 images/audio/videos/tail-frames 全部入库。
+# 如果仓库体积后续膨胀过大（>1GB），再考虑迁 Git LFS 或外部 CDN。
+# （原屏蔽规则保留注释，需要瘦身时一键恢复）
+# **/assets/images/
+# **/assets/audio/
+# **/outputs/**/tail-frames/
+# **/outputs/**/videos/
 
-### 备份文件
+### 备份文件（保持屏蔽：_backup 里是旧版 .old.png，没必要入库）
 *.bak
 **/_backup/
 
