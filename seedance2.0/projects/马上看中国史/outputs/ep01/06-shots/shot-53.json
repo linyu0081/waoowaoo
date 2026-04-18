@@ -24,16 +24,16 @@
     "{{scene:高平战场}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "1491cc3f-4236-4820-90ef-be1236916e50",
+    "status": "generating",
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
+    "creditCount": 30,
+    "submittedAt": "2026-04-19T03:08:46.675902+08:00",
     "completedAt": ""
   }
 }

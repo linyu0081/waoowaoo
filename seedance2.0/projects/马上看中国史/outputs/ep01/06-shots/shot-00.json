@@ -25,15 +25,15 @@
   ],
   "videoTask": {
     "engine": "dreamina",
-    "modelName": "seedance2.0fast",
+    "modelName": "seedance2.0_vip",
     "taskId": "c79e1332-20bd-453f-8892-ecc03cd52dd0",
-    "status": "generating",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "status": "done",
+    "videoUrl": "https://v6-artist.vlabvod.com/b546d188690f641c655a924b4ac07fd1/69e3e464/video/tos/cn/tos-cn-v-148450/oECjldmsQkBJQEBIkBepS0z4gaCDLAt1qe4Haq/",
+    "videoFile": "outputs/ep01/videos/shot-00.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-00.jpg",
     "failReason": "",
     "creditCount": 210,
     "submittedAt": "2026-04-19T02:52:50.612394+08:00",
-    "completedAt": ""
+    "completedAt": "2026-04-19T03:07:19.985837+08:00"
   }
 }

@@ -23,16 +23,16 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0",
+    "taskId": "ec94a74a-323d-46b1-91c2-5fc8569271e1",
+    "status": "generating",
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
+    "submittedAt": "2026-04-19T03:08:42.825498+08:00",
     "completedAt": ""
   }
 }

@@ -25,16 +25,16 @@
     "{{prop:点检做天子木牌}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "6c18c7b3-3a78-409a-a3c1-a75c38dda8bf",
+    "status": "generating",
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
+    "submittedAt": "2026-04-19T03:08:49.465675+08:00",
     "completedAt": ""
   }
 }
