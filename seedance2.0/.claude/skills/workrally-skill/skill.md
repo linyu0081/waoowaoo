@@ -418,6 +418,13 @@ description: WorkRally CLI (旧名 zencli) 调用技能包。用于 AI 生图、
     7. 下载后务必重命名为项目约定的文件名（如 char-角色名.png, scene-grid.png 等）
     8. ⚠️ 所有 generate image / generate video 命令必须带 --project-id（见[默认项目配置]）
     9. upload 命令分步执行更可靠——不要用 $(...) 嵌套在其他命令中，容易因进度条输出导致变量为空
+    10. ⚠️ **成本记录（强制）**：每次下载完成（即真正出图/出视频）之后必须立即调用 `scripts/cost-logger.py` 记一笔，用于 dashboard 成本核算。
+        - 生图：`python scripts/cost-logger.py image --project <项目> --episode <epNN> --target <char-xx/scene-xx/prop-xx> --model nano-banana2 --task-id <taskId> [--note "..."]`
+          - 贝宝1 → `nano-banana1`；贝宝2（即 model 314）→ `nano-banana2`
+        - 生视频：`python scripts/cost-logger.py video --project <项目> --episode <epNN> --target shot-XX --model <providerId> --duration <实际秒数> --task-id <taskId> [--note "..."]`
+          - 视频模型直接填 provider id（2/1/202/18）
+          - 同一 shot 重复生视频，脚本会自动识别为 isRegenerate，不计入去重成片数与总时长
+        - 失败的任务不要登记；只在下载成功（拿到图/视频文件）后登记
    10. ⚠️ 品牌升级兼容说明：旧命令 `zencli` 和旧环境变量 `ZENSTUDIO_API_KEY` 仍可用（过渡期），
        但新项目/新脚本请优先使用 `workrally` 和 `WORKRALLY_API_KEY`
 

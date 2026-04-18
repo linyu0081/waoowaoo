@@ -1,0 +1,339 @@
+{
+  "version": "1.0",
+  "project": "马上看中国史",
+  "episode": "ep01",
+  "createdAt": "2026-04-18T23:07:22+0800",
+  "updatedAt": "2026-04-18T23:07:51+0800",
+  "backfillNote": "本集启用成本追踪前，历史生图记录按 assets/images/ 现存 PNG + _backup/ 备份 PNG 逐一补录，总计 45 次（37 次成功保留 + 8 次重生后废弃）。实际重生次数可能略高于此数，以后续逐次调用 cost-logger 为准。",
+  "summary": {
+    "imageGenCount": 45,
+    "videoGenCount": 0,
+    "videoUniqueShots": 0,
+    "videoTotalDurationSec": 0,
+    "videoTotalDurationMin": 0.0
+  },
+  "byModel": {
+    "nano-banana2": {
+      "imageCount": 45,
+      "videoCount": 0,
+      "videoDurationSec": 0
+    }
+  },
+  "records": [
+    {
+      "type": "image",
+      "target": "char-张永德",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-李从珂",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-李嗣源",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-李处耘",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-节度使",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-螳螂夫人",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-财务",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-赵匡胤",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-赵匡胤·黄袍加身",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:衍生形象"
+    },
+    {
+      "type": "image",
+      "target": "char-郭威",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-郭威·黄袍加身",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:衍生形象"
+    },
+    {
+      "type": "image",
+      "target": "char-郭荣",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-郭荣·病榻",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:衍生形象"
+    },
+    {
+      "type": "image",
+      "target": "char-马上",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-马仁瑀",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-马前卒",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-马后炮",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-黑马警长",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-殿前都点检印绶",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-演播室话筒",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-点检做天子木牌",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-酱板鸭",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-铜钱山",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-黄色纛旗",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "prop-龙袍冕冠",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-北征行军路",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-后唐皇宫大殿",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-土味年会现场",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-开封城街道",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-洛阳城门军营",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-洛阳废墟街道",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-演播室",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-皇宫寝殿",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-赵匡胤洛阳宅邸",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-陈桥驿军营",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-雪地军帐",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "scene-高平战场",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:22+0800",
+      "note": "历史补录:主形象"
+    },
+    {
+      "type": "image",
+      "target": "char-李处耘",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(char-李处耘.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "char-节度使",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(char-节度使.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "char-节度使",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(char-节度使.v2.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "char-财务",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(char-财务.v2.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "char-马仁瑀",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(char-马仁瑀.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "scene-北征行军路",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(scene-北征行军路.v2.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "scene-洛阳城门军营",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(scene-洛阳城门军营.v2.old.png)"
+    },
+    {
+      "type": "image",
+      "target": "scene-洛阳废墟街道",
+      "model": "nano-banana2",
+      "at": "2026-04-18T23:07:51+0800",
+      "note": "历史补录-重生版本(scene-洛阳废墟街道.v2.old.png)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+### 产物与素材（大文件，不进仓库，应在本地或 CDN）
+**/assets/images/
+**/assets/audio/
+**/outputs/**/tail-frames/
+**/outputs/**/videos/
+
+### 备份文件
+*.bak
+**/_backup/
+
+### Python 缓存
+__pycache__/
+*.pyc
+
+### 系统 / 编辑器
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+### 本地外部文件（位于仓库外，偶尔被 status 误列）
+# （这些由 git 自身处理，保留占位说明）

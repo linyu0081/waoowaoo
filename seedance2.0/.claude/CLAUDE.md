@@ -122,6 +122,12 @@
     - AI 生图/生视频均为可选：在对应节点明确询问用户 y/n，n 则跳过
     - 视频引擎：workrally（默认）或 dreamina，用户在 `~video` 指令时明确
     - 所有产出使用 JSON 结构化格式；每集维护 manifest.json 作为 dashboard.html 数据源
+    - **成本追踪（强制）**：每次调用 AI 生图 / 生视频**后**必须调用 `scripts/cost-logger.py` 记一笔，否则 dashboard 上的次数和时长会失真。
+        - 生图：`python scripts/cost-logger.py image --project <项目> --episode <epNN> --target <char-xx/scene-xx/prop-xx> --model <模型名> [--task-id xxx] [--note "..."]`
+        - 生视频：`python scripts/cost-logger.py video --project <项目> --episode <epNN> --target shot-XX --model <模型id/名> --duration <实际秒数> [--task-id xxx] [--note "..."]`
+        - 模型名约定：workrally 贝宝1/贝宝2 → `nano-banana1` / `nano-banana2`；视频模型直接填 provider id（2/1/202/18）或别名
+        - 同一 shot 被重复生视频，脚本自动识别为 `isRegenerate=true`，不计入去重成片数与总时长
+        - 流水落盘：`projects/<项目>/outputs/<epNN>/07-costs.json`；同时回写 `manifest.stages.art/video` 供 dashboard 读取
 
 [Resumable 多项目状态]
     状态文件：.agent-state.json
@@ -180,6 +186,9 @@
         第一步：调用 art-director（generateImages=false 先做提取）
             - agent 并行跑三个 extract skill，合并到 assets/*.json，记录 firstAppearInEpisode
             - 产出 04-new-assets.json
+            - 🆕 character-extract 会自动识别"同一角色的年龄段 / 穿搭 / COS / 形态"变体，
+              并在 characters.json 中输出带 `baseCharacter / variantType` 字段的变体对象；
+              导演无需额外下发指令
 
         第二步：询问用户
             "✅ 本集资产提取完成：
@@ -191,6 +200,8 @@
 
         第三步：按用户选择
             - y → 再次调用 art-director（generateImages=true）
+                  🆕 生图阶段会自动按"先主角色 → 再变体（以主角色图为参考图）"两阶段串行，
+                  保证变体与主角色五官一致，不发生视觉漂移
             - n → 跳过
 
         第四步：更新 state 后进入阶段③

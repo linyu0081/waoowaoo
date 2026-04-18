@@ -38,8 +38,9 @@
       "generatedImages": 38,
       "mainCount": 35,
       "variantCount": 7,
-      "note": "主形象 35 张 + 衍生形象 7 张（含赵匡胤/郭威黄袍加身、郭荣病榻、三马四变体）全部完成",
-      "completedAt": "2026-04-18T15:45:00+08:00"
+      "note": "主形象 35 张 + 衍生形象 7 张（郭荣病榻、三马四变体）全部完成",
+      "completedAt": "2026-04-18T15:45:00+08:00",
+      "imageGenCount": 45
     },
     "storyboard": {
       "status": "plan-done",
@@ -50,7 +51,11 @@
     "video": {
       "status": "pending",
       "produced": 0,
-      "failed": 0
+      "failed": 0,
+      "videoGenCount": 0,
+      "videoUniqueShots": 0,
+      "videoTotalDurationSec": 0,
+      "videoTotalDurationMin": 0.0
     }
   },
   "assets": {
@@ -92,7 +97,6 @@
       "铜钱山",
       "殿前都点检印绶",
       "龙袍冕冠",
-      "契丹军报急件",
       "演播室话筒"
     ],
     "newThisEpisode": {
@@ -134,7 +138,6 @@
         "铜钱山",
         "殿前都点检印绶",
         "龙袍冕冠",
-        "契丹军报急件",
         "演播室话筒"
       ]
     },
@@ -147,9 +150,7 @@
       "char-螳螂夫人": "../../assets/images/char-螳螂夫人.png",
       "char-财务": "../../assets/images/char-财务.png",
       "char-赵匡胤": "../../assets/images/char-赵匡胤.png",
-      "char-赵匡胤·黄袍加身": "../../assets/images/char-赵匡胤·黄袍加身.png",
       "char-郭威": "../../assets/images/char-郭威.png",
-      "char-郭威·黄袍加身": "../../assets/images/char-郭威·黄袍加身.png",
       "char-郭荣": "../../assets/images/char-郭荣.png",
       "char-郭荣·病榻": "../../assets/images/char-郭荣·病榻.png",
       "char-马上": "../../assets/images/char-马上.png",
@@ -157,7 +158,6 @@
       "char-马前卒": "../../assets/images/char-马前卒.png",
       "char-马后炮": "../../assets/images/char-马后炮.png",
       "char-黑马警长": "../../assets/images/char-黑马警长.png",
-      "prop-契丹军报急件": "../../assets/images/prop-契丹军报急件.png",
       "prop-殿前都点检印绶": "../../assets/images/prop-殿前都点检印绶.png",
       "prop-演播室话筒": "../../assets/images/prop-演播室话筒.png",
       "prop-点检做天子木牌": "../../assets/images/prop-点检做天子木牌.png",

@@ -1,0 +1,104 @@
+[
+  {
+    "name": "char-节度使",
+    "filename": "char-节度使.png",
+    "prompt": "参考上传图片角色，生成该演员扮演节度使的戏中戏变体。面孔保留原演员特征不变，换装为穿华丽红色古代官袍戴高顶乌纱帽的节度使。表情浮夸豪横带土味喜剧感。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清，真实皮肤纹理。保持与参考图画风一致，不要输出文字。",
+    "input_images": [
+      "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260418/e9b0400f-f2b2-4de4-9058-d0e7dc4c9376.png"
+    ],
+    "ref_keys": [
+      "char-马前卒"
+    ],
+    "asset_type": "character_variant",
+    "asset_name": "节度使",
+    "task_id": "d7hjec05o9alhig479f0",
+    "status": "done",
+    "asset_id": "b3v5dl7148",
+    "local_path": "/data/workspace/waoowaoo/seedance2.0/projects/马上看中国史/assets/images/char-节度使.png"
+  },
+  {
+    "name": "char-财务",
+    "filename": "char-财务.png",
+    "prompt": "参考上传图片角色，生成该演员扮演土味年会财务的戏中戏变体。面孔保留原演员特征不变，换装为深灰色西装三件套，内搭白衬衫系深蓝色领带，胸前别金色笔夹，鼻梁架金丝眼镜，头发改为黑色三七分油头，手提深棕皮质账本包，脚穿黑色尖头皮鞋。表情谨慎畏缩小心翼翼，眯眼算计带戏剧化夸张。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清，真实皮肤纹理。保持与参考图画风一致，不要输出文字。",
+    "input_images": [
+      "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260418/d8eb129e-7c69-4892-8581-40facab6df58.png"
+    ],
+    "ref_keys": [
+      "char-马后炮"
+    ],
+    "asset_type": "character_variant",
+    "asset_name": "财务",
+    "task_id": "d7hjecc563v83lao0m5g",
+    "status": "done",
+    "asset_id": "dg57ygzyfg",
+    "local_path": "/data/workspace/waoowaoo/seedance2.0/projects/马上看中国史/assets/images/char-财务.png"
+  },
+  {
+    "name": "char-黑马警长",
+    "filename": "char-黑马警长.png",
+    "prompt": "参考上传图片角色，生成该演员扮演黑猫警长人类版的戏中戏变体。面孔保留原演员特征不变，换装为黑色立领军装制服，胸口别金色警徽，肩章绣金线，佩戴白色手套，头戴大檐黑军帽配金边，脚踏黑色长靴。表情正义严肃略带戏剧夸张。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清，真实皮肤纹理。保持与参考图画风一致，不要输出文字。",
+    "input_images": [
+      "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260418/e9b0400f-f2b2-4de4-9058-d0e7dc4c9376.png"
+    ],
+    "ref_keys": [
+      "char-马前卒"
+    ],
+    "asset_type": "character_variant",
+    "asset_name": "黑马警长",
+    "task_id": "d7hjec85o9alhig479hg",
+    "status": "done",
+    "asset_id": "askygyk19d",
+    "local_path": "/data/workspace/waoowaoo/seedance2.0/projects/马上看中国史/assets/images/char-黑马警长.png"
+  },
+  {
+    "name": "char-螳螂夫人",
+    "filename": "char-螳螂夫人.png",
+    "prompt": "参考上传图片角色，生成该演员扮演螳螂夫人的戏中戏变体。面孔保留原演员特征不变，换装为翠绿色丝绸连衣裙及膝，裙摆不规则褶皱剪裁仿螳螂翼，头戴翠绿色一对触须发箍，手臂套柠黄色袖套，赤脚。眼含薄泪楚楚可怜带戏剧化夸张。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清，真实皮肤纹理。保持与参考图画风一致，不要输出文字。",
+    "input_images": [
+      "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260418/d8eb129e-7c69-4892-8581-40facab6df58.png"
+    ],
+    "ref_keys": [
+      "char-马后炮"
+    ],
+    "asset_type": "character_variant",
+    "asset_name": "螳螂夫人",
+    "task_id": "d7hjecg7hovbgac202m0",
+    "status": "done",
+    "asset_id": "86u4ygaxzz",
+    "local_path": "/data/workspace/waoowaoo/seedance2.0/projects/马上看中国史/assets/images/char-螳螂夫人.png"
+  },
+  {
+    "name": "char-赵匡胤·黄袍加身",
+    "filename": "char-赵匡胤·黄袍加身.png",
+    "prompt": "参考上传图片角色，生成赵匡胤黄袍加身变体版本。头顶覆盖一面巨大明黄色厚重丝绸纛旗，旗面两侧绣墨黑回纹锦边，局部带长期悬挂的磨毛与暗金流苏垂穗，旗杆金铜旗矛斜倚右肩。旗下仍可见暗金山文甲与赭红战袍一角，神情由沉稳转为被推举的凝重。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清。",
+    "input_images": [
+      "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260418/ca7d7751-cf58-4474-b327-6cb2306e627c.png"
+    ],
+    "ref_keys": [
+      "char-赵匡胤"
+    ],
+    "asset_type": "character_variant",
+    "asset_name": "赵匡胤·黄袍加身",
+    "task_id": "d7hjeck563v83lao0m6g",
+    "status": "done",
+    "asset_id": "uncijbuy23",
+    "local_path": "/data/workspace/waoowaoo/seedance2.0/projects/马上看中国史/assets/images/char-赵匡胤·黄袍加身.png"
+  },
+  {
+    "name": "char-郭威·黄袍加身",
+    "filename": "char-郭威·黄袍加身.png",
+    "prompt": "参考上传图片角色，生成郭威黄袍加身变体版本。双肩与头顶覆盖一面明黄色厚重丝绸纛旗，旗面两侧绣墨黑回纹锦边，底部流苏垂穗散落，暗金旗矛倚肩。纛旗下露出暗青鱼鳞甲与藏蓝战袍一角，神色由隐忍转为被拥立的庄严。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清。",
+    "input_images": [
+      "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260418/a0ca3824-c5d3-46eb-a337-cdb7db412c97.png"
+    ],
+    "ref_keys": [
+      "char-郭威"
+    ],
+    "asset_type": "character_variant",
+    "asset_name": "郭威·黄袍加身",
+    "task_id": "d7hjeck563v83lao0m7g",
+    "status": "done",
+    "asset_id": "e90mppm0kn",
+    "local_path": "/data/workspace/waoowaoo/seedance2.0/projects/马上看中国史/assets/images/char-郭威·黄袍加身.png"
+  }
+]

@@ -1434,6 +1434,9 @@ function renderOverview() {
     <div class="stat-card"><div class="stat-value">${score}</div><div class="stat-label">质检分</div></div>
     <div class="stat-card"><div class="stat-value">${retries}</div><div class="stat-label">修订轮次</div></div>
     <div class="stat-card"><div class="stat-value">${(stages.video?.produced ?? 0)}</div><div class="stat-label">已出视频</div></div>
+    <div class="stat-card"><div class="stat-value">${(stages.art?.imageGenCount ?? 0)}</div><div class="stat-label">生图次数</div></div>
+    <div class="stat-card"><div class="stat-value">${(stages.video?.videoGenCount ?? 0)}</div><div class="stat-label">生视频次数</div></div>
+    <div class="stat-card"><div class="stat-value">${(stages.video?.videoTotalDurationMin ?? 0)}<span style="font-size:14px;color:var(--text-secondary);margin-left:2px">min</span></div><div class="stat-label">视频总时长</div></div>
     <div class="stat-card"><div class="stat-value">${cfg.duration || '—'}</div><div class="stat-label">单集时长</div></div>
   `;
   document.getElementById('metaStyle').textContent = cfg.stylePreset || cfg.customStyle || '—';

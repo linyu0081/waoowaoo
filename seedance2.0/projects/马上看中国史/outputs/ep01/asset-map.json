@@ -2,57 +2,256 @@
   "episode": "ep01",
   "generatedAt": "2026-04-18T18:11:00+08:00",
   "images": {
-    "@图片1": { "type": "character", "name": "马上", "file": "assets/images/char-马上.png" },
-    "@图片2": { "type": "character", "name": "马前卒", "file": "assets/images/char-马前卒.png" },
-    "@图片3": { "type": "character", "name": "马后炮", "file": "assets/images/char-马后炮.png" },
-    "@图片4": { "type": "character", "name": "赵匡胤", "file": "assets/images/char-赵匡胤.png" },
-    "@图片5": { "type": "character-variant", "name": "赵匡胤·黄袍加身", "baseCharacter": "赵匡胤", "file": "assets/images/char-赵匡胤·黄袍加身.png" },
-    "@图片6": { "type": "character", "name": "李嗣源", "file": "assets/images/char-李嗣源.png" },
-    "@图片7": { "type": "character", "name": "李从珂", "file": "assets/images/char-李从珂.png" },
-    "@图片8": { "type": "character", "name": "郭威", "file": "assets/images/char-郭威.png" },
-    "@图片9": { "type": "character-variant", "name": "郭威·黄袍加身", "baseCharacter": "郭威", "file": "assets/images/char-郭威·黄袍加身.png" },
-    "@图片10": { "type": "character", "name": "郭荣", "file": "assets/images/char-郭荣.png" },
-    "@图片11": { "type": "character-variant", "name": "郭荣·病榻", "baseCharacter": "郭荣", "file": "assets/images/char-郭荣·病榻.png" },
-    "@图片12": { "type": "character", "name": "张永德", "file": "assets/images/char-张永德.png" },
-    "@图片13": { "type": "character", "name": "李处耘", "file": "assets/images/char-李处耘.png" },
-    "@图片14": { "type": "character", "name": "马仁瑀", "file": "assets/images/char-马仁瑀.png" },
-    "@图片15": { "type": "character-variant", "name": "节度使", "baseCharacter": "马前卒", "file": "assets/images/char-节度使.png" },
-    "@图片16": { "type": "character-variant", "name": "财务", "baseCharacter": "马后炮", "file": "assets/images/char-财务.png" },
-    "@图片17": { "type": "character-variant", "name": "黑马警长", "baseCharacter": "马前卒", "file": "assets/images/char-黑马警长.png" },
-    "@图片18": { "type": "character-variant", "name": "螳螂夫人", "baseCharacter": "马后炮", "file": "assets/images/char-螳螂夫人.png" },
-    "@图片19": { "type": "scene", "name": "演播室", "timeOfDay": "日", "file": "assets/images/scene-演播室.png" },
-    "@图片20": { "type": "scene", "name": "洛阳废墟街道", "timeOfDay": "日", "file": "assets/images/scene-洛阳废墟街道.png" },
-    "@图片21": { "type": "scene", "name": "洛阳城门军营", "timeOfDay": "日", "file": "assets/images/scene-洛阳城门军营.png" },
-    "@图片22": { "type": "scene", "name": "后唐皇宫大殿", "timeOfDay": "日", "file": "assets/images/scene-后唐皇宫大殿.png" },
-    "@图片23": { "type": "scene", "name": "赵匡胤洛阳宅邸", "timeOfDay": "黄昏", "file": "assets/images/scene-赵匡胤洛阳宅邸.png" },
-    "@图片24": { "type": "scene", "name": "土味年会现场", "timeOfDay": "夜", "file": "assets/images/scene-土味年会现场.png" },
-    "@图片25": { "type": "scene", "name": "开封城街道", "timeOfDay": "日", "file": "assets/images/scene-开封城街道.png" },
-    "@图片26": { "type": "scene", "name": "高平战场", "timeOfDay": "日", "file": "assets/images/scene-高平战场.png" },
-    "@图片27": { "type": "scene", "name": "北征行军路", "timeOfDay": "日", "file": "assets/images/scene-北征行军路.png" },
-    "@图片28": { "type": "scene", "name": "皇宫寝殿", "timeOfDay": "夜", "file": "assets/images/scene-皇宫寝殿.png" },
-    "@图片29": { "type": "scene", "name": "陈桥驿军营", "timeOfDay": "夜", "file": "assets/images/scene-陈桥驿军营.png" },
-    "@图片30": { "type": "scene", "name": "雪地军帐", "timeOfDay": "日", "file": "assets/images/scene-雪地军帐.png" },
-    "@图片31": { "type": "prop", "name": "黄色纛旗", "file": "assets/images/prop-黄色纛旗.png" },
-    "@图片32": { "type": "prop", "name": "点检做天子木牌", "file": "assets/images/prop-点检做天子木牌.png" },
-    "@图片33": { "type": "prop", "name": "酱板鸭", "file": "assets/images/prop-酱板鸭.png" },
-    "@图片34": { "type": "prop", "name": "铜钱山", "file": "assets/images/prop-铜钱山.png" },
-    "@图片35": { "type": "prop", "name": "殿前都点检印绶", "file": "assets/images/prop-殿前都点检印绶.png" },
-    "@图片36": { "type": "prop", "name": "龙袍冕冠", "file": "assets/images/prop-龙袍冕冠.png" },
-    "@图片37": { "type": "prop", "name": "契丹军报急件", "file": "assets/images/prop-契丹军报急件.png" },
-    "@图片38": { "type": "prop", "name": "演播室话筒", "file": "assets/images/prop-演播室话筒.png" },
-    "@图片39": { "type": "tail-frame", "fromShot": 0, "file": "outputs/ep01/tail-frames/tail-shot-00.jpg" },
-    "@图片40": { "type": "tail-frame", "fromShot": 1, "file": "outputs/ep01/tail-frames/tail-shot-01.jpg" },
-    "@图片41": { "type": "tail-frame", "fromShot": 2, "file": "outputs/ep01/tail-frames/tail-shot-02.jpg" },
-    "@图片42": { "type": "tail-frame", "fromShot": 3, "file": "outputs/ep01/tail-frames/tail-shot-03.jpg" },
-    "@图片43": { "type": "tail-frame", "fromShot": 4, "file": "outputs/ep01/tail-frames/tail-shot-04.jpg" },
-    "@图片44": { "type": "tail-frame", "fromShot": 5, "file": "outputs/ep01/tail-frames/tail-shot-05.jpg" },
-    "@图片45": { "type": "tail-frame", "fromShot": 6, "file": "outputs/ep01/tail-frames/tail-shot-06.jpg" },
-    "@图片46": { "type": "tail-frame", "fromShot": 7, "file": "outputs/ep01/tail-frames/tail-shot-07.jpg" },
-    "@图片47": { "type": "tail-frame", "fromShot": 8, "file": "outputs/ep01/tail-frames/tail-shot-08.jpg" }
+    "@图片1": {
+      "type": "character",
+      "name": "马上",
+      "file": "assets/images/char-马上.png"
+    },
+    "@图片2": {
+      "type": "character",
+      "name": "马前卒",
+      "file": "assets/images/char-马前卒.png"
+    },
+    "@图片3": {
+      "type": "character",
+      "name": "马后炮",
+      "file": "assets/images/char-马后炮.png"
+    },
+    "@图片4": {
+      "type": "character",
+      "name": "赵匡胤",
+      "file": "assets/images/char-赵匡胤.png"
+    },
+    "@图片5": {
+      "type": "character",
+      "name": "李嗣源",
+      "file": "assets/images/char-李嗣源.png"
+    },
+    "@图片6": {
+      "type": "character",
+      "name": "李从珂",
+      "file": "assets/images/char-李从珂.png"
+    },
+    "@图片7": {
+      "type": "character",
+      "name": "郭威",
+      "file": "assets/images/char-郭威.png"
+    },
+    "@图片8": {
+      "type": "character",
+      "name": "郭荣",
+      "file": "assets/images/char-郭荣.png"
+    },
+    "@图片9": {
+      "type": "character-variant",
+      "name": "郭荣·病榻",
+      "baseCharacter": "郭荣",
+      "file": "assets/images/char-郭荣·病榻.png"
+    },
+    "@图片10": {
+      "type": "character",
+      "name": "张永德",
+      "file": "assets/images/char-张永德.png"
+    },
+    "@图片11": {
+      "type": "character",
+      "name": "李处耘",
+      "file": "assets/images/char-李处耘.png"
+    },
+    "@图片12": {
+      "type": "character",
+      "name": "马仁瑀",
+      "file": "assets/images/char-马仁瑀.png"
+    },
+    "@图片13": {
+      "type": "character-variant",
+      "name": "节度使",
+      "baseCharacter": "马前卒",
+      "file": "assets/images/char-节度使.png"
+    },
+    "@图片14": {
+      "type": "character-variant",
+      "name": "财务",
+      "baseCharacter": "马后炮",
+      "file": "assets/images/char-财务.png"
+    },
+    "@图片15": {
+      "type": "character-variant",
+      "name": "黑马警长",
+      "baseCharacter": "马前卒",
+      "file": "assets/images/char-黑马警长.png"
+    },
+    "@图片16": {
+      "type": "character-variant",
+      "name": "螳螂夫人",
+      "baseCharacter": "马后炮",
+      "file": "assets/images/char-螳螂夫人.png"
+    },
+    "@图片17": {
+      "type": "scene",
+      "name": "演播室",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-演播室.png"
+    },
+    "@图片18": {
+      "type": "scene",
+      "name": "洛阳废墟街道",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-洛阳废墟街道.png"
+    },
+    "@图片19": {
+      "type": "scene",
+      "name": "洛阳城门军营",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-洛阳城门军营.png"
+    },
+    "@图片20": {
+      "type": "scene",
+      "name": "后唐皇宫大殿",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-后唐皇宫大殿.png"
+    },
+    "@图片21": {
+      "type": "scene",
+      "name": "赵匡胤洛阳宅邸",
+      "timeOfDay": "黄昏",
+      "file": "assets/images/scene-赵匡胤洛阳宅邸.png"
+    },
+    "@图片22": {
+      "type": "scene",
+      "name": "土味年会现场",
+      "timeOfDay": "夜",
+      "file": "assets/images/scene-土味年会现场.png"
+    },
+    "@图片23": {
+      "type": "scene",
+      "name": "开封城街道",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-开封城街道.png"
+    },
+    "@图片24": {
+      "type": "scene",
+      "name": "高平战场",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-高平战场.png"
+    },
+    "@图片25": {
+      "type": "scene",
+      "name": "北征行军路",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-北征行军路.png"
+    },
+    "@图片26": {
+      "type": "scene",
+      "name": "皇宫寝殿",
+      "timeOfDay": "夜",
+      "file": "assets/images/scene-皇宫寝殿.png"
+    },
+    "@图片27": {
+      "type": "scene",
+      "name": "陈桥驿军营",
+      "timeOfDay": "夜",
+      "file": "assets/images/scene-陈桥驿军营.png"
+    },
+    "@图片28": {
+      "type": "scene",
+      "name": "雪地军帐",
+      "timeOfDay": "日",
+      "file": "assets/images/scene-雪地军帐.png"
+    },
+    "@图片29": {
+      "type": "prop",
+      "name": "黄色纛旗",
+      "file": "assets/images/prop-黄色纛旗.png"
+    },
+    "@图片30": {
+      "type": "prop",
+      "name": "点检做天子木牌",
+      "file": "assets/images/prop-点检做天子木牌.png"
+    },
+    "@图片31": {
+      "type": "prop",
+      "name": "酱板鸭",
+      "file": "assets/images/prop-酱板鸭.png"
+    },
+    "@图片32": {
+      "type": "prop",
+      "name": "铜钱山",
+      "file": "assets/images/prop-铜钱山.png"
+    },
+    "@图片33": {
+      "type": "prop",
+      "name": "殿前都点检印绶",
+      "file": "assets/images/prop-殿前都点检印绶.png"
+    },
+    "@图片34": {
+      "type": "prop",
+      "name": "龙袍冕冠",
+      "file": "assets/images/prop-龙袍冕冠.png"
+    },
+    "@图片36": {
+      "type": "prop",
+      "name": "演播室话筒",
+      "file": "assets/images/prop-演播室话筒.png"
+    },
+    "@图片37": {
+      "type": "tail-frame",
+      "fromShot": 0,
+      "file": "outputs/ep01/tail-frames/tail-shot-00.jpg"
+    },
+    "@图片38": {
+      "type": "tail-frame",
+      "fromShot": 1,
+      "file": "outputs/ep01/tail-frames/tail-shot-01.jpg"
+    },
+    "@图片39": {
+      "type": "tail-frame",
+      "fromShot": 2,
+      "file": "outputs/ep01/tail-frames/tail-shot-02.jpg"
+    },
+    "@图片40": {
+      "type": "tail-frame",
+      "fromShot": 3,
+      "file": "outputs/ep01/tail-frames/tail-shot-03.jpg"
+    },
+    "@图片41": {
+      "type": "tail-frame",
+      "fromShot": 4,
+      "file": "outputs/ep01/tail-frames/tail-shot-04.jpg"
+    },
+    "@图片42": {
+      "type": "tail-frame",
+      "fromShot": 5,
+      "file": "outputs/ep01/tail-frames/tail-shot-05.jpg"
+    },
+    "@图片43": {
+      "type": "tail-frame",
+      "fromShot": 6,
+      "file": "outputs/ep01/tail-frames/tail-shot-06.jpg"
+    },
+    "@图片44": {
+      "type": "tail-frame",
+      "fromShot": 7,
+      "file": "outputs/ep01/tail-frames/tail-shot-07.jpg"
+    },
+    "@图片45": {
+      "type": "tail-frame",
+      "fromShot": 8,
+      "file": "outputs/ep01/tail-frames/tail-shot-08.jpg"
+    }
   },
   "voices": {
-    "@声音1": { "name": "马上", "file": "assets/audio/voice-马上.mp3" },
-    "@声音2": { "name": "马前卒", "file": "assets/audio/voice-马前卒.mp3" },
-    "@声音3": { "name": "马后炮", "file": "assets/audio/voice-马后炮.mp3" }
+    "@声音1": {
+      "name": "马上",
+      "file": "assets/audio/voice-马上.mp3"
+    },
+    "@声音2": {
+      "name": "马前卒",
+      "file": "assets/audio/voice-马前卒.mp3"
+    },
+    "@声音3": {
+      "name": "马后炮",
+      "file": "assets/audio/voice-马后炮.mp3"
+    }
   }
 }

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "char-赵匡胤",
+    "filename": "char-赵匡胤.png",
+    "prompt": "五代十国末期中原武将，34岁男性，2D写实动画画风角色设定图，白底，禁止输出文字。方脸国字形，浓眉阔目，蒜头鼻，厚唇，下颌棱角分明，肤色古铜，左眉骨一道浅疤。头束黑色发髻，戴铁制束发冠，鬓角整齐。身披暗金山文甲，内衬赭红战袍，腰束革带佩虎头铜扣，肩覆玄黑披膊，脚踏皮靴。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清。",
+    "asset_type": "character",
+    "asset_name": "赵匡胤"
+  },
+  {
+    "name": "char-李嗣源",
+    "filename": "char-李嗣源.png",
+    "prompt": "五代后唐沙陀族武将，50岁男性，2D写实动画画风角色设定图，白底，禁止输出文字。长方脸，深目高颧，鹰钩鼻，薄唇留花白髭须，肤色黝黑，额头深纹。束黑白相间发髻，戴铁盔缀红缨。黑铁札甲外罩赭黄战袍，披紫红色大氅，腰束皮质革带，脚穿皮战靴。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清。",
+    "asset_type": "character",
+    "asset_name": "李嗣源"
+  },
+  {
+    "name": "char-张永德",
+    "filename": "char-张永德.png",
+    "prompt": "五代后周殿前都点检武将，35岁男性，2D写实动画画风角色设定图，白底，禁止输出文字。长方脸，剑眉阔目，鼻梁略弯，厚唇留短髭，肤色小麦，右脸颊长条淡疤。束黑色发髻戴铁盔。亮银色鱼鳞甲外罩赭褐色战袍，腰悬银扣皮带，披暗红色披风，脚穿皮战靴。站姿自然，双手自然下垂，面容平静，白色背景。四宫格构图：左上全身正面，右上全身背面，左下侧身90度，右下面部特写。8K超高清。",
+    "asset_type": "character",
+    "asset_name": "张永德"
+  },
+  {
+    "name": "scene-北征行军路",
+    "filename": "scene-北征行军路.png",
+    "prompt": "五代北征行军官道外景，旷野官道空镜。官道纵深约百米。地面干裂黄土带纵横车辙，两侧低矮杂草黄绿相间，远处青灰石山朦胧。路边歪斜里程木桩斑驳，散落几支铁箭簇。云层低压，冷黄日光侧入，阴影发蓝，主色调冷灰黄。空镜，无人物，没有任何人影。8K超清，材质纹理清晰，光影真实自然。Cinematic matte painting, Ancient Chinese historical illustration, Ink wash painting style blended with digital realism, Epic scale, Detailed textures, Atmospheric perspective, Traditional aesthetic.",
+    "asset_type": "scene",
+    "asset_name": "北征行军路"
+  }
+]
