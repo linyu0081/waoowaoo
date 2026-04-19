@@ -9,7 +9,7 @@
   "transition": "动作动势硬切：李从珂挥手授意的动势延续到下一镜士兵手持火把冲入民居的动作起点。",
   "dualAnchor": "9:16 强调李从珂竖向推门入库+库房纵深垂直铺展；16:9 强调李从珂居左推门+库房空荡居右横向铺开。",
   "mainPrompt": "【本分镜S+质量描述】REAL_CG空库发现仰角镜头，历史纪录片戏剧质感，8K电影感。\n第一段：镜头由上一镜士兵躁动情绪切入金库门外低位仰角，李从珂身披黑亮铠甲外披暗红披风双手推开金库厚重朱红木门，木门发出沉闷吱呀声扬起门后尘土。\n第二段：镜头跟随李从珂身影推进到库内中景，金库空荡空地面只剩几个翻倒的空木箱与散落铜钱屑，原本应该码放整齐的银锭铜钱全无踪影，库房顶部灯笼被风吹得微微摇晃投下摇曳阴影，马上以说书腔画外音响起，**马上**：\"攻入洛阳后，李从珂发现国库空荡荡，根本没钱可发。怎么办？他就授意手下肆意搜刮，烧杀抢掠。\"。\n第三段：李从珂眉头压低嘴角抽动转身面向库外手下右手向库外一挥做授意动作，披风被转身动作带起向后扬起，手下武将躬身领命转身退出库外，画面定格在金库门前这个授意瞬间。",
-  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
+  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "李从珂推开金库厚重朱红木门的动作、库内空荡只剩翻倒空木箱的惨淡景象、李从珂右手一挥授意搜刮定格",
   "qualityRoute": "库房压暗冷调+门外斜射日光暖色强对比，朱红木门与铠甲金属高光保结构清晰可辨。",
   "imagingStyle": "先门外后库内+从希望到失望，让空荡冲击由对比直接释放。",
@@ -24,16 +24,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "8828efba-280a-470d-90bd-9bb3eaace79c",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/929b09f7845f58916c5c42ed935422c6/69e438be/video/tos/cn/tos-cn-v-148450/oE6U1Qh40AKmSOPesH0hVJIMDAMkK8PQPgEnn2/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6372&bt=6372&cs=0&ds=12&ft=5QYTUxhhe6BMyq.KZPVJD12Nzj&mime_type=video_mp4&qs=0&rc=M2k1OWZpOjZnZGdmaWk5OEBpM2xqNjlrb3U1OjczNDM7M0AwNTZfYDEvX2IxLTQvLzMwYSNxcm0zcWcvaGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776560804&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260419090644021214073158602EC30",
+    "videoFile": "outputs/ep01/videos/shot-29.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-29.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 50,
+    "submittedAt": "2026-04-19T08:58:53+08:00",
+    "completedAt": "2026-04-19T09:06:46+08:00"
   }
 }

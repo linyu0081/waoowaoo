@@ -9,7 +9,7 @@
   "transition": "信息钩子硬切：舞台左侧空位的一句话老板要登台变为下一镜节度使紫红西装登台亮相的动作起点。",
   "dualAnchor": "9:16 强调上下条幅悬挂顶部+士兵队列铺满底部；16:9 强调左右铜钱山居左+士兵队列居右的横向对比。",
   "mainPrompt": "【本分镜S+质量描述】REAL_CG土味年会建立大全景，土味综艺舞台厚重饱和质感，8K电影感。\n第一段：镜头由上一镜卡通标题金色高亮切入土味年会大全景，第一层视觉冲击是舞台大红条幅上庆功表彰大会六字金色烫字霸气悬挂，条幅下方舞台铺着大红地毯配金色边线，LED背景墙蓝紫色渐变灯光打底。\n第二段：镜头稳定下推推进到舞台斜前方中景，舞台左侧一座铜钱山由成串铜钱堆积成人高的小山，串串铜钱在顶光下反射暖金色高光，舞台右侧摆放两排金色礼炮管口朝上，音响组立在舞台两端。\n第三段：镜头定格覆盖舞台与观众席的大全景，台下数百名穿深色作战服的士兵密密麻麻排列整齐手握兵器站立，舞台前沿与士兵队列之间留出宽阔走道，舞台左侧前端留出一块明显空位暗示主角即将登台。",
-  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
+  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "舞台大红条幅庆功表彰大会金字、舞台一侧堆积成山的铜钱山、台下密密麻麻排列整齐的士兵队列",
   "qualityRoute": "舞台蓝紫色LED冷光+顶光大红金字暖色强反差；铜钱串金属反光与兵器高光保结构。",
   "imagingStyle": "土味年会直给饱和，不靠滤镜高级感，靠大红大金堆满画面的土味氛围。",
@@ -26,15 +26,15 @@
     "engine": "dreamina",
     "modelName": "seedance2.0fast",
     "taskId": "d08d195c-242e-4b15-8a8a-2f8e3a28a055",
-    "status": "generating",
-    "queueStatus": "queuing",
-    "queueIdx": 191,
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v6-artist.vlabvod.com/8219cfbf5dfdf83c14c6db776b04128b/69e434ba/video/tos/cn/tos-cn-v-148450/oAl0RFMrGJckQgsrQIeo8Jh43KXtCnhsADALkE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6547&bt=6547&cs=0&ds=12&ft=5QYTUxhhe6BMyqN~ZPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Omg3NDs6ODRmNzZnPDU1OEBpM2dmbzdrb3U1OjczNDM7M0AvNTVeYi80XjAxNl5fXjViYSNoMnFmcWdmYGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776559778&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604190849380212140731588392071",
+    "videoFile": "outputs/ep01/videos/shot-19.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-19.jpg",
     "failReason": "",
     "creditCount": 40,
     "submittedAt": "2026-04-19T08:43:34+08:00",
-    "completedAt": ""
+    "completedAt": "2026-04-19T08:49:41+08:00"
   }
 }

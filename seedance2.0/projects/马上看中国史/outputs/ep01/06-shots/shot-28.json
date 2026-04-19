@@ -9,7 +9,7 @@
   "transition": "台词跨镜硬切：马上画外音讲到争取禁军低级军官支持的尾句直接切入下一镜相关承接画面。",
   "dualAnchor": "9:16 强调李从珂竖向高台俯视+士兵群纵向仰视；16:9 强调李从珂居中甲胄+前排士兵左右铺开仰视横向呼应。",
   "mainPrompt": "【本分镜S+质量描述】REAL_CG军营讲话仰角镜头，历史纪录片政治密谋质感，8K电影感。\n第一段：镜头由上一镜大殿压暗画面切入军营高台前排士兵视角低位仰角，李从珂身披黑亮铁甲外披暗红披风立于木台之上俯视前排低级军官，铠甲金属反光在日光下冷硬清晰，第一层视觉冲击是一个野心武将居高临下的威慑气场。\n第二段：李从珂抬手做压声手势示意士兵安静表情沉稳眼神透露锋利，马上以说书腔画外音在画面上响起，**马上**：\"你猜，李从珂致胜的关键是什么？就是争取到了禁军低级军官的支持，而且许诺他们事成之后必有重赏。\"画面同步镜头从士兵群前移至李从珂半身近景。\n第三段：李从珂张口开始密谋讲话嘴型默默动作幅度小只露出低声讲话的表情，前排低级军官抬头看向李从珂眼神躁动脸上闪过惊喜与心动表情，身旁士兵彼此交头接耳压低嗓音讨论画面定格在这份躁动与低语氛围中。",
-  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
+  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "李从珂立于高台甲胄森然的半身仰角、前排低级军官抬头眼神躁动表情、士兵彼此交头接耳嘴型",
   "qualityRoute": "军营日光冷白+铠甲冷金属反光+暗红披风暖色点缀，铁甲与披风布料高光保结构可辨。",
   "imagingStyle": "低位仰角+从群到个的镜头推进，让野心武将与底层军官的权力交换关系由视角直接传达。",
@@ -24,16 +24,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "8bef9672-e339-4172-a24a-29de9f790789",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/4ea5e0fac2e64adaa1bd41f5ca55b04c/69e436e0/video/tos/cn/tos-cn-v-148450/oQP8KCTF4EbIXkshSZeQCcBfdBK7pJAIspgwH5/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6281&bt=6281&cs=0&ds=12&ft=5QYTUxhhe6BMyqRIZPVJD12Nzj&mime_type=video_mp4&qs=0&rc=PGY0OzdnNztpO2doMzg2ZUBpandrdmZrb3k1OjczNDM7M0AuYS4tMS42XzExNDUtYTUzYSNfZjQvcWdmZGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776560324&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604190858440212140731585928772",
+    "videoFile": "outputs/ep01/videos/shot-28.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-28.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 60,
+    "submittedAt": "2026-04-19T08:51:05+08:00",
+    "completedAt": "2026-04-19T08:58:46+08:00"
   }
 }
