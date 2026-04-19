@@ -5,69 +5,6 @@
   "defaultRatio": "16:9",
   "waitList": [
     {
-      "shot": "04",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "09",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "10",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "13",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "16",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "20",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "27",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "41",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T19:55:09+08:00",
-      "note": "分镜师优化重投-置顶"
-    },
-    {
-      "shot": "47",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
       "shot": "45",
       "model": "",
       "ratio": "",
@@ -395,6 +332,13 @@
       "ratio": "",
       "note": "",
       "addedAt": "2026-04-19T19:23:36+08:00"
+    },
+    {
+      "shot": "47",
+      "model": "",
+      "ratio": "",
+      "note": "",
+      "addedAt": "2026-04-19T22:54:23+08:00"
     }
   ],
   "history": [
@@ -901,20 +845,178 @@
     {
       "shot": "14",
       "submit_id": "727434db-00f2-4ce4-b4f6-5a44ed324bd1",
-      "result": "submitted",
+      "result": "done",
       "reason": "",
       "at": "2026-04-19T19:39:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T19:58:58+08:00",
+      "durationSec": 6
+    },
+    {
+      "shot": "04",
+      "submit_id": "b8918897-643b-46f2-8c2d-0150cd904f45",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T19:59:02+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:20:50+08:00",
+      "durationSec": 6
+    },
+    {
+      "shot": "09",
+      "submit_id": "a8c775a6-0af0-43c1-962d-e431a4fe29e4",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T20:20:55+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:24:34+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "10",
+      "submit_id": "22b9c681-6c5a-43f3-97c6-cafac2436b08",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T20:24:39+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:27:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": "44549559-ac17-44c5-90dd-537d0a037262",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T20:27:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:31:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "16",
+      "submit_id": "91b60c1e-dc4b-4e22-b4e0-cfdffb1207a7",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T20:31:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:35:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "20",
+      "submit_id": "cf3017fe-c502-46d7-97dd-62f4bf61226b",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T20:35:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:39:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": "50c6d9eb-2160-4d7c-bb05-c34b6c7ebbf3",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T20:39:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T20:43:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "41",
+      "submit_id": "d109b225-b82a-4584-a0b5-fb7b1ea62ad3",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T20:43:49+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "09",
+      "submit_id": "3c0b892f-2c71-4abf-99e9-64f0a99942fa",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T22:36:18+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T22:36:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "10",
+      "submit_id": "9ead262c-b54f-4be0-ade6-b93ba3706d3a",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T22:36:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T22:39:12+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": "76e9b3da-aaf4-4cf7-b534-303d2138cea1",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T22:39:16+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T22:39:46+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "16",
+      "submit_id": "15e2044a-f5c6-4bc3-8ebb-80e322b19e42",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T22:39:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T22:40:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "20",
+      "submit_id": "41224b60-92bc-43cf-be2d-627945e0ba19",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T22:40:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T22:41:52+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": "afef0bdb-7a6f-4cdb-8138-6808b7753a29",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T22:41:56+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T22:42:26+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "47",
+      "submit_id": "c33c6b7c-6261-4761-b3da-56bdf4b41b5e",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T22:42:30+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T23:07:48+08:00",
+      "durationSec": 14
+    },
+    {
+      "shot": "09",
+      "submit_id": "45bd3944-11a0-44d6-a9a4-d2dae42c848f",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T23:07:52+08:00",
       "model": "seedance2.0fast"
     }
   ],
-  "lastHeartbeat": "2026-04-19T19:55:06+08:00",
+  "lastHeartbeat": "2026-04-19T23:07:52+08:00",
   "depStatus": {
-    "shot-47": {
+    "shot-09": {
       "ready": true,
       "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
+      "tailNum": "45",
+      "fromShot": "08",
+      "reason": "首帧 @图片45 就绪（来自 shot-08）"
     },
     "shot-45": {
       "ready": true,
@@ -938,11 +1040,11 @@
       "reason": "无首帧依赖，可直接提交"
     },
     "shot-05": {
-      "ready": false,
-      "blocker": "dep-missing",
+      "ready": true,
+      "blocker": "",
       "tailNum": "41",
       "fromShot": "04",
-      "reason": "等 shot-04 出片后才能提交"
+      "reason": "首帧 @图片41 就绪（来自 shot-04）"
     },
     "shot-11": {
       "ready": false,
@@ -987,11 +1089,11 @@
       "reason": "等 shot-24 出片后才能提交"
     },
     "shot-42": {
-      "ready": false,
-      "blocker": "dep-missing",
+      "ready": true,
+      "blocker": "",
       "tailNum": "58",
       "fromShot": "41",
-      "reason": "等 shot-41 出片后才能提交"
+      "reason": "首帧 @图片58 就绪（来自 shot-41）"
     },
     "shot-06": {
       "ready": false,
@@ -1085,11 +1187,11 @@
       "reason": "无首帧依赖，可直接提交"
     },
     "shot-64": {
-      "ready": true,
-      "blocker": "",
+      "ready": false,
+      "blocker": "needsRework",
       "tailNum": null,
       "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
+      "reason": "分镜被标记为需返工，清除 needsRework 后才能提交"
     },
     "shot-65": {
       "ready": true,
@@ -1148,11 +1250,11 @@
       "reason": "无首帧依赖，可直接提交"
     },
     "shot-74": {
-      "ready": true,
-      "blocker": "",
+      "ready": false,
+      "blocker": "needsRework",
       "tailNum": null,
       "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
+      "reason": "分镜被标记为需返工，清除 needsRework 后才能提交"
     },
     "shot-75": {
       "ready": true,
@@ -1244,6 +1346,13 @@
       "tailNum": "48",
       "fromShot": "14",
       "reason": "首帧 @图片48 就绪（来自 shot-14）"
+    },
+    "shot-47": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
     }
   },
   "skipLog": [

@@ -311,6 +311,19 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
             return self._send_json(403, {'ok': False, 'error': 'path out of projects/'})
         q = self._load_queue(abs_path)
         before_wl = [str(e.get('shot','')).zfill(2) for e in (q.get('waitList') or [])]
+        # 入口校验：waitList 传入必须是 list，且每一项必须是 dict 且含 shot 字段
+        # 防止半成品字符串（如 ['09','10']）写入后把 scheduler 心跳整体打崩
+        if 'waitList' in patch:
+            wl_in = patch.get('waitList')
+            if not isinstance(wl_in, list):
+                return self._send_json(400, {'ok': False, 'error': 'waitList must be a list'})
+            bad = [(i, type(e).__name__, e) for i, e in enumerate(wl_in)
+                   if not (isinstance(e, dict) and 'shot' in e)]
+            if bad:
+                return self._send_json(400, {
+                    'ok': False,
+                    'error': f'waitList contains malformed entries (must be dict with "shot"): {bad[:5]}'
+                })
         changed_keys = []
         for k in ('maxInflight','paused','defaultModel','defaultRatio','waitList'):
             if k in patch:

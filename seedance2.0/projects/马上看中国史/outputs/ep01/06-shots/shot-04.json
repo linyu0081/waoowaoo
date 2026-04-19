@@ -26,25 +26,16 @@
   "videoTask": {
     "engine": "dreamina",
     "modelName": "seedance2.0fast",
-    "taskId": "66bc0cd6-f818-4633-8191-cbd2413bb66c",
-    "status": "pending",
+    "taskId": "b8918897-643b-46f2-8c2d-0150cd904f45",
+    "status": "done",
     "queueStatus": "",
     "queueIdx": null,
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoUrl": "https://v6-artist.vlabvod.com/1f3e097c51f8d31be6393394ea4e16ec/69e4d6b2/video/tos/cn/tos-cn-v-148450/okDPIhs4QTqA1lDQx0mkDTIE9EemWgJ8nmApNQ/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=5744&bt=5744&cs=0&ds=12&ft=5QYTUxhhe6BMyqDvrPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Njo0NzpoOjQ7aTxmNzNmZkBpM215bzhrb21mOjczNDM7M0AzM181MWNhNi8xYjM1L2JiYSMxXmg2cWdeY2ZhLS1kNC9zcw%3D%3D&btag=c0000e00008000&dy_q=1776601244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604192020440212140731585949E27",
+    "videoFile": "outputs/ep01/videos/shot-04.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-04.jpg",
+    "failReason": "",
     "creditCount": 30,
-    "submittedAt": "2026-04-19T16:41:51+08:00",
-    "completedAt": "2026-04-19T16:45:45+08:00",
-    "needsRework": false,
-    "failHistory": [
-      {
-        "taskId": "66bc0cd6-f818-4633-8191-cbd2413bb66c",
-        "failReason": "generation failed: pre-TNS check did not pass",
-        "submittedAt": "2026-04-19T16:41:51+08:00",
-        "failedAt": "2026-04-19T16:45:45+08:00",
-        "model": "seedance2.0fast"
-      }
-    ]
+    "submittedAt": "2026-04-19T19:59:02+08:00",
+    "completedAt": "2026-04-19T20:20:50+08:00"
   }
 }

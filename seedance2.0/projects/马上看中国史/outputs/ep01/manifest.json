@@ -50,14 +50,14 @@
     },
     "video": {
       "status": "pending",
-      "produced": 0,
+      "produced": 37,
       "failed": 0,
       "generating": 1,
       "pending": 87,
-      "videoGenCount": 39,
-      "videoUniqueShots": 34,
-      "videoTotalDurationSec": 314,
-      "videoTotalDurationMin": 5.23
+      "videoGenCount": 43,
+      "videoUniqueShots": 37,
+      "videoTotalDurationSec": 340,
+      "videoTotalDurationMin": 5.67
     }
   },
   "assets": {

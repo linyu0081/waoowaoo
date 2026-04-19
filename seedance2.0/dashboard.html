@@ -1261,6 +1261,28 @@ body {
   </div>
 </div>
 
+<!-- ======== SHOT PROMPT MODAL (查看/编辑提示词) ======== -->
+<div class="modal-overlay hidden" id="shotPromptModal" onclick="closeShotPromptModal(event)">
+  <div class="modal" role="dialog" aria-modal="true" style="max-width:960px;width:94vw" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">
+        <div class="modal-title-icon"></div>
+        <span id="shotPromptModalTitle">提示词</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="vq-btn" id="shotPromptCopyBtn" onclick="copyShotPromptFromModal()" title="复制全部提示词">📋 复制</button>
+        <button class="vq-btn" id="shotPromptEditToggle" onclick="toggleShotPromptEdit()" title="编辑提示词">✏️ 编辑</button>
+        <button class="modal-close" onclick="closeShotPromptModal()" aria-label="关闭">✕</button>
+      </div>
+    </div>
+    <div class="modal-body" id="shotPromptModalBody" style="max-height:72vh;overflow:auto"></div>
+    <div class="modal-footer hidden" id="shotPromptEditFooter">
+      <button class="vq-btn" onclick="cancelShotPromptEdit()">取消</button>
+      <button class="vq-btn vq-btn-primary" id="shotPromptSaveBtn" onclick="saveShotPromptEdit()">💾 保存</button>
+    </div>
+  </div>
+</div>
+
 <!-- ======== TOAST CONTAINER ======== -->
 <div class="toast-container" id="toastContainer"></div>
 
@@ -1269,8 +1291,7 @@ body {
   <div class="nav-tab" data-tab="assets">资产库</div>
   <div class="nav-tab" data-tab="screenplay">剧本</div>
   <div class="nav-tab" data-tab="storyboard">分镜大纲</div>
-  <div class="nav-tab" data-tab="seedance">分镜列表</div>
-  <div class="nav-tab" data-tab="videos">视频</div>
+  <div class="nav-tab" data-tab="videos">视频列表</div>
 </nav>
 
 <main class="main">
@@ -1320,21 +1341,12 @@ body {
     <div id="storyboardContent"></div>
   </div>
 
-  <!-- ===== SEEDANCE PROMPTS ===== -->
-  <div class="tab-panel" id="panel-seedance">
-    <h2 class="section-title">分镜列表（V2 · 20 字段）</h2>
-    <p class="section-subtitle" id="seedanceMeta"></p>
-    <div style="margin-bottom:12px">
-      <button class="ai-prompt-btn" onclick="showAssetMap()">🗺 查看集级素材映射表</button>
-    </div>
-    <div class="seg-grid" id="seedanceGrid"></div>
-  </div>
-
-  <!-- ===== VIDEOS ===== -->
+  <!-- ===== VIDEOS (合并原分镜列表+视频) ===== -->
   <div class="tab-panel" id="panel-videos">
     <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px">
-      <h2 class="section-title" style="margin:0">视频</h2>
-      <div id="videoFilterBar" class="video-filter-bar"></div>
+      <h2 class="section-title" style="margin:0">视频列表</h2>
+      <div id="videoFilterBar" class="video-filter-bar" style="margin-left:4px"></div>
+      <button class="ai-prompt-btn" onclick="showAssetMap()" style="margin-left:auto">🗺 素材映射表</button>
     </div>
     <div id="videoQueuePanel" class="video-queue-panel"></div>
     <div class="video-grid" id="videoGrid"></div>
@@ -1536,7 +1548,6 @@ async function loadEpisode(projectName, episode) {
   renderAssets();
   renderScreenplay();
   renderStoryboard();
-  renderSeedance();
   renderVideos();
   renderReview();
 }
@@ -1597,17 +1608,24 @@ function renderOverview() {
   const score = review?.score ?? stages.script?.score ?? '—';
   const retries = stages.script?.retries ?? 0;
 
+  // ---- 实时统计：从 shots 数组计算去重已出视频数 ----
+  const doneShots = shots.filter(s => (s.videoTask?.status) === 'done');
+  const doneShotCount = doneShots.length;  // 去重（每个 shot 只算一次）
+  // 视频总时长：优先用 manifest（cost-logger 已去重计算），fallback 从 done 数 × 15s 估算
+  const videoTotalMin = stages.video?.videoTotalDurationMin
+    ?? (doneShotCount > 0 ? +(doneShotCount * 15 / 60).toFixed(2) : 0);
+  const videoGenCount = stages.video?.videoGenCount ?? 0;
+
   document.getElementById('statsBar').innerHTML = `
     <div class="stat-card"><div class="stat-value">${charArr.length}</div><div class="stat-label">角色</div></div>
     <div class="stat-card"><div class="stat-value">${locArr.length}</div><div class="stat-label">场景</div></div>
     <div class="stat-card"><div class="stat-value">${propArr.length}</div><div class="stat-label">道具</div></div>
-    <div class="stat-card"><div class="stat-value">${shots.length}</div><div class="stat-label">分镜数</div></div>
+    <div class="stat-card"><div class="stat-value">${doneShotCount}<span style="font-size:18px;color:var(--text-secondary);margin:0 2px">/</span>${shots.length}</div><div class="stat-label">分镜进度</div></div>
     <div class="stat-card"><div class="stat-value">${score}</div><div class="stat-label">质检分</div></div>
     <div class="stat-card"><div class="stat-value">${retries}</div><div class="stat-label">修订轮次</div></div>
-    <div class="stat-card"><div class="stat-value">${(stages.video?.produced ?? 0)}</div><div class="stat-label">已出视频</div></div>
     <div class="stat-card"><div class="stat-value">${(stages.art?.imageGenCount ?? 0)}</div><div class="stat-label">生图次数</div></div>
-    <div class="stat-card"><div class="stat-value">${(stages.video?.videoGenCount ?? 0)}</div><div class="stat-label">生视频次数</div></div>
-    <div class="stat-card"><div class="stat-value">${(stages.video?.videoTotalDurationMin ?? 0)}<span style="font-size:14px;color:var(--text-secondary);margin-left:2px">min</span></div><div class="stat-label">视频总时长</div></div>
+    <div class="stat-card"><div class="stat-value">${videoGenCount}</div><div class="stat-label">生视频次数</div></div>
+    <div class="stat-card"><div class="stat-value">${videoTotalMin}<span style="font-size:14px;color:var(--text-secondary);margin-left:2px">min</span></div><div class="stat-label">视频总时长 <span title="计算口径：去重统计，每个分镜仅计最新一次成功生成的视频时长，重复生成不累加" style="cursor:help;font-size:12px;color:var(--text-secondary);vertical-align:middle">❓</span></div></div>
     <div class="stat-card"><div class="stat-value">${cfg.duration || '—'}</div><div class="stat-label">单集时长</div></div>
   `;
   document.getElementById('metaStyle').textContent = cfg.stylePreset || cfg.customStyle || '—';
@@ -2130,69 +2148,6 @@ function renderStoryboard() {
   `;
 }
 
-// ========== SEEDANCE (V2 · 20 字段逐镜提示词) ==========
-function renderSeedance() {
-  const sd2 = window.__sd2 || {};
-  const shots = sd2.shots || [];
-  document.getElementById('seedanceMeta').textContent = `共 ${shots.length} 镜`;
-
-  if (shots.length === 0) {
-    document.getElementById('seedanceGrid').innerHTML = '<div class="prop-desc" style="padding:40px;text-align:center;grid-column:1/-1">暂无分镜提示词（06-shots/shot-NN.json）</div>';
-    return;
-  }
-
-  const V2_FIELDS = [
-    ['titleBar', '标题栏'],
-    ['mount', '挂载'],
-    ['camera', '相机'],
-    ['openingFrame', '起幅'],
-    ['closingFrame', '落幅'],
-    ['connection', '承接'],
-    ['transition', '过门'],
-    ['dualAnchor', '双版本锚'],
-    ['mainPrompt', '正文 mainPrompt'],
-    ['compulsoryDeclaration', '强制声明'],
-    ['mustShow', 'Must-Show'],
-    ['qualityRoute', '画质路线'],
-    ['imagingStyle', '成像个性'],
-    ['qualityBaseline', '画质底线'],
-    ['reference', '参照'],
-    ['microExpressions', '微表情'],
-    ['nailLines', '钉子 4 行'],
-    ['e15', 'E15'],
-  ];
-
-  const html = shots.map(s => {
-    if (s._missing) {
-      return `<div class="seg-card" style="border-color:var(--accent-red)"><div class="seg-header"><span class="seg-id">#${String(s.index).padStart(2,'0')}</span><span class="seg-meta" style="color:var(--accent-red-bright)">文件缺失</span></div><div class="seg-prompt">shot-${String(s.index).padStart(2,'0')}.json 未找到</div></div>`;
-    }
-    const fieldsHTML = V2_FIELDS.map(([k, label]) => {
-      const v = s[k];
-      if (!v) return '';
-      const safe = String(v).replace(/</g, '&lt;');
-      return `<div style="margin-bottom:10px">
-        <div style="font-size:10px;color:var(--accent-gold);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">${k} · ${label}</div>
-        <div style="font-size:12px;line-height:1.7;white-space:pre-wrap;color:var(--text-secondary)">${safe}</div>
-      </div>`;
-    }).join('');
-    const refs = (s.assetRefs || []).map(r => `<span class="seg-ref-tag">${r}</span>`).join('');
-    return `
-    <div class="seg-card">
-      <div class="seg-header">
-        <span class="seg-id">#${String(s.index).padStart(2,'0')} · ${s.shotType || '—'}</span>
-        <span class="seg-meta">${s.title || ''}</span>
-        <button class="ai-prompt-btn" title="复制整镜 20 字段提示词" onclick="copyShotPrompt(${s.index})" style="margin-left:auto">📋 复制提示词</button>
-      </div>
-      <div class="seg-refs" style="margin-bottom:10px">${refs}</div>
-      <details>
-        <summary style="cursor:pointer;font-size:12px;color:var(--accent-gold);padding:6px 0">▼ 展开 20 字段完整内容</summary>
-        <div style="margin-top:10px;padding:12px;background:var(--bg-elevated);border-radius:var(--radius)">${fieldsHTML}</div>
-      </details>
-    </div>`;
-  }).join('');
-  document.getElementById('seedanceGrid').innerHTML = html;
-}
-
 // 把某镜的 20 字段按「【字段名】内容」格式拼接后复制（与 skill 中 2000 字统计口径一致）
 function copyShotPrompt(index) {
   const sd2 = window.__sd2 || {};
@@ -2214,6 +2169,156 @@ function copyShotPrompt(index) {
     () => showToast(`已复制分镜 #${String(index).padStart(2,'0')} 提示词（${text.length} 字）`, 'success', 2000),
     () => showToast('复制失败，请手动选中', 'error')
   );
+}
+
+// ========== SHOT PROMPT MODAL（提示词查看/编辑弹窗） ==========
+window.__shotPromptModalIndex = null;
+window.__shotPromptEditing = false;
+
+const PROMPT_FIELDS = [
+  ['titleBar','标题栏'], ['mount','挂载'], ['camera','相机'], ['openingFrame','起幅'],
+  ['closingFrame','落幅'], ['connection','承接'], ['transition','过门'], ['dualAnchor','双版本锚'],
+  ['mainPrompt','正文 mainPrompt'], ['compulsoryDeclaration','强制声明'], ['mustShow','Must-Show'],
+  ['qualityRoute','画质路线'], ['imagingStyle','成像个性'], ['qualityBaseline','画质底线'],
+  ['reference','参照'], ['microExpressions','微表情'], ['nailLines','钉子4行'], ['e15','E15'],
+];
+
+function showShotPromptModal(index) {
+  const sd2 = window.__sd2 || {};
+  const s = (sd2.shots || []).find(x => x.index === index);
+  if (!s) { showToast('未找到该分镜数据', 'error'); return; }
+  window.__shotPromptModalIndex = index;
+  window.__shotPromptEditing = false;
+
+  document.getElementById('shotPromptModalTitle').textContent = `#${String(index).padStart(2,'0')} · ${s.shotType || '—'} · ${s.title || ''} — 提示词`;
+  document.getElementById('shotPromptEditFooter').classList.add('hidden');
+  document.getElementById('shotPromptEditToggle').textContent = '✏️ 编辑';
+
+  _renderShotPromptView(s);
+  document.getElementById('shotPromptModal').classList.remove('hidden');
+}
+
+function _renderShotPromptView(s) {
+  const body = document.getElementById('shotPromptModalBody');
+  const html = PROMPT_FIELDS.map(([k, label]) => {
+    const v = s[k];
+    if (!v && v !== 0) return '';
+    const safe = String(v).replace(/</g, '&lt;');
+    return `<div style="margin-bottom:14px">
+      <div style="font-size:11px;color:var(--accent-gold);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:700">${k} · ${label}</div>
+      <div style="font-size:12px;line-height:1.8;white-space:pre-wrap;color:var(--text-secondary);background:var(--bg-elevated);padding:10px 12px;border-radius:var(--radius);border:1px solid var(--border)">${safe}</div>
+    </div>`;
+  }).filter(Boolean).join('');
+  const refs = (s.assetRefs || []).map(r => `<span class="seg-ref-tag">${r}</span>`).join('');
+  body.innerHTML = `
+    ${refs ? `<div style="margin-bottom:14px;display:flex;flex-wrap:wrap;gap:4px">${refs}</div>` : ''}
+    ${html || '<div style="padding:40px;text-align:center;color:var(--text-muted)">该分镜暂无提示词字段</div>'}
+  `;
+}
+
+function _renderShotPromptEdit(s) {
+  const body = document.getElementById('shotPromptModalBody');
+  const html = PROMPT_FIELDS.map(([k, label]) => {
+    const v = s[k] || '';
+    const safe = String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    const rows = Math.max(3, String(v).split('\n').length + 1);
+    return `<div style="margin-bottom:14px">
+      <div style="font-size:11px;color:var(--accent-gold);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:700">${k} · ${label}</div>
+      <textarea data-prompt-field="${k}" rows="${rows}" style="width:100%;font-family:var(--font-mono);font-size:12px;line-height:1.7;color:var(--text-primary);background:var(--bg-deep);border:1px solid var(--accent-gold-dim);border-radius:var(--radius);padding:10px 12px;resize:vertical;box-sizing:border-box">${safe}</textarea>
+    </div>`;
+  }).join('');
+  body.innerHTML = html;
+}
+
+function toggleShotPromptEdit() {
+  const sd2 = window.__sd2 || {};
+  const index = window.__shotPromptModalIndex;
+  const s = (sd2.shots || []).find(x => x.index === index);
+  if (!s) return;
+
+  window.__shotPromptEditing = !window.__shotPromptEditing;
+  const footer = document.getElementById('shotPromptEditFooter');
+  const btn = document.getElementById('shotPromptEditToggle');
+
+  if (window.__shotPromptEditing) {
+    _renderShotPromptEdit(s);
+    footer.classList.remove('hidden');
+    btn.textContent = '👁 查看';
+  } else {
+    _renderShotPromptView(s);
+    footer.classList.add('hidden');
+    btn.textContent = '✏️ 编辑';
+  }
+}
+
+function cancelShotPromptEdit() {
+  window.__shotPromptEditing = false;
+  const sd2 = window.__sd2 || {};
+  const index = window.__shotPromptModalIndex;
+  const s = (sd2.shots || []).find(x => x.index === index);
+  if (s) _renderShotPromptView(s);
+  document.getElementById('shotPromptEditFooter').classList.add('hidden');
+  document.getElementById('shotPromptEditToggle').textContent = '✏️ 编辑';
+}
+
+async function saveShotPromptEdit() {
+  const index = window.__shotPromptModalIndex;
+  if (index == null) return;
+  const saveBtn = document.getElementById('shotPromptSaveBtn');
+  saveBtn.disabled = true;
+  saveBtn.textContent = '⏳ 保存中…';
+
+  try {
+    const shotPath = `projects/${currentProject}/outputs/${currentEpisode}/06-shots/shot-${String(index).padStart(2,'0')}.json`;
+    // 读取最新 JSON
+    const full = await fetch(`${shotPath}?_t=${Date.now()}`).then(r => r.json());
+
+    // 从编辑区收集字段值
+    const textareas = document.querySelectorAll('[data-prompt-field]');
+    textareas.forEach(ta => {
+      const key = ta.dataset.promptField;
+      full[key] = ta.value;
+    });
+
+    // 保存
+    const res = await fetch('/api/save-json', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ path: shotPath, content: full }),
+    });
+    const j = await res.json();
+    if (!j.ok) throw new Error(j.error || '保存失败');
+
+    // 更新内存中的 shot 数据
+    const sd2 = window.__sd2 || {};
+    const s = (sd2.shots || []).find(x => x.index === index);
+    if (s) {
+      textareas.forEach(ta => { s[ta.dataset.promptField] = ta.value; });
+    }
+
+    showToast(`✅ shot-${String(index).padStart(2,'0')} 提示词已保存`, 'success');
+    // 切回查看模式
+    window.__shotPromptEditing = false;
+    if (s) _renderShotPromptView(s);
+    document.getElementById('shotPromptEditFooter').classList.add('hidden');
+    document.getElementById('shotPromptEditToggle').textContent = '✏️ 编辑';
+  } catch (e) {
+    showToast(`保存失败: ${e.message}`, 'error');
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = '💾 保存';
+  }
+}
+
+function copyShotPromptFromModal() {
+  const index = window.__shotPromptModalIndex;
+  if (index != null) copyShotPrompt(index);
+}
+
+function closeShotPromptModal(event) {
+  if (event && event.target && event.target.id !== 'shotPromptModal') return;
+  document.getElementById('shotPromptModal').classList.add('hidden');
+  window.__shotPromptEditing = false;
 }
 
 // ========== ASSET MAP（集级素材映射表弹窗） ==========
@@ -2462,12 +2567,25 @@ function renderVideos() {
     } else if (status === 'waitlisted') {
       videoArea = `<div class="video-status-placeholder video-status-waitlisted"><span>📋 候补中</span><span style="font-size:11px;color:var(--text-muted)">等待调度器心跳提交</span></div>`;
     } else {
-      videoArea = `<div class="video-status-placeholder video-status-pending"><span>⬜ 待提交</span></div>`;
+      // pending：若被标记 needsRework，展示返工占位；否则普通"待提交"
+      if (vt.needsRework) {
+        videoArea = `<div class="video-status-placeholder video-status-failed"><span>⚠️ 需分镜师优化</span>${vt.failReason ? `<span style="font-size:11px;max-width:90%;text-align:center;word-break:break-all">${vt.failReason}</span>` : ''}</div>`;
+      } else {
+        videoArea = `<div class="video-status-placeholder video-status-pending"><span>⬜ 待提交</span></div>`;
+      }
     }
 
     // 操作按钮行（pending / waitlisted / failed / stuck / done 都可出按钮）
     let actions = '';
-    if (status === 'pending') {
+    // 优先判定：只要被标记 needsRework，无论 status 走什么分支都给"已优化重投"按钮
+    if (vt.needsRework && status !== 'done' && status !== 'generating' && status !== 'waitlisted') {
+      const failCnt = (vt.failHistory || []).length;
+      const failLabel = failCnt ? `（失败 ${failCnt} 次）` : '';
+      actions = `<div class="video-card-actions" style="flex-wrap:wrap;gap:6px">
+        <span style="font-size:10px;color:var(--accent-red-bright);font-weight:700;background:rgba(235,77,75,0.15);padding:2px 6px;border-radius:3px">⚠️ 需分镜师优化${failLabel}</span>
+        <button class="vq-btn vq-btn-primary" onclick="onMarkReworkedAndRetry('${idx}')" title="分镜师已重写，清除标记后重新入池">✏️ 已优化重投</button>
+      </div>`;
+    } else if (status === 'pending') {
       actions = `<div class="video-card-actions">
         <button class="vq-btn vq-btn-primary" onclick="onQueueAdd('${idx}')">📋 加入候补池</button>
       </div>`;
@@ -2477,24 +2595,13 @@ function renderVideos() {
       </div>`;
     } else if (status === 'failed' || status === 'stuck') {
       const failCnt = (vt.failHistory || []).length;
-      const failLabel = failCnt ? `（失败 ${failCnt} 次）` : '';
-      if (vt.needsRework) {
-        // 需返工：显示失败标签 + 已优化重投按钮
-        actions = `<div class="video-card-actions" style="flex-wrap:wrap;gap:6px">
-          <span style="font-size:10px;color:var(--accent-red-bright);font-weight:700;background:rgba(235,77,75,0.15);padding:2px 6px;border-radius:3px">⚠️ 需分镜师优化${failLabel}</span>
-          <button class="vq-btn vq-btn-primary" onclick="onMarkReworkedAndRetry('${idx}')" title="分镜师已重写，清除标记后重新入池">✏️ 已优化重投</button>
-        </div>`;
-      } else {
-        const label = status === 'stuck' ? '🔄 重投到候补池' : '🔄 重新加入候补池';
-        actions = `<div class="video-card-actions">
-          <button class="vq-btn vq-btn-primary" onclick="onQueueAdd('${idx}')">${label}</button>
-        </div>`;
-      }
-    } else if (status === 'done') {
-      // 已出片 → 允许手动触发"删除当前视频并重新生成"
+      const label = status === 'stuck' ? '🔄 重投到候补池' : '🔄 重新加入候补池';
       actions = `<div class="video-card-actions">
-        <button class="vq-btn" onclick="onRegenerate('${idx}')" title="删除当前视频并重新加入候补池（消耗积分重出）">🔄 重新生成</button>
+        <button class="vq-btn vq-btn-primary" onclick="onQueueAdd('${idx}')">${label}</button>
       </div>`;
+    } else if (status === 'done') {
+      // 已出片 → 底部统一有"重新生成"按钮，此处不再重复
+      actions = '';
     }
 
     return `
@@ -2506,6 +2613,10 @@ function renderVideos() {
         ${(s.assetRefs || []).length ? `<div style="font-size:11px;color:var(--accent-gold);margin-top:4px">${s.assetRefs.join(' · ')}</div>` : ''}
         ${metaRow}
         ${actions}
+        <div class="video-card-actions" style="margin-top:4px;display:flex;justify-content:space-between;align-items:center">
+          <button class="vq-btn" onclick="showShotPromptModal(${s.index})" title="查看/编辑提示词">📝 提示词</button>
+          <button class="vq-btn" onclick="onRegenerate('${idx}')" title="删除当前视频并重新加入候补池（消耗积分重出）">🔄 重新生成</button>
+        </div>
       </div>
     </div>`;
   }).join('');
@@ -2845,17 +2956,22 @@ function renderVideoFilterBar() {
   };
   shots.forEach(s => {
     const st = _shotDisplayStatus(s, waitlistSet);
+    const vt = s.videoTask || {};
     if (st === 'done') counts.done++;
     else if (st === 'generating') counts.generating++;
     else if (st === 'waitlisted') counts.waitlisted++;
     else if (st === 'failed' || st === 'stuck') counts.failed++;
-    else counts.pending++;
-    // ready 定义：还没 done / 未在进行中；首帧依赖已满足；不在候补池
-    if (st === 'pending') {
-      const dep = _shotTailDepStatus(s);
-      if (dep.tailReady) counts.ready++;
+    else if (st === 'pending') {
+      if (vt.needsRework) {
+        // 标了返工的 pending → 归入失败统计，便于用户在失败 tab 找到"已优化重投"按钮
+        counts.failed++;
+      } else {
+        // ready 与 pending 互斥：依赖就绪的算 ready，其余才算 pending
+        const dep = _shotTailDepStatus(s);
+        if (dep.tailReady) counts.ready++;
+        else counts.pending++;
+      }
     }
-    // needsRework 已合并到 failed 计数中，不再单独统计
   });
 
   const curr = window.__videoFilter || 'all';
@@ -2885,11 +3001,25 @@ function _matchVideoFilter(shot, filter, waitlistSet) {
   if (filter === 'done') return st === 'done';
   if (filter === 'generating') return st === 'generating';
   if (filter === 'waitlisted') return st === 'waitlisted';
-  if (filter === 'pending') return st === 'pending';
-  if (filter === 'failed') return st === 'failed' || st === 'stuck';
-  if (filter === 'ready') {
-    // 必须是 pending 态 + 首帧依赖已就绪（无依赖或已就绪）
+  if (filter === 'pending') {
+    // pending tab：仅显示「未就绪且未标记返工」的，ready 和 needsRework 的不算
     if (st !== 'pending') return false;
+    const vt = shot.videoTask || {};
+    if (vt.needsRework) return false;
+    const dep = _shotTailDepStatus(shot);
+    return !dep.tailReady;
+  }
+  if (filter === 'failed') {
+    // failed tab：真 failed/stuck + 被标记 needsRework 的 pending（便于在这里重投）
+    if (st === 'failed' || st === 'stuck') return true;
+    const vt = shot.videoTask || {};
+    return st === 'pending' && !!vt.needsRework;
+  }
+  if (filter === 'ready') {
+    // 必须是 pending 态 + 首帧依赖已就绪 + 未标记返工
+    if (st !== 'pending') return false;
+    const vt = shot.videoTask || {};
+    if (vt.needsRework) return false;
     const dep = _shotTailDepStatus(shot);
     return dep.tailReady;
   }
@@ -3562,6 +3692,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeNewProjectModal();
     closeUploadModal();
+    closeShotPromptModal();
   }
 });
 

@@ -376,6 +376,15 @@ def compute_waitlist_deps(project, ep, waitlist):
     images = (asset_map.get("images") or {})
 
     for e in waitlist or []:
+        # 防御：允许 waitList 里出现脏条目（字符串/None 等），避免把心跳整体打崩
+        if not isinstance(e, dict):
+            key = f"malformed-{len(result)}"
+            result[key] = {
+                "ready": False, "blocker": "malformed",
+                "tailNum": None, "fromShot": None,
+                "reason": f"waitList 存在非法条目: type={type(e).__name__} value={e!r}",
+            }
+            continue
         idx = str(e.get("shot", "")).zfill(2)
         info = {"ready": False, "blocker": "", "tailNum": None, "fromShot": None, "reason": ""}
 
@@ -431,7 +440,10 @@ def next_submittable(project, ep, waitlist, log):
     deps = compute_waitlist_deps(project, ep, waitlist)
     skipped = []
     for i, e in enumerate(waitlist):
-        idx = str(e["shot"]).zfill(2)
+        if not isinstance(e, dict):
+            skipped.append(f"[{i}]malformed({type(e).__name__})")
+            continue
+        idx = str(e.get("shot", "")).zfill(2)
         info = deps.get(f"shot-{idx}") or {}
         if info.get("ready"):
             return i, e, "ok"
@@ -475,7 +487,14 @@ def heartbeat(project, ep, followup_only=False):
         return
 
     try:
-        _heartbeat_impl(project, ep, p, log_line, followup_only=followup_only)
+        try:
+            _heartbeat_impl(project, ep, p, log_line, followup_only=followup_only)
+        except Exception as e:
+            # 异常写进心跳日志，避免静默崩溃只抛到 stderr（systemd journal）
+            import traceback
+            log_line(f"💥 heartbeat crashed: {type(e).__name__}: {e}")
+            log_line("traceback:\n" + traceback.format_exc())
+            raise
     finally:
         try: fcntl.flock(lock_fd, fcntl.LOCK_UN)
         except Exception: pass

@@ -26,16 +26,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "c33c6b7c-6261-4761-b3da-56bdf4b41b5e",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v3-artist.vlabvod.com/4ab90d6df29192499b02f7831c393b4e/69e4fdde/video/tos/cn/tos-cn-v-148450/oAHL9IQfIZ7AGlKAO7pHkx1B5EcYCfcVgSw6bB/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6079&bt=6079&cs=0&ds=12&ft=5QYTUxhhe6BMyq1doPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZTM6ZGZkOTozNzM6OTU4PEBpanczNDVrb2xoOjczNDM7M0BjMmMtMmE0NV8xYi5fNDJiYSNzc2QzcWducmZhLS1kNC9zcw%3D%3D&btag=c0000e00008000&dy_q=1776611264&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=2026041923074402121407315859449FC",
+    "videoFile": "outputs/ep01/videos/shot-47.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-47.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 70,
+    "submittedAt": "2026-04-19T22:42:30+08:00",
+    "completedAt": "2026-04-19T23:07:48+08:00"
   }
 }

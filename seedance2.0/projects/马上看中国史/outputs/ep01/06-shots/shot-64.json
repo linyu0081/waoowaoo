@@ -28,13 +28,25 @@
     "engine": "dreamina",
     "modelName": "seedance2.0fast",
     "taskId": "6c18c7b3-3a78-409a-a3c1-a75c38dda8bf",
-    "status": "fail",
+    "status": "failed",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
     "failReason": "远端任务不存在/内容安全预检不通过（prompt含T（打响鼻）M谐音脏话）",
     "creditCount": null,
     "submittedAt": "2026-04-19T03:08:49.465675+08:00",
-    "completedAt": "2026-04-19T07:27:34.940459+08:00"
+    "completedAt": "2026-04-19T07:27:34.940459+08:00",
+    "needsRework": true,
+    "failHistory": [
+      {
+        "taskId": "6c18c7b3-3a78-409a-a3c1-a75c38dda8bf",
+        "failReason": "远端任务不存在/内容安全预检不通过（prompt含T（打响鼻）M谐音脏话）",
+        "submittedAt": "2026-04-19T03:08:49.465675+08:00",
+        "failedAt": "2026-04-19T07:27:34.940459+08:00",
+        "model": "seedance2.0fast"
+      }
+    ]
   }
 }

@@ -111,6 +111,7 @@ def update_manifest(project, episode, data):
     art["imageGenCount"] = s["imageGenCount"]
     video["videoGenCount"] = s["videoGenCount"]
     video["videoUniqueShots"] = s["videoUniqueShots"]
+    video["produced"] = s["videoUniqueShots"]  # 去重已出视频数 = uniqueShots
     video["videoTotalDurationSec"] = s["videoTotalDurationSec"]
     video["videoTotalDurationMin"] = s["videoTotalDurationMin"]
     with open(mp, "w", encoding="utf-8") as f:

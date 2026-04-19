@@ -3,14 +3,14 @@
   "project": "马上看中国史",
   "episode": "ep01",
   "createdAt": "2026-04-18T23:07:22+0800",
-  "updatedAt": "2026-04-19T19:39:48+0800",
+  "updatedAt": "2026-04-19T23:07:48+0800",
   "backfillNote": "本集启用成本追踪前，历史生图记录按 assets/images/ 现存 PNG + _backup/ 备份 PNG 逐一补录，总计 45 次（37 次成功保留 + 8 次重生后废弃）。实际重生次数可能略高于此数，以后续逐次调用 cost-logger 为准。",
   "summary": {
     "imageGenCount": 45,
-    "videoGenCount": 39,
-    "videoUniqueShots": 34,
-    "videoTotalDurationSec": 314,
-    "videoTotalDurationMin": 5.23
+    "videoGenCount": 43,
+    "videoUniqueShots": 37,
+    "videoTotalDurationSec": 340,
+    "videoTotalDurationMin": 5.67
   },
   "byModel": {
     "nano-banana2": {
@@ -20,8 +20,8 @@
     },
     "seedance2.0fast": {
       "imageCount": 0,
-      "videoCount": 38,
-      "videoDurationSec": 358
+      "videoCount": 42,
+      "videoDurationSec": 390
     },
     "seedance2.0": {
       "imageCount": 0,
@@ -734,6 +734,46 @@
       "at": "2026-04-19T19:39:48+0800",
       "note": "auto: scheduler download@2026-04-19T19:39:48+08:00; credit=60",
       "taskId": "1e779806-d6a0-4351-b6c5-42ca2e012d1e"
+    },
+    {
+      "type": "video",
+      "target": "shot-14",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": true,
+      "at": "2026-04-19T19:58:58+0800",
+      "note": "auto: scheduler download@2026-04-19T19:58:58+08:00; credit=30",
+      "taskId": "727434db-00f2-4ce4-b4f6-5a44ed324bd1"
+    },
+    {
+      "type": "video",
+      "target": "shot-04",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-19T20:20:50+0800",
+      "note": "auto: scheduler download@2026-04-19T20:20:50+08:00; credit=30",
+      "taskId": "b8918897-643b-46f2-8c2d-0150cd904f45"
+    },
+    {
+      "type": "video",
+      "target": "shot-41",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-19T21:06:11+0800",
+      "note": "auto: scheduler download@2026-04-19T21:06:11+08:00; credit=30",
+      "taskId": "d109b225-b82a-4584-a0b5-fb7b1ea62ad3"
+    },
+    {
+      "type": "video",
+      "target": "shot-47",
+      "model": "seedance2.0fast",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-19T23:07:48+0800",
+      "note": "auto: scheduler download@2026-04-19T23:07:48+08:00; credit=70",
+      "taskId": "c33c6b7c-6261-4761-b3da-56bdf4b41b5e"
     }
   ]
 }
