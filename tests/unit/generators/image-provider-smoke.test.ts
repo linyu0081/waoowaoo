@@ -239,7 +239,9 @@ describe('image provider smoke tests', () => {
       prompt: 'restyle this portrait',
       referenceImages: ['/api/files/ref-image'],
       options: {
-        resolution: '2K',
+        // Google Gemini imageConfig.imageSize 仅支持像素格式（如 "1024x1024"），
+        // 档位缩写（"2K"/"0.5K"）会被生成器主动过滤以规避 INVALID_ARGUMENT。
+        resolution: '1024x1024',
       },
     })
 
@@ -259,6 +261,46 @@ describe('image provider smoke tests', () => {
     }
     expect(content.contents[0].parts[0].inlineData).toEqual({ mimeType: 'image/png', data: 'UkVG' })
     expect(content.contents[0].parts[1].text).toBe('restyle this portrait')
-    expect(content.config.imageConfig).toEqual({ imageSize: '2K' })
+    expect(content.config.imageConfig).toEqual({ imageSize: '1024x1024' })
+  })
+
+  it('Gemini 兼容层档位缩写 resolution -> 应被过滤，不传 imageSize', async () => {
+    getProviderConfigMock.mockResolvedValueOnce({
+      id: 'gemini-compatible:gm-1',
+      apiKey: 'gm-key',
+      baseUrl: 'https://gm.test',
+    })
+    googleGenerateContentMock.mockResolvedValueOnce({
+      candidates: [
+        {
+          content: {
+            parts: [
+              {
+                inlineData: {
+                  mimeType: 'image/png',
+                  data: 'UEFTUw==',
+                },
+              },
+            ],
+          },
+        },
+      ],
+    })
+
+    const generator = new GeminiCompatibleImageGenerator('gemini-2.5-flash-image-preview', 'gemini-compatible:gm-1')
+    await generator.generate({
+      userId: 'user-1',
+      prompt: 'draw anything',
+      options: {
+        aspectRatio: '1:1',
+        resolution: '2K', // 档位缩写，不应进入 imageConfig
+      },
+    })
+
+    const call = googleGenerateContentMock.mock.calls[0]
+    if (!call) throw new Error('Gemini generateContent should be called')
+    const content = call[0] as { config: { imageConfig?: { imageSize?: string; aspectRatio?: string } } }
+    // 只保留 aspectRatio，不带 imageSize（避免 Google INVALID_ARGUMENT）
+    expect(content.config.imageConfig).toEqual({ aspectRatio: '1:1' })
   })
 })
