@@ -1,0 +1,43 @@
+# systemd 用户级定时任务（Dreamina 视频调度心跳）
+#
+# 为什么不用 %i 传项目名？
+#   systemd 对实例名做 escape 时中文会变成 \xHH 字面序列，传给 shell 拿不回原字符串。
+#   改用 "实例名=项目别名(英文)" + "环境文件配 PROJECT/EP" 的方式，规避中文 escape。
+#
+# 安装步骤：
+#   1) 建环境文件（每项目一份，实例名任取英文别名）：
+#        mkdir -p ~/.config/dreamina-scheduler
+#        cat > ~/.config/dreamina-scheduler/msckcs-ep01.env << 'EOF'
+#        PROJECT=马上看中国史
+#        EP=ep01
+#        EOF
+#
+#   2) 拷贝 unit：
+#        mkdir -p ~/.config/systemd/user/
+#        cp scripts/systemd/dreamina-scheduler@.service ~/.config/systemd/user/
+#        cp scripts/systemd/dreamina-scheduler@.timer   ~/.config/systemd/user/
+#        systemctl --user daemon-reload
+#
+#   3) 启动（实例名 = 环境文件 basename，无空格无中文）：
+#        systemctl --user enable --now dreamina-scheduler@msckcs-ep01.timer
+#
+# 查看：
+#   systemctl --user list-timers 'dreamina-scheduler@*'
+#   journalctl --user -u dreamina-scheduler@msckcs-ep01.service -n 30 --no-pager
+#
+# 停用：
+#   systemctl --user disable --now dreamina-scheduler@msckcs-ep01.timer
+[Unit]
+Description=Dreamina video scheduler heartbeat (%i)
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/data/workspace/waoowaoo/seedance2.0
+Environment=PYTHONUNBUFFERED=1
+Environment=PATH=/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# 从 env 文件读 PROJECT / EP 变量
+EnvironmentFile=%h/.config/dreamina-scheduler/%i.env
+ExecStart=/usr/bin/python3 scripts/video_scheduler.py --project ${PROJECT} --ep ${EP}
+StandardOutput=journal
+StandardError=journal

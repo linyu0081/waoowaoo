@@ -543,6 +543,10 @@ body {
   border-bottom: 1px solid var(--border); font-size: 13px; gap: 8px;
 }
 .video-status-pending { background: var(--bg-elevated); color: var(--text-muted); }
+.video-status-queuing {
+  background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.15));
+  color: var(--accent-gold);
+}
 .video-status-generating {
   background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(59,130,246,0.15));
   color: var(--accent-blue);
@@ -557,6 +561,79 @@ body {
 }
 .video-status-failed {
   background: rgba(239,68,68,0.06); color: var(--accent-red-bright);
+}
+.video-status-waitlisted {
+  background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(168,85,247,0.15));
+  color: #c084fc;
+}
+
+/* ---- 候补池面板 ---- */
+.video-queue-panel {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px 18px; margin-bottom: 20px;
+}
+.vq-header {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text-secondary);
+}
+.vq-header strong { color: var(--text-primary); font-size: 14px; }
+.vq-header .vq-sep { color: var(--border); }
+.vq-badge {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
+  border-radius: 10px; font-family: var(--font-mono); font-size: 11px;
+}
+.vq-badge-queuing { background: rgba(245,158,11,0.1); color: var(--accent-gold); }
+.vq-badge-generating { background: rgba(59,130,246,0.1); color: var(--accent-blue); }
+.vq-badge-wait { background: rgba(168,85,247,0.1); color: #c084fc; }
+.vq-btn {
+  padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg-elevated); color: var(--text-primary); font-size: 12px;
+  cursor: pointer; transition: all 0.15s;
+}
+.vq-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+.vq-btn-danger:hover { border-color: var(--accent-red-bright); color: var(--accent-red-bright); }
+.vq-btn-primary { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
+.vq-btn-primary:hover { filter: brightness(1.1); color: white; }
+.vq-waitlist {
+  margin-top: 10px; display: flex; flex-direction: column; gap: 6px;
+}
+.vq-waitlist-item {
+  display: flex; align-items: center; gap: 10px; padding: 6px 10px;
+  background: var(--bg-elevated); border-radius: 6px; font-size: 12px;
+  font-family: var(--font-mono);
+}
+.vq-waitlist-item .vq-idx { color: var(--text-muted); width: 24px; }
+.vq-waitlist-item .vq-shot { color: #c084fc; font-weight: 700; }
+.vq-waitlist-item .vq-model { color: var(--text-secondary); }
+.vq-waitlist-item .vq-note { color: var(--text-muted); flex: 1; }
+.vq-waitlist-empty { color: var(--text-muted); font-size: 12px; padding: 6px 0; }
+
+/* ---- 视频 Tab 顶部状态筛选条 ---- */
+.video-filter-bar {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.vfb-btn {
+  padding: 4px 12px; border-radius: 14px; border: 1px solid var(--border);
+  background: var(--bg-elevated); color: var(--text-secondary);
+  font-size: 12px; cursor: pointer; transition: all 0.15s;
+  font-family: var(--font-mono);
+}
+.vfb-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+.vfb-active {
+  background: var(--accent-blue) !important; color: white !important;
+  border-color: var(--accent-blue) !important;
+}
+.vfb-ok.vfb-active      { background: #16a34a !important; border-color: #16a34a !important; }
+.vfb-blue.vfb-active    { background: var(--accent-blue) !important; border-color: var(--accent-blue) !important; }
+.vfb-purple.vfb-active  { background: #9333ea !important; border-color: #9333ea !important; }
+.vfb-gold.vfb-active    { background: var(--accent-gold) !important; border-color: var(--accent-gold) !important; color: #1a1a1a !important; }
+.vfb-red.vfb-active     { background: var(--accent-red-bright) !important; border-color: var(--accent-red-bright) !important; }
+
+#schedulerIntervalInput:focus { outline: none; border-color: var(--accent-blue); }
+
+/* ---- 视频卡片底部操作区 ---- */
+.video-card-actions {
+  display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;
 }
 
 /* ======== SCREENPLAY SIDEBAR ======== */
@@ -1249,7 +1326,11 @@ body {
 
   <!-- ===== VIDEOS ===== -->
   <div class="tab-panel" id="panel-videos">
-    <h2 class="section-title">视频</h2>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px">
+      <h2 class="section-title" style="margin:0">视频</h2>
+      <div id="videoFilterBar" class="video-filter-bar"></div>
+    </div>
+    <div id="videoQueuePanel" class="video-queue-panel"></div>
     <div class="video-grid" id="videoGrid"></div>
   </div>
 
@@ -1367,7 +1448,7 @@ async function loadEpisode(projectName, episode) {
     //  - 本集新增：04-new-assets.json
     //  - 分镜大纲：05-storyboard-plan.json
     //  - 每镜：06-shots/shot-NN.json（聚合为数组）
-    const [manifestRaw, chRaw, scRaw, prRaw, planningTxt, scriptMd, reviewJson, newAssetsJson, boardPlan, assetMapRaw] = await Promise.all([
+    const [manifestRaw, chRaw, scRaw, prRaw, planningTxt, scriptMd, reviewJson, newAssetsJson, boardPlan, assetMapRaw, videoQueueRaw] = await Promise.all([
       loadJSON(`${epBase}/manifest.json`).catch(() => ({})),
       loadJSON(`${base}/assets/characters.json`).catch(() => []),
       loadJSON(`${base}/assets/scenes.json`).catch(() => []),
@@ -1378,6 +1459,7 @@ async function loadEpisode(projectName, episode) {
       loadJSON(`${epBase}/04-new-assets.json`).catch(() => ({characters:[],scenes:[],props:[]})),
       loadJSON(`${epBase}/05-storyboard-plan.json`).catch(() => null),
       loadJSON(`${epBase}/asset-map.json`).catch(() => null),
+      loadJSON(`${epBase}/video-queue.json`).catch(() => null),
     ]);
 
     // 聚合 06-shots/shot-NN.json
@@ -1414,7 +1496,8 @@ async function loadEpisode(projectName, episode) {
       newAssets: newAssetsJson || {characters:[],scenes:[],props:[]},
       boardPlan,
       shots,
-      assetMap: assetMapRaw
+      assetMap: assetMapRaw,
+      videoQueue: videoQueueRaw,
     };
 
     // 兼容旧变量（部分 UI 还在读）
@@ -2270,10 +2353,18 @@ async function handleCharacterVoiceUpload(input) {
 }
 
 // ========== VIDEOS ==========
+// 全局筛选器状态（tab 内记忆）
+window.__videoFilter = window.__videoFilter || 'all';
+
 function renderVideos() {
   const sd2 = window.__sd2 || {};
   const shots = sd2.shots || [];
   const epBase = `projects/${currentProject}/outputs/${currentEpisode}`;
+
+  // 先渲染候补池面板 + 筛选条
+  renderVideoQueue();
+  renderVideoFilterBar();
+
   if (shots.length === 0) {
     document.getElementById('videoGrid').innerHTML = '<div class="prop-desc" style="padding:40px;text-align:center;grid-column:1/-1">暂无分镜，视频无法渲染</div>';
     return;
@@ -2296,12 +2387,28 @@ function renderVideos() {
     } catch { return ''; }
   }
 
-  const html = shots.map(s => {
+  // 候补池镜号集合
+  const waitlistSet = new Set(((sd2.videoQueue || {}).waitList || []).map(e => String(e.shot).padStart(2,'0')));
+
+  // 按当前筛选器过滤
+  const filter = window.__videoFilter || 'all';
+  const filteredShots = shots.filter(s => _matchVideoFilter(s, filter, waitlistSet));
+
+  if (filteredShots.length === 0) {
+    document.getElementById('videoGrid').innerHTML = '<div class="prop-desc" style="padding:40px;text-align:center;grid-column:1/-1">当前筛选下无匹配视频</div>';
+    return;
+  }
+
+  const html = filteredShots.map(s => {
     const idx = String(s.index).padStart(2,'0');
     const fname = `shot-${idx}.mp4`;
     const src = `${epBase}/videos/${fname}`;
     const vt = s.videoTask || {};
-    const status = vt.status || 'pending';
+    let status = vt.status || 'pending';
+    // 若 pending 且在候补池，显示 waitlisted
+    const inWaitlist = waitlistSet.has(idx);
+    if (status === 'pending' && inWaitlist) status = 'waitlisted';
+
     const engine = vt.engine || '';
     const modelName = vt.modelName || '';
     const taskId = vt.taskId || '';
@@ -2320,15 +2427,52 @@ function renderVideos() {
 
     // 视频区域：按状态渲染
     let videoArea = '';
+    const queueStatus = vt.queueStatus || '';  // 'queuing' | 'generating' | ''
     if (status === 'done') {
       videoArea = `<video controls preload="metadata" src="${src}" onerror="this.outerHTML='<div class=video-status-placeholder\ video-status-failed><span>⚠️ 文件缺失</span></div>'"></video>`;
     } else if (status === 'generating') {
-      videoArea = `<div class="video-status-placeholder video-status-generating"><div class="pulse-dot"></div><span>⏳ 生成中…</span></div>`;
+      if (queueStatus === 'queuing') {
+        const qIdx = (vt.queueIdx != null && vt.queueIdx !== '') ? vt.queueIdx : '';
+        const qLabel = qIdx !== '' ? `队列 #${qIdx}` : '账号级排队中';
+        videoArea = `<div class="video-status-placeholder video-status-queuing"><span>🕒 ${qLabel}</span><span style="font-size:11px;color:var(--text-muted);max-width:85%;text-align:center">即梦同账号同模型并发=1，排前面的跑完再上</span></div>`;
+      } else {
+        videoArea = `<div class="video-status-placeholder video-status-generating"><div class="pulse-dot"></div><span>⏳ 生成中…</span></div>`;
+      }
     } else if (status === 'failed') {
-      videoArea = `<div class="video-status-placeholder video-status-failed"><span>❌ 生成失败</span>${vt.failReason ? `<span style="font-size:11px;max-width:90%;text-align:center;word-break:break-all">${vt.failReason}</span>` : ''}</div>`;
+      const rwTag = vt.needsRework ? `<span style="font-size:10px;color:var(--accent-red-bright);font-weight:700;background:rgba(235,77,75,0.15);padding:2px 6px;border-radius:3px;margin-top:4px">⚠️ 需分镜师优化 prompt</span>` : '';
+      videoArea = `<div class="video-status-placeholder video-status-failed"><span>❌ 生成失败</span>${vt.failReason ? `<span style="font-size:11px;max-width:90%;text-align:center;word-break:break-all">${vt.failReason}</span>` : ''}${rwTag}</div>`;
+    } else if (status === 'stuck') {
+      videoArea = `<div class="video-status-placeholder video-status-failed"><span>🔴 卡死/丢单</span>${vt.failReason ? `<span style="font-size:11px;max-width:90%;text-align:center;word-break:break-all">${vt.failReason}</span>` : ''}</div>`;
+    } else if (status === 'waitlisted') {
+      videoArea = `<div class="video-status-placeholder video-status-waitlisted"><span>📋 候补中</span><span style="font-size:11px;color:var(--text-muted)">等待调度器心跳提交</span></div>`;
     } else {
-      // pending 或无 videoTask
       videoArea = `<div class="video-status-placeholder video-status-pending"><span>⬜ 待提交</span></div>`;
+    }
+
+    // 操作按钮行（只在 pending/waitlisted/failed 时出现）
+    let actions = '';
+    if (status === 'pending') {
+      actions = `<div class="video-card-actions">
+        <button class="vq-btn vq-btn-primary" onclick="onQueueAdd('${idx}')">📋 加入候补池</button>
+      </div>`;
+    } else if (status === 'waitlisted') {
+      actions = `<div class="video-card-actions">
+        <button class="vq-btn vq-btn-danger" onclick="onQueueRemove('${idx}')">✖ 移出候补池</button>
+      </div>`;
+    } else if (status === 'failed' || status === 'stuck') {
+      if (vt.needsRework) {
+        // 需返工：不能直接重投，需分镜师确认已优化
+        const failCnt = (vt.failHistory || []).length;
+        actions = `<div class="video-card-actions" style="flex-wrap:wrap;gap:6px">
+          <button class="vq-btn" disabled title="需分镜师重写 prompt 后才能重投" style="opacity:.5;cursor:not-allowed">🚫 已标记需返工${failCnt ? '（失败 '+failCnt+' 次）' : ''}</button>
+          <button class="vq-btn vq-btn-primary" onclick="onMarkReworkedAndRetry('${idx}')" title="分镜师已重写，清除标记后重新入池">✏️ 已优化重投</button>
+        </div>`;
+      } else {
+        const label = status === 'stuck' ? '🔄 重投到候补池' : '🔄 重新加入候补池';
+        actions = `<div class="video-card-actions">
+          <button class="vq-btn vq-btn-primary" onclick="onQueueAdd('${idx}')">${label}</button>
+        </div>`;
+      }
     }
 
     return `
@@ -2339,10 +2483,336 @@ function renderVideos() {
         <div style="font-size:11px;color:var(--text-muted)">${fname}</div>
         ${(s.assetRefs || []).length ? `<div style="font-size:11px;color:var(--accent-gold);margin-top:4px">${s.assetRefs.join(' · ')}</div>` : ''}
         ${metaRow}
+        ${actions}
       </div>
     </div>`;
   }).join('');
   document.getElementById('videoGrid').innerHTML = html;
+}
+
+// ========== VIDEO QUEUE (候补池面板) ==========
+function renderVideoQueue() {
+  const el = document.getElementById('videoQueuePanel');
+  if (!el) return;
+  const sd2 = window.__sd2 || {};
+  const q = sd2.videoQueue;
+  if (!q) {
+    el.innerHTML = '';
+    return;
+  }
+  const wait = (q.waitList || []).length;
+  const hb = q.lastHeartbeat ? new Date(q.lastHeartbeat).toLocaleString('zh-CN', {hour12:false}) : '—';
+  const paused = !!q.paused;
+  const shots = sd2.shots || [];
+
+  const list = (q.waitList || []).map((e, i) => {
+    const shot = String(e.shot).padStart(2,'0');
+    const sh = shots.find(s => String(s.index).padStart(2,'0') === shot) || {};
+    const title = sh.title || '';
+    const model = e.model || q.defaultModel || '';
+    const note = e.note || '';
+    return `<div class="vq-waitlist-item">
+      <span class="vq-idx">${i+1}.</span>
+      <span class="vq-shot">shot-${shot}</span>
+      <span style="color:var(--text-secondary);font-size:12px">${title}</span>
+      <span class="vq-model">${model}</span>
+      <span class="vq-note">${note}</span>
+      <button class="vq-btn vq-btn-danger" onclick="onQueueRemove('${shot}')">移除</button>
+    </div>`;
+  }).join('');
+
+  // 心跳周期（异步读取，不阻塞渲染）
+  _renderSchedulerConfig();
+
+  // 折叠状态：默认 collapsed；localStorage 记住偏好
+  const collapsed = (localStorage.getItem('videoQueueCollapsed') ?? '1') === '1';
+  const caret = collapsed ? '▶' : '▼';
+  const bodyStyle = collapsed ? 'display:none' : '';
+
+  el.innerHTML = `
+    <div class="vq-header">
+      <button class="vq-btn" onclick="onQueueToggleCollapse()" title="${collapsed ? '展开候补池详情' : '收起候补池详情'}" style="padding:2px 8px;font-size:12px;min-width:28px">${caret}</button>
+      <strong>📋 视频候补池</strong>
+      <span class="vq-badge vq-badge-wait">📋 候补 ${wait}</span>
+      <span class="vq-sep">|</span>
+      <span>上次心跳: ${hb}</span>
+      <span class="vq-sep">|</span>
+      <span>并发上限: ${q.maxInflight || 1} · 默认模型: ${q.defaultModel || 'seedance2.0fast'}${paused ? ' · <span style="color:var(--accent-red-bright)">已暂停</span>' : ''}</span>
+      <span class="vq-sep">|</span>
+      <span id="schedulerCfgView" style="color:var(--text-secondary)">⏱ 周期: —</span>
+      <span style="margin-left:auto;display:flex;gap:6px;align-items:center">
+        <input id="schedulerIntervalInput" type="number" min="1" max="120" placeholder="分" onchange="this._touched=true" style="width:60px;padding:4px 6px;background:var(--bg-elev-1);border:1px solid var(--border);border-radius:4px;color:var(--text-primary);font-size:12px" />
+        <button class="vq-btn" onclick="onSchedulerSetInterval()">保存周期</button>
+        <button class="vq-btn" onclick="onQueueTogglePaused()">${paused ? '▶ 恢复' : '⏸ 暂停'}</button>
+        <button class="vq-btn vq-btn-primary" onclick="onQueueTrigger()">⚡ 立即心跳</button>
+      </span>
+    </div>
+    <div class="vq-waitlist" style="${bodyStyle}">
+      ${list || '<div class="vq-waitlist-empty">候补池为空，可从下方视频卡片点击"加入候补池"</div>'}
+    </div>
+  `;
+}
+
+// 切换候补池展开/收起
+function onQueueToggleCollapse() {
+  const cur = (localStorage.getItem('videoQueueCollapsed') ?? '1') === '1';
+  localStorage.setItem('videoQueueCollapsed', cur ? '0' : '1');
+  renderVideoQueue();
+}
+
+// ===== 判断首帧依赖状态 =====
+// 返回 { needsTail: bool, tailReady: bool, fromShot: number|null }
+function _shotTailDepStatus(shot) {
+  const sd2 = window.__sd2 || {};
+  const mount = shot.mount || '';
+  const m = mount.match(/本视频以@图片(\d+)为首帧/);
+  if (!m) return { needsTail: false, tailReady: true, fromShot: null };
+  const num = m[1];
+  const am = sd2.assetMap || {};
+  const entry = (am.images || {})[`@图片${num}`] || {};
+  if (entry.type !== 'tail-frame') {
+    // 非 tail-frame，走用户素材，认为已就绪
+    return { needsTail: true, tailReady: true, fromShot: null };
+  }
+  const fromShot = entry.fromShot;
+  const src = (sd2.shots || []).find(s => s.index === fromShot);
+  const srcStatus = (src && src.videoTask && src.videoTask.status) || 'pending';
+  return { needsTail: true, tailReady: srcStatus === 'done', fromShot };
+}
+
+// 计算 shot 的展示状态（与 renderVideos 保持一致）
+function _shotDisplayStatus(shot, waitlistSet) {
+  const vt = shot.videoTask || {};
+  let status = vt.status || 'pending';
+  const idx = String(shot.index).padStart(2, '0');
+  if (status === 'pending' && waitlistSet.has(idx)) status = 'waitlisted';
+  return status;
+}
+
+// ===== 候补池操作 =====
+async function _callQueueAPI(endpoint, body) {
+  const res = await fetch(`/api/video-queue/${endpoint}`, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ project: currentProject, ep: currentEpisode, ...body }),
+  });
+  const j = await res.json();
+  if (!j.ok) throw new Error(j.error || 'queue api failed');
+  return j;
+}
+async function _refreshQueueState() {
+  // 仅重新拉 video-queue.json + 所有 shot.json（ep 重新加载太重，这里轻量拉 queue 即可）
+  const epBase = `projects/${currentProject}/outputs/${currentEpisode}`;
+  try {
+    const q = await fetch(`${epBase}/video-queue.json?_t=${Date.now()}`).then(r => r.ok ? r.json() : null);
+    if (window.__sd2) window.__sd2.videoQueue = q;
+  } catch {}
+  renderVideos();
+}
+async function onQueueAdd(shot) {
+  try {
+    // 若是 stuck / failed，先清空 videoTask 让它回到 pending 再入池
+    const sd2 = window.__sd2 || {};
+    const target = (sd2.shots || []).find(s => String(s.index).padStart(2,'0') === String(shot).padStart(2,'0'));
+    const vt = target && target.videoTask;
+    if (vt && (vt.status === 'stuck' || vt.status === 'failed')) {
+      // 归零（保留引擎/模型偏好 + failHistory 留档，其余清空）
+      const cleared = {
+        engine: vt.engine || '', modelName: vt.modelName || '',
+        taskId: '', status: 'pending', queueStatus: '', queueIdx: null,
+        videoUrl: '', videoFile: '', tailFrame: '', failReason: '',
+        creditCount: null, submittedAt: '', completedAt: '',
+        failHistory: vt.failHistory || [],
+        // needsRework 在 onMarkReworkedAndRetry 中才清除，普通 onQueueAdd 路径此处不会到（未标记才可能走此分支）
+      };
+      target.videoTask = cleared;
+      const shotPath = `projects/${currentProject}/outputs/${currentEpisode}/06-shots/shot-${String(shot).padStart(2,'0')}.json`;
+      // 重新读 → patch videoTask → 写回
+      const full = await fetch(`${shotPath}?_t=${Date.now()}`).then(r => r.json());
+      full.videoTask = cleared;
+      await fetch('/api/save-json', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ path: shotPath, content: full }),
+      });
+    }
+    const res = await fetch('/api/video-queue/add', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ project: currentProject, ep: currentEpisode, shot }),
+    });
+    const j = await res.json();
+    if (!j.ok) {
+      if (j.needsRework) {
+        showToast(`⚠️ shot-${shot} 被标记需返工，请先让分镜师重写 prompt（点卡片上的“✏️ 已优化重投”确认）`, 'error', 5000);
+        return;
+      }
+      throw new Error(j.error || 'queue api failed');
+    }
+    await _refreshQueueState();
+    showToast(`✅ shot-${shot} 已加入候补池`, 'success');
+  } catch (e) { showToast(`加入失败: ${e.message}`, 'error'); }
+}
+
+// 分镜师确认已优化：清除 needsRework 标记后重投
+async function onMarkReworkedAndRetry(shot) {
+  if (!confirm(`确认 shot-${shot} 的分镜/prompt 已重写优化？\n确认后会清除“需返工”标记，并重新加入候补池。`)) return;
+  try {
+    const shotPath = `projects/${currentProject}/outputs/${currentEpisode}/06-shots/shot-${String(shot).padStart(2,'0')}.json`;
+    const full = await fetch(`${shotPath}?_t=${Date.now()}`).then(r => r.json());
+    const oldVt = full.videoTask || {};
+    full.videoTask = {
+      engine: oldVt.engine || '', modelName: oldVt.modelName || '',
+      taskId: '', status: 'pending', queueStatus: '', queueIdx: null,
+      videoUrl: '', videoFile: '', tailFrame: '', failReason: '',
+      creditCount: null, submittedAt: '', completedAt: '',
+      failHistory: oldVt.failHistory || [],
+      // needsRework: 有意不写，即清除
+    };
+    await fetch('/api/save-json', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ path: shotPath, content: full }),
+    });
+    // 再入池
+    await _callQueueAPI('add', { shot });
+    await _refreshQueueState();
+    showToast(`✅ shot-${shot} 已解除返工标记并重新入池`, 'success');
+  } catch (e) { showToast(`操作失败: ${e.message}`, 'error'); }
+}
+async function onQueueRemove(shot) {
+  try {
+    await _callQueueAPI('remove', { shot });
+    await _refreshQueueState();
+    showToast(`已移出候补池: shot-${shot}`, 'success');
+  } catch (e) { showToast(`移出失败: ${e.message}`, 'error'); }
+}
+async function onQueueTogglePaused() {
+  const q = (window.__sd2 || {}).videoQueue || {};
+  try {
+    await _callQueueAPI('update', { patch: { paused: !q.paused } });
+    await _refreshQueueState();
+    showToast(q.paused ? '▶ 已恢复' : '⏸ 已暂停', 'success');
+  } catch (e) { showToast(`操作失败: ${e.message}`, 'error'); }
+}
+async function onQueueTrigger() {
+  try {
+    await _callQueueAPI('trigger', {});
+    showToast('⚡ 已触发心跳，几秒后刷新查看结果', 'success', 3000);
+    // 8 秒后拉一次
+    setTimeout(() => { loadEpisode(currentProject, currentEpisode); }, 8000);
+  } catch (e) { showToast(`触发失败: ${e.message}`, 'error'); }
+}
+
+// ========== 视频 Tab 顶部状态筛选条 ==========
+function renderVideoFilterBar() {
+  const el = document.getElementById('videoFilterBar');
+  if (!el) return;
+  const sd2 = window.__sd2 || {};
+  const shots = sd2.shots || [];
+  const waitlistSet = new Set(((sd2.videoQueue || {}).waitList || []).map(e => String(e.shot).padStart(2,'0')));
+
+  // 计算各分类数量
+  const counts = {
+    all: shots.length,
+    done: 0, generating: 0, waitlisted: 0, pending: 0, failed: 0,
+    ready: 0,  // 无首帧依赖 OR 首帧已就绪且尚未提交
+    needsRework: 0,  // 失败/卸责被标记需分镜师优化
+  };
+  shots.forEach(s => {
+    const st = _shotDisplayStatus(s, waitlistSet);
+    if (st === 'done') counts.done++;
+    else if (st === 'generating') counts.generating++;
+    else if (st === 'waitlisted') counts.waitlisted++;
+    else if (st === 'failed' || st === 'stuck') counts.failed++;
+    else counts.pending++;
+    // ready 定义：还没 done / 未在进行中；首帧依赖已满足；不在候补池
+    if (st === 'pending') {
+      const dep = _shotTailDepStatus(s);
+      if (dep.tailReady) counts.ready++;
+    }
+    // needsRework: failed/stuck 且 videoTask.needsRework=true
+    if ((st === 'failed' || st === 'stuck') && (s.videoTask || {}).needsRework) counts.needsRework++;
+  });
+
+  const curr = window.__videoFilter || 'all';
+  const defs = [
+    { key: 'all',         label: `全部 ${counts.all}`,        color: '' },
+    { key: 'done',        label: `✅ 已完成 ${counts.done}`,   color: 'ok' },
+    { key: 'generating',  label: `🎬 进行中 ${counts.generating}`, color: 'blue' },
+    { key: 'waitlisted',  label: `📋 候补 ${counts.waitlisted}`, color: 'purple' },
+    { key: 'ready',       label: `⚡ 可立即提交 ${counts.ready}`, color: 'gold' },
+    { key: 'pending',     label: `⬜ 待处理 ${counts.pending}`, color: '' },
+    { key: 'failed',      label: `❌ 失败/卡死 ${counts.failed}`, color: 'red' },
+    { key: 'needsRework', label: `⚠️ 需返工 ${counts.needsRework}`, color: 'red' },
+  ];
+  el.innerHTML = defs.map(d => {
+    const active = d.key === curr;
+    return `<button class="vfb-btn vfb-${d.color}${active ? ' vfb-active' : ''}" onclick="onVideoFilterChange('${d.key}')">${d.label}</button>`;
+  }).join('');
+}
+
+function onVideoFilterChange(key) {
+  window.__videoFilter = key;
+  renderVideos();
+}
+
+function _matchVideoFilter(shot, filter, waitlistSet) {
+  if (filter === 'all') return true;
+  const st = _shotDisplayStatus(shot, waitlistSet);
+  if (filter === 'done') return st === 'done';
+  if (filter === 'generating') return st === 'generating';
+  if (filter === 'waitlisted') return st === 'waitlisted';
+  if (filter === 'pending') return st === 'pending';
+  if (filter === 'failed') return st === 'failed' || st === 'stuck';
+  if (filter === 'needsRework') {
+    return (st === 'failed' || st === 'stuck') && !!((shot.videoTask || {}).needsRework);
+  }
+  if (filter === 'ready') {
+    // 必须是 pending 态 + 首帧依赖已就绪（无依赖或已就绪）
+    if (st !== 'pending') return false;
+    const dep = _shotTailDepStatus(shot);
+    return dep.tailReady;
+  }
+  return true;
+}
+
+// ========== 调度器心跳周期配置 ==========
+async function _renderSchedulerConfig() {
+  try {
+    const res = await fetch('/api/scheduler/config', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ action: 'get' }),
+    }).then(r => r.json());
+    const v = document.getElementById('schedulerCfgView');
+    const ipt = document.getElementById('schedulerIntervalInput');
+    if (!v) return;
+    if (!res || !res.ok) {
+      v.textContent = '⏱ 周期: 未安装 timer';
+      return;
+    }
+    v.innerHTML = `⏱ 周期: <strong style="color:var(--accent-gold)">${res.intervalMin} 分钟</strong>${res.active ? '' : ' <span style="color:var(--accent-red-bright)">(未运行)</span>'}`;
+    if (ipt && !ipt._touched) ipt.value = res.intervalMin;
+  } catch (e) {
+    const v = document.getElementById('schedulerCfgView');
+    if (v) v.textContent = '⏱ 周期: 读取失败';
+  }
+}
+
+async function onSchedulerSetInterval() {
+  const ipt = document.getElementById('schedulerIntervalInput');
+  if (!ipt) return;
+  const val = parseInt(ipt.value, 10);
+  if (!val || val < 1 || val > 120) {
+    showToast('周期必须是 1-120 之间的整数分钟', 'error');
+    return;
+  }
+  try {
+    const res = await fetch('/api/scheduler/config', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ action: 'set', intervalMin: val }),
+    }).then(r => r.json());
+    if (!res.ok) throw new Error(res.error || res.hint || 'set failed');
+    showToast(`✅ 周期已更新为 ${val} 分钟`, 'success');
+    _renderSchedulerConfig();
+  } catch (e) { showToast(`更新失败: ${e.message}`, 'error'); }
 }
 
 // ========== REVIEW (剧本评分) ==========

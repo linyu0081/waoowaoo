@@ -1,0 +1,115 @@
+{
+  "maxInflight": 1,
+  "paused": false,
+  "defaultModel": "seedance2.0fast",
+  "defaultRatio": "16:9",
+  "waitList": [
+    {
+      "shot": "27",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "28",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "29",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "31",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "32",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "33",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "34",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    },
+    {
+      "shot": "35",
+      "model": "",
+      "ratio": "",
+      "note": "批量-无首帧依赖",
+      "addedAt": "2026-04-19T08:26:33+08:00"
+    }
+  ],
+  "history": [
+    {
+      "shot": "07",
+      "submit_id": "ad9d255a-1da7-4a72-99ae-52df881f5606",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T08:06:08+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "10",
+      "submit_id": "5e7f2d63-a78b-4cd8-b72f-1006b2b0b18c",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T08:15:51+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "13",
+      "submit_id": "b5792afa-f8be-4187-8d8d-d5152d76558c",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T08:21:38+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "14",
+      "submit_id": "fe1c2155-da1e-4de5-a08f-2152c13ead02",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T08:32:49+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "18",
+      "submit_id": "bc109795-a306-4ef1-aabc-560a59ff4b03",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T08:37:12+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "19",
+      "submit_id": "d08d195c-242e-4b15-8a8a-2f8e3a28a055",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T08:43:34+08:00",
+      "model": "seedance2.0fast"
+    }
+  ],
+  "lastHeartbeat": "2026-04-19T08:44:18+08:00"
+}

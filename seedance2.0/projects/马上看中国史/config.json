@@ -9,5 +9,16 @@
     "existingScriptPath": "projects/马上看中国史/script/ep01-马上看中国史.md",
     "videoRatio": "16:9",
     "videoEngine": "workrally",
+    "modelPreferences": {
+        "_comment": "项目级默认模型偏好；未配置时走对应 skill 的默认值",
+        "image": {
+            "engine": "",
+            "model": ""
+        },
+        "video": {
+            "dreamina": "seedance2.0-fast",
+            "workrally": ""
+        }
+    },
     "createdAt": "2026-04-18T12:32:19+08:00"
 }

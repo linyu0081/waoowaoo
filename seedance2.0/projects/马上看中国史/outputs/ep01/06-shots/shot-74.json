@@ -28,13 +28,13 @@
     "engine": "dreamina",
     "modelName": "seedance2.0fast",
     "taskId": "e7abb269-68db-462a-a17b-bc493cb74837",
-    "status": "generating",
+    "status": "fail",
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
-    "failReason": "",
+    "failReason": "远端任务不存在/内容安全预检不通过（prompt含Happy New Year外文+密室握手暗中谋划敏感词）",
     "creditCount": null,
     "submittedAt": "2026-04-19T03:08:52.445894+08:00",
-    "completedAt": ""
+    "completedAt": "2026-04-19T07:27:34.940459+08:00"
   }
 }

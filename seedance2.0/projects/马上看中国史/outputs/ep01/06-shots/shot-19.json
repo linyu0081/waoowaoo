@@ -23,16 +23,18 @@
     "{{prop:铜钱山}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "d08d195c-242e-4b15-8a8a-2f8e3a28a055",
+    "status": "generating",
+    "queueStatus": "queuing",
+    "queueIdx": 191,
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
+    "creditCount": 40,
+    "submittedAt": "2026-04-19T08:43:34+08:00",
     "completedAt": ""
   }
 }

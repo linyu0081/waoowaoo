@@ -1,11 +1,10 @@
 ### 产物与素材
-# 🆕 为方便换机器直接拉项目，现在 images/audio/videos/tail-frames 全部入库。
-# 如果仓库体积后续膨胀过大（>1GB），再考虑迁 Git LFS 或外部 CDN。
-# （原屏蔽规则保留注释，需要瘦身时一键恢复）
+# images/audio 继续入库（体积小，方便换机）；videos / tail-frames 体积大，不入库。
+# 早期为了迁项目曾一度全入库，现恢复屏蔽 videos 和 tail-frames。
 # **/assets/images/
 # **/assets/audio/
-# **/outputs/**/tail-frames/
-# **/outputs/**/videos/
+**/outputs/**/tail-frames/
+**/outputs/**/videos/
 
 ### 备份文件（保持屏蔽：_backup 里是旧版 .old.png，没必要入库）
 *.bak
@@ -24,3 +23,6 @@ Thumbs.db
 
 ### 本地外部文件（位于仓库外，偶尔被 status 误列）
 # （这些由 git 自身处理，保留占位说明）
+
+### 调度器运行时锁（不入库）
+**/outputs/**/.scheduler.lock

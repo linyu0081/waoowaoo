@@ -116,6 +116,19 @@ projects/<项目>/
 
 > ⚠️ **踩坑记录**：`seedance2.0_vip` 和 `seedance2.0fast_vip` 需要 VIP 会员权限，非 VIP 用户提交会报错或扣更多积分。日常使用请选 `seedance2.0`（质量优先）或 `seedance2.0fast`（速度优先）。
 
+### 3.2 模型选择来源（优先级从高到低）
+
+每次调用时，`--model_version` 的最终值按以下顺序取第一个命中项：
+
+1. **用户本次明确指定**（ai-producer 消息里说"用 seedance2.0-fast 生成"等）
+2. **项目级偏好** `projects/<项目>/config.json` 的 `modelPreferences.video.dreamina`
+   - 字段缺失或值为空字符串视为"未配置"，继续往下 fallback
+   - 写入格式**不限连字符**：`seedance2.0-fast` / `seedance2.0fast` / `seedance2.0_fast` 等都接受；ai-producer 调 CLI 前统一规范化为 CLI 认的值（去掉连字符/下划线，即 `seedance2.0fast`）
+3. **skill 默认值**：`seedance2.0`（见上方 3.1 默认推荐）
+
+> 📌 **读取时机**：在第 2 步构造命令**之前**读取 `config.json`，不要缓存；用户可能临时改 config。
+> 📌 **图片/workrally 同理**：`modelPreferences.image.*`、`modelPreferences.video.workrally` 对应各自 skill 的读取逻辑，本 skill 不直接消费。
+
 ---
 
 ## 4. 素材解析规则
@@ -248,7 +261,9 @@ dreamina multimodal2video \
 >
 > ⚠️ **统一命名**：shot-NN.json 的 mount、asset-map.json 的 voices key、以及提交给即梦 CLI 的 prompt 中，音频引用**统一使用 `@音频N`**（不是 `@声音N`）。这是即梦 CLI 识别音频素材的格式。
 
-### 第 2.5 步 · 写入 videoTask（提交后立即执行）
+### 第 2.5 步 · 写入 videoTask（提交成功后立即执行）
+
+> **提交成功**的判定见下方 3.1 节硬规则：**拿到 submit_id 即算提交成功**，不依赖 `gen_status`；轮询超时不等于提交失败。
 
 提交成功后，立即更新 `shot-NN.json` 的 `videoTask` 字段：
 
@@ -281,11 +296,207 @@ dreamina multimodal2video \
 
 ### 第 3 步 · 解析返回
 
-从日志里抓 `submit_id` / `gen_status` / `fail_reason` / `video_url` / `credit_count`。
+#### 3.1 提交成功的判定（硬规则，别搞混）
 
-- `gen_status=success` → 进入第 4 步
-- `gen_status=querying` + 达到 `--poll` 上限 → 记 `submit_id` 挂起（交 ai-producer 决定是否继续轮询或跳过）；此时 videoTask 已在第 2.5 步写入，status 保持 `generating`
-- `gen_status=fail` → 更新 `videoTask.status="failed"` + `failReason` + `completedAt`，把 `fail_reason` 丢给 ai-producer，不自动重试
+**"提交成功" ≠ "视频生成成功"**，必须分两段看：
+
+| 阶段 | 判定信号（同时满足即算成功） | 说明 |
+|---|---|---|
+| **提交成功**（本 skill 关注） | 日志里拿到合法的 `submit_id`（UUID 形式，如 `c79e1332-20bd-453f-8892-ecc03cd52dd0`），且 CLI 进程返回码为 0，且日志里没有出现 `提交失败` / `submit_fail` / `账号未登录` / `credit` 相关报错 | 说明即梦服务端已收下任务进入队列 |
+| **生成成功**（第 6 步关注） | `gen_status=success` + `video_url` 非空 | 说明队列中的任务渲染完毕 |
+
+**实操判定流程**：
+1. 先在 `/tmp/dreamina-$EP-$IDX.log` 里 grep `submit_id`（推荐精确匹配 `submit_id=` 或 JSON 里的 `"submit_id"`），拿到 UUID 就算**提交成功**，立刻执行 2.5 步写入 videoTask（`status=generating` + `taskId=<submit_id>`）
+2. **不要**把"轮询超时 / `gen_status=querying`"当作提交失败。轮询超时只是"还没渲染完"，这时候 submit_id 已经存在、任务已在即梦队列里
+3. **也不要**把"没有 `gen_status=success`"当作提交失败，同理
+4. 只有两种情况才算**提交失败**（此时**不写** videoTask，状态保持 `pending`）：
+   - 日志里根本没有 `submit_id`
+   - 日志里显式出现 `提交失败` / `submit_fail` / 账号或积分相关 ERROR
+
+#### 3.2 常见现象与应对
+
+| 现象 | 分类 | 处理 |
+|---|---|---|
+| 拿到 submit_id + `gen_status=success` + `video_url` | 提交成功 + 生成成功 | 进入第 4 步 |
+| 拿到 submit_id + `gen_status=querying`（达到 `--poll` 上限） | 提交成功 + 渲染中 | videoTask 在 2.5 步已写入 `generating`，留着等第 0 步下次刷新；**不要回滚成 pending** |
+| 拿到 submit_id + `gen_status=fail` | 提交成功 + 生成失败 | 更新 `videoTask.status="failed"` + `failReason` + `completedAt`，把 `fail_reason` 丢给 ai-producer，不自动重试 |
+| 日志里**没有** submit_id，且有 ERROR | 提交失败 | **不写** videoTask，保持 `pending`；把错误原文丢给 ai-producer，由用户决定是否重试 |
+| 多镜批量提交后，只有部分镜拿到 submit_id | 提交失败（部分） | 对没拿到 submit_id 的镜**不写** videoTask；见下方"批量提交排查清单" |
+
+#### 3.3 账号并发上限（已验证实锤）
+
+**结论：即梦同账号 + 同队列（同模型 + 分辨率/尺寸组合）同时只能有 1 个任务真正在"生成中"。**
+
+一次批量提交 5 个 `seedance2.0fast` 任务（2026-04-19 实测），结果：
+
+| 任务 | `gen_status` | `queue_info` |
+|---|---|---|
+| 第 1 个（最早提交） | `querying` | `queue_status=Generating`, `queue_idx=0`（正在跑） |
+| 第 2~5 个 | `querying` | **没返回 queue_info 块**（还没进入调度队列） |
+
+队列标识（从 `debug_info` 读到）：`dreamina_matrix_queue_name=dreamina_fusion_video40`，请求键 `DreaminaFusion:Video40_unified_edit_720p` —— 同模型+同分辨率共用同一个队列。
+
+##### 提交成功 ≠ 正在生成
+
+- **拿到 submit_id 就是提交成功**（参见 3.1 节），这条仍然成立
+- 但 `gen_status=querying` 有两种子状态，`query_result` 返回体能区分：
+  - `queue_info.queue_status=Generating` → 真正在渲染，等结果就行
+  - **没有 queue_info 块** → 还在账号级预队列排队，前面的 Generating 任务跑完才会调度这一批
+- 即梦 Web 首页/dashboard 可能**只展示真正 Generating 的 1 个**，其余 4 个任务即使在服务端已经接收，前端也可能不亮—— 这不是提交失败，是展示策略
+
+##### 操作建议
+
+- **不需要**刻意串行提交，5 镜批量一次性提交下去是 OK 的，任务都安全落库了
+- 但提交完**别期待**同时看到 5 个视频进度条；预计节奏 ≈ 首镜完成前所有后续镜都在 querying 预队列
+- 仪表盘必须识别这三种细分状态并分别显示：`querying(预队列)` / `Generating(渲染中)` / `done` / `failed`
+- 轮询刷新脚本读到 `gen_status=querying` 时，看 `queue_info.queue_status` 区分"渲染中 vs 预队列"
+
+##### 查询状态字段速查
+
+| 字段 | 位置 | 含义 |
+|---|---|---|
+| `gen_status` | 顶层 | `querying` = 在途未出片；`done` = 成功；`fail` / 空 = 失败 |
+| `queue_info.queue_status` | 嵌套（可能缺失） | `Generating` = 真正在渲染；缺失 = 还在账号级预队列 |
+| `queue_info.queue_idx` | 嵌套 | 0 = 当前正在处理；>0 = 在队列里第 N 位 |
+| `video_url` | 顶层 | 出片后有值，拿到就可以下载 |
+| `fail_reason` | 顶层 | 失败原因，空串即未失败 |
+
+##### 遗留排查项（仍待后续观察）
+
+- [x] **提交成功 ≠ 入队**：存在服务端静默丢单的情况（见 3.4 节）
+- [ ] 不同模型队列是否独立？初步假设 `seedance2.0` 与 `seedance2.0fast` 各占独立队列（可并行），未实测确认
+- [ ] 单次批量超过 N 次（N=?）是否会触发额外限流（当前 5 次批量无问题）
+
+#### 3.4 静默丢单（silent drop）与 stuck 状态（已验证实锤）
+
+**现象**：批量提交 5 个任务时，首镜进入 Generating，后 4 个镜 `query_result` 长时间返回：
+
+```
+gen_status: "querying"
+queue_info: null          ← 关键：完全没有 queue_info 块
+result_json.videos: []
+fail_reason: null
+```
+
+即梦 Web 首页也完全不显示这 4 个任务。**过 10+ 分钟依然无变化** → 判定为服务端静默丢单（不报错、不消耗、不执行）。
+
+##### 判定规则（硬规范）
+
+对 `status="generating"` 的镜，轮询状态时按如下决策：
+
+| `gen_status` | `queue_info` | `提交时间差` | → 判定 | inflight 计数 |
+|---|---|---|---|---|
+| `success` + 有 `video_url` | — | — | **done** | 0 |
+| `fail` / 有 `fail_reason` | — | — | **failed** | 0 |
+| `querying` | `queue_status=Generating` | — | **rendering**（真渲染） | 1 |
+| `querying` | 有 `queue_info` 但非 Generating（Waiting/Queueing） | — | **queuing**（已入队） | 1 |
+| `querying` | `null` / 缺失 | ≤ 10 min | **queuing**（刚提交，耐心等） | 1 |
+| `querying` | `null` / 缺失 | > 10 min | **stuck**（静默丢单） | **0** |
+
+`stuck` 是 `videoTask.status` 的合法终态值（与 `done/failed/generating/pending` 并列），不占 inflight，等待人工重投。
+
+##### 调度器行为
+
+- 每次心跳先扫全部 `generating` 镜，按上表更新 `videoTask.status` / `queueStatus` / `queueIdx`
+- 遇到 `stuck` 镜：释放 slot + 写 `failReason="提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单"`
+- dashboard 候补池面板顶部会显示 `🔴 卡死 N`，卡片显示"🔄 重投到候补池"按钮
+- 用户点击重投时：**先清空 videoTask → 再把 shot 推入 waitList 头**，下次心跳自然重新提交（拿新的 submit_id）
+
+---
+
+## 调度器（video_scheduler）使用说明
+
+### 职责
+
+按固定心跳（默认 10min）：
+1. 刷新所有 generating 镜状态（按 3.3/3.4 节规则区分 rendering/queuing/stuck）
+2. 若 `inflight < maxInflight` 且队列未暂停，从 waitList 头部找第一个"前镜尾帧依赖已就绪"的镜，调用 dreamina CLI 提交
+3. 成功/失败都从 waitList 移除并写 history；**失败不自动重试**
+
+### 文件与路径
+
+| 文件 | 作用 |
+|---|---|
+| `scripts/video_submit.py` | 单镜提交的公共库（构造 prompt/images/audios → 调 CLI → 写 videoTask） |
+| `scripts/video_scheduler.py` | 调度器主脚本 |
+| `scripts/refresh_video_status.py` | 只刷新不提交（手动查看状态用） |
+| `projects/<项目>/outputs/<ep>/video-queue.json` | 候补池清单（人可直接改） |
+| `projects/<项目>/outputs/<ep>/video-scheduler.log` | 心跳日志 |
+| `scripts/systemd/dreamina-scheduler@.{service,timer}` | systemd 定时器模板 |
+
+### 候补池 JSON 结构
+
+```json
+{
+  "maxInflight": 1,
+  "paused": false,
+  "defaultModel": "seedance2.0fast",
+  "defaultRatio": "16:9",
+  "waitList": [
+    {"shot":"02","model":"","ratio":"","note":"","addedAt":"..."}
+  ],
+  "history": [
+    {"shot":"00","submit_id":"...","result":"submitted|failed","reason":"","at":"...","model":"..."}
+  ],
+  "lastHeartbeat": "..."
+}
+```
+
+### 运行方式
+
+**单次执行（推荐）**：
+```bash
+python3 scripts/video_scheduler.py --project "马上看中国史" --ep ep01
+```
+
+**systemd user timer（生产推荐，5 分钟周期）**：
+
+> ⚠️ 不要用 `systemd-escape "中文名___epNN"` 做实例名——`%i` 会被 systemd 解析成 `\xHH` 字面字符串传到 shell 拿不回中文，导致路径错乱。
+> 本项目采用"英文别名实例 + EnvironmentFile 传真实中文项目名"的方式规避。
+
+```bash
+# 1) 建环境文件（每项目一份；实例名任取英文别名）
+mkdir -p ~/.config/dreamina-scheduler
+cat > ~/.config/dreamina-scheduler/msckcs-ep01.env << 'EOF'
+PROJECT=马上看中国史
+EP=ep01
+EOF
+
+# 2) 安装 unit（service 里已显式写 PATH=/root/.local/bin:...，保证 dreamina CLI 可见）
+cp scripts/systemd/dreamina-scheduler@.service ~/.config/systemd/user/
+cp scripts/systemd/dreamina-scheduler@.timer   ~/.config/systemd/user/
+systemctl --user daemon-reload
+
+# 3) 启动 timer（实例名 = env 文件 basename）
+systemctl --user enable --now dreamina-scheduler@msckcs-ep01.timer
+
+# 4) 开 linger，退出登录后 timer 继续跑
+loginctl enable-linger root
+
+# 查看
+systemctl --user list-timers 'dreamina-scheduler@*'
+journalctl --user -u dreamina-scheduler@msckcs-ep01.service -n 30 --no-pager
+```
+
+**Dashboard 立即触发**：视频 tab 候补池面板右侧"⚡ 立即心跳"按钮（走 `POST /api/video-queue/trigger`，服务端 fork 异步跑）。
+
+**Dashboard 修改心跳周期**：候补池面板右侧"⏱ 周期"输入框（1-120 分钟）+ "保存周期"按钮（走 `POST /api/scheduler/config {action:set, intervalMin}`，会改 `.timer` 文件 + `daemon-reload` + `restart timer`）。默认实例名 `msckcs-ep01`，如有多项目需在 serve 端扩展。
+
+**Dashboard 视频 tab 顶部状态筛选条**：支持 `全部 / 已完成 / 进行中 / 候补 / ⚡可立即提交 / 待处理 / 失败/卡死` 几个类别一键筛选。
+- **⚡可立即提交**：pending 态且"首帧依赖已就绪"（无依赖 OR 依赖源 shot 已 done OR 走用户素材）—— 对应调度器 `next_submittable` 判定，便于人工挑选下一批要入池的镜。
+
+### 首帧依赖调度策略
+
+- waitList 按顺序扫描，**跳过**尾帧未就绪的镜（不阻塞后面的无依赖镜）
+- 当所有候选都被依赖阻塞时本轮不提交
+- 这样可以把"必须先跑完 shot-5 才能跑 shot-6"这种链式依赖和"独立无依赖"的镜混在同一个 waitList 里自然调度
+
+### Dashboard 操作入口（视频 tab）
+
+- 卡片"⬜ 待提交" → 点"📋 加入候补池"
+- 卡片"❌ 失败/🔴 卡死" → 点"🔄 重投到候补池"（自动清 videoTask 再入池）
+- 卡片"📋 候补中" → 点"✖ 移出候补池"
+- 候补池面板 → "⏸ 暂停 / ▶ 恢复 / ⚡ 立即心跳"
 
 ### 第 4 步 · 下载到本项目路径
 
@@ -416,6 +627,7 @@ dreamina list_task --gen_status=success
 2. **每次调用前必须 re-read `shot-NN.json` 与 `asset-map.json`**，严禁使用上下文缓存——用户随时可能改文件
 3. 不重复生成已成功的 shot（除非用户明确 "重做 shot-NN"）
 4. `--poll` 超时 ≠ 失败；任务可能仍在即梦侧生成中，按"8. 历史任务查询"走
+4.1 **提交成功 ≠ 生成成功**：前者只看日志里是否拿到 `submit_id`（见"第 3 步 · 3.1 提交成功的判定"硬规则），后者看 `gen_status=success` + `video_url`；两件事不要搞混，也不要因为轮询超时就回滚 videoTask 成 pending
 5. prompt 里**保留对白原文**（中文"xxx"："xxx"这种），不要删
 6. 本 skill **不处理剪辑 / 拼接 / 字幕**，相关需求走 `video-edit-skill`
 7. 旧版 skill 里的 `P<X>-S<Y>.mp4` 命名已废弃；统一 `shot-NN.mp4`

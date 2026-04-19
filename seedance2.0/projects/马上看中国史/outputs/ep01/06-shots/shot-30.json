@@ -26,13 +26,13 @@
     "engine": "dreamina",
     "modelName": "seedance2.0",
     "taskId": "a2a80241-9354-4e59-9791-b796e91c012a",
-    "status": "generating",
+    "status": "fail",
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
-    "failReason": "",
+    "failReason": "远端任务不存在/内容安全预检不通过（prompt含屠城/火光冲天/百姓哀嚎/战争片屠城全景等敏感词）",
     "creditCount": null,
     "submittedAt": "2026-04-19T03:08:39.375953+08:00",
-    "completedAt": ""
+    "completedAt": "2026-04-19T07:27:34.940459+08:00"
   }
 }

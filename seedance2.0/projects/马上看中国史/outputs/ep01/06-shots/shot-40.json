@@ -26,13 +26,13 @@
     "engine": "dreamina",
     "modelName": "seedance2.0",
     "taskId": "ec94a74a-323d-46b1-91c2-5fc8569271e1",
-    "status": "generating",
+    "status": "fail",
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
-    "failReason": "",
+    "failReason": "远端任务不存在/内容安全预检不通过（prompt含鼻涕眼泪/一塌糊涂+Coin外文）",
     "creditCount": null,
     "submittedAt": "2026-04-19T03:08:42.825498+08:00",
-    "completedAt": ""
+    "completedAt": "2026-04-19T07:27:34.940459+08:00"
   }
 }

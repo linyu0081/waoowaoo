@@ -1,0 +1,14 @@
+[Unit]
+Description=Dreamina video scheduler timer (%i) — every 5 min
+Requires=dreamina-scheduler@%i.service
+
+[Timer]
+# 启动 30 秒后首次触发，然后每 5 分钟一次
+OnBootSec=30s
+OnUnitActiveSec=5min
+# 偶尔错过一次时下次补跑
+Persistent=true
+Unit=dreamina-scheduler@%i.service
+
+[Install]
+WantedBy=timers.target

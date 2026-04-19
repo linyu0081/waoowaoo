@@ -23,16 +23,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "5e7f2d63-a78b-4cd8-b72f-1006b2b0b18c",
+    "status": "failed",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
-    "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "failReason": "generation failed: final generation failed",
+    "creditCount": 60,
+    "submittedAt": "2026-04-19T08:15:51+08:00",
+    "completedAt": "2026-04-19T08:21:32+08:00"
   }
 }

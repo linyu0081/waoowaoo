@@ -24,16 +24,37 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "b5792afa-f8be-4187-8d8d-d5152d76558c",
+    "status": "failed",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
-    "failReason": "",
+    "failReason": "连续 2 次生成失败（并发抢发）：首次 generation failed、二次页面判不过审",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-19T08:21:38+08:00",
+    "completedAt": "2026-04-19T08:35:27+08:00",
+    "needsRework": true,
+    "failHistory": [
+      {
+        "taskId": "c569801d-e184-4107-9188-b059862ed5bb",
+        "failReason": "generation failed: final generation failed",
+        "submittedAt": "2026-04-19T08:21:32+08:00",
+        "failedAt": "2026-04-19T08:21:32+08:00",
+        "model": "seedance2.0fast",
+        "kind": "审核/生成失败(并发首次)"
+      },
+      {
+        "taskId": "b5792afa-f8be-4187-8d8d-d5152d76558c",
+        "failReason": "页面判审核失败（CLI 回刷未同步）",
+        "submittedAt": "2026-04-19T08:21:38+08:00",
+        "failedAt": "2026-04-19T08:35:27+08:00",
+        "model": "seedance2.0fast",
+        "kind": "审核/生成失败(并发二次)"
+      }
+    ]
   }
 }
