@@ -24,16 +24,18 @@
     "{{scene:洛阳废墟街道}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "4230360b-dd32-41b2-b5b8-f47da2ded124",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v9-artist.vlabvod.com/ce7ff47b3d45a1fe1a4d911c53d151de/69e4458b/video/tos/cn/tos-cn-v-148450/o408bgwNEdhVAKSDItEkvAJuQge17hKN4QT4us/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6027&bt=6027&cs=0&ds=12&ft=5QYTUxhhe6BMyqkyaPVJD12Nzj&mime_type=video_mp4&qs=0&rc=OTNkZGRmNzs0ZDs1aGc8M0BpampmNjNrb3A2OjczNDM7M0BgNDVeMl4vXzAxNC1eMjZgYSNeaV42cWdmYmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776564085&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604191001250212140731582029AEA",
+    "videoFile": "outputs/ep01/videos/shot-35.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-35.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 30,
+    "submittedAt": "2026-04-19T09:49:50+08:00",
+    "completedAt": "2026-04-19T10:01:27+08:00"
   }
 }

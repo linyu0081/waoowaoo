@@ -3,14 +3,14 @@
   "project": "马上看中国史",
   "episode": "ep01",
   "createdAt": "2026-04-18T23:07:22+0800",
-  "updatedAt": "2026-04-19T09:15:17+0800",
+  "updatedAt": "2026-04-19T19:39:48+0800",
   "backfillNote": "本集启用成本追踪前，历史生图记录按 assets/images/ 现存 PNG + _backup/ 备份 PNG 逐一补录，总计 45 次（37 次成功保留 + 8 次重生后废弃）。实际重生次数可能略高于此数，以后续逐次调用 cost-logger 为准。",
   "summary": {
     "imageGenCount": 45,
-    "videoGenCount": 10,
-    "videoUniqueShots": 10,
-    "videoTotalDurationSec": 91,
-    "videoTotalDurationMin": 1.52
+    "videoGenCount": 39,
+    "videoUniqueShots": 34,
+    "videoTotalDurationSec": 314,
+    "videoTotalDurationMin": 5.23
   },
   "byModel": {
     "nano-banana2": {
@@ -20,8 +20,8 @@
     },
     "seedance2.0fast": {
       "imageCount": 0,
-      "videoCount": 9,
-      "videoDurationSec": 83
+      "videoCount": 38,
+      "videoDurationSec": 358
     },
     "seedance2.0": {
       "imageCount": 0,
@@ -444,6 +444,296 @@
       "at": "2026-04-19T09:15:17+0800",
       "note": "auto: scheduler download@2026-04-19T09:15:17+08:00; credit=35",
       "taskId": "3c91d9e9-8c0d-4fcd-a129-c68ed6089a35"
+    },
+    {
+      "type": "video",
+      "target": "shot-32",
+      "model": "seedance2.0fast",
+      "durationSec": 5,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:24:38+0800",
+      "note": "auto: scheduler download@2026-04-19T09:24:38+08:00; credit=25",
+      "taskId": "79e28a44-4451-426a-ae26-607874208210"
+    },
+    {
+      "type": "video",
+      "target": "shot-33",
+      "model": "seedance2.0fast",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:36:06+0800",
+      "note": "auto: scheduler download@2026-04-19T09:36:06+08:00; credit=35",
+      "taskId": "615b277c-2945-4551-8830-65bee84f865a"
+    },
+    {
+      "type": "video",
+      "target": "shot-34",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:49:46+0800",
+      "note": "auto: scheduler download@2026-04-19T09:49:46+08:00; credit=40",
+      "taskId": "d560fc7f-7965-4977-ae98-f10e558c8c28"
+    },
+    {
+      "type": "video",
+      "target": "shot-35",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-19T10:01:27+0800",
+      "note": "auto: scheduler download@2026-04-19T10:01:27+08:00; credit=30",
+      "taskId": "4230360b-dd32-41b2-b5b8-f47da2ded124"
+    },
+    {
+      "type": "video",
+      "target": "shot-36",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T10:16:50+0800",
+      "note": "auto: scheduler download@2026-04-19T10:16:50+08:00; credit=40",
+      "taskId": "e43e84e6-e23b-4de4-8021-0405ae32787b"
+    },
+    {
+      "type": "video",
+      "target": "shot-00",
+      "model": "seedance2.0fast",
+      "durationSec": 15,
+      "isRegenerate": true,
+      "at": "2026-04-19T10:30:34+0800",
+      "note": "auto: scheduler download@2026-04-19T10:30:34+08:00; credit=75",
+      "taskId": "41a63498-23fb-446b-8955-a1469ff26ede"
+    },
+    {
+      "type": "video",
+      "target": "shot-37",
+      "model": "seedance2.0fast",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-19T10:49:46+0800",
+      "note": "auto: scheduler download@2026-04-19T10:49:46+08:00; credit=35",
+      "taskId": "b4c8dbf5-2acd-4423-b540-ed1b208589ee"
+    },
+    {
+      "type": "video",
+      "target": "shot-44",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T11:09:09+0800",
+      "note": "auto: scheduler download@2026-04-19T11:09:09+08:00; credit=60",
+      "taskId": "1141c208-c9c9-4a27-9199-374cecb84993"
+    },
+    {
+      "type": "video",
+      "target": "shot-38",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T11:30:00+0800",
+      "note": "auto: scheduler download@2026-04-19T11:30:00+08:00; credit=60",
+      "taskId": "10be296a-7196-4793-934b-603632ed841e"
+    },
+    {
+      "type": "video",
+      "target": "shot-39",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T11:50:47+0800",
+      "note": "auto: scheduler download@2026-04-19T11:50:47+08:00; credit=40",
+      "taskId": "4ac8b8c6-05a9-4192-9eb6-e5efd0fc3ce1"
+    },
+    {
+      "type": "video",
+      "target": "shot-01",
+      "model": "seedance2.0fast",
+      "durationSec": 15,
+      "isRegenerate": false,
+      "at": "2026-04-19T12:11:07+0800",
+      "note": "auto: scheduler download@2026-04-19T12:11:07+08:00; credit=75",
+      "taskId": "a63d3faa-5ac9-4c2e-9876-e10992085167"
+    },
+    {
+      "type": "video",
+      "target": "shot-48",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-19T12:31:07+0800",
+      "note": "auto: scheduler download@2026-04-19T12:31:07+08:00; credit=50",
+      "taskId": "e01e2fbb-61f4-47a1-a78c-6c0b4892db6e"
+    },
+    {
+      "type": "video",
+      "target": "shot-52",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T12:49:47+0800",
+      "note": "auto: scheduler download@2026-04-19T12:49:47+08:00; credit=40",
+      "taskId": "e461ce57-7b4b-4e0f-a51e-7ff8908ca0d9"
+    },
+    {
+      "type": "video",
+      "target": "shot-54",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-19T13:04:47+0800",
+      "note": "auto: scheduler download@2026-04-19T13:04:47+08:00; credit=50",
+      "taskId": "6e4a88eb-10b1-410f-bd2a-d71d9a7205cb"
+    },
+    {
+      "type": "video",
+      "target": "shot-57",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T13:21:18+0800",
+      "note": "auto: scheduler download@2026-04-19T13:21:18+08:00; credit=40",
+      "taskId": "377a9eea-7ab4-4687-9311-c7eed280b6c7"
+    },
+    {
+      "type": "video",
+      "target": "shot-46",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T13:36:47+0800",
+      "note": "auto: scheduler download@2026-04-19T13:36:47+08:00; credit=60",
+      "taskId": "6c89a207-57fc-4fbe-88c6-fecc96dc53e0"
+    },
+    {
+      "type": "video",
+      "target": "shot-49",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T13:55:47+0800",
+      "note": "auto: scheduler download@2026-04-19T13:55:47+08:00; credit=60",
+      "taskId": "754bf886-64e7-4161-8eb0-f42903fe7363"
+    },
+    {
+      "type": "video",
+      "target": "shot-71",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T14:17:47+0800",
+      "note": "auto: scheduler download@2026-04-19T14:17:47+08:00; credit=60",
+      "taskId": "00284b86-0a72-4b05-8514-1d72c7665c19"
+    },
+    {
+      "type": "video",
+      "target": "shot-03",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-19T14:41:48+0800",
+      "note": "auto: scheduler download@2026-04-19T14:41:48+08:00; credit=50",
+      "taskId": "20194b0a-bc91-4ddb-8e1a-c6e650696804"
+    },
+    {
+      "type": "video",
+      "target": "shot-08",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T15:13:47+0800",
+      "note": "auto: scheduler download@2026-04-19T15:13:47+08:00; credit=40",
+      "taskId": "317fa5fc-30d0-42d9-be39-2dc701be8eae"
+    },
+    {
+      "type": "video",
+      "target": "shot-15",
+      "model": "seedance2.0fast",
+      "durationSec": 5,
+      "isRegenerate": false,
+      "at": "2026-04-19T15:41:48+0800",
+      "note": "auto: scheduler download@2026-04-19T15:41:48+08:00; credit=25",
+      "taskId": "31041e43-6ec6-4ad7-b933-dcb10acdddd3"
+    },
+    {
+      "type": "video",
+      "target": "shot-19",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-19T16:09:47+0800",
+      "note": "auto: scheduler download@2026-04-19T16:09:47+08:00; credit=40",
+      "taskId": "c30b4745-6b8e-4aa5-a5f9-f6b0ab99a923"
+    },
+    {
+      "type": "video",
+      "target": "shot-40",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-19T16:41:46+0800",
+      "note": "auto: scheduler download@2026-04-19T16:41:46+08:00; credit=30",
+      "taskId": "a3005823-886b-4eba-a510-fa7c35e03cb9"
+    },
+    {
+      "type": "video",
+      "target": "shot-76",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T17:21:48+0800",
+      "note": "auto: scheduler download@2026-04-19T17:21:48+08:00; credit=60",
+      "taskId": "b623ad0b-3290-49bb-a347-3610afc050d1"
+    },
+    {
+      "type": "video",
+      "target": "shot-17",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-19T18:01:48+0800",
+      "note": "auto: scheduler download@2026-04-19T18:01:48+08:00; credit=50",
+      "taskId": "59691389-5c8a-49f3-af1b-39bbf400be86"
+    },
+    {
+      "type": "video",
+      "target": "shot-28",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": true,
+      "at": "2026-04-19T18:33:46+0800",
+      "note": "auto: scheduler download@2026-04-19T18:33:46+08:00; credit=60",
+      "taskId": "5d537648-b273-48e4-b2cd-7730982dcf6c"
+    },
+    {
+      "type": "video",
+      "target": "shot-29",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": true,
+      "at": "2026-04-19T18:57:46+0800",
+      "note": "auto: scheduler download@2026-04-19T18:57:46+08:00; credit=50",
+      "taskId": "9bf8ea7d-e0bb-4121-afb5-32949796a397"
+    },
+    {
+      "type": "video",
+      "target": "shot-31",
+      "model": "seedance2.0fast",
+      "durationSec": 7,
+      "isRegenerate": true,
+      "at": "2026-04-19T19:17:49+0800",
+      "note": "auto: scheduler download@2026-04-19T19:17:49+08:00; credit=35",
+      "taskId": "8cde5e39-26a4-49af-9b83-55d3bcd72c82"
+    },
+    {
+      "type": "video",
+      "target": "shot-50",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T19:39:48+0800",
+      "note": "auto: scheduler download@2026-04-19T19:39:48+08:00; credit=60",
+      "taskId": "1e779806-d6a0-4351-b6c5-42ca2e012d1e"
     }
   ]
 }

@@ -8,7 +8,7 @@
   "connection": "接住上一镜恶雕俯冲动势接力物：俯冲动作转为恶雕利爪破窗拽人的落地动作。",
   "transition": "图形匹配硬切：恶雕嘴角嚼动的卡通幅度匹配下一镜小赵匡胤窗格后瞳孔惊恐定格的同风格画面。",
   "dualAnchor": "9:16 强调上下恶雕爪子从窗户垂直抓下+两人被拎起垂直向上；16:9 强调左右恶雕利爪破窗横向抓+恶雕嘴部张合横向动作。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG仿黑猫警长80年代国产动画平涂风格卡通镜头，童年阴影动画质感，8K电影感。\n第一段：镜头由上一镜恶雕俯冲定格切入卡通民居屋内低位平视，马前卒和马后炮采用黑猫警长平涂动画造型蜷缩在木桌底抱头缩成一团，马前卒亮黄色色块卫衣马后炮粉白色块毛衣保持平涂卡通造型，桌底背景是墙面与地面的简化色块。\n第二段：恶雕黑色利爪从民居窗户破窗而入木窗框爆出几块平涂碎片飞散，利爪张开抓住马前卒和马后炮的衣领把两人从桌底拎出窗外，两人在爪子间被拎起做挣扎姿态嘴型张开准备呼救，画面保持平涂卡通简笔动作。\n第三段：镜头切到屋外中位，恶雕把两人扔进张开的卡通嘴巴里上下颚合拢，喉咙发出夸张嘎吱嘎吱脆骨般的响声，恶雕嘴角流出一丝卡通口水卡通色块眼睛做贪婪眯眼表情，画面定格在恶雕合嘴咀嚼的瞬间。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG仿黑猫警长80年代国产动画平涂风格卡通镜头，童年阴影动画质感，8K电影感。\n第一段：镜头由上一镜恶雕俯冲定格切入卡通民居屋内低位平视，马前卒和马后炮采用黑猫警长平涂动画造型蜷缩在木桌底抱头缩成一团，两人保持平涂卡通造型轮廓，桌底背景是墙面与地面的简化色块。\n第二段：恶雕黑色利爪从民居窗户破窗而入木窗框爆出几块平涂碎片飞散，利爪张开抓住马前卒和马后炮把两人从桌底拎出窗外，两人在爪子间被拎起做挣扎姿态嘴型张开准备呼救，画面保持平涂卡通简笔动作。\n第三段：镜头切到屋外中位，恶雕把两人扔进张开的卡通嘴巴里上下颚合拢，喉咙发出夸张嘎吱嘎吱脆骨般的响声，恶雕嘴角流出一丝卡通口水卡通色块眼睛做贪婪眯眼表情，画面定格在恶雕合嘴咀嚼的瞬间。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马前卒马后炮卡通平涂造型蜷缩桌底、恶雕黑色利爪破窗拽起两人的卡通动作、恶雕张开嘴巴吞咽两人嘎吱嘎吱定格",
   "qualityRoute": "卡通平涂明确轮廓线+怀旧暗调色块，恶雕利爪锋利轮廓与木窗碎片色块边缘保结构清晰可辨。",
@@ -24,16 +24,18 @@
     "{{scene:洛阳废墟街道}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "615b277c-2945-4551-8830-65bee84f865a",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/3c66f5a9a68f5592044df4c9b66b2b21/69e43f9b/video/tos/cn/tos-cn-v-148450/o0N8IkA0AQpEXbgAFsNSqQaJkQA48erihhsM1D/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6553&bt=6553&cs=0&ds=12&ft=5QYTUxhhe6BMyqRQaPVJD12Nzj&mime_type=video_mp4&qs=0&rc=M2k2ZjlmODU8NTw0MzZmO0BpM3RweWVrbzs2OjczNDM7M0AyYzFfMy8uNmIxM14vX15gYSMtbDMzcWdeL2ZhLS1kNC9zcw%3D%3D&btag=c0000e00008000&dy_q=1776562564&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604190936040212140731582895442",
+    "videoFile": "outputs/ep01/videos/shot-33.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-33.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 35,
+    "submittedAt": "2026-04-19T09:24:41+08:00",
+    "completedAt": "2026-04-19T09:36:06+08:00"
   }
 }

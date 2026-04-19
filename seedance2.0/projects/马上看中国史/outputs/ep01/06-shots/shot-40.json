@@ -24,15 +24,17 @@
   ],
   "videoTask": {
     "engine": "dreamina",
-    "modelName": "seedance2.0",
-    "taskId": "ec94a74a-323d-46b1-91c2-5fc8569271e1",
-    "status": "fail",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
-    "failReason": "远端任务不存在/内容安全预检不通过（prompt含鼻涕眼泪/一塌糊涂+Coin外文）",
-    "creditCount": null,
-    "submittedAt": "2026-04-19T03:08:42.825498+08:00",
-    "completedAt": "2026-04-19T07:27:34.940459+08:00"
+    "modelName": "seedance2.0fast",
+    "taskId": "a3005823-886b-4eba-a510-fa7c35e03cb9",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v6-artist.vlabvod.com/79fc6a88cde9fc57b90c34dbc67587cf/69e4a35f/video/tos/cn/tos-cn-v-148450/o4KXk1EJAQAsONQwuF4yh0EI8IEpvlgDkeiDLw/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=5705&bt=5705&cs=0&ds=12&ft=5QYTUxhhe6BMyqxnfPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Nmc4aWU2ZDQ2NWU2ZTY0ZEBpM2x2ZmhrbzU8OjczNDM7M0BhYy4vMy0xNmExNC8vMTQuYSNlby9scWcvNmZhLS1kNC9zcw%3D%3D&btag=c0000e00008000&dy_q=1776588105&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604191641440212140731585892A94",
+    "videoFile": "outputs/ep01/videos/shot-40.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-40.jpg",
+    "failReason": "",
+    "creditCount": 30,
+    "submittedAt": "2026-04-19T16:09:51+08:00",
+    "completedAt": "2026-04-19T16:41:46+08:00"
   }
 }

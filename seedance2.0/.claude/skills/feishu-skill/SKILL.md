@@ -61,9 +61,10 @@ lark-cli schema bitable.appTableField.list --format pretty
 #   ]
 # }
 
-lark-cli api POST \
+# ⚠️ lark-cli 不支持 --data @file，用 stdin：
+cat records.json | lark-cli api POST \
   "/open-apis/bitable/v1/apps/{APP_TOKEN}/tables/{TABLE_ID}/records/batch_create" \
-  --data "@records.json" \
+  --data - \
   --format pretty
 ```
 
@@ -129,12 +130,13 @@ jq '{records: [.[] | {fields: {
     "AI提示词": .aiPrompt
 }}]}' "$CHAR_JSON" > /tmp/char-records.json
 
-lark-cli api POST \
+cat /tmp/char-records.json | lark-cli api POST \
   "/open-apis/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records/batch_create" \
-  --data "@/tmp/char-records.json" \
+  --data - \
   --format pretty
 ```
 
+### 场景 B
 ### 场景 B · 同步素材映射表
 
 ```bash
@@ -160,12 +162,13 @@ jq '{records: [
   }})
 ]}' --arg ep "ep01" "$MAP_JSON" > /tmp/assetmap-records.json
 
-lark-cli api POST \
+cat /tmp/assetmap-records.json | lark-cli api POST \
   "/open-apis/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records/batch_create" \
-  --data "@/tmp/assetmap-records.json" \
+  --data - \
   --format pretty
 ```
 
+### 场景 C
 ### 场景 C · 同步分镜总表
 
 ```bash
@@ -186,10 +189,68 @@ jq -s '{records: [.[] | {fields: {
   "集数": "ep01"
 }}]}' "$SHOTS_DIR"/shot-*.json > /tmp/shots-records.json
 
-lark-cli api POST \
+cat /tmp/shots-records.json | lark-cli api POST \
   "/open-apis/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records/batch_create" \
-  --data "@/tmp/shots-records.json" \
+  --data - \
   --format pretty
+```
+
+### 场景 D
+### 场景 D · 同步视频/图片到多维表格附件字段（重点，坑多）
+
+附件字段不能直接塞 URL，必须先走 `/drive/v1/medias/upload_all` 拿到 `file_token`，再在 `batch_create` 里用 `[{"file_token": "..."}]` 写入。注意 **3 个硬规则**（每条都踩过）：
+
+1. **`--file` 只吃工作目录下的相对路径**（lark-cli sandbox 校验）。绝对路径会报 `unsafe file path: --file must be a relative path within the current directory`。
+   解决：先把文件拷到 `workspace` 下一个临时子目录（如 `/data/workspace/.feishu-upload/`），再用 `bash -c "cd 那个目录 && lark-cli ..."` 包起来执行。
+2. **`size` 字段必须是字符串**，数字会报 `1061002 params error`。`--data` 里写 `"size":"${SIZE}"` 而不是 `"size":${SIZE}`。
+3. **附件必须挂到 bitable**：`parent_type=bitable_file`、`parent_node=<APP_TOKEN>`。用 `lark-cli drive +upload` 上传的文件走的是 `parent_type=explorer`，挂进多维表格会报 `1254303 The attachment does not belong to this bitable`。
+
+完整上传模板（单个文件）：
+
+```bash
+APP_TOKEN="Vdpsb..."
+UPLOAD_DIR="/data/workspace/.feishu-upload"   # 必须在 workspace 内
+mkdir -p "$UPLOAD_DIR" && cp /path/to/shot-00.mp4 "$UPLOAD_DIR/"
+
+SIZE=$(stat -c%s "$UPLOAD_DIR/shot-00.mp4")
+bash -c "cd '$UPLOAD_DIR' && lark-cli api POST /open-apis/drive/v1/medias/upload_all \
+  --data '{\"file_name\":\"shot-00.mp4\",\"parent_type\":\"bitable_file\",\"parent_node\":\"${APP_TOKEN}\",\"size\":\"${SIZE}\"}' \
+  --file 'file=./shot-00.mp4'"
+# 成功返回 { "code":0, "data":{"file_token":"..."} }
+```
+
+批量上传 + 写入记录（示意，按需调整字段）：
+
+```bash
+APP_TOKEN="Vdpsb..."; TABLE_ID="tbln..."
+UPLOAD_DIR="/data/workspace/.feishu-upload"
+mkdir -p "$UPLOAD_DIR" && cp /源目录/*.mp4 "$UPLOAD_DIR/"
+
+# 1) 批量上传，收集 file_token
+: > /tmp/feishu-tokens.txt
+for f in "$UPLOAD_DIR"/*.mp4; do
+  name=$(basename "$f"); size=$(stat -c%s "$f")
+  tok=$(bash -c "cd '$UPLOAD_DIR' && lark-cli api POST /open-apis/drive/v1/medias/upload_all \
+    --data '{\"file_name\":\"${name}\",\"parent_type\":\"bitable_file\",\"parent_node\":\"${APP_TOKEN}\",\"size\":\"${size}\"}' \
+    --file 'file=./${name}'" | python3 -c "import sys,json;print(json.load(sys.stdin)['data']['file_token'])")
+  echo "${name%.mp4} ${tok}" >> /tmp/feishu-tokens.txt
+done
+
+# 2) 组装 records.json（字段名严格对齐表头）
+python3 <<'PY' > /tmp/records.json
+import json
+tokens = dict(l.split() for l in open('/tmp/feishu-tokens.txt'))
+records = [{"fields": {"分镜号": k, "视频": [{"file_token": v}]}} for k, v in tokens.items()]
+print(json.dumps({"records": records}, ensure_ascii=False))
+PY
+
+# 3) 写入（重要：--data 读文件只能走 stdin "-"，不支持 @file 语法）
+cat /tmp/records.json | lark-cli api POST \
+  "/open-apis/bitable/v1/apps/${APP_TOKEN}/tables/${TABLE_ID}/records/batch_create" \
+  --data -
+
+# 4) 清理中间目录
+rm -rf "$UPLOAD_DIR" /tmp/feishu-tokens.txt /tmp/records.json
 ```
 
 ## 避坑要点
@@ -199,12 +260,22 @@ lark-cli api POST \
 3. **批量上限 500 条/次**：超过请自己分页切片。
 4. **速率**：默认每秒 20 请求；大批量 `batch_create` 可加 `--page-delay 300` 给缓冲。
 5. **幂等**：batch_create 每次都会**新增**记录，不会去重；若要更新，先 GET 查到 record_id 再 PUT。
-6. **错误码速查**：
-   - `1254004` `FieldNameNotFound`：字段名写错
-   - `1254005` `TableNotFound`：table_id 错误
-   - `1254302` `AppNotFound`：app_token 错误或无权限
-   - `99991664` `auth expired`：重新 `lark-cli auth login --recommend`
-7. **敏感数据**：不要把 `--data` 里含密钥的原文写到可追溯日志里；必要时改用 `--data "@file.json"` 读文件。
+6. **`--data` 读文件必须走 stdin**：lark-cli **不支持** `--data @file.json` 语法（会报 `--data invalid JSON format`）。正确写法：`cat file.json | lark-cli api ... --data -`。
+7. **`--file` 只吃工作目录下的相对路径**：绝对路径会报 `unsafe file path`。先把文件 `cp` 到 workspace 内，再用 `bash -c "cd 目录 && lark-cli ... --file './xxx'"`。
+8. **附件上传 3 硬规则**（`/drive/v1/medias/upload_all`）：
+   - `parent_type` 要与落点一致：挂多维表格用 `bitable_file` + `parent_node=<APP_TOKEN>`；挂云文档/Drive 用 `explorer`。挂错会报 `1254303 attachment does not belong to this bitable`。
+   - `size` 字段**必须传字符串**：数字类型会报 `1061002 params error`。
+   - 不要用 `lark-cli drive +upload` 上传供多维表格附件字段使用——它固定走 `parent_type=explorer`，拿到的 `file_token` 写不进 bitable 附件。
+9. **读取权限与写入权限是分离的 scope**：实测 user token 可能只有 `base:record:create` 没有 `base:record:retrieve`，`batch_create` 写成功了但 `GET records` 会 `99991679 Permission denied`。写入后要校验，改用 batch_create 响应里回显的 `record_id` 即可，不必强行去 GET。
+10. **错误码速查**：
+    - `1061002` `params error`：multipart 参数类型错（常见 size 传了数字）
+    - `1254004` `FieldNameNotFound`：字段名写错
+    - `1254005` `TableNotFound`：table_id 错误
+    - `1254302` `AppNotFound`：app_token 错误或无权限
+    - `1254303` `attachment not belong to bitable`：上传时 `parent_type/parent_node` 没对到目标 bitable
+    - `99991664` `auth expired`：重新 `lark-cli auth login --recommend`
+    - `99991679` `permission denied`：scope 不够，看返回里的 `permission_violations`
+11. **敏感数据**：不要把 `--data` 里含密钥的原文写到可追溯日志里；改从文件 pipe（`cat x.json | lark-cli ... --data -`）。
 
 ## 触发方式
 

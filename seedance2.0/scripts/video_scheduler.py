@@ -32,7 +32,7 @@ video-queue.json 结构：
   "lastHeartbeat": "2026-04-19T08:00:00+08:00"
 }
 """
-import json, os, sys, time, datetime, argparse, glob, re, subprocess, shutil, urllib.request, fcntl
+import json, os, sys, time, datetime, argparse, glob, re, subprocess, shutil, urllib.request, fcntl, shlex
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
@@ -42,6 +42,10 @@ PROJECT_ROOT = "/data/workspace/waoowaoo/seedance2.0"
 
 # 提交后多少分钟内 queue_info 仍为空，判为"静默丢单"
 STUCK_THRESHOLD_MIN = 10
+
+# submit 成功后延迟多少秒触发一次 followup 心跳
+# 用于覆盖平台 30s 内审核打回的场景（失败后不用干等下一次心跳）
+FOLLOWUP_DELAY_SEC = 30
 
 
 def now_iso():
@@ -348,37 +352,115 @@ def _shot_needs_rework(project, ep, idx):
         return False
 
 
-def next_submittable(project, ep, waitlist, log):
+def compute_waitlist_deps(project, ep, waitlist):
     """
-    向前扫 waitList，找第一个尾帧依赖就绪的镜。找不到返回 (None, None, 'all deps not ready')
-    返回 (index_in_list, entry, reason)
-    跳过规则：needsRework=true 的镜 / 尾帧未就绪
+    为 waitList 中每一镜计算依赖状态，供 dashboard 徽章渲染与 scheduler skip-log 复用。
+    返回 dict: {
+      "shot-XX": {
+        "ready": bool,          # 可否立即提交
+        "blocker": "needsRework"|"dep-missing"|"dep-err"|"" ,
+        "tailNum": "46" | None,   # 依赖的 tail 引用号（若存在）
+        "fromShot": "10" | None,  # 依赖的前镜
+        "reason": "人类可读的简短说明",
+      }
+    }
     """
-    skipped = []
-    for i, e in enumerate(waitlist):
-        idx = str(e["shot"]).zfill(2)
-        # 跳过需要返工的镜（分镜师优化 prompt 后会清除该标记）
+    result = {}
+    p = paths(project, ep)
+    # 读 asset-map 一次（用于反查 tail-frame 的 fromShot）
+    asset_map = {}
+    am_fp = f"{p['project_dir']}/outputs/{ep}/asset-map.json"
+    if os.path.exists(am_fp):
+        try: asset_map = json.load(open(am_fp))
+        except Exception: pass
+    images = (asset_map.get("images") or {})
+
+    for e in waitlist or []:
+        idx = str(e.get("shot", "")).zfill(2)
+        info = {"ready": False, "blocker": "", "tailNum": None, "fromShot": None, "reason": ""}
+
+        # 1) needsRework 最优先
         if _shot_needs_rework(project, ep, idx):
-            skipped.append(f"{idx}(needsRework)")
+            info["blocker"] = "needsRework"
+            info["reason"] = "分镜被标记为需返工，清除 needsRework 后才能提交"
+            result[f"shot-{idx}"] = info
             continue
+
+        # 2) 首帧依赖
         try:
             needs, ready, tail_num = check_tail_frame_ready(PROJECT_ROOT, project, ep, idx)
         except Exception as ex:
-            log(f"  shot-{idx}: check deps error: {ex}; skip")
-            skipped.append(idx)
+            info["blocker"] = "dep-err"
+            info["reason"] = f"依赖检查异常：{ex}"
+            result[f"shot-{idx}"] = info
             continue
-        if not needs or ready:
-            return i, e, "ok"
+
+        if not needs:
+            info["ready"] = True
+            info["reason"] = "无首帧依赖，可直接提交"
+            result[f"shot-{idx}"] = info
+            continue
+
+        info["tailNum"] = tail_num
+        # 反查 fromShot（用于 UI 更友好地说"等 shot-10 出片"）
+        if tail_num:
+            entry = images.get(f"@图片{tail_num}") or {}
+            if entry.get("type") == "tail-frame":
+                fs = entry.get("fromShot")
+                if fs is not None:
+                    info["fromShot"] = str(fs).zfill(2)
+
+        if ready:
+            info["ready"] = True
+            info["reason"] = f"首帧 @图片{tail_num} 就绪（来自 shot-{info['fromShot'] or '?'}）"
         else:
-            skipped.append(f"{idx}(需@图片{tail_num})")
+            info["blocker"] = "dep-missing"
+            from_shot_desc = f"shot-{info['fromShot']}" if info["fromShot"] else f"@图片{tail_num}"
+            info["reason"] = f"等 {from_shot_desc} 出片后才能提交"
+
+        result[f"shot-{idx}"] = info
+    return result
+
+
+def next_submittable(project, ep, waitlist, log):
+    """
+    向前扫 waitList，找第一个尾帧依赖就绪的镜。找不到返回 (None, None, reason)
+    返回 (index_in_list, entry, reason)
+    跳过规则：needsRework=true 的镜 / 尾帧未就绪
+    """
+    deps = compute_waitlist_deps(project, ep, waitlist)
+    skipped = []
+    for i, e in enumerate(waitlist):
+        idx = str(e["shot"]).zfill(2)
+        info = deps.get(f"shot-{idx}") or {}
+        if info.get("ready"):
+            return i, e, "ok"
+        # skip
+        if info.get("blocker") == "needsRework":
+            skipped.append(f"{idx}(needsRework)")
+        elif info.get("blocker") == "dep-missing":
+            fs = info.get("fromShot")
+            if fs:
+                skipped.append(f"{idx}(待shot-{fs})")
+            else:
+                skipped.append(f"{idx}(需@图片{info.get('tailNum')})")
+        elif info.get("blocker") == "dep-err":
+            skipped.append(f"{idx}(dep-err)")
+        else:
+            skipped.append(idx)
     return None, None, f"all waitlist blocked; skipped: {', '.join(skipped)}"
 
 
-def heartbeat(project, ep):
+def heartbeat(project, ep, followup_only=False):
+    """一次心跳。
+    followup_only=True 表示本次是 submit 成功后的 30s 延迟追击心跳，
+    本次即使再次 submit 成功也不再递归 spawn 下一个 followup（防级联）。
+    """
     p = paths(project, ep)
 
+    tag = "[followup] " if followup_only else ""
     def log_line(msg, also_stdout=True):
-        line = f"[{now_iso()}] {msg}"
+        line = f"[{now_iso()}] {tag}{msg}"
         with open(p["log_file"], "a", encoding="utf-8") as f: f.write(line + "\n")
         if also_stdout: print(line)
 
@@ -393,14 +475,40 @@ def heartbeat(project, ep):
         return
 
     try:
-        _heartbeat_impl(project, ep, p, log_line)
+        _heartbeat_impl(project, ep, p, log_line, followup_only=followup_only)
     finally:
         try: fcntl.flock(lock_fd, fcntl.LOCK_UN)
         except Exception: pass
         lock_fd.close()
 
 
-def _heartbeat_impl(project, ep, p, log):
+def _spawn_followup(project, ep, log):
+    """spawn 一个后台子进程，sleep FOLLOWUP_DELAY_SEC 秒后再跑一次心跳。
+
+    目的：提交成功后平台可能在 30s 内做审核打回，打回后 refresh_generating 会把
+    任务标为 failed 释放 slot。若只靠下一次常规心跳（周期可能 10 分钟）填补，
+    会白白空转。用延迟子进程主动追击一次即可补齐空档。
+    """
+    try:
+        import subprocess as _sp
+        script = os.path.abspath(__file__)
+        # setsid 脱离当前进程组 + close_fds 避免继承父 fd（flock 不会被子进程带走）
+        cmd = [
+            "sh", "-c",
+            f"sleep {FOLLOWUP_DELAY_SEC}; exec python3 {shlex.quote(script)} "
+            f"--project {shlex.quote(project)} --ep {shlex.quote(ep)} --followup-only",
+        ]
+        _sp.Popen(
+            cmd,
+            stdout=_sp.DEVNULL, stderr=_sp.DEVNULL,
+            close_fds=True, start_new_session=True,
+        )
+        log(f"  ⏱ scheduled followup heartbeat in {FOLLOWUP_DELAY_SEC}s (覆盖平台审核打回空档)")
+    except Exception as e:
+        log(f"  ⚠️ spawn followup failed: {e}")
+
+
+def _heartbeat_impl(project, ep, p, log, followup_only=False):
     q = load_queue(p["queue_file"])
     log("=== heartbeat start ===")
     if q.get("paused"):
@@ -415,6 +523,14 @@ def _heartbeat_impl(project, ep, p, log):
     _apply_transitions_to_history(q, transitions, project, ep, log=log)
     max_inflight = int(q.get("maxInflight", 1))
     log(f"inflight={inflight}, maxInflight={max_inflight}, waitList={len(q.get('waitList',[]))}")
+
+    # 1.6. 为 waitList 每一镜计算依赖状态（无论是否会提交都写入，供 dashboard UI 渲染徽章）
+    wl_now = q.get("waitList", []) or []
+    dep_snapshot = compute_waitlist_deps(project, ep, wl_now)
+    q["depStatus"] = dep_snapshot
+    blocked = [k for k, v in dep_snapshot.items() if not v.get("ready")]
+    if blocked:
+        log(f"  🔒 blocked in waitList: {', '.join(blocked)}")
 
     # 2. 判断是否有空位
     if inflight >= max_inflight:
@@ -432,6 +548,22 @@ def _heartbeat_impl(project, ep, p, log):
 
     # 3. 找第一个可提交的镜
     i, entry, reason = next_submittable(project, ep, wl, log)
+    # 3.1 记录本轮被跳过的镜到 skipLog（保留最近 50 条），便于 dashboard 查"为什么一直没轮到我"
+    skiplog = q.setdefault("skipLog", [])
+    for idx_str in list(dep_snapshot.keys())[: (i if i is not None else len(dep_snapshot))]:
+        info = dep_snapshot[idx_str]
+        if info.get("ready"):
+            continue
+        skiplog.append({
+            "at": now_iso(),
+            "shot": idx_str.replace("shot-", ""),
+            "blocker": info.get("blocker", ""),
+            "reason": info.get("reason", ""),
+        })
+    # 裁到最近 50 条
+    if len(skiplog) > 50:
+        q["skipLog"] = skiplog[-50:]
+
     if i is None:
         log(f"no submittable entry: {reason}")
         q["lastHeartbeat"] = now_iso()
@@ -449,7 +581,8 @@ def _heartbeat_impl(project, ep, p, log):
     # 4. 不管成功失败，都从 waitList 移除（失败不自动重试）
     wl.pop(i)
     hist = q.setdefault("history", [])
-    if res.get("ok"):
+    submitted_ok = bool(res.get("ok"))
+    if submitted_ok:
         hist.append({"shot": idx, "submit_id": res.get("submit_id"),
                      "result": "submitted", "reason": "", "at": now_iso(),
                      "model": model})
@@ -463,6 +596,13 @@ def _heartbeat_impl(project, ep, p, log):
     q["waitList"] = wl
     q["lastHeartbeat"] = now_iso()
     save_queue(p["queue_file"], q)
+
+    # 5. submit 成功 → 30s 后追击一次心跳，覆盖平台审核打回的空档
+    # 仅在正常心跳中触发；followup 心跳本身不再递归 spawn（防级联）
+    # queue 开关：followupAfterSubmit=false 可关闭该特性
+    if submitted_ok and not followup_only and q.get("followupAfterSubmit", True):
+        _spawn_followup(project, ep, log)
+
     log("=== heartbeat end ===\n")
 
 
@@ -472,6 +612,8 @@ def main():
     ap.add_argument("--ep", required=True)
     ap.add_argument("--loop", action="store_true", help="常驻循环（否则单次执行）")
     ap.add_argument("--interval", type=int, default=600, help="loop 模式间隔秒数")
+    ap.add_argument("--followup-only", action="store_true",
+                    help="内部用：submit 成功后的 30s 延迟追击心跳，本次不再递归 spawn followup")
     args = ap.parse_args()
 
     if args.loop:
@@ -480,7 +622,7 @@ def main():
             except Exception as e: print(f"heartbeat error: {e}")
             time.sleep(args.interval)
     else:
-        heartbeat(args.project, args.ep)
+        heartbeat(args.project, args.ep, followup_only=args.followup_only)
 
 
 if __name__ == "__main__":

@@ -23,16 +23,18 @@
     "{{character:螳螂夫人}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "4ac8b8c6-05a9-4192-9eb6-e5efd0fc3ce1",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/ae98907aae9e9e72c01c1ef1bfba699e/69e45f2c/video/tos/cn/tos-cn-v-148450/osfCQCZxVaVARfrgUpFkH5YIKL6VrBS5KkBirg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=5766&bt=5766&cs=0&ds=12&ft=5QYTUxhhe6BMyqTfdPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZWQ6Ozg2aDpnaTozNDg5ZEBpM3Zub2lrbzw4OjczNDM7M0AxYl8xYF8wXjIxLTMxMGE0YSNqZWBqcWcvLmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776570644&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260419115044021214073158593E312",
+    "videoFile": "outputs/ep01/videos/shot-39.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-39.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 40,
+    "submittedAt": "2026-04-19T11:30:05+08:00",
+    "completedAt": "2026-04-19T11:50:47+08:00"
   }
 }

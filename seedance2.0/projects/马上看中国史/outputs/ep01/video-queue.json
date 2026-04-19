@@ -5,25 +5,396 @@
   "defaultRatio": "16:9",
   "waitList": [
     {
-      "shot": "33",
+      "shot": "04",
       "model": "",
       "ratio": "",
-      "note": "批量-无首帧依赖",
-      "addedAt": "2026-04-19T08:26:33+08:00"
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
     },
     {
-      "shot": "34",
+      "shot": "09",
       "model": "",
       "ratio": "",
-      "note": "批量-无首帧依赖",
-      "addedAt": "2026-04-19T08:26:33+08:00"
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
     },
     {
-      "shot": "35",
+      "shot": "10",
       "model": "",
       "ratio": "",
-      "note": "批量-无首帧依赖",
-      "addedAt": "2026-04-19T08:26:33+08:00"
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
+    },
+    {
+      "shot": "13",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
+    },
+    {
+      "shot": "16",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
+    },
+    {
+      "shot": "20",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
+    },
+    {
+      "shot": "27",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
+    },
+    {
+      "shot": "41",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T19:55:09+08:00",
+      "note": "分镜师优化重投-置顶"
+    },
+    {
+      "shot": "47",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "45",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "31",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "30",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "05",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "11",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "21",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "22",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "23",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "24",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "25",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "42",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-关键路径（尾帧喂下游）"
+    },
+    {
+      "shot": "06",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "12",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "26",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "43",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "51",
+      "model": "",
+      "ratio": "",
+      "note": "",
+      "addedAt": "2026-04-19T13:17:17+08:00"
+    },
+    {
+      "shot": "55",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "56",
+      "model": "",
+      "ratio": "",
+      "note": "",
+      "addedAt": "2026-04-19T13:17:23+08:00"
+    },
+    {
+      "shot": "58",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "59",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "60",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "61",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "62",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "63",
+      "model": "",
+      "ratio": "",
+      "note": "",
+      "addedAt": "2026-04-19T13:17:25+08:00"
+    },
+    {
+      "shot": "64",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "65",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "66",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "67",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "68",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "69",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "70",
+      "model": "",
+      "ratio": "",
+      "note": "批量-非纪录片-无首帧依赖",
+      "addedAt": "2026-04-19T09:30:08+08:00"
+    },
+    {
+      "shot": "72",
+      "model": "",
+      "ratio": "",
+      "note": "",
+      "addedAt": "2026-04-19T13:17:30+08:00"
+    },
+    {
+      "shot": "73",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "74",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "75",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "77",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "78",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "79",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "80",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "81",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "82",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "83",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "84",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "85",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "86",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "87",
+      "model": "",
+      "ratio": "",
+      "addedAt": "2026-04-19T14:03:19+08:00",
+      "note": "批量补池-可并行"
+    },
+    {
+      "shot": "15",
+      "model": "",
+      "ratio": "",
+      "note": "",
+      "addedAt": "2026-04-19T19:23:36+08:00"
     }
   ],
   "history": [
@@ -130,11 +501,1051 @@
     {
       "shot": "32",
       "submit_id": "79e28a44-4451-426a-ae26-607874208210",
-      "result": "submitted",
+      "result": "done",
       "reason": "",
       "at": "2026-04-19T09:15:20+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T09:24:38+08:00",
+      "durationSec": 5
+    },
+    {
+      "shot": "33",
+      "submit_id": "615b277c-2945-4551-8830-65bee84f865a",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T09:24:41+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T09:36:06+08:00",
+      "durationSec": 7
+    },
+    {
+      "shot": "34",
+      "submit_id": "d560fc7f-7965-4977-ae98-f10e558c8c28",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T09:36:10+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T09:49:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "35",
+      "submit_id": "4230360b-dd32-41b2-b5b8-f47da2ded124",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T09:49:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:01:27+08:00",
+      "durationSec": 6
+    },
+    {
+      "shot": "36",
+      "submit_id": "e43e84e6-e23b-4de4-8021-0405ae32787b",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T10:01:30+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:16:50+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "00",
+      "submit_id": "41a63498-23fb-446b-8955-a1469ff26ede",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T10:16:54+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:30:34+08:00",
+      "durationSec": 15
+    },
+    {
+      "shot": "10",
+      "submit_id": "cf1c0212-dd36-4344-b110-6f8c779aa58d",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T10:30:38+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:32:58+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": "e4ebf049-d449-40aa-9c33-60f39205b7f6",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T10:33:02+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:33:19+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "37",
+      "submit_id": "b4c8dbf5-2acd-4423-b540-ed1b208589ee",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T10:33:23+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:49:46+08:00",
+      "durationSec": 7
+    },
+    {
+      "shot": "10",
+      "submit_id": "132016c1-40f8-4f22-ac18-4e3b637bc162",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T10:49:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T10:50:46+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "44",
+      "submit_id": "1141c208-c9c9-4a27-9199-374cecb84993",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T10:50:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T11:09:09+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "10",
+      "submit_id": "dd70daa5-d1b1-4813-85de-b4c5041a9895",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T11:09:13+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T11:10:16+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": "721d42e1-eebe-47f7-96ff-5df6e14e15a1",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T11:10:20+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T11:11:26+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "38",
+      "submit_id": "10be296a-7196-4793-934b-603632ed841e",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T11:11:32+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T11:30:00+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "39",
+      "submit_id": "4ac8b8c6-05a9-4192-9eb6-e5efd0fc3ce1",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T11:30:05+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T11:50:47+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "01",
+      "submit_id": "a63d3faa-5ac9-4c2e-9876-e10992085167",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T11:50:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T12:11:07+08:00",
+      "durationSec": 15
+    },
+    {
+      "shot": "20",
+      "submit_id": "2322afc1-07ea-49a9-8e99-a747a69cd9c6",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T12:11:11+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T12:11:37+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "48",
+      "submit_id": "e01e2fbb-61f4-47a1-a78c-6c0b4892db6e",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T12:11:41+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T12:31:07+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "52",
+      "submit_id": "e461ce57-7b4b-4e0f-a51e-7ff8908ca0d9",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T12:31:10+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T12:49:47+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "54",
+      "submit_id": "6e4a88eb-10b1-410f-bd2a-d71d9a7205cb",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T12:49:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T13:04:47+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "57",
+      "submit_id": "377a9eea-7ab4-4687-9311-c7eed280b6c7",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T13:04:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T13:21:18+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "46",
+      "submit_id": "6c89a207-57fc-4fbe-88c6-fecc96dc53e0",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T13:21:22+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T13:36:47+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "49",
+      "submit_id": "754bf886-64e7-4161-8eb0-f42903fe7363",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T13:36:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T13:55:47+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "71",
+      "submit_id": "00284b86-0a72-4b05-8514-1d72c7665c19",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T13:55:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T14:17:47+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "03",
+      "submit_id": "20194b0a-bc91-4ddb-8e1a-c6e650696804",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T14:17:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T14:41:48+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "08",
+      "submit_id": "317fa5fc-30d0-42d9-be39-2dc701be8eae",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T14:41:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T15:13:47+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "15",
+      "submit_id": "31041e43-6ec6-4ad7-b933-dcb10acdddd3",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T15:13:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T15:41:48+08:00",
+      "durationSec": 5
+    },
+    {
+      "shot": "19",
+      "submit_id": "c30b4745-6b8e-4aa5-a5f9-f6b0ab99a923",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T15:41:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T16:09:47+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "40",
+      "submit_id": "a3005823-886b-4eba-a510-fa7c35e03cb9",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T16:09:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T16:41:46+08:00",
+      "durationSec": 6
+    },
+    {
+      "shot": "04",
+      "submit_id": "66bc0cd6-f818-4633-8191-cbd2413bb66c",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T16:41:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T16:45:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "41",
+      "submit_id": "b320af30-cad0-4ddb-b471-09293c64cdae",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T16:45:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T16:49:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "76",
+      "submit_id": "b623ad0b-3290-49bb-a347-3610afc050d1",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T16:49:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T17:21:48+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "09",
+      "submit_id": "74d772db-25e8-4432-b5fc-2ee304f7ddfc",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T17:21:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T17:25:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "16",
+      "submit_id": "7d234dc7-a2c0-40cf-a579-c7826236c71b",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-19T17:25:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T17:29:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "17",
+      "submit_id": "59691389-5c8a-49f3-af1b-39bbf400be86",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T17:29:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T18:01:48+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "27",
+      "submit_id": "9f2a9a8d-8ff4-4417-aa67-961767070295",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-19T18:01:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T18:05:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "28",
+      "submit_id": "5d537648-b273-48e4-b2cd-7730982dcf6c",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T18:05:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T18:33:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "29",
+      "submit_id": "9bf8ea7d-e0bb-4121-afb5-32949796a397",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T18:33:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T18:57:46+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "31",
+      "submit_id": "8cde5e39-26a4-49af-9b83-55d3bcd72c82",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T18:57:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T19:17:49+08:00",
+      "durationSec": 7
+    },
+    {
+      "shot": "50",
+      "submit_id": "1e779806-d6a0-4351-b6c5-42ca2e012d1e",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T19:17:54+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T19:39:48+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "14",
+      "submit_id": "727434db-00f2-4ce4-b4f6-5a44ed324bd1",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-19T19:39:52+08:00",
       "model": "seedance2.0fast"
     }
   ],
-  "lastHeartbeat": "2026-04-19T09:15:20+08:00"
+  "lastHeartbeat": "2026-04-19T19:55:06+08:00",
+  "depStatus": {
+    "shot-47": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-45": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-31": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-30": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-05": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "41",
+      "fromShot": "04",
+      "reason": "等 shot-04 出片后才能提交"
+    },
+    "shot-11": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "46",
+      "fromShot": "10",
+      "reason": "等 shot-10 出片后才能提交"
+    },
+    "shot-21": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "51",
+      "fromShot": "20",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    "shot-22": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "52",
+      "fromShot": "21",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    "shot-23": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "53",
+      "fromShot": "22",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    "shot-24": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "54",
+      "fromShot": "23",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    "shot-25": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "55",
+      "fromShot": "24",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    "shot-42": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "58",
+      "fromShot": "41",
+      "reason": "等 shot-41 出片后才能提交"
+    },
+    "shot-06": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "42",
+      "fromShot": "05",
+      "reason": "等 shot-05 出片后才能提交"
+    },
+    "shot-12": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "47",
+      "fromShot": "11",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    "shot-26": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "56",
+      "fromShot": "25",
+      "reason": "等 shot-25 出片后才能提交"
+    },
+    "shot-43": {
+      "ready": false,
+      "blocker": "dep-missing",
+      "tailNum": "59",
+      "fromShot": "42",
+      "reason": "等 shot-42 出片后才能提交"
+    },
+    "shot-51": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-55": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": "60",
+      "fromShot": "54",
+      "reason": "首帧 @图片60 就绪（来自 shot-54）"
+    },
+    "shot-56": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-58": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-59": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-60": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-61": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-62": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-63": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-64": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-65": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-66": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-67": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-68": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-69": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-70": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-72": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-73": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-74": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-75": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-77": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-78": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-79": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-80": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-81": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-82": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-83": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-84": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-85": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-86": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-87": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": null,
+      "fromShot": null,
+      "reason": "无首帧依赖，可直接提交"
+    },
+    "shot-15": {
+      "ready": true,
+      "blocker": "",
+      "tailNum": "48",
+      "fromShot": "14",
+      "reason": "首帧 @图片48 就绪（来自 shot-14）"
+    }
+  },
+  "skipLog": [
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "42",
+      "blocker": "dep-missing",
+      "reason": "等 shot-41 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "06",
+      "blocker": "dep-missing",
+      "reason": "等 shot-05 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:25:45+08:00",
+      "shot": "12",
+      "blocker": "dep-missing",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "05",
+      "blocker": "dep-missing",
+      "reason": "等 shot-04 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "11",
+      "blocker": "dep-missing",
+      "reason": "等 shot-10 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "21",
+      "blocker": "dep-missing",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "42",
+      "blocker": "dep-missing",
+      "reason": "等 shot-41 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "06",
+      "blocker": "dep-missing",
+      "reason": "等 shot-05 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T17:29:45+08:00",
+      "shot": "12",
+      "blocker": "dep-missing",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "05",
+      "blocker": "dep-missing",
+      "reason": "等 shot-04 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "11",
+      "blocker": "dep-missing",
+      "reason": "等 shot-10 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "21",
+      "blocker": "dep-missing",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "42",
+      "blocker": "dep-missing",
+      "reason": "等 shot-41 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "06",
+      "blocker": "dep-missing",
+      "reason": "等 shot-05 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "12",
+      "blocker": "dep-missing",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:01:48+08:00",
+      "shot": "26",
+      "blocker": "dep-missing",
+      "reason": "等 shot-25 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "05",
+      "blocker": "dep-missing",
+      "reason": "等 shot-04 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "11",
+      "blocker": "dep-missing",
+      "reason": "等 shot-10 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "21",
+      "blocker": "dep-missing",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "42",
+      "blocker": "dep-missing",
+      "reason": "等 shot-41 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "06",
+      "blocker": "dep-missing",
+      "reason": "等 shot-05 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "12",
+      "blocker": "dep-missing",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:05:45+08:00",
+      "shot": "26",
+      "blocker": "dep-missing",
+      "reason": "等 shot-25 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "05",
+      "blocker": "dep-missing",
+      "reason": "等 shot-04 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "11",
+      "blocker": "dep-missing",
+      "reason": "等 shot-10 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "21",
+      "blocker": "dep-missing",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "42",
+      "blocker": "dep-missing",
+      "reason": "等 shot-41 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "06",
+      "blocker": "dep-missing",
+      "reason": "等 shot-05 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "12",
+      "blocker": "dep-missing",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    {
+      "at": "2026-04-19T18:33:46+08:00",
+      "shot": "26",
+      "blocker": "dep-missing",
+      "reason": "等 shot-25 出片后才能提交"
+    }
+  ]
 }

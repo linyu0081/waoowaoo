@@ -1,0 +1,40 @@
+{
+  "shotType": "A",
+  "titleBar": "【分镜03｜10秒｜类型：A｜方案：T4主角建立模板｜档位：LITE｜节奏：金块转场→马上近景→亮相台词】",
+  "mount": "挂载：角色：马上@图片1｜场景：演播室-日@图片17｜声音：马上声音@音频1｜本视频以@图片39为首帧",
+  "camera": "相机位置：平视胸上近景；相机朝向：正对马上面部；角色朝向：马上正对镜头微微抬下巴；构图锚点：马上深灰色西装马甲的V形领口",
+  "openingFrame": "画面从上一镜金字柔化淡入，马上胸上近景出现在画面中央，他站在演播室暖光打光下面朝镜头，左手扶圆桌木纹边缘。",
+  "closingFrame": "马上说完台词后保持正视镜头的稳重表情，画面右侧预留空位，等待下一镜马前卒脑袋从侧边挤入。",
+  "connection": "接住上一镜金字边框柔化接力物：金字边框融入马上深灰马甲V领与素色衬衫领口线。",
+  "transition": "声画先入硬切：下一镜马前卒唐老鸭腔我是马前卒的声音先上，再切画面。",
+  "dualAnchor": "9:16 强调马上胸上竖向身形+圆桌边缘上下切割画面；16:9 强调马上居中近景+左右两侧空位等待两马挤入。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG主角建立镜头，文化节目专业脱口秀感，8K电影感。\n第一段：画面从上一镜金字柔化淡入，马上胸上近景出现在演播室画面中央，他站在暖金顶光下面朝镜头抬下巴做开场姿态，左手自然扶在圆桌边缘，身后四色块墙面（橙/绿/黄/蓝）与横向木质墙架上彩色书籍微微虚焦，第一层视觉冲击是学者型主持人的稳场气度。\n第二段：马上表情放松带一丝自信微笑，深灰色西装马甲V形领口反射暖金顶光，鼻梁的粗黑框圆眼镜微微反光，额顶白色挑染与鼻梁白色长条斑在暖光下清晰可辨，他对镜头清晰发声，**马上**：\"中国史，马上看！我是马上。\"。\n第三段：说完后马上保持正视镜头的稳重表情不动，嘴角微抿，左手仍扶桌沿，画面右侧镜头前空间留出明显缺口等待第二个角色挤入，背景四色块墙面平涂让主体轮廓更突出。",
+  "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
+  "mustShow": "马上胸上近景端正站姿、深灰西装马甲V领与素色衬衫、粗黑框圆眼镜、额顶白色挑染与鼻梁白色长条斑、圆桌木纹边缘",
+  "qualityRoute": "卡通色块背景+右上追光圆斑，主体皮肤高光保结构毛孔纹理可见；深灰马甲织物纹理与眼镜金属镜框反射要有质感。",
+  "imagingStyle": "不靠走位动作，靠主持人站定那一刻的气场定场感。",
+  "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
+  "reference": "参照：BBC纪录片主持开场近景+TED演讲者定场；稳帧点：马上粗黑框圆眼镜与胸口正中。",
+  "microExpressions": "",
+  "nailLines": "这镜最值钱的不是台词，而是主持人稳场的气度。\n马上面部必须让观众看到额顶白色挑染细节与鼻梁白色长条斑的光影层次。\n表情要又自信又亲切，不靠夸张，靠微笑与抬下巴角度。\n落幅停在画面右侧留出缺口，让下一镜马前卒脑袋挤入位置自然。",
+  "e15": "",
+  "assetRefs": [
+    "{{character:马上}}",
+    "{{scene:演播室}}"
+  ],
+  "videoTask": {
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "20194b0a-bc91-4ddb-8e1a-c6e650696804",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v3-artist.vlabvod.com/1d04455327b0fe960194c9c9996a5824/69e48742/video/tos/cn/tos-cn-v-148450/oEA8RgOspvA4O9HIBV6ZgixKH5SBf2yIQhVfCH/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6025&bt=6025&cs=0&ds=12&ft=5QYTUxhhe6BMyqeCGPVJD12Nzj&mime_type=video_mp4&qs=0&rc=aTNnaDk8NDtmNmczOzM1OkBpM3g6NzhrbzU6OjczNDM7M0AwNTU1YDQxNTExYl41MzBgYSNvcy1gcWdmZWZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776580904&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260419144144021214073158592AAE2",
+    "videoFile": "outputs/ep01/videos/shot-03.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-03.jpg",
+    "failReason": "",
+    "creditCount": 50,
+    "submittedAt": "2026-04-19T14:17:50+08:00",
+    "completedAt": "2026-04-19T14:41:48+08:00"
+  }
+}

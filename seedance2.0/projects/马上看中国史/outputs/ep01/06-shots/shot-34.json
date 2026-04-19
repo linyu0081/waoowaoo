@@ -23,16 +23,18 @@
     "{{scene:赵匡胤洛阳宅邸}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "d560fc7f-7965-4977-ae98-f10e558c8c28",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v6-artist.vlabvod.com/313c07d2e42fc43933e6d03cfc152ed5/69e442d0/video/tos/cn/tos-cn-v-148450/oQ4oIfKngyWh09MDCvCAJ4h8s8IAZQdQg4HaZ3/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6306&bt=6306&cs=0&ds=12&ft=5QYTUxhhe6BMyqd0aPVJD12Nzj&mime_type=video_mp4&qs=0&rc=PGY1O2Q5Zzc6ZTc6aDRlPEBpM2U4NjRrb3Y2OjczNDM7M0A1Li5gYTNjXl8xYzJjXjZiYSNjbGtecWcvNGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776563384&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260419094944021214073158591CD5F",
+    "videoFile": "outputs/ep01/videos/shot-34.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-34.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 40,
+    "submittedAt": "2026-04-19T09:36:10+08:00",
+    "completedAt": "2026-04-19T09:49:46+08:00"
   }
 }

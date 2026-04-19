@@ -23,16 +23,18 @@
     "{{character:螳螂夫人}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "e43e84e6-e23b-4de4-8021-0405ae32787b",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v6-artist.vlabvod.com/965812d908d594c95a9f1029300e6b5d/69e44924/video/tos/cn/tos-cn-v-148450/och4CMIVsHegIH9Q0lhJldhqh0dgAcD8IQAygc/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6267&bt=6267&cs=0&ds=12&ft=5QYTUxhhe6BMyqbMaPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Ojc7N2c0NGkzOjhkNDhpZkBpampkZmhrb2g2OjczNDM7M0A1YDAuXmI2NTQxYzEzLWNhYSNkcC9scWdeaGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776565004&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604191016440212140731585924004",
+    "videoFile": "outputs/ep01/videos/shot-36.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-36.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 40,
+    "submittedAt": "2026-04-19T10:01:30+08:00",
+    "completedAt": "2026-04-19T10:16:50+08:00"
   }
 }

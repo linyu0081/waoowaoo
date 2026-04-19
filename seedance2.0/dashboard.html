@@ -606,6 +606,12 @@ body {
 .vq-waitlist-item .vq-shot { color: #c084fc; font-weight: 700; }
 .vq-waitlist-item .vq-model { color: var(--text-secondary); }
 .vq-waitlist-item .vq-note { color: var(--text-muted); flex: 1; }
+.vq-dep-badge {
+  padding: 2px 6px; border-radius: 10px; font-size: 11px;
+  font-family: var(--font-mono); white-space: nowrap; cursor: help;
+}
+.vq-dep-ok    { background: rgba(34,197,94,.12);  color: #22c55e; }
+.vq-dep-block { background: rgba(217,119,6,.15);  color: #d97706; }
 .vq-waitlist-empty { color: var(--text-muted); font-size: 12px; padding: 6px 0; }
 
 /* ---- 视频 Tab 顶部状态筛选条 ---- */
@@ -1499,6 +1505,16 @@ async function loadEpisode(projectName, episode) {
       assetMap: assetMapRaw,
       videoQueue: videoQueueRaw,
     };
+
+    // 异步刷新依赖徽章状态（fire-and-forget，不阻塞渲染；完成后会被下一次 renderVideoQueue 消费）
+    (async () => {
+      try {
+        if (typeof _refreshDepStatus === 'function') {
+          await _refreshDepStatus();
+          if (typeof renderVideoQueue === 'function') renderVideoQueue();
+        }
+      } catch (_) {}
+    })();
 
     // 兼容旧变量（部分 UI 还在读）
     clips = [];
@@ -2449,7 +2465,7 @@ function renderVideos() {
       videoArea = `<div class="video-status-placeholder video-status-pending"><span>⬜ 待提交</span></div>`;
     }
 
-    // 操作按钮行（只在 pending/waitlisted/failed 时出现）
+    // 操作按钮行（pending / waitlisted / failed / stuck / done 都可出按钮）
     let actions = '';
     if (status === 'pending') {
       actions = `<div class="video-card-actions">
@@ -2460,11 +2476,12 @@ function renderVideos() {
         <button class="vq-btn vq-btn-danger" onclick="onQueueRemove('${idx}')">✖ 移出候补池</button>
       </div>`;
     } else if (status === 'failed' || status === 'stuck') {
+      const failCnt = (vt.failHistory || []).length;
+      const failLabel = failCnt ? `（失败 ${failCnt} 次）` : '';
       if (vt.needsRework) {
-        // 需返工：不能直接重投，需分镜师确认已优化
-        const failCnt = (vt.failHistory || []).length;
+        // 需返工：显示失败标签 + 已优化重投按钮
         actions = `<div class="video-card-actions" style="flex-wrap:wrap;gap:6px">
-          <button class="vq-btn" disabled title="需分镜师重写 prompt 后才能重投" style="opacity:.5;cursor:not-allowed">🚫 已标记需返工${failCnt ? '（失败 '+failCnt+' 次）' : ''}</button>
+          <span style="font-size:10px;color:var(--accent-red-bright);font-weight:700;background:rgba(235,77,75,0.15);padding:2px 6px;border-radius:3px">⚠️ 需分镜师优化${failLabel}</span>
           <button class="vq-btn vq-btn-primary" onclick="onMarkReworkedAndRetry('${idx}')" title="分镜师已重写，清除标记后重新入池">✏️ 已优化重投</button>
         </div>`;
       } else {
@@ -2473,6 +2490,11 @@ function renderVideos() {
           <button class="vq-btn vq-btn-primary" onclick="onQueueAdd('${idx}')">${label}</button>
         </div>`;
       }
+    } else if (status === 'done') {
+      // 已出片 → 允许手动触发"删除当前视频并重新生成"
+      actions = `<div class="video-card-actions">
+        <button class="vq-btn" onclick="onRegenerate('${idx}')" title="删除当前视频并重新加入候补池（消耗积分重出）">🔄 重新生成</button>
+      </div>`;
     }
 
     return `
@@ -2511,12 +2533,43 @@ function renderVideoQueue() {
     const title = sh.title || '';
     const model = e.model || q.defaultModel || '';
     const note = e.note || '';
+
+    // 依赖徽章：从 queue.depStatus 读取（scheduler 每次心跳写入；若没有则降级为空）
+    const depInfo = (q.depStatus || {})[`shot-${shot}`] || null;
+    let depBadge = '';
+    let isBlocked = false;
+    if (depInfo) {
+      if (depInfo.ready) {
+        depBadge = `<span class="vq-dep-badge vq-dep-ok" title="${depInfo.reason||'可提交'}">🟢 可提交</span>`;
+      } else {
+        isBlocked = true;
+        const blocker = depInfo.blocker || '';
+        const label =
+          blocker === 'needsRework' ? '🔧 待返工' :
+          blocker === 'dep-missing' ? (depInfo.fromShot ? `🔒 待 shot-${depInfo.fromShot}` : `🔒 待首帧`) :
+          blocker === 'dep-err' ? '⚠ 检查异常' : '🔒 未就绪';
+        depBadge = `<span class="vq-dep-badge vq-dep-block" title="${depInfo.reason||'被依赖阻塞'}">${label}</span>`;
+      }
+    }
+
+    // 置顶按钮：对"被阻塞"的镜给出警告型样式和 tooltip，点击前二次确认
+    let topBtn;
+    if (i === 0) {
+      topBtn = `<button class="vq-btn" disabled title="已在队首" style="opacity:.4;cursor:not-allowed">⬆ 置顶</button>`;
+    } else if (isBlocked) {
+      const reason = (depInfo && depInfo.reason) || '首帧/返工未就绪';
+      topBtn = `<button class="vq-btn" onclick="onQueueTop('${shot}', true)" title="⚠ ${reason}；置顶后仍会被 scheduler 跳过，除非依赖满足" style="border-color:#d97706;color:#d97706">⬆ 置顶</button>`;
+    } else {
+      topBtn = `<button class="vq-btn" onclick="onQueueTop('${shot}', false)" title="把 shot-${shot} 移到队首，下次心跳最先提交">⬆ 置顶</button>`;
+    }
     return `<div class="vq-waitlist-item">
       <span class="vq-idx">${i+1}.</span>
       <span class="vq-shot">shot-${shot}</span>
       <span style="color:var(--text-secondary);font-size:12px">${title}</span>
+      ${depBadge}
       <span class="vq-model">${model}</span>
       <span class="vq-note">${note}</span>
+      ${topBtn}
       <button class="vq-btn vq-btn-danger" onclick="onQueueRemove('${shot}')">移除</button>
     </div>`;
   }).join('');
@@ -2584,6 +2637,8 @@ function _shotTailDepStatus(shot) {
 function _shotDisplayStatus(shot, waitlistSet) {
   const vt = shot.videoTask || {};
   let status = vt.status || 'pending';
+  // 兼容历史数据：'fail' → 'failed'
+  if (status === 'fail') status = 'failed';
   const idx = String(shot.index).padStart(2, '0');
   if (status === 'pending' && waitlistSet.has(idx)) status = 'waitlisted';
   return status;
@@ -2607,6 +2662,8 @@ async function _refreshQueueState() {
     const q = await fetch(`${epBase}/video-queue.json?_t=${Date.now()}`).then(r => r.ok ? r.json() : null);
     if (window.__sd2) window.__sd2.videoQueue = q;
   } catch {}
+  // 顺手刷新依赖状态徽章（不触发心跳，只是后端 on-demand 计算）
+  try { await _refreshDepStatus(); } catch (_) {}
   renderVideos();
 }
 async function onQueueAdd(shot) {
@@ -2684,6 +2741,77 @@ async function onQueueRemove(shot) {
     showToast(`已移出候补池: shot-${shot}`, 'success');
   } catch (e) { showToast(`移出失败: ${e.message}`, 'error'); }
 }
+
+// done 态：删除当前视频并重新加入候补池（消耗积分重新生成）
+async function onRegenerate(shot) {
+  const sd2 = window.__sd2 || {};
+  const target = (sd2.shots || []).find(s => String(s.index).padStart(2,'0') === String(shot).padStart(2,'0'));
+  const vt = (target && target.videoTask) || {};
+  const oldFile = vt.videoFile || '—';
+  const oldCredit = vt.creditCount || 0;
+  const msg = `⚠️ 确认重新生成 shot-${shot} 的视频？\n\n`
+    + `当前视频：${oldFile}\n`
+    + `上次消耗积分：${oldCredit}\n\n`
+    + `操作后：当前视频引用将被清空（文件不删）→ 重新加入候补池 → 等待调度器提交 → 消耗积分重新生成。\n\n`
+    + `确认继续？`;
+  if (!confirm(msg)) return;
+  try {
+    const shotPath = `projects/${currentProject}/outputs/${currentEpisode}/06-shots/shot-${String(shot).padStart(2,'0')}.json`;
+    const full = await fetch(`${shotPath}?_t=${Date.now()}`).then(r => r.json());
+    const oldVt = full.videoTask || {};
+    // 归零 videoTask，保留引擎/模型偏好 + failHistory
+    full.videoTask = {
+      engine: oldVt.engine || '', modelName: oldVt.modelName || '',
+      taskId: '', status: 'pending', queueStatus: '', queueIdx: null,
+      videoUrl: '', videoFile: '', tailFrame: '', failReason: '',
+      creditCount: null, submittedAt: '', completedAt: '',
+      failHistory: oldVt.failHistory || [],
+    };
+    await fetch('/api/save-json', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ path: shotPath, content: full }),
+    });
+    // 加入候补池
+    await _callQueueAPI('add', { shot });
+    await _refreshQueueState();
+    showToast(`🔄 shot-${shot} 已清空视频引用并加入候补池`, 'success');
+  } catch (e) { showToast(`重新生成失败: ${e.message}`, 'error'); }
+}
+// 置顶：把指定 shot 移到 waitList 队首。blocked=true 时先弹确认。
+async function onQueueTop(shot, blocked) {
+  const q = (window.__sd2 || {}).videoQueue || {};
+  const wl = (q.waitList || []).slice();
+  const pad = String(shot).padStart(2,'0');
+  const idx = wl.findIndex(e => String(e.shot).padStart(2,'0') === pad);
+  if (idx <= 0) return; // 不存在或已在首位
+  if (blocked) {
+    const info = ((q.depStatus || {})[`shot-${pad}`]) || {};
+    const ok = confirm(`⚠ shot-${pad} 当前被阻塞：${info.reason || '依赖未就绪'}。\n\n置顶后 scheduler 仍会跳过它直到依赖满足。确定继续置顶吗？`);
+    if (!ok) return;
+  }
+  const [item] = wl.splice(idx, 1);
+  wl.unshift(item);
+  try {
+    await _callQueueAPI('update', { patch: { waitList: wl } });
+    await _refreshQueueState();
+    // 顺带刷新依赖状态（不等心跳）
+    try { await _refreshDepStatus(); } catch (_) {}
+    renderVideoQueue();
+    showToast(`⬆ shot-${pad} 已置顶${blocked ? '（但仍被依赖阻塞）' : '，下次心跳最先提交'}`, blocked ? 'warn' : 'success');
+  } catch (e) { showToast(`置顶失败: ${e.message}`, 'error'); }
+}
+
+// 即时刷新候补池依赖状态（调用 /api/video-queue/deps，不触发心跳）
+async function _refreshDepStatus() {
+  try {
+    const r = await _callQueueAPI('deps', {});
+    if (r && r.depStatus) {
+      const q = (window.__sd2 || {}).videoQueue || {};
+      q.depStatus = r.depStatus;
+      if (r.skipLog) q.skipLog = r.skipLog;
+    }
+  } catch (_) {}
+}
 async function onQueueTogglePaused() {
   const q = (window.__sd2 || {}).videoQueue || {};
   try {
@@ -2714,7 +2842,6 @@ function renderVideoFilterBar() {
     all: shots.length,
     done: 0, generating: 0, waitlisted: 0, pending: 0, failed: 0,
     ready: 0,  // 无首帧依赖 OR 首帧已就绪且尚未提交
-    needsRework: 0,  // 失败/卸责被标记需分镜师优化
   };
   shots.forEach(s => {
     const st = _shotDisplayStatus(s, waitlistSet);
@@ -2728,8 +2855,7 @@ function renderVideoFilterBar() {
       const dep = _shotTailDepStatus(s);
       if (dep.tailReady) counts.ready++;
     }
-    // needsRework: failed/stuck 且 videoTask.needsRework=true
-    if ((st === 'failed' || st === 'stuck') && (s.videoTask || {}).needsRework) counts.needsRework++;
+    // needsRework 已合并到 failed 计数中，不再单独统计
   });
 
   const curr = window.__videoFilter || 'all';
@@ -2740,8 +2866,7 @@ function renderVideoFilterBar() {
     { key: 'waitlisted',  label: `📋 候补 ${counts.waitlisted}`, color: 'purple' },
     { key: 'ready',       label: `⚡ 可立即提交 ${counts.ready}`, color: 'gold' },
     { key: 'pending',     label: `⬜ 待处理 ${counts.pending}`, color: '' },
-    { key: 'failed',      label: `❌ 失败/卡死 ${counts.failed}`, color: 'red' },
-    { key: 'needsRework', label: `⚠️ 需返工 ${counts.needsRework}`, color: 'red' },
+    { key: 'failed',      label: `❌ 失败 ${counts.failed}`, color: 'red' },
   ];
   el.innerHTML = defs.map(d => {
     const active = d.key === curr;
@@ -2762,9 +2887,6 @@ function _matchVideoFilter(shot, filter, waitlistSet) {
   if (filter === 'waitlisted') return st === 'waitlisted';
   if (filter === 'pending') return st === 'pending';
   if (filter === 'failed') return st === 'failed' || st === 'stuck';
-  if (filter === 'needsRework') {
-    return (st === 'failed' || st === 'stuck') && !!((shot.videoTask || {}).needsRework);
-  }
   if (filter === 'ready') {
     // 必须是 pending 态 + 首帧依赖已就绪（无依赖或已就绪）
     if (st !== 'pending') return false;

@@ -71,6 +71,8 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
                 return self._handle_queue_update()
             if self.path == '/api/video-queue/trigger':
                 return self._handle_queue_trigger()
+            if self.path == '/api/video-queue/deps':
+                return self._handle_queue_deps()
             if self.path == '/api/scheduler/config':
                 return self._handle_scheduler_config()
             self._send_json(404, {'ok': False, 'error': 'unknown endpoint'})
@@ -207,6 +209,21 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         import datetime as _dt
         return _dt.datetime.now().astimezone().isoformat(timespec='seconds')
 
+    def _audit_log_queue(self, project, ep, msg):
+        """把 waitList 手工变更（add/remove/update）写入与 scheduler 共用的日志文件，
+        便于事后对账"shot-XX 怎么没了"这种问题。非关键路径，静默失败。"""
+        try:
+            rel = f'projects/{project}/outputs/{ep}/video-scheduler.log'
+            abs_path = _safe_resolve(rel)
+            if abs_path is None:
+                return
+            os.makedirs(os.path.dirname(abs_path), exist_ok=True)
+            line = f"[{self._now_iso()}] [dashboard] {msg}\n"
+            with open(abs_path, 'a', encoding='utf-8') as f:
+                f.write(line)
+        except Exception:
+            pass
+
     # -------- /api/video-queue/add --------
     def _handle_queue_add(self):
         """payload: { project, ep, shot, model?, ratio?, note? }"""
@@ -242,6 +259,7 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         # 去重：同 shot 已在 waitList 则跳过
         for e in q.get('waitList', []):
             if str(e.get('shot','')).zfill(2) == shot:
+                self._audit_log_queue(project, ep, f"add shot-{shot} → dedup (already in waitList, waitList={len(q['waitList'])})")
                 return self._send_json(200, {'ok': True, 'dedup': True, 'waitList': q['waitList']})
         entry = {
             'shot': shot,
@@ -250,8 +268,11 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
             'note': p.get('note') or '',
             'addedAt': self._now_iso(),
         }
+        before = len(q.get('waitList', []) or [])
         q.setdefault('waitList', []).append(entry)
         self._save_queue(abs_path, q)
+        note = entry.get('note') or ''
+        self._audit_log_queue(project, ep, f"add shot-{shot} (model={entry['model'] or '-'}, note={note or '-'}) waitList {before} → {len(q['waitList'])}")
         return self._send_json(200, {'ok': True, 'entry': entry, 'waitList': q['waitList']})
 
     # -------- /api/video-queue/remove --------
@@ -268,9 +289,14 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         q = self._load_queue(abs_path)
         wl = q.get('waitList', [])
         new_wl = [e for e in wl if str(e.get('shot','')).zfill(2) != shot]
+        removed = len(wl) - len(new_wl)
         q['waitList'] = new_wl
         self._save_queue(abs_path, q)
-        return self._send_json(200, {'ok': True, 'removed': len(wl) - len(new_wl), 'waitList': new_wl})
+        if removed > 0:
+            self._audit_log_queue(project, ep, f"remove shot-{shot} (hit) waitList {len(wl)} → {len(new_wl)}")
+        else:
+            self._audit_log_queue(project, ep, f"remove shot-{shot} (not found, no-op) waitList={len(wl)}")
+        return self._send_json(200, {'ok': True, 'removed': removed, 'waitList': new_wl})
 
     # -------- /api/video-queue/update --------
     def _handle_queue_update(self):
@@ -284,10 +310,54 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         if abs_path is None:
             return self._send_json(403, {'ok': False, 'error': 'path out of projects/'})
         q = self._load_queue(abs_path)
+        before_wl = [str(e.get('shot','')).zfill(2) for e in (q.get('waitList') or [])]
+        changed_keys = []
         for k in ('maxInflight','paused','defaultModel','defaultRatio','waitList'):
-            if k in patch: q[k] = patch[k]
+            if k in patch:
+                q[k] = patch[k]
+                changed_keys.append(k)
         self._save_queue(abs_path, q)
+        # 审计日志：若 waitList 有变更，详细记录顺序 diff（置顶、排序等）
+        if 'waitList' in patch:
+            after_wl = [str(e.get('shot','')).zfill(2) for e in (q.get('waitList') or [])]
+            if before_wl != after_wl:
+                # 识别首位变化（置顶最常见）
+                head_before = before_wl[0] if before_wl else '-'
+                head_after = after_wl[0] if after_wl else '-'
+                extra = ''
+                if head_before != head_after and head_after in before_wl:
+                    extra = f' [top→shot-{head_after}]'
+                self._audit_log_queue(project, ep, f"update waitList{extra} len {len(before_wl)} → {len(after_wl)}, order: {','.join(before_wl)} → {','.join(after_wl)}")
+        other_keys = [k for k in changed_keys if k != 'waitList']
+        if other_keys:
+            kv = ', '.join(f'{k}={q[k]!r}' for k in other_keys)
+            self._audit_log_queue(project, ep, f"update config: {kv}")
         return self._send_json(200, {'ok': True, 'queue': q})
+
+    # -------- /api/video-queue/deps --------
+    def _handle_queue_deps(self):
+        """payload: { project, ep }
+        即时计算当前 waitList 中每一镜的依赖就绪状态（不修改 queue 文件）。
+        复用 video_scheduler.compute_waitlist_deps。用于 dashboard 在不触发心跳
+        的前提下即时刷新 🔒/🟢 徽章（例如刚点完"置顶"想立刻看到效果）。
+        返回：{ ok, depStatus: { "shot-XX": {ready, blocker, tailNum, fromShot, reason} } }
+        """
+        p = self._read_body_json()
+        project = p.get('project'); ep = p.get('ep')
+        if not (project and ep):
+            return self._send_json(400, {'ok': False, 'error': 'missing project/ep'})
+        rel, abs_path = self._queue_file(project, ep)
+        if abs_path is None:
+            return self._send_json(403, {'ok': False, 'error': 'path out of projects/'})
+        q = self._load_queue(abs_path)
+        try:
+            # 延迟 import 避免 serve.py 启动时依赖 dreamina 等
+            sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+            from video_scheduler import compute_waitlist_deps  # type: ignore
+            deps = compute_waitlist_deps(project, ep, q.get('waitList') or [])
+            return self._send_json(200, {'ok': True, 'depStatus': deps, 'skipLog': q.get('skipLog') or []})
+        except Exception as e:
+            return self._send_json(500, {'ok': False, 'error': f'compute deps failed: {e}'})
 
     # -------- /api/video-queue/trigger --------
     def _handle_queue_trigger(self):
