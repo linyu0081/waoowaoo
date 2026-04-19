@@ -123,8 +123,9 @@
     - 视频引擎：workrally（默认）或 dreamina，用户在 `~video` 指令时明确
     - 所有产出使用 JSON 结构化格式；每集维护 manifest.json 作为 dashboard.html 数据源
     - **成本追踪（强制）**：每次调用 AI 生图 / 生视频**后**必须调用 `scripts/cost-logger.py` 记一笔，否则 dashboard 上的次数和时长会失真。
+        - **视频自动记账**：`scripts/video_scheduler.py`（心跳）和 `scripts/refresh_video_status.py` 在下载视频成功时会**自动**调用 cost-logger（按 `taskId` 幂等，重复调用 `[skip]`），所以走这两条路径**无需再手动记**。仅在绕开它们直接操作时才需要手动调。
         - 生图：`python scripts/cost-logger.py image --project <项目> --episode <epNN> --target <char-xx/scene-xx/prop-xx> --model <模型名> [--task-id xxx] [--note "..."]`
-        - 生视频：`python scripts/cost-logger.py video --project <项目> --episode <epNN> --target shot-XX --model <模型id/名> --duration <实际秒数> [--task-id xxx] [--note "..."]`
+        - 生视频：`python scripts/cost-logger.py video --project <项目> --episode <epNN> --target shot-XX --model <模型id/名> --duration <实际秒数> --task-id <submit_id> [--note "..."]`（强烈建议填 `--task-id`，脚本据此幂等去重）
         - 模型名约定：workrally 贝宝1/贝宝2 → `nano-banana1` / `nano-banana2`；视频模型直接填 provider id（2/1/202/18）或别名
         - 同一 shot 被重复生视频，脚本自动识别为 `isRegenerate=true`，不计入去重成片数与总时长
         - 流水落盘：`projects/<项目>/outputs/<epNN>/07-costs.json`；同时回写 `manifest.stages.art/video` 供 dashboard 读取

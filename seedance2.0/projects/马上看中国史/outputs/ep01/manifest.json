@@ -54,10 +54,10 @@
       "failed": 0,
       "generating": 1,
       "pending": 87,
-      "videoGenCount": 1,
-      "videoUniqueShots": 0,
-      "videoTotalDurationSec": 0,
-      "videoTotalDurationMin": 0.0
+      "videoGenCount": 10,
+      "videoUniqueShots": 10,
+      "videoTotalDurationSec": 91,
+      "videoTotalDurationMin": 1.52
     }
   },
   "assets": {

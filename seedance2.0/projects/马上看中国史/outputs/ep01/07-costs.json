@@ -3,20 +3,30 @@
   "project": "马上看中国史",
   "episode": "ep01",
   "createdAt": "2026-04-18T23:07:22+0800",
-  "updatedAt": "2026-04-18T23:07:51+0800",
+  "updatedAt": "2026-04-19T09:15:17+0800",
   "backfillNote": "本集启用成本追踪前，历史生图记录按 assets/images/ 现存 PNG + _backup/ 备份 PNG 逐一补录，总计 45 次（37 次成功保留 + 8 次重生后废弃）。实际重生次数可能略高于此数，以后续逐次调用 cost-logger 为准。",
   "summary": {
     "imageGenCount": 45,
-    "videoGenCount": 0,
-    "videoUniqueShots": 0,
-    "videoTotalDurationSec": 0,
-    "videoTotalDurationMin": 0.0
+    "videoGenCount": 10,
+    "videoUniqueShots": 10,
+    "videoTotalDurationSec": 91,
+    "videoTotalDurationMin": 1.52
   },
   "byModel": {
     "nano-banana2": {
       "imageCount": 45,
       "videoCount": 0,
       "videoDurationSec": 0
+    },
+    "seedance2.0fast": {
+      "imageCount": 0,
+      "videoCount": 9,
+      "videoDurationSec": 83
+    },
+    "seedance2.0": {
+      "imageCount": 0,
+      "videoCount": 1,
+      "videoDurationSec": 8
     }
   },
   "records": [
@@ -334,6 +344,106 @@
       "model": "nano-banana2",
       "at": "2026-04-18T23:07:51+0800",
       "note": "历史补录-重生版本(scene-洛阳废墟街道.v2.old.png)"
+    },
+    {
+      "type": "video",
+      "target": "shot-00",
+      "model": "seedance2.0fast",
+      "durationSec": 15,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:03:52+0800",
+      "note": "历史补录: done@2026-04-19; credit=75",
+      "taskId": "9840611b-9534-423b-90a8-98b37f0c256e"
+    },
+    {
+      "type": "video",
+      "target": "shot-02",
+      "model": "seedance2.0",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=64",
+      "taskId": "055774bf-4424-4b5e-9cd4-ff581f83504a"
+    },
+    {
+      "type": "video",
+      "target": "shot-07",
+      "model": "seedance2.0fast",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=70",
+      "taskId": "ad9d255a-1da7-4a72-99ae-52df881f5606"
+    },
+    {
+      "type": "video",
+      "target": "shot-14",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=30",
+      "taskId": "fe1c2155-da1e-4de5-a08f-2152c13ead02"
+    },
+    {
+      "type": "video",
+      "target": "shot-18",
+      "model": "seedance2.0fast",
+      "durationSec": 5,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=25",
+      "taskId": "bc109795-a306-4ef1-aabc-560a59ff4b03"
+    },
+    {
+      "type": "video",
+      "target": "shot-19",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=40",
+      "taskId": "d08d195c-242e-4b15-8a8a-2f8e3a28a055"
+    },
+    {
+      "type": "video",
+      "target": "shot-28",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=60",
+      "taskId": "8bef9672-e339-4172-a24a-29de9f790789"
+    },
+    {
+      "type": "video",
+      "target": "shot-53",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:04:00+0800",
+      "note": "历史补录: done; credit=30",
+      "taskId": "1491cc3f-4236-4820-90ef-be1236916e50"
+    },
+    {
+      "type": "video",
+      "target": "shot-29",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:06:46+0800",
+      "note": "auto: scheduler download@2026-04-19T09:06:46+08:00; credit=50",
+      "taskId": "8828efba-280a-470d-90bd-9bb3eaace79c"
+    },
+    {
+      "type": "video",
+      "target": "shot-31",
+      "model": "seedance2.0fast",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-19T09:15:17+0800",
+      "note": "auto: scheduler download@2026-04-19T09:15:17+08:00; credit=35",
+      "taskId": "3c91d9e9-8c0d-4fcd-a129-c68ed6089a35"
     }
   ]
 }

@@ -521,6 +521,8 @@ ffmpeg -sseof -0.1 \
 
 ### 第 6 步 · 记账（强制）
 
+> ⚡ **2026-04 更新**：`video_scheduler.py` 心跳和 `refresh_video_status.py` 在**下载视频成功**的同一时刻会**自动**调用 `cost-logger.py video`（基于 `taskId` 幂等，重复调用会 `[skip]`）。所以走心跳/refresh 路径**无需再手动记一笔**；仅在你绕开这两个脚本直接操作时才需要手动调。
+
 读取 shot-NN.json 的 titleBar 得到 duration（秒），然后：
 
 ```bash
@@ -536,6 +538,7 @@ python scripts/cost-logger.py video \
 
 > - `--model` 统一填 `dreamina-seedance2.0`（与 workrally 区分）
 > - 同一 shot 重复调用脚本会自动识别 `isRegenerate=true`，不计入去重成片数与总时长
+> - **`--task-id` 必填**：脚本按 `taskId` 幂等去重，重复提交会打印 `[skip]` 且不改动 07-costs.json
 > - 失败任务不登记；仅在视频真正下载 + 尾帧成功 时登记
 
 ### 第 6.5 步 · 更新 videoTask 为完成状态

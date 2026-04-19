@@ -63,6 +63,36 @@ def grab_tail(mp4: str, jpg: str) -> bool:
     except Exception:
         return False
 
+
+def _parse_duration_from_title(title_bar: str) -> int:
+    m = re.search(r"(\d+)\s*秒", title_bar or "")
+    return int(m.group(1)) if m else 15
+
+
+def _cost_log_video(idx: str, vt: dict, title_bar: str):
+    """下载成功后调 cost-logger 记账（taskId 幂等）。"""
+    try:
+        duration = _parse_duration_from_title(title_bar)
+        model = vt.get("modelName") or "unknown"
+        task_id = vt.get("taskId") or ""
+        credit = vt.get("creditCount")
+        note = f"auto: refresh download@{now_iso()}"
+        if credit is not None:
+            note += f"; credit={credit}"
+        cmd = ["python3", f"{PROJECT_ROOT}/scripts/cost-logger.py", "video",
+               "--project", PROJECT, "--episode", EP,
+               "--target", f"shot-{idx}",
+               "--model", str(model),
+               "--duration", str(duration),
+               "--note", note]
+        if task_id:
+            cmd += ["--task-id", task_id]
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        out = (r.stdout or "").strip() or (r.stderr or "").strip()
+        print(f"    💰 cost-log: {out}")
+    except Exception as e:
+        print(f"    ⚠️  cost-log exception: {e}")
+
 def refresh_shot(path: str):
     shot = json.load(open(path))
     vt = shot.get("videoTask") or {}
@@ -101,6 +131,8 @@ def refresh_shot(path: str):
             vt["queueIdx"] = None
             vt["completedAt"] = now_iso()
             print(f"  ✅ shot-{idx} done ({os.path.getsize(mp4)//1024}KB)")
+            # 自动记账（taskId 幂等）
+            _cost_log_video(idx, vt, shot.get("titleBar", ""))
         else:
             print(f"  ⚠️  shot-{idx} url ok but download failed")
     elif gs in ("fail", "failed") or (fail and not gs):

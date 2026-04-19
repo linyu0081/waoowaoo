@@ -119,6 +119,100 @@ def grab_tail(mp4: str, jpg: str) -> bool:
         return False
 
 
+def _parse_duration_from_title(title_bar: str) -> int:
+    """从 titleBar 解析时长（兜底 15 秒）。与 video_submit.parse_duration 同逻辑。"""
+    m = re.search(r"(\d+)\s*秒", title_bar or "")
+    return int(m.group(1)) if m else 15
+
+
+def cost_log_video(project, ep, idx, vt, log=print):
+    """
+    下载成功 = 真正出视频 = 即梦已扣积分，自动记一笔到 07-costs.json。
+    幂等由 cost-logger.py 基于 taskId 保证，这里只负责组参数。
+    vt: 该镜 videoTask 字典（应已含 modelName / taskId）
+    """
+    try:
+        title_bar = ""
+        shot_fp = f"{PROJECT_ROOT}/projects/{project}/outputs/{ep}/06-shots/shot-{idx}.json"
+        if os.path.exists(shot_fp):
+            try:
+                title_bar = json.load(open(shot_fp)).get("titleBar", "")
+            except Exception:
+                pass
+        duration = _parse_duration_from_title(title_bar)
+        model = vt.get("modelName") or "unknown"
+        task_id = vt.get("taskId") or ""
+        credit = vt.get("creditCount")
+        note = f"auto: scheduler download@{now_iso()}"
+        if credit is not None:
+            note += f"; credit={credit}"
+        cmd = ["python3", f"{PROJECT_ROOT}/scripts/cost-logger.py", "video",
+               "--project", project, "--episode", ep,
+               "--target", f"shot-{idx}",
+               "--model", str(model),
+               "--duration", str(duration),
+               "--note", note]
+        if task_id:
+            cmd += ["--task-id", task_id]
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        out = (r.stdout or "").strip() or (r.stderr or "").strip()
+        if r.returncode == 0:
+            log(f"  💰 cost-log shot-{idx}: {out}")
+        else:
+            log(f"  ⚠️  cost-log shot-{idx} rc={r.returncode}: {out}")
+    except Exception as e:
+        log(f"  ⚠️  cost-log shot-{idx} exception: {e}")
+
+
+def _apply_transitions_to_history(q, transitions, project, ep, log=print):
+    """
+    把 refresh_generating 返回的 transitions 回填到 video-queue.json 的 history[]。
+    规则：
+      - 从 shot-json 取 taskId，在 history 里找最后一条 submit_id==taskId 且 result=='submitted' 的记录
+      - 把 result 改为 'done' / 'failed' / 'stuck'，补 endAt、durationSec（failed/stuck 留 0）
+      - 找不到匹配（比如历史没记提交）就 skip（非致命）
+    """
+    if not transitions:
+        return 0
+    p = paths(project, ep)
+    hist = q.get("history", [])
+    updated = 0
+    for state, idx in transitions:
+        shot_fp = f"{p['shots_dir']}/shot-{idx}.json"
+        if not os.path.exists(shot_fp):
+            continue
+        try:
+            shot = json.load(open(shot_fp))
+        except Exception:
+            continue
+        vt = shot.get("videoTask") or {}
+        tid = vt.get("taskId")
+        if not tid:
+            continue
+        # 从后往前找第一条匹配的 submitted 记录（同一 shot 可能多次提交）
+        target = None
+        for h in reversed(hist):
+            if h.get("submit_id") == tid and h.get("result") == "submitted":
+                target = h
+                break
+        if target is None:
+            continue
+        target["result"] = state  # 'done' / 'failed' / 'stuck'
+        target["endAt"] = now_iso()
+        if state == "done":
+            title = shot.get("titleBar", "")
+            target["durationSec"] = _parse_duration_from_title(title)
+        else:
+            target.setdefault("durationSec", 0)
+            fr = vt.get("failReason")
+            if fr:
+                target["reason"] = fr
+        updated += 1
+    if updated:
+        log(f"  📝 history 回填 {updated} 条终态")
+    return updated
+
+
 def refresh_generating(project, ep, log):
     """扫描所有 generating 镜，更新状态。返回 (inflight_count, transitions)"""
     p = paths(project, ep)
@@ -161,6 +255,8 @@ def refresh_generating(project, ep, log):
                 })
                 transitions.append(("done", idx))
                 log(f"  ✅ shot-{idx} done ({os.path.getsize(mp4)//1024}KB)")
+                # 自动记账（taskId 幂等，重复调用安全）
+                cost_log_video(project, ep, idx, vt, log=log)
             else:
                 log(f"  ⚠️  shot-{idx} url ready but download failed; keep generating")
                 inflight += 1
@@ -315,6 +411,8 @@ def _heartbeat_impl(project, ep, p, log):
 
     # 1. 刷新 generating 状态
     inflight, transitions = refresh_generating(project, ep, log)
+    # 1.5. 把 done/failed/stuck 的终态回写到 queue.history（便于审计对账）
+    _apply_transitions_to_history(q, transitions, project, ep, log=log)
     max_inflight = int(q.get("maxInflight", 1))
     log(f"inflight={inflight}, maxInflight={max_inflight}, waitList={len(q.get('waitList',[]))}")
 

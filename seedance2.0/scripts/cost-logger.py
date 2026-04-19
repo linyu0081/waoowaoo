@@ -119,6 +119,13 @@ def update_manifest(project, episode, data):
 
 def cmd_image(args):
     data = load_costs(args.project, args.episode)
+    # 幂等：同一 taskId 已记过则跳过
+    if args.task_id:
+        for r in data.get("records", []):
+            if r.get("type") == "image" and r.get("taskId") == args.task_id:
+                print(f"[skip] image already logged for taskId={args.task_id} "
+                      f"(target={r.get('target')}); no-op")
+                return
     rec = {
         "type": "image",
         "target": args.target,
@@ -139,6 +146,13 @@ def cmd_image(args):
 def cmd_video(args):
     data = load_costs(args.project, args.episode)
     target = args.target
+    # 幂等：同一 taskId 已记过则直接跳过（防止自动钩子 + 人工补录重复扣数）
+    if args.task_id:
+        for r in data.get("records", []):
+            if r.get("type") == "video" and r.get("taskId") == args.task_id:
+                print(f"[skip] video already logged for taskId={args.task_id} "
+                      f"(target={r.get('target')}); no-op")
+                return
     is_regenerate = any(
         r.get("type") == "video" and r.get("target") == target
         for r in data.get("records", [])

@@ -513,6 +513,8 @@ description: WorkRally CLI (旧名 zencli) 调用技能包。用于 AI 生图、
         - 生视频：`python scripts/cost-logger.py video --project <项目> --episode <epNN> --target shot-XX --model <providerId> --duration <实际秒数> --task-id <taskId> [--note "..."]`
           - 视频模型直接填 provider id（2/1/202/18）
           - 同一 shot 重复生视频，脚本会自动识别为 isRegenerate，不计入去重成片数与总时长
+          - ⚡ **走 dreamina 的视频**：`video_scheduler.py`（心跳）/ `refresh_video_status.py` 下载成功时会自动调 cost-logger（按 taskId 幂等），**无需手动记**
+        - `--task-id` 强烈建议填：脚本据此幂等，重复调用会 `[skip]` 不改 07-costs
         - 失败的任务不要登记；只在下载成功（拿到图/视频文件）后登记
    10. ⚠️ 品牌升级兼容说明：旧命令 `zencli` 和旧环境变量 `ZENSTUDIO_API_KEY` 仍可用（过渡期），
        但新项目/新脚本请优先使用 `workrally` 和 `WORKRALLY_API_KEY`

@@ -22,16 +22,18 @@
     "{{scene:洛阳废墟街道}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "79e28a44-4451-426a-ae26-607874208210",
+    "status": "generating",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
     "videoFile": "",
     "tailFrame": "",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
+    "creditCount": 25,
+    "submittedAt": "2026-04-19T09:15:20+08:00",
     "completedAt": ""
   }
 }
