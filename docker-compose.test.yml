@@ -21,11 +21,18 @@ services:
   redis:
     image: redis:7-alpine
     container_name: waoowaoo-test-redis
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?REDIS_PASSWORD is required (see .env.example)}
     ports:
       - "6380:6379"
-    command: ["redis-server", "--appendonly", "no"]
+    command:
+      - "redis-server"
+      - "--appendonly"
+      - "no"
+      - "--requirepass"
+      - "${REDIS_PASSWORD}"
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping | grep -q PONG"]
       interval: 5s
       timeout: 5s
       retries: 30

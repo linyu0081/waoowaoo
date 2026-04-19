@@ -27,13 +27,21 @@ services:
     image: redis:7-alpine
     container_name: waoowaoo-redis
     restart: unless-stopped
+    # REDIS_PASSWORD 通过 .env 注入；.env.example 提供默认值，生产环境必须覆盖为自定义强密码
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?REDIS_PASSWORD is required (see .env.example)}
     ports:
       - "16379:6379"
     volumes:
       - redis_data:/data
-    command: ["redis-server", "--appendonly", "yes"]
+    command:
+      - "redis-server"
+      - "--appendonly"
+      - "yes"
+      - "--requirepass"
+      - "${REDIS_PASSWORD}"
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping | grep -q PONG"]
       interval: 5s
       timeout: 5s
       retries: 30
@@ -72,7 +80,7 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: "6379"
       REDIS_USERNAME: ""
-      REDIS_PASSWORD: ""
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?REDIS_PASSWORD is required (see .env.example)}
       REDIS_TLS: ""
       # 存储：默认 MinIO（S3 兼容）
       STORAGE_TYPE: minio

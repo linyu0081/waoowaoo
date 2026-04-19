@@ -46,6 +46,9 @@ export function loadTestEnv() {
   setIfMissing('DATABASE_URL', 'mysql://root:root@127.0.0.1:3307/waoowaoo_test')
   setIfMissing('REDIS_HOST', '127.0.0.1')
   setIfMissing('REDIS_PORT', '6380')
+  // 测试 Redis 同样启用 requirepass（见 docker-compose.test.yml），此处默认值与 .env.example 保持一致。
+  // CI/生产测试环境可通过环境变量 REDIS_PASSWORD 覆盖。
+  setIfMissing('REDIS_PASSWORD', 'bFjMyN8Nif8T7AMTs5TacpBS')
 }
 
 loadTestEnv()
