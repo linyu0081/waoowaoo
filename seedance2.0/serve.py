@@ -17,7 +17,7 @@ import json
 import shutil
 import cgi
 import re
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import unquote
 
 
@@ -678,7 +678,9 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
     os.chdir(ROOT)
-    httpd = HTTPServer(('0.0.0.0', port), NoCacheHandler)
+    httpd = ThreadingHTTPServer(('0.0.0.0', port), NoCacheHandler)
+    # 允许请求线程随主进程退出，避免 Ctrl+C 后残留线程卡住端口释放
+    httpd.daemon_threads = True
     print(f"[seedance2.0] Serving {ROOT} on http://0.0.0.0:{port}")
     print(f"[seedance2.0] Dashboard: http://localhost:{port}/dashboard.html")
     print(f"[seedance2.0] API: POST /api/save-json  /api/upload  /api/video-queue/{{add,remove,update,trigger}}  /api/scheduler/config")
