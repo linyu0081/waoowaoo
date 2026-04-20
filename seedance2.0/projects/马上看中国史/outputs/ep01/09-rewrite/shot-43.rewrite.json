@@ -1,0 +1,24 @@
+{
+  "shotId": "43",
+  "status": "rewritten",
+  "verdict": "pre-TNS 命中：画面描述把台词中的'禁军/作战/契丹军队攻入/后晋灭亡'做了身体动作强化（爆哭+泪水大颗喷涌+堵嘴压变形），战争+政权崩溃+暴力动作组合触发风控。去掉对敏感词的画面呼应并降低肢体暴力密度即可通过。",
+  "detectedRisks": [
+    {"category": "F类高危组合（军事+灭亡）", "hit": "继续沉稳讲述历史叙事", "fixedTo": "继续沉稳叙事"},
+    {"category": "E类暴力暗示动作", "hit": "右手手掌直接堵在马前卒张大的嘴上阻止哭声继续扩散", "fixedTo": "伸出右手手掌覆上马前卒的嘴稳稳按住止住声音"},
+    {"category": "E类身体夸张密度", "hit": "崩溃爆哭双手举过头顶张大嘴哭喊 / 双眼泪水仍在眼角大颗大颗喷涌 / 嘴型被手掌压扁变形", "fixedTo": "崩溃表情双手举过头顶张大嘴哭喊 / 眼眶含泪 / 画面在这一按一哭的反差中定格"},
+    {"category": "E类叠词瘦身", "hit": "后晋就亡了四字直接从抓头状态升级为崩溃爆哭", "fixedTo": "听到尾句瞬间从抓头状态转为崩溃表情"}
+  ],
+  "rewrittenFields": {
+    "mainPrompt": "见 shot-43.json"
+  },
+  "preservedFields": ["titleBar","mount","camera","compulsoryDeclaration","qualityBaseline","openingFrame","closingFrame","connection","transition","assetRefs","dialogue(台词逐字)"],
+  "submitConfig": {
+    "engine": "workrally",
+    "model": "Zen-SD2.0",
+    "mode": "SubjectToVideo",
+    "promptMode": "full",
+    "pinned": true,
+    "note": "mainPrompt-rewritten-20260420T14(war-violence-desensitize)"
+  },
+  "checklistPassed": ["起手句原样","台词原文逐字保留","A类0命中","B类0命中","C类0命中","D类0命中","E类降敏","F类组合拆解","三段骨架","长度≤450","挂载未动"]
+}

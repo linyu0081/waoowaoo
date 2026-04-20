@@ -110,7 +110,13 @@ skills: storyboard-planning-skill, asset-map-skill, storyboard-writing-skill
    - 首镜 connection === ""
    - 末镜 transition === ""
    - 整镜拼接后字符数 ≤ 2000
-   - 违规则重试该镜一次并在 user 末尾追加 "上一版违规项：..."，仍失败则保留并警告导演
+   - **sceneContinuity 字段必填**（每镜都要有，不允许省略），且满足：
+     - `inheritFromPrev` 为 boolean
+     - `inheritReason` 是 `opening-shot` / `action-continuation` / `has-scene-ref` / `same-scene-no-ref` 四选一
+     - 首镜（index===0）必须 `inheritFromPrev===false` 且 `inheritReason==="opening-shot"`
+   - **R1 承接必标**：若 `sceneContinuity.inheritFromPrev===true`，mount 必须以 `｜本视频以@图片N为首帧` 结尾，且 `@图片N` 在 assetMap 中 `type==="tail-frame"` 且 `fromShot===上一镜index`
+   - **R2 不承接必净**：若 `sceneContinuity.inheritFromPrev===false`，mount 中禁止出现 `本视频以@图片N为首帧`
+   - 违规则重试该镜一次并在 user 末尾追加 "上一版违规项：..."（R1/R2 违规必须在重试提示里点名），仍失败则**拒收该镜**并警告导演要求人工介入，禁止降级通过
 5. 把本镜的 `closingFrame / transition` 存入内存，作为下一镜 `previousContext` 的输入
 
 ### 第五步 · 更新 manifest
@@ -152,6 +158,7 @@ skills: storyboard-planning-skill, asset-map-skill, storyboard-writing-skill
 3. **挂载区规范 v5**：按 `挂载：角色：名@图片N｜场景：名@图片M｜声音：角色名声音@声音K` 编号挂载，所有编号**必须从 `assetMap` 反查**，禁止 skill 自行按顺序分配；段首不写 `@` 前缀；不再挂音效/拟音，`声音：` 只收有声线的角色；当 openingFrame 承接上一镜尾帧时在 mount 末尾追加 `本视频以@图片N为首帧`
 4. **正文规范 v3**：mainPrompt 正文中**角色 / 场景 / 道具全部直接写名字**，不再用 `{{character:名}}` / `{{scene:名}}` / `{{prop:名}}` 包裹；`assetRefs` 数组依然列出完整的三类标签
 5. **集级映射表 v5**：`asset-map.json` 由 asset-map-skill 在逐镜生产前一次性生成并落盘；后续如有新增资产只能追加新编号，禁止修改已有资产的编号以保障历史分镜 mount 有效
-6. **依赖链归档**：有首帧引用的镜必须在前镜 tail-frame 产出后再触发本镜视频生成，无首帧引用的镜可作为独立"首段"并行生成；下游流水线扫 mount 中是否存在 `本视频以@图片N为首帧` 子串即可识别
+6. **依赖链归档**：有首帧引用的镜必须在前镜 tail-frame 产出后再触发本镜视频生成，无首帧引用的镜可作为独立"首段"并行生成；下游流水线**优先读** `sceneContinuity.inheritFromPrev` 字段识别依赖，mount 中 `本视频以@图片N为首帧` 子串作为老数据回退通道
 7. 输出字段的 20 个 key 名固定不得变
 8. 单镜超字数时按 prompt.md 里的"裁剪策略"顺序删冗
+9. **首帧承接决策 sceneContinuity 必填**：每镜的 sceneContinuity 由 storyboard-writing-skill 按 2 问决策树机械推导（Q1 分镜师主观判断本镜第一秒是否由上一镜最后一幕开始；Q2 正则扫 mount 里有没有 `场景：…@图片N`）。本 agent 在第四步校验 R1/R2 一致性，违规镜必须重试或拒收，不得放行。依据在 storyboard-writing-skill/SKILL.md §「首帧承接决策（sceneContinuity）」

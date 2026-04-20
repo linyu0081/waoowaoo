@@ -14,7 +14,7 @@
   "qualityRoute": "二维手绘墨线轮廓+军帐内油灯暖金基调与赵匡胤深青中衣冷色块反差+汗水墨线高光+酱板鸭厚涂油亮褐色块+黄色纛旗高饱和厚涂+帐前将士剪影群像+雪地苍白反差；中衣色块与纛旗与剪影群像层次清晰可辨。",
   "imagingStyle": "梦境现实交织+纛旗披身跪伏呐喊，不靠戏剧配乐，靠国产动画墨线勾勒与厚涂色块的酱板鸭实物反馈+纛旗披身+万千跪伏承载历史宿命分量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义梦境现实交织桥段+中华勤学故事二维手绘厚涂兵变大场面；稳帧点：军帐前万千将士剪影群像跪伏齐呼定格。",
+  "reference": "参照：80年代国产二维手绘梦境现实交织厚涂兵变大场面；稳帧点：军帐前万千将士剪影群像跪伏齐呼定格。",
   "microExpressions": "赵匡胤猛然惊醒+上身骤然坐起+满头冷汗+瞪大双眼+大口喘气；低头发现酱板鸭+表情凝固一秒+吓得大惊+手指一松把酱板鸭扔向空中；背后手递纛旗+赵匡胤还未从震惊中回过神；帐前万千将士剪影群像被甲执兵+单膝跪伏+嘴型齐呼给你一个纛旗希望你能熬过这个冬天。",
   "nailLines": "这镜最值钱的不是惊醒，而是国产动画纪录片风下梦境酱板鸭变成现实手中实物+纛旗披身跪伏呐喊的宿命交织。\n酱板鸭必须让观众通过厚涂色块看到油亮实物从手中扔向空中的物理反馈。\n三段画面一惊一扔一跪，不靠配乐，靠厚涂色块实物反馈与明黄纛旗披身承载兵变宿命分量。\n落幅停在跪伏齐呼定格，让下一镜赵匡胤约法四不得训话自然承接。",
   "e15": "【E类本分镜特有】梦境闪回画中画叠加位置：画面顶部中央横跨画面三分之一宽度；画中画大小：占画面对角线四分之一；画中画边框：邵氏复古暖橙偏红虚化边框无硬边缘；画中画内容：上一镜郭威披黄纛旗冷笑闪回一瞬定格约零点五秒以墨线笔触表现；画中画入画方式：从顶部快速闪入与赵匡胤低头发现酱板鸭的震惊瞬间同步；画中画与现实画面叠加出现在第二段转入第三段的过渡时刻。",
@@ -25,16 +25,18 @@
     "{{prop:酱板鸭}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "d5dc3d46-4e87-4792-b210-94218b140f48",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/c7e3c1b7b0db3f51a427bd8f754f7779/69e5550c/video/tos/cn/tos-cn-v-148450/oY1KwJ4TIeJMESA8rQshMRDJAkqUKgjl01izQW/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6253&bt=6253&cs=0&ds=12&ft=5QYTUxhhe6BMyq79WPVJD12Nzj&mime_type=video_mp4&qs=0&rc=OThpNzo3NztkOTQ7NmU6ZEBpanBmdzdrbzxuOjczNDM7M0BfNDYvYC4xNi4xNjBfNjZfYSNpaGBucWdmYGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776633584&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200519440212140731585927C9D",
+    "videoFile": "outputs/ep01/videos/shot-84.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-84.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 60,
+    "submittedAt": "2026-04-20T05:11:48+08:00",
+    "completedAt": "2026-04-20T05:19:46+08:00"
   }
 }

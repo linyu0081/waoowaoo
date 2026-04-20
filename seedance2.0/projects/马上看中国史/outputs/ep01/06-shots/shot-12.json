@@ -8,13 +8,13 @@
   "connection": "接住上一镜禁军出城动势接力物：前进动势延续但方向突然反转合流。",
   "transition": "情绪峰值硬切：李嗣源黄袍加身错愕定格的情绪余韵带过到下一镜皇宫大殿登基龙椅。",
   "dualAnchor": "9:16 强调上下李嗣源被推举的高台垂直构图+黄布披风向上升起；16:9 强调左右禁军叛军合流包围的横向挤压+李嗣源居中。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画历史纪录片风格二维手绘兵变反转大场面镜头，中国传统动画厚涂冷调戏剧质感，8K电影感。\n第一段：镜头承接上一镜禁军出城动势切入国产动画二维手绘中景，画面采用明确墨线勾勒轮廓与厚涂冷调色块，原本向前的禁军队列与迎面而来的贝州叛军以二维手绘剪影群像方式汇合成一体，数百把长刀以墨线勾勒轮廓整齐由原先朝前的方向回转面朝李嗣源方向，空气里手绘粉尘颗粒与喘息声骤停三秒。\n第二段：几个为首的禁军武将以二维手绘造型围上去将李嗣源从马背上扶下簇拥推到一堆军粮麻袋垒成的高台上，一块从军帐剪下的厚涂黄色布料色块被急忙披到李嗣源肩上盖住铠甲色块，李嗣源身体僵住双臂下垂张嘴欲言被士兵举刀呼声淹没，马上以说书腔画外音响起，**马上**：\"没想到，禁军竟然和叛军联起手，拥立李嗣源做皇帝，反要了他李存勖的命。这就是兵变。\"。\n第三段：高台四周士兵以二维手绘剪影群像举刀高呼李嗣源瞪眼错愕定格在画面中央，远景手绘战场尘土色块中一面黄色纛旗被士兵升起迎风鼓起以厚涂明黄色块铺开，旗下二维手绘剪影群像万众拥立的画面定格，黄布披风边缘的毛边与粗织纹理以粗墨线笔触清晰可见。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘兵变反转大场面镜头，中国传统动画厚涂冷调戏剧质感，8K电影感。\n第一段：镜头承接上一镜禁军出城动势切入国产动画二维手绘中景，原本向前的禁军队列与迎面而来的贝州叛军以剪影群像合拢成一体，数百把长刀由原先朝前的方向整齐回转面朝李嗣源方向，空气里手绘粉尘与喘息声骤停三秒。\n第二段：几个为首的禁军武将围上去将李嗣源从马背上扶下簇拥推到一堆军粮麻袋垒成的高台上，一块从军帐剪下的黄色布料急忙披到李嗣源肩上盖住铠甲，李嗣源身体僵住双臂下垂张嘴欲言被举刀呼声淹没，马上以说书腔画外音响起，**马上**：\"没想到，禁军竟然和叛军联起手，拥立李嗣源做皇帝，反要了他李存勖的命。这就是兵变。\"\n第三段：高台四周士兵举刀高呼，李嗣源瞪眼错愕定格在画面中央，远景尘土色块中一面黄色纛旗被士兵升起迎风鼓起，旗下剪影群像万众拥立的画面定格。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "二维手绘禁军与叛军剪影群像合流举刀反向的列阵、李嗣源肩披厚涂黄色布料色块僵住错愕、远景升起的黄色纛旗",
   "qualityRoute": "二维手绘墨线轮廓+战场灰黄尘土与黄布鲜亮厚涂色块反差；铠甲色块与粗布墨线毛边纹理层次清晰可辨。",
   "imagingStyle": "先动后静：合流举刀刹那定格三秒，不靠写实质感，靠国产动画墨线剪影与厚涂色块的速度差直接呈现兵变反转的沉重感。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义兵变黄袍场面+中华勤学故事二维手绘厚涂戏剧时刻；稳帧点：肩披黄色布料的李嗣源定格身形。",
+  "reference": "参照：80年代国产二维手绘兵变黄袍厚涂戏剧时刻；稳帧点：肩披黄色布料的李嗣源定格身形。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是兵变场面，而是国产动画纪录片风下李嗣源被推上高台那一秒的错愕身形。\n黄色披风必须让观众通过厚涂色块看清粗墨线毛边与急忙披上的歪斜感。\n禁军反向举刀要又齐又突然，不靠慢镜头，靠二维手绘剪影群像动作瞬间反转的对比。\n落幅停在错愕定格+远景纛旗升起，让下一镜皇宫登基龙椅权力转场自然递进。",
   "e15": "",
@@ -25,16 +25,44 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7ird1c563v83lapuvrg",
+    "status": "done",
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-12.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-12.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T13:15:49+08:00",
+    "completedAt": "2026-04-20T13:25:04+08:00",
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-李嗣源",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/af3a6134-c0c5-4b29-a838-b728eda6ad29.png",
+        "srcImg": "@图片5"
+      },
+      {
+        "role": "prop-黄色纛旗",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/f9c09035-3422-44cf-b618-3957fc8b5eaf.png",
+        "srcImg": "@图片29"
+      },
+      {
+        "role": "scene-洛阳城门军营",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/0464f3ac-3062-4294-adda-78b6e44ce9ea.png",
+        "srcImg": "@图片19"
+      },
+      {
+        "role": "tail-frame-?",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/e49b93d2-d0da-46ae-a612-303a1a45a19e.jpg",
+        "srcImg": "@图片47"
+      }
+    ],
+    "failHistory": [],
+    "assetId": "lo5486wbp4",
+    "queueStatus": "",
+    "queueIdx": null
   }
 }

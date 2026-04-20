@@ -8,7 +8,7 @@
   "connection": "接住上一镜马前卒抱头摇摆动势接力物：抱头戏精转为被马上快进打断的抗议。",
   "transition": "台词跨镜硬切：马上讲后晋都城开封的尾句直接切入下一镜马上继续讲杜威临阵倒戈画面。",
   "dualAnchor": "9:16 强调两人竖向并列+动作幅度反差；16:9 强调马上居左讲解+马前卒居右抗议横向对位。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG快进打断演播室中景，综艺主持打断互动质感，8K电影感。\n第一段：镜头承接上一镜马前卒抱头摇摆动势，马上从画面左侧冷静入画恢复主持模式右手抬起在胸前做讲解手势目光坚定看向镜头直接切换节奏。\n第二段：马上用沉稳说书腔快进讲述继续主线叙事，**马上**：\"公元946，赵匡胤21岁。这时候已经到了后晋，后晋的都城在开封……\"；话还没说完马前卒突然从画面右侧侧身过来双手抓住自己的头发抗议打断。\n第三段：马前卒睁大眼睛嘴巴张到最大用惊讶夸张语气打断马上，**马前卒**：\"等等等等，这么快的？！我还没有出戏，Coin就21了！\"说完马前卒保持抓头发张大嘴抗议姿态定格在画面右侧，马上侧视马前卒略显无奈的侧脸定格。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘演播室胸上中景，综艺打断互动质感，8K电影感。\n第一段：镜头承接上一镜马前卒抱头摇摆动势，马上从画面左侧沉着入画恢复主持模式，右手抬起在胸前做讲解手势目光平稳看向镜头。\n第二段：马上用沉稳说书腔快进继续主线叙事，**马上**：\"公元946，赵匡胤21岁。这时候已经到了后晋，后晋的都城在开封……\"话还没说完，马前卒突然从画面右侧侧身过来，双手抓住自己的头发抗议打断。\n第三段：马前卒睁大眼睛嘴巴张到最大用惊讶语气打断马上，**马前卒**：\"等等等等，这么快的？！我还没有出戏，Coin就21了！\"说完马前卒保持抓头发张嘴抗议姿态定格在画面右侧，马上侧视马前卒露出略显无奈的侧脸。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马上从左侧冷静入画恢复主持模式姿态、马上右手抬起讲解手势快进公元946年、马前卒侧身抓头发张大嘴抗议的姿态",
   "qualityRoute": "卡通扁平色块背景+右上追光圆形光斑，马上面部与马前卒面部高光保结构可辨，手指骨节纹理清晰。",
@@ -24,16 +24,55 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7ird1g5o9alhig65fr0",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-42.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-42.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T13:15:50+08:00",
+    "completedAt": "2026-04-20T13:22:15+08:00",
+    "failHistory": [
+      {
+        "taskId": "6b7d145a-fd00-436c-a01f-65231d7f4495",
+        "failReason": "generation failed: pre-TNS check did not pass",
+        "submittedAt": "2026-04-20T09:24:49+08:00",
+        "failedAt": "2026-04-20T09:28:45+08:00",
+        "model": "seedance2.0fast",
+        "kind": "fail"
+      }
+    ],
+    "autoRetryCount": 1,
+    "lastAutoRetryAt": "2026-04-20T09:28:45+08:00",
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-马上",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/501844bb-2b89-4f91-8c18-83945df8f0e2.png",
+        "srcImg": "@图片1"
+      },
+      {
+        "role": "character-马前卒",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/56e24d5e-fc5f-441c-b16b-049bb0a7c955.png",
+        "srcImg": "@图片2"
+      },
+      {
+        "role": "scene-演播室",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/fab3ba08-b0a1-4fa0-82da-8e21e3efd274.png",
+        "srcImg": "@图片17"
+      },
+      {
+        "role": "tail-frame-?",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/c608db72-bb1f-4877-96a6-197b52e877ad.jpg",
+        "srcImg": "@图片58"
+      }
+    ],
+    "assetId": "e2s1b0dj1s"
   }
 }

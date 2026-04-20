@@ -8,13 +8,13 @@
   "connection": "接住上一镜情绪接力物：人物情绪延续但空间跳转到国产动画朱红大殿座椅场景。",
   "transition": "台词跨镜硬切：马上画外音讲完赵匡胤出生尾句未落直接切入演播室马前卒押韵接话。",
   "dualAnchor": "9:16 强调上下丹陛纵深+座椅居中垂直对称构图；16:9 强调左右朱红柱列对称展开+李嗣源居中端坐。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画历史纪录片风格二维手绘大殿镜头，中国传统动画厚涂暖调质感，8K电影感。\n第一段：镜头切入国产动画二维手绘朱红大殿纵深，墨线轮廓+厚涂色块，朱红巨柱左右对称展开，金黄藻井与丹陛石阶层层延伸至画面尽头，侧高窗斜射入殿的阳光画成手绘梯形光柱。\n第二段：镜头稳定不动，丹陛尽头金黄色块座椅上李嗣源二维手绘造型端坐其上，双手安稳搭在座椅扶手上，殿内空旷只有他一人独坐。\n第三段：李嗣源二维手绘造型眼睛沉稳低垂目光落在身前地面，殿内空气凝固只有远处风声，马上以低沉说书腔画外音响起，**马上**：\"公元926年的二月十六，赵匡胤出生在洛阳夹马营的一个普通家庭。他生在最混乱的五代十国时期，当时中原王朝正逢梁唐晋汉周中的后唐，都城就在洛阳。\"。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘朱红大殿端坐镜头，中国传统动画厚涂暖调质感，8K电影感。\n第一段：镜头切入国产动画二维手绘朱红大殿纵深，朱红巨柱左右对称展开，金黄藻井与阶梯层层延伸至画面尽头，侧高窗斜射入殿的阳光画成手绘光柱。\n第二段：镜头稳定不动，大殿尽头的金黄座椅上李嗣源二维手绘造型端坐其上，双手安稳搭在扶手上，殿内空旷只有他一人独坐。\n第三段：李嗣源目光沉稳低垂落在身前地面，殿内只剩远处风声；马上以低沉说书腔画外音响起，**马上**：\"公元926年的二月十六，赵匡胤出生在洛阳夹马营的一个普通家庭。他生在最混乱的五代十国时期，当时中原王朝正逢梁唐晋汉周中的后唐，都城就在洛阳。\"",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "国产动画二维手绘朱红丹陛纵深柱列、丹陛尽头金黄色块座椅、李嗣源二维手绘造型端坐座椅",
   "qualityRoute": "二维手绘墨线轮廓+殿内暖调与侧窗阳光色块对比，朱红柱金黄座椅色块边缘清晰保结构可辨。",
   "imagingStyle": "静态纵深对称+不动镜头+风格反差直给，让大殿的庄严沉静感由二维手绘色块建筑体量与光柱直接呈现，不靠写实3D质感。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义大殿场面+中华勤学故事厚涂人物定场；稳帧点：金黄座椅与李嗣源居中端坐。",
+  "reference": "参照：80年代国产二维手绘大殿厚涂人物定场；稳帧点：金黄座椅与李嗣源居中端坐。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是场面宏大，而是国产动画纪录片风格下大殿纵深与端坐的庄严落幅。\n朱红丹陛必须让观众感受到二维手绘殿堂体量与沉静气息。\n李嗣源要又稳又沉，不靠写实细节，靠卡通造型端坐不动的身形剪影。\n落幅停在手绘殿内肃静气氛，让下一镜马前卒演播室打油诗反差转场自然拉开。",
   "e15": "",
@@ -24,28 +24,45 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "dreamina",
-    "modelName": "seedance2.0fast",
-    "taskId": "76e9b3da-aaf4-4cf7-b534-303d2138cea1",
-    "status": "failed",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7iqtm05o9alhig642sg",
+    "status": "done",
     "queueStatus": "",
     "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
-    "failReason": "generation failed: final generation failed",
-    "creditCount": 60,
-    "submittedAt": "2026-04-19T22:39:16+08:00",
-    "completedAt": "2026-04-19T22:39:46+08:00",
-    "needsRework": true,
+    "videoFile": "outputs/ep01/videos/shot-13.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-13.jpg",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "2026-04-20T12:43:04+08:00",
+    "completedAt": "2026-04-20T12:46:56+08:00",
     "failHistory": [
       {
-        "taskId": "76e9b3da-aaf4-4cf7-b534-303d2138cea1",
+        "taskId": "4bb2aea1-116f-47d1-8c5d-641e298fcf17",
         "failReason": "generation failed: final generation failed",
-        "submittedAt": "2026-04-19T22:39:16+08:00",
-        "failedAt": "2026-04-19T22:39:46+08:00",
-        "model": "seedance2.0fast"
+        "submittedAt": "2026-04-20T11:37:33+08:00",
+        "failedAt": "2026-04-20T11:38:01+08:00",
+        "model": "seedance2.0fast",
+        "kind": "fail"
       }
-    ]
+    ],
+    "autoRetryCount": 1,
+    "lastAutoRetryAt": "2026-04-20T11:38:01+08:00",
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-李嗣源",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/775af18f-ad0e-4d66-a5ae-5514e58d81fa.png",
+        "srcImg": "@图片5"
+      },
+      {
+        "role": "scene-后唐皇宫大殿",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/39852fd9-c2ee-4669-a393-e396ed25b2f1.png",
+        "srcImg": "@图片20"
+      }
+    ],
+    "assetId": "1ahcqsotzs"
   }
 }

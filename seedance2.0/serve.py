@@ -16,12 +16,25 @@ import sys
 import json
 import shutil
 import cgi
+import re
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import unquote
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PROJECTS_DIR = os.path.join(ROOT, 'projects')
+
+# 视频时长上限（与 scripts/video_submit.py 保持一致）
+# - raw ≤ 15s：直接入池
+# - 15 < raw ≤ 18s：允许入池，提交时 clamp 为 15s
+# - raw > 18s：拒绝入池，并回写 needsRework
+DURATION_MAX_SEC = 15
+DURATION_CLAMP_SEC = 18
+
+
+def _parse_title_duration(title_bar: str) -> int:
+    m = re.search(r"(\d+)\s*秒", title_bar or "")
+    return int(m.group(1)) if m else 15
 
 
 def _safe_resolve(rel_path: str):
@@ -37,15 +50,130 @@ def _safe_resolve(rel_path: str):
 
 
 class NoCacheHandler(SimpleHTTPRequestHandler):
+    # 媒体类扩展名：这类文件需要支持 HTTP Range（拖进度条），且允许短缓存（避免 seek 重下）
+    MEDIA_EXTS = ('.mp4', '.webm', '.mov', '.m4v', '.mp3', '.wav', '.m4a', '.ogg')
+
     # -------- 通用响应头 --------
     def end_headers(self):
-        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
-        self.send_header('Pragma', 'no-cache')
-        self.send_header('Expires', '0')
+        # 对媒体文件跳过 no-cache，避免浏览器每次 seek 都重新全量拉取
+        path_lower = (getattr(self, 'path', '') or '').lower().split('?', 1)[0]
+        is_media = any(path_lower.endswith(ext) for ext in self.MEDIA_EXTS)
+        if not is_media:
+            self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+            self.send_header('Pragma', 'no-cache')
+            self.send_header('Expires', '0')
         super().end_headers()
 
     def log_message(self, format, *args):
         sys.stderr.write("[%s] %s\n" % (self.log_date_time_string(), format % args))
+
+    # -------- GET 路由：拦截媒体文件请求，支持 HTTP Range（拖进度条） --------
+    def do_GET(self):
+        # 只有媒体类文件走自定义分段响应，其它一切走默认实现
+        path_only = unquote(self.path.split('?', 1)[0])
+        ext = os.path.splitext(path_only)[1].lower()
+        if ext in self.MEDIA_EXTS:
+            try:
+                return self._serve_media_with_range(path_only, ext)
+            except Exception as e:
+                sys.stderr.write(f"[serve.py] media range failed for {path_only}: {e}\n")
+                # 失败回落到默认实现
+        return super().do_GET()
+
+    def _guess_media_ctype(self, ext: str) -> str:
+        return {
+            '.mp4':  'video/mp4',
+            '.m4v':  'video/mp4',
+            '.mov':  'video/quicktime',
+            '.webm': 'video/webm',
+            '.mp3':  'audio/mpeg',
+            '.wav':  'audio/wav',
+            '.m4a':  'audio/mp4',
+            '.ogg':  'audio/ogg',
+        }.get(ext, 'application/octet-stream')
+
+    def _serve_media_with_range(self, url_path: str, ext: str):
+        """对媒体文件支持 Range 请求：若带 Range 头返回 206 Partial Content，否则 200 全量。"""
+        # 解析到绝对路径：复用 SimpleHTTPRequestHandler 的 translate_path
+        fs_path = self.translate_path(url_path)
+        if not os.path.isfile(fs_path):
+            self.send_error(404, 'File not found')
+            return
+        file_size = os.path.getsize(fs_path)
+        ctype = self._guess_media_ctype(ext)
+        range_header = self.headers.get('Range') or self.headers.get('range')
+
+        if not range_header:
+            # 无 Range：仍然返回 200，但带 Accept-Ranges，方便后续 seek
+            self.send_response(200)
+            self.send_header('Content-Type', ctype)
+            self.send_header('Content-Length', str(file_size))
+            self.send_header('Accept-Ranges', 'bytes')
+            # 媒体允许短缓存（60s），交给 end_headers 里跳过 no-cache 分支
+            self.send_header('Cache-Control', 'public, max-age=60')
+            self.end_headers()
+            if self.command == 'HEAD':
+                return
+            with open(fs_path, 'rb') as f:
+                shutil.copyfileobj(f, self.wfile, length=64 * 1024)
+            return
+
+        # 解析 Range: bytes=start-end
+        start, end = 0, file_size - 1
+        try:
+            units, _, rng = range_header.partition('=')
+            if units.strip().lower() != 'bytes':
+                raise ValueError('only bytes unit supported')
+            # 暂不支持多段（逗号分隔），浏览器视频 seek 也只用单段
+            first_range = rng.split(',', 1)[0].strip()
+            s_str, _, e_str = first_range.partition('-')
+            if s_str == '':
+                # suffix-byte-range-spec: "-N" → 取最后 N 字节
+                n = int(e_str)
+                if n <= 0:
+                    raise ValueError('invalid suffix length')
+                start = max(0, file_size - n)
+                end = file_size - 1
+            else:
+                start = int(s_str)
+                end = int(e_str) if e_str else (file_size - 1)
+            if start > end or start >= file_size:
+                self.send_response(416)
+                self.send_header('Content-Range', f'bytes */{file_size}')
+                self.end_headers()
+                return
+            end = min(end, file_size - 1)
+        except Exception:
+            self.send_response(416)
+            self.send_header('Content-Range', f'bytes */{file_size}')
+            self.end_headers()
+            return
+
+        length = end - start + 1
+        self.send_response(206)
+        self.send_header('Content-Type', ctype)
+        self.send_header('Accept-Ranges', 'bytes')
+        self.send_header('Content-Range', f'bytes {start}-{end}/{file_size}')
+        self.send_header('Content-Length', str(length))
+        self.send_header('Cache-Control', 'public, max-age=60')
+        self.end_headers()
+
+        if self.command == 'HEAD':
+            return
+        with open(fs_path, 'rb') as f:
+            f.seek(start)
+            remaining = length
+            chunk_size = 64 * 1024
+            while remaining > 0:
+                buf = f.read(min(chunk_size, remaining))
+                if not buf:
+                    break
+                try:
+                    self.wfile.write(buf)
+                except (BrokenPipeError, ConnectionResetError):
+                    # 用户拖进度条/换分段时浏览器主动断开是常态，静默
+                    return
+                remaining -= len(buf)
 
     # -------- 工具：JSON 响应 --------
     def _send_json(self, code: int, obj: dict):
@@ -239,6 +367,51 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         force = bool(p.get('force'))
         shot_json_rel = f'projects/{project}/outputs/{ep}/06-shots/shot-{shot}.json'
         shot_json_abs = _safe_resolve(shot_json_rel)
+        # —— 时长闸门（入池前检查）：>18s 拒绝，[16,18] 放行但 clamp；<=15 直接通过 ——
+        if shot_json_abs and os.path.exists(shot_json_abs):
+            try:
+                with open(shot_json_abs, 'r', encoding='utf-8') as f:
+                    shot_data_pre = json.load(f)
+                title_bar_pre = (shot_data_pre.get('titleBar') or '')
+                raw_sec_pre = _parse_title_duration(title_bar_pre)
+                if raw_sec_pre > DURATION_CLAMP_SEC and not force:
+                    # 给分镜师打 needsRework 标记（回写 shot-NN.json.videoTask）
+                    try:
+                        vt_pre = shot_data_pre.get('videoTask') or {}
+                        fail_reason_msg = (
+                            f'时长超标：titleBar 估算 {raw_sec_pre}s > {DURATION_CLAMP_SEC}s 最大阈值，'
+                            f'需分镜师拆分镜头使单镜 ≤ {DURATION_MAX_SEC}s 后重新入池'
+                        )
+                        vt_pre['needsRework'] = True
+                        vt_pre['failReason'] = fail_reason_msg
+                        fh = list(vt_pre.get('failHistory') or [])
+                        fh.append({
+                            'taskId': '',
+                            'failReason': fail_reason_msg,
+                            'submittedAt': self._now_iso(),
+                            'failedAt': self._now_iso(),
+                            'model': vt_pre.get('modelName') or '',
+                            'kind': 'duration-gate-reject',
+                            'rawSec': raw_sec_pre,
+                        })
+                        vt_pre['failHistory'] = fh
+                        shot_data_pre['videoTask'] = vt_pre
+                        with open(shot_json_abs, 'w', encoding='utf-8') as f:
+                            json.dump(shot_data_pre, f, ensure_ascii=False, indent=2)
+                    except Exception:
+                        pass
+                    self._audit_log_queue(project, ep, f"add shot-{shot} REJECTED (duration {raw_sec_pre}s > {DURATION_CLAMP_SEC}s, marked needsRework)")
+                    return self._send_json(409, {
+                        'ok': False,
+                        'needsRework': True,
+                        'durationRejected': True,
+                        'rawSec': raw_sec_pre,
+                        'maxSec': DURATION_MAX_SEC,
+                        'clampSec': DURATION_CLAMP_SEC,
+                        'error': fail_reason_msg,
+                    })
+            except Exception:
+                pass
         if not force and shot_json_abs and os.path.exists(shot_json_abs):
             try:
                 with open(shot_json_abs, 'r', encoding='utf-8') as f:
@@ -263,16 +436,18 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
                 return self._send_json(200, {'ok': True, 'dedup': True, 'waitList': q['waitList']})
         entry = {
             'shot': shot,
+            'engine': p.get('engine') or '',
             'model': p.get('model') or '',
             'ratio': p.get('ratio') or '',
             'note': p.get('note') or '',
+            'promptMode': p.get('promptMode') or '',
             'addedAt': self._now_iso(),
         }
         before = len(q.get('waitList', []) or [])
         q.setdefault('waitList', []).append(entry)
         self._save_queue(abs_path, q)
         note = entry.get('note') or ''
-        self._audit_log_queue(project, ep, f"add shot-{shot} (model={entry['model'] or '-'}, note={note or '-'}) waitList {before} → {len(q['waitList'])}")
+        self._audit_log_queue(project, ep, f"add shot-{shot} (model={entry['model'] or '-'}, promptMode={entry['promptMode'] or 'full'}, note={note or '-'}) waitList {before} → {len(q['waitList'])}")
         return self._send_json(200, {'ok': True, 'entry': entry, 'waitList': q['waitList']})
 
     # -------- /api/video-queue/remove --------

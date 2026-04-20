@@ -3,12 +3,12 @@
   "titleBar": "【分镜40｜6秒｜类型：F｜方案：T40跨场爆哭模板｜档位：LITE｜节奏：切回演播室马前卒抹眼泪→哭喊Coin为什么不来救我→画面定格】",
   "mount": "挂载：角色：马前卒@图片2｜场景：演播室-日@图片17｜声音：马前卒声音@音频2",
   "camera": "相机位置：演播室胸上近景正面；相机朝向：正对马前卒哭脸；角色朝向：马前卒面朝镜头抹眼泪；构图锚点：马前卒双手抹眼泪的动作与张大嘴的哭喊",
-  "openingFrame": "镜头由上一镜监狱卡通殉情跨场切入演播室胸上近景，马前卒黄色卫衣亮眼从卡通回到真人造型双手正在揉眼圈泪水挂脸上。",
+  "openingFrame": "镜头由上一镜监狱卡通殉情跨场切入演播室胸上近景，马前卒双手正在揉眼圈泪水挂脸上。",
   "closingFrame": "马前卒张大嘴哭喊完最后一个为什么后下巴颤抖嘴角向下撇定格在委屈至极的表情，画面左侧为下一镜马后炮拍肩安慰做构图空位。",
   "connection": "接住上一镜监狱殉情哀求情绪峰值接力物：殉情哭场跨风格切回真人演播室马前卒爆哭。",
   "transition": "动作动势硬切：马前卒张大嘴撇嘴的哭嘴动势延续到下一镜双手抱头Oh no的抱头动作。",
   "dualAnchor": "9:16 强调马前卒竖向抹眼泪+张大嘴哭喊向上动势；16:9 强调马前卒居右留左侧空位等待马后炮入画。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG跨场爆哭演播室近景，综艺脱口秀戏剧质感，8K电影感。\n第一段：镜头由上一镜监狱卡通殉情跨场切入演播室胸上近景，马前卒亮黄oversized卫衣领口歪斜从卡通风格跨回真人造型，双手正用袖口揉眼圈圆脸上泪水挂满嘴角向下撇出委屈表情。\n第二段：马前卒突然抬起头张大嘴巴用尖细哭腔爆哭，**马前卒**：\"Coin为什么不来救我啊？为什么？\"两句连续哭喊时头部左右摇摆配合委屈节奏，鼻涕眼泪齐流脸上卫衣领口抹得一塌糊涂。\n第三段：马前卒哭喊完最后一个为什么三字后下巴颤抖嘴角向下撇到最大幅度定格在委屈至极的表情中，画面左侧自然留出构图空位等待下一镜马后炮进入，演播室右上追光圆斑打在马前卒泪光满面的脸上。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG跨场爆哭演播室近景，综艺脱口秀戏剧质感，8K电影感。\n第一段：镜头由上一镜监狱卡通殉情跨场切入演播室胸上近景，马前卒双手正用袖口揉眼圈圆脸上泪水挂满嘴角向下撇出委屈表情。\n第二段：马前卒突然抬起头张大嘴巴用尖细哭腔爆哭，**马前卒**：\"Coin为什么不来救我啊？为什么？\"两句连续哭喊时头部左右摇摆配合委屈节奏，鼻涕眼泪齐流脸上衣服领口抹得一塌糊涂。\n第三段：马前卒哭喊完最后一个为什么三字后下巴颤抖嘴角向下撇到最大幅度定格在委屈至极的表情中，画面左侧自然留出构图空位等待下一镜马后炮进入，演播室右上追光圆斑打在马前卒泪光满面的脸上。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马前卒双手用袖口揉眼圈擦泪、张大嘴哭喊Coin为什么不来救我、下巴颤抖嘴角撇到最大幅度定格",
   "qualityRoute": "演播室卡通色块背景+右上追光圆斑，泪水与鼻涕反光高光保结构清晰；亮黄卫衣布料纹理可辨。",
@@ -23,18 +23,35 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "dreamina",
-    "modelName": "seedance2.0fast",
-    "taskId": "a3005823-886b-4eba-a510-fa7c35e03cb9",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7ito1s0ronsa3ueoo10",
     "status": "done",
     "queueStatus": "",
     "queueIdx": null,
-    "videoUrl": "https://v6-artist.vlabvod.com/79fc6a88cde9fc57b90c34dbc67587cf/69e4a35f/video/tos/cn/tos-cn-v-148450/o4KXk1EJAQAsONQwuF4yh0EI8IEpvlgDkeiDLw/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=5705&bt=5705&cs=0&ds=12&ft=5QYTUxhhe6BMyqxnfPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Nmc4aWU2ZDQ2NWU2ZTY0ZEBpM2x2ZmhrbzU8OjczNDM7M0BhYy4vMy0xNmExNC8vMTQuYSNlby9scWcvNmZhLS1kNC9zcw%3D%3D&btag=c0000e00008000&dy_q=1776588105&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604191641440212140731585892A94",
+    "videoUrl": "",
     "videoFile": "outputs/ep01/videos/shot-40.mp4",
     "tailFrame": "outputs/ep01/tail-frames/tail-shot-40.jpg",
     "failReason": "",
-    "creditCount": 30,
-    "submittedAt": "2026-04-19T16:09:51+08:00",
-    "completedAt": "2026-04-19T16:41:46+08:00"
+    "creditCount": null,
+    "submittedAt": "2026-04-20T15:55:51+08:00",
+    "completedAt": "2026-04-20T16:02:35+08:00",
+    "failHistory": [],
+    "autoRetryCount": 0,
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-马前卒",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/c3f12892-dd2e-4e1d-b3f0-dbd925f9a059.png",
+        "srcImg": "@图片2"
+      },
+      {
+        "role": "scene-演播室",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/2cfa5026-989d-4d74-a223-c37e82f197e5.png",
+        "srcImg": "@图片17"
+      }
+    ],
+    "assetId": "z1dmwlcotu"
   }
 }

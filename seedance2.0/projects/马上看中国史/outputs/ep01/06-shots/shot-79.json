@@ -14,7 +14,7 @@
   "qualityRoute": "二维手绘墨线轮廓+帐外篝火暖橙与将领皮甲暗色冷反差厚涂+夜色冷蓝+帐内油灯暖金与赵匡胤深青中衣冷反差；篝火色块与皮甲纹样墨线层次清晰可辨。",
   "imagingStyle": "犹豫试探+拍板拥立+呼噜附和三连节奏，不靠写实戏腔，靠国产动画墨线勾勒与厚涂色块的指帐内+拍大腿+呼噜戏腔承载权谋喜剧反差。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义帐外密谋敲定桥段+中华勤学故事二维手绘厚涂喜剧呼噜附和；稳帧点：帐外众将齐声Good idea附和定格。",
+  "reference": "参照：80年代国产二维手绘帐外密谋厚涂喜剧呼噜附和；稳帧点：帐外众将齐声Good idea附和定格。",
   "microExpressions": "马前卒李处耘拇指指帐内+疑色犹豫+嘴型问是在睡觉吧；马后炮马仁瑀点头如捣蒜+嘴型说是啊；李处耘一拍大腿+眼中墨线精光闪烁+豁然开朗+嘴型说拥立赵点检为天子；帐内赵匡胤嘴角咧开+呼噜变调拉长戏腔Good idea+胸口起伏；帐外众将领愣一秒后齐声附和+表情兴奋+嘴型张大说Good idea。",
   "nailLines": "这镜最值钱的不是密谋，而是国产动画纪录片风下呼噜变调Good idea打断犹豫+众将附和的权谋喜剧钩子。\n拍板必须让观众看到一拍大腿+眼中墨线精光闪烁的豁然开朗姿态。\n三连节奏一疑一拍一附和，不靠配乐，靠指帐内与呼噜变调承载权谋喜剧双重分量。\n落幅停在Good idea附和定格，让下一镜万千将士呐喊拥立从情绪峰值自然承接。",
   "e15": "",
@@ -25,16 +25,18 @@
     "{{scene:雪地军帐}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "2814a598-859a-4263-9d37-a494aca28cc4",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v9-artist.vlabvod.com/4db20dc4b93008b89c57651bb62949f6/69e54c9a/video/tos/cn/tos-cn-v-148450/oweCmMH8reDJlfUedGgyIEdcr2GBEIBVBnP7kn/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6361&bt=6361&cs=0&ds=12&ft=5QYTUxhhe6BMyq1GiPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZmZpNjllM2U7aWk7Zzg7ZkBpam5rZWlrb3JtOjczNDM7M0AuLTRiL14uNl4xMzFhYzZiYSM0Z3FhcWdmcGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776631424&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200443440212140731585970DA9",
+    "videoFile": "outputs/ep01/videos/shot-79.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-79.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 50,
+    "submittedAt": "2026-04-20T04:39:51+08:00",
+    "completedAt": "2026-04-20T04:43:46+08:00"
   }
 }

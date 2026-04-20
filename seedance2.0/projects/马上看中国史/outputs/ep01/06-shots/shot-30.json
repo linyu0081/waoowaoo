@@ -14,7 +14,7 @@
   "qualityRoute": "二维手绘墨线轮廓+街道冷灰色块基调与远景晚霞厚涂暖橙反差+手绘薄雾颗粒在侧光里漂浮；散落物件色块与远景烟线墨笔触层次清晰可辨。",
   "imagingStyle": "街道贴地空镜+纵深横摇+俯瞰远景三段推进，不靠任何冲突动作，靠国产动画空镜与冷调色块的寂静压抑直接传达城中动荡信息，台词承载叙事全部信息量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义乱世街道空镜+中华勤学故事二维手绘厚涂空镜叙事；稳帧点：远景屋顶薄烟线与晚霞色块。",
+  "reference": "参照：80年代国产二维手绘乱世街道厚涂空镜叙事；稳帧点：远景屋顶薄烟线与晚霞色块。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是事件，而是国产动画纪录片风下空街+远景薄烟+晚霞色块传达的城中动荡氛围感。\n散落物件必须让观众通过二维手绘墨线看到粗陶罐筐篓粗布衣物这些生活痕迹感受到人去楼空。\n空街要又静又凉，不靠人物，靠半掩木门与翻倒提灯承载暗示。\n落幅停在远景屋顶薄烟+晚霞色块定格，让下一镜小赵匡胤窗格视角从这份远景记忆自然承接。",
   "e15": "",
@@ -23,31 +23,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "e700b4c9-663f-4846-955a-372e2e51030f",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v3-artist.vlabvod.com/e2fabdd613a8fb750fbbe929dadea1ee/69e51c93/video/tos/cn/tos-cn-v-148450/ocqJDQgOxIfh2lf4SY6gCDBSSBVLpSAQZ4g9H5/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6345&bt=6345&cs=0&ds=12&ft=5QYTUxhhe6BMyqOo7PVJD12Nzj&mime_type=video_mp4&qs=0&rc=ODs0ZjY7M2g8ZTc1OTg1OUBpajxscWlrbzdqOjczNDM7M0BhYWMuM2A0X14xMmEuNTFfYSNhbGhncWdmcGZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776619127&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420011847021214073158473BFE3",
+    "videoFile": "outputs/ep01/videos/shot-30.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-30.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": "",
-    "needsRework": false,
-    "failHistory": [
-      {
-        "taskId": "a2a80241-9354-4e59-9791-b796e91c012a",
-        "failReason": "远端任务不存在/内容安全预检不通过（prompt含屠城/火光冲天/百姓哀嚎/战争片屠城全景等敏感词）",
-        "submittedAt": "2026-04-19T03:08:39.375953+08:00",
-        "failedAt": "2026-04-19T07:27:34.940459+08:00",
-        "model": "seedance2.0",
-        "kind": "内容安全预检-屠城/火光冲天/百姓哀嚎敏感词"
-      },
-      {
-        "rewriteAt": "2026-04-19T13:50:00+08:00",
-        "rewriteReason": "按 shot-44/46 成功规范改为 2D 国产动画空镜：删除所有'屠城/火把/砍门/引火/百姓仆倒/抱头奔逃/倒地哀嚎/人间地狱/火光冲天/浓烟火光'，改为街道散落陶罐筐篓+半掩木门+远景屋顶薄墨色烟线+晚霞色块三段空镜，台词承载叙事信息，参考 shot-10 第三版与 shot-46 空镜方案"
-      }
-    ]
+    "creditCount": 60,
+    "submittedAt": "2026-04-20T00:59:03+08:00",
+    "completedAt": "2026-04-20T01:18:50+08:00"
   }
 }

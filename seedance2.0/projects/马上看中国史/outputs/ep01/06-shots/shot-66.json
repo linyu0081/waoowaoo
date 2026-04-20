@@ -8,7 +8,7 @@
   "connection": "接住上一镜马后炮小指触碰木板定格接力物：触碰瞬间引发木板金字显灵奇观。",
   "transition": "动作动势硬切：两人被金光照亮的惊愕表情延续到下一镜两人瞬变舞女造型舞到郭荣面前。",
   "dualAnchor": "9:16 强调上下木板竖向金字闪现+两人脸上金光向上照亮；16:9 强调木板居左金字+两人居右大惊横向对位。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG金字显灵奇观镜头，历史预兆神秘色彩质感，8K电影感。\n第一段：镜头由上一镜马后炮小指碰触木板表面定格延续特写视角，漆黑木板表面被碰触的位置开始浮现细微金色光点光点逐渐向外扩散凝聚成符文形状，画面中金色光斑缓缓增多仿佛有神秘能量从木板内部涌出。\n第二段：金色符文逐渐成形清晰浮现出五个闪闪发光的金色正楷汉字点检做天子字体厚重古朴每个字都散发着明亮的金色光晕，五个金字在漆黑木板表面形成强烈对比画面定格展示这五个金字的奇观。\n第三段：镜头切到马前卒申公豹与马后炮哪吒两人近景，两人脸上被木板金字发出的金色光芒照亮金光在两人脸部形成明显的上照效果，两人同时睁大眼睛瞳孔放大嘴巴张成O形画面定格在这份金字显灵大惊表情中。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘木板文字浮现特写+两人近景切换，传统动画厚涂暖调质感，8K电影感。\n第一段：镜头由上一镜马后炮小指碰触木板表面定格延续特写视角，漆黑木板表面被碰触的位置开始浮现细小金色光点，金色光点沿木纹向外扩散逐渐凝聚成笔画形状。\n第二段：金色笔画逐渐成形，清晰浮现出五个厚重古朴的金色正楷汉字\"点检做天子\"，金色字迹在漆黑木板表面形成明显对比，画面定格展示这五个金色大字。\n第三段：镜头切到马前卒与马后炮两人近景，两人脸部被木板金色字迹反射的暖光轻轻照亮，同时睁大眼睛嘴巴张成O形，画面定格在这份大惊表情中。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "漆黑木板表面浮现五个闪闪发光金色正楷汉字点检做天子、金字散发明亮金色光晕与漆黑木板形成强烈对比、马前卒马后炮两人脸上被金光照亮睁大眼睛嘴张成O形大惊",
   "qualityRoute": "官道压阴+木板漆黑低饱和+金字暖金鲜亮高光+两人脸部金光上照反射，金字笔划边缘与金光粒子高光保结构可辨。",
@@ -25,16 +25,18 @@
     "{{prop:点检做天子木牌}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "5b6073a5-03b7-4ce3-a8eb-754d20843fe0",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v6-artist.vlabvod.com/3c60027493a348ca942de9d8ca904eb2/69e5ac68/video/tos/cn/tos-cn-v-148450/oAmLBZYcpQCMH1A9OB56RX3ZIOxgUASfagVkeh/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6523&bt=6523&cs=0&ds=12&ft=5QYTUxhhe6BMyqnoePVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZjNoPGlmZWc2OGlkPDk5NUBpM21obGlrb3BzOjczNDM7M0AuY14xNjEyXzYxYmBhLTEwYSMzcy9ecWdmb2ZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776655952&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420113231021214073158797CFA2",
+    "videoFile": "outputs/ep01/videos/shot-66.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-66.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 40,
+    "submittedAt": "2026-04-20T10:40:06+08:00",
+    "completedAt": "2026-04-20T11:32:34+08:00"
   }
 }

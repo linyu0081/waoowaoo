@@ -14,7 +14,7 @@
   "qualityRoute": "卡通平涂色块加明显轮廓线，追光圆斑在四色块墙上形成亮区，马克杯蓝红黄高饱和度对比鲜红地毯保持画面节奏。",
   "imagingStyle": "不靠花哨推拉，靠稳定后退镜头让观众逐步看清完整空间结构。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：《马男波杰克》《脱口秀大会》圆桌访谈开场+卡通平涂空间揭示；稳帧点：圆桌中央三只彩色马克杯组合。",
+  "reference": "参照：动物拟人脱口秀圆桌访谈开场+卡通平涂空间揭示；稳帧点：圆桌中央三只彩色马克杯组合。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是台词本身，而是拉远揭示卡通色块演播室全貌的仪式感。\n圆桌三马克杯必须让观众感受到空间落位的确定感。\n马上吟诵要又书卷又庄严，不靠戏剧腔，靠平稳低音气息。\n落幅停在马上抬头停顿，让下一镜马前卒抢话自然承接。",
   "e15": "",
@@ -25,16 +25,18 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "289bfdb9-286e-44b4-8e31-56666c8cde85",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v9-artist.vlabvod.com/8ba2f3a16744c5cf1fa160429368113f/69e52321/video/tos/cn/tos-cn-v-148450/okg7BZ2Kg0sVXhAeAn4KTp9ooXK8QJUQWGKSID/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6331&bt=6331&cs=0&ds=12&ft=5QYTUxhhe6BMyquh6PVJD12Nzj&mime_type=video_mp4&qs=0&rc=Zjo5aTo5Zmg4ZzxnZDZlN0BpandoamRrb2ZrOjczNDM7M0BjMmJhLS5eXzIxMjReMi81YSNxZzMycWdmNmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776620805&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200146440212140731585902391",
+    "videoFile": "outputs/ep01/videos/shot-06.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-06.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 60,
+    "submittedAt": "2026-04-20T01:38:50+08:00",
+    "completedAt": "2026-04-20T01:46:46+08:00"
   }
 }

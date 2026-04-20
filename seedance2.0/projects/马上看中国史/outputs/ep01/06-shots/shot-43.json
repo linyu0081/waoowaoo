@@ -8,7 +8,7 @@
   "connection": "接住上一镜马前卒抗议+马上侧视无奈接力物：马上强行继续讲解+马前卒继续崩溃升级。",
   "transition": "信息钩子硬切：马上讲到契丹军队攻入开封后晋灭亡的一句话变为下一镜契丹骑兵冲入开封街道的具体画面。",
   "dualAnchor": "9:16 强调三人竖向并列+马后炮堵嘴垂直动作；16:9 强调三人横向并列+动作分工清晰的左中右构图。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG主讲崩溃并存演播室中景，综艺主持崩溃互动质感，8K电影感。\n第一段：镜头承接上一镜马前卒抓头抗议+马上侧视无奈定格，马上不为所动恢复镜头方向右手抬起做讲解手势继续沉稳讲述历史叙事，**马上**：\"后晋的禁军统帅杜威，在和契丹人作战中，临阵倒戈，致使契丹军队攻入开封，后晋灭亡。\"。\n第二段：马前卒听到后晋就亡了四字直接从抓头状态升级为崩溃爆哭双手举过头顶张大嘴哭喊，**马前卒**：\"我还没有出戏，后晋就亡了！呜——\"；他的哭声还在拖长音尾音持续。\n第三段：马后炮从马前卒右侧快步上前右手手掌直接堵在马前卒张大的嘴上阻止哭声继续扩散，马前卒虽然被堵嘴但双眼泪水仍在眼角大颗大颗喷涌眉毛挤成八字画面在这个一堵一涌的荒诞反差中定格，马上对此视若无睹保持讲解姿态。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG主讲崩溃并存演播室中景，综艺主持互动质感，8K电影感。\n第一段：镜头承接上一镜马前卒抓头抗议+马上侧视无奈定格，马上恢复镜头方向右手抬起做讲解手势继续沉稳叙事，**马上**：\"后晋的禁军统帅杜威，在和契丹人作战中，临阵倒戈，致使契丹军队攻入开封，后晋灭亡。\"。\n第二段：马前卒听到尾句瞬间从抓头状态转为崩溃表情双手举过头顶张大嘴哭喊出声，**马前卒**：\"我还没有出戏，后晋就亡了！呜——\"尾音持续拖长。\n第三段：马后炮从马前卒右侧快步上前伸出右手手掌覆上马前卒的嘴稳稳按住止住声音，马前卒眼眶含泪眉毛挤成八字画面在这一按一哭的反差中定格，马上对此视若无睹保持讲解姿态。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马上沉稳讲后晋灭亡的讲解手势、马前卒双手举过头顶张大嘴崩溃哭喊姿态、马后炮右手手掌堵在马前卒嘴上阻止哭声",
   "qualityRoute": "演播室卡通色块背景+右上追光圆斑，三人服装色彩对比真实饱和；泪水喷涌与堵嘴手掌高光保结构清晰可辨。",
@@ -25,16 +25,50 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7isie87hovbgac4a6rg",
+    "status": "done",
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-43.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-43.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T14:35:37+08:00",
+    "completedAt": "2026-04-20T14:43:05+08:00",
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-马上",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/c4509388-45ef-44f4-b130-239efce64a46.png",
+        "srcImg": "@图片1"
+      },
+      {
+        "role": "character-马前卒",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/039b85d1-ef9a-4b38-a040-a211659d8ada.png",
+        "srcImg": "@图片2"
+      },
+      {
+        "role": "character-马后炮",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/25e1576f-98b0-4a0e-ada1-c7fcaf5b85bc.png",
+        "srcImg": "@图片3"
+      },
+      {
+        "role": "scene-演播室",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/87f8e952-59ed-4517-bd34-db5317ba62c3.png",
+        "srcImg": "@图片17"
+      },
+      {
+        "role": "tail-frame-?",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/c1ae9891-ed0f-4184-8a93-c28bd53ea784.jpg",
+        "srcImg": "@图片59"
+      }
+    ],
+    "failHistory": [],
+    "needsRework": false,
+    "assetId": "bm7m6wy594",
+    "queueStatus": "",
+    "queueIdx": null
   }
 }

@@ -50,14 +50,14 @@
     },
     "video": {
       "status": "pending",
-      "produced": 37,
+      "produced": 88,
       "failed": 0,
       "generating": 1,
-      "pending": 87,
-      "videoGenCount": 43,
-      "videoUniqueShots": 37,
-      "videoTotalDurationSec": 340,
-      "videoTotalDurationMin": 5.67
+      "pending": 81,
+      "videoGenCount": 106,
+      "videoUniqueShots": 88,
+      "videoTotalDurationSec": 869,
+      "videoTotalDurationMin": 14.48
     }
   },
   "assets": {
@@ -96,7 +96,6 @@
       "黄色纛旗",
       "点检做天子木牌",
       "酱板鸭",
-      "铜钱山",
       "殿前都点检印绶",
       "龙袍冕冠",
       "演播室话筒"
@@ -137,7 +136,6 @@
         "黄色纛旗",
         "点检做天子木牌",
         "酱板鸭",
-        "铜钱山",
         "殿前都点检印绶",
         "龙袍冕冠",
         "演播室话筒"
@@ -164,7 +162,6 @@
       "prop-演播室话筒": "../../assets/images/prop-演播室话筒.png",
       "prop-点检做天子木牌": "../../assets/images/prop-点检做天子木牌.png",
       "prop-酱板鸭": "../../assets/images/prop-酱板鸭.png",
-      "prop-铜钱山": "../../assets/images/prop-铜钱山.png",
       "prop-黄色纛旗": "../../assets/images/prop-黄色纛旗.png",
       "prop-龙袍冕冠": "../../assets/images/prop-龙袍冕冠.png",
       "scene-北征行军路": "../../assets/images/scene-北征行军路.png",

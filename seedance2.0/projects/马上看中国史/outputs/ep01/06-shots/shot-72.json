@@ -26,16 +26,18 @@
     "{{prop:点检做天子木牌}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "3bc72611-156b-41d5-9f8b-1b5e1f3b0d63",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/bfedc69aaffab7b197fb3aa168233719/69e547ec/video/tos/cn/tos-cn-v-148450/o0QJOspN0ATjOoqhJ4AlbNX8eQxIhEKgNDtnlb/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6323&bt=6323&cs=0&ds=12&ft=5QYTUxhhe6BMyqnliPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZzZnNGc4ZDppNzo5Z2U2OUBpajtudTRrb29tOjczNDM7M0AxNDU2Ly8yNjUxMDRiMS80YSNhcTZncWcvZWZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776630224&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420042344021214073158597F2F1",
+    "videoFile": "outputs/ep01/videos/shot-72.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-72.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 60,
+    "submittedAt": "2026-04-20T04:15:50+08:00",
+    "completedAt": "2026-04-20T04:23:47+08:00"
   }
 }

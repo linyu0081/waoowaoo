@@ -8,7 +8,7 @@
   "connection": "接住上一镜马前卒食指向上抢答得意定格接力物：问答连环继续从王朝数扩展到皇帝数。",
   "transition": "信息钩子硬切：马后炮比11的手势定格延续到下一镜马上打响指Bingo的肯定节奏。",
   "dualAnchor": "9:16 强调上下马前卒掐指+马后炮比11垂直构图；16:9 强调马前卒居左掐指+马后炮居右比11横向对位。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG极速报菜名演播室中景，综艺极速报答质感，8K电影感。\n第一段：镜头由上一镜抢答得意定格接入演播室胸上中景，马上右手在胸前做追问手势语速放慢抛出新问题，**马上**：\"皇帝呢？\"。\n第二段：马前卒立刻左手食指与右手掌配合做掐指一算手势语速骤快开始报菜名，**马前卒**：\"让我掐指一算，唐明宗李嗣源、闵皇帝李从厚。\"说完突然停顿表情一凝摇头双手挥动否认，**马前卒**：\"不对不对，重来重来，\"立刻重新极速报答，**马前卒**：\"唐明宗李嗣源、闵皇帝李从厚、末帝李从珂、后晋高祖石敬瑭、末帝石重贵、入主中原的耶律德光、后汉高祖刘知远、末帝刘承祐……\"语速越说越快嘴型变成模糊的极速唇形。\n第三段：马后炮不紧不慢从画面右侧探身侧面用冷静稚嫩童声一句话总结，**马后炮**：\"11个。\"同时伸出两只手左手十指张开右手食指竖起比出11的手势画面在这份冷静总结中定格。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘演播室胸上中景三人并列，综艺快问快答质感，8K电影感。\n第一段：镜头由上一镜马前卒抢答得意定格接入演播室胸上中景，马上右手在胸前做追问手势语速放慢，**马上**：\"皇帝呢？\"\n第二段：马前卒立刻双手配合做掰手指计数手势语速骤快开始逐一报答，**马前卒**：\"让我数一数，唐明宗李嗣源、闵皇帝李从厚。\"忽然停顿表情一凝摇头摆手否认，**马前卒**：\"不对不对，重来重来，\"随即重新快速接续：\"唐明宗李嗣源、闵皇帝李从厚、末帝李从珂、后晋高祖石敬瑭、末帝石重贵、入主中原的耶律德光、后汉高祖刘知远、末帝刘承祐……\"越说越快。\n第三段：马后炮不紧不慢从画面右侧探身侧面，用冷静稚嫩童声一句话总结，**马后炮**：\"11个。\"同时伸出两只手左手十指张开右手食指竖起比出11的手势，画面在这份冷静总结中定格。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马前卒左手食指与右手掌掐指一算手势、马前卒报到一半摇头挥手不对重来、马后炮伸出两只手比出11的手势冷静总结",
   "qualityRoute": "演播室暖金顶光+冷蓝侧补光，马前卒与马后炮色彩对比，掐指手指骨节与比11手势高光保结构可辨。",
@@ -25,16 +25,55 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7ird1o5o9alhig65ft0",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-60.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-60.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T13:15:51+08:00",
+    "completedAt": "2026-04-20T13:23:49+08:00",
+    "failHistory": [
+      {
+        "taskId": "d27fc5cb-5f41-4837-a0bd-9dd350f6bed8",
+        "failReason": "generation failed: final generation failed",
+        "submittedAt": "2026-04-20T11:41:49+08:00",
+        "failedAt": "2026-04-20T11:44:45+08:00",
+        "model": "seedance2.0fast",
+        "kind": "fail"
+      }
+    ],
+    "autoRetryCount": 1,
+    "lastAutoRetryAt": "2026-04-20T11:44:45+08:00",
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-马上",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/e49d8ca4-c18e-4a95-bef4-2a459999a88f.png",
+        "srcImg": "@图片1"
+      },
+      {
+        "role": "character-马前卒",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/346b6e4b-9486-4633-a63e-87fd56cd8a6b.png",
+        "srcImg": "@图片2"
+      },
+      {
+        "role": "character-马后炮",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/c2527cec-abd7-4665-af62-189b059d63fb.png",
+        "srcImg": "@图片3"
+      },
+      {
+        "role": "scene-演播室",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/530593e7-fa20-4ed1-bfb0-278a78bfdcf0.png",
+        "srcImg": "@图片17"
+      }
+    ],
+    "assetId": "qy4v8il0hl"
   }
 }

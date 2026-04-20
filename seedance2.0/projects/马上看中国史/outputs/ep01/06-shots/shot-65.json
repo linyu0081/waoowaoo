@@ -8,7 +8,7 @@
   "connection": "接住上一镜申公豹翻白眼吐槽定格接力物：吐槽转为哪吒试探碰木动作。",
   "transition": "动作动势硬切：马后炮手指碰触木板的瞬间延续到下一镜木板表面金字闪现异变奇观。",
   "dualAnchor": "9:16 强调上下马后炮哪吒向上伸指+木板垂直插地姿态；16:9 强调马后炮居左伸指+马前卒居右摆手横向对位。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG试探碰木小剧场镜头，网梗变装戏剧质感，8K电影感。\n第一段：镜头由上一镜马前卒申公豹翻白眼定格延续小剧场近景，马后炮哪吒双丸子发髻晃动试探性抬起右手食指朝插在地上的漆黑木板方向慢慢伸过去一副担心又好奇的姿态，用稚嫩童声带着试探语气问，**马后炮**：\"碰一下，会怎么样？\"。\n第二段：马前卒申公豹听到问题后白袍一挥右手做摆手包票姿态嘴角微撇一脸不以为然的神情用肯定的口吻答复，**马前卒**：\"碰了什么事都不会发生。\"；话刚说完马前卒脸上还带着老仙人的自信。\n第三段：镜头切到手指逼近木板的特写画面，马后炮哪吒的小手食指不顾马前卒的话真的向木板表面靠过去画面中手指尖与木板表面距离越来越近最终小指尖轻轻碰了一下木板表面定格在这份即将引发异变的瞬间中。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘官道小剧场近景+手部特写切换，网感变装喜剧质感，8K电影感。\n第一段：镜头由上一镜马前卒翻白眼定格延续小剧场近景，马后炮（小童子装扮）两个丸子发髻轻晃，试探性抬起右手食指朝插在地上的漆黑木板方向慢慢伸过去，用稚嫩童声带着试探语气问，**马后炮**：\"碰一下，会怎么样？\"\n第二段：马前卒（小道士装扮）听到问题后白袍一挥右手做摆手姿态，嘴角微撇一脸不以为然，用肯定的口吻答复，**马前卒**：\"碰了什么事都不会发生。\"\n第三段：镜头切到手指逼近木板的特写，马后炮的小手食指向木板表面靠过去，指尖与木板距离越来越近，最终小指尖轻轻碰了一下木板表面，画面定格在这份触碰瞬间。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马后炮哪吒试探性抬起右手食指朝木板伸过去、马前卒申公豹右手做摆手包票姿态、马后炮小指尖轻碰木板表面的特写瞬间",
   "qualityRoute": "官道压阴+申公豹白袍亮白反光+哪吒红肚兜鲜红+木板漆黑低饱和冷调，手指骨节与木板表面纹理高光保结构可辨。",
@@ -25,16 +25,62 @@
     "{{prop:点检做天子木牌}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7ithc85o9alhig6tdbg",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-65.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-65.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T15:41:37+08:00",
+    "completedAt": "2026-04-20T15:49:07+08:00",
+    "failHistory": [
+      {
+        "taskId": "e1ed103a-6263-418e-82ba-6c7eb54f137b",
+        "failReason": "generation failed: pre-TNS check did not pass",
+        "submittedAt": "2026-04-20T13:56:59+08:00",
+        "failedAt": "2026-04-20T14:26:45+08:00",
+        "model": "seedance2.0fast",
+        "kind": "fail"
+      },
+      {
+        "taskId": "a9c6cdde-0369-49df-8cae-4ff601e7eaed",
+        "failReason": "generation failed: pre-TNS check did not pass",
+        "submittedAt": "2026-04-20T15:24:02+08:00",
+        "failedAt": "2026-04-20T15:27:02+08:00",
+        "model": "Zen-SD2.0",
+        "kind": "fail"
+      }
+    ],
+    "autoRetryCount": 0,
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-马前卒",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/a8360ceb-5628-4528-8790-8f84cb9df754.png",
+        "srcImg": "@图片2"
+      },
+      {
+        "role": "character-马后炮",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/0e7416de-031e-44a3-8d25-6bfb14ebea7d.png",
+        "srcImg": "@图片3"
+      },
+      {
+        "role": "scene-北征行军路",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/e37c73ff-1e4d-4458-9f78-6e9d53fa7dbf.png",
+        "srcImg": "@图片25"
+      },
+      {
+        "role": "prop-点检做天子木牌",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/a21b71b3-9c8c-43aa-8563-00ecc972160a.png",
+        "srcImg": "@图片30"
+      }
+    ],
+    "assetId": "15buzjm9pb"
   }
 }

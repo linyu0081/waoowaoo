@@ -24,16 +24,18 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "709c9a5a-8aa1-4d06-b496-1a9132e17698",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/04b93ebfecf27edabdbc2d6c0b6fea37/69e53437/video/tos/cn/tos-cn-v-148450/oEulK0M1s3gpJePLcQhIiQAJFMF8AX4hDERqg1/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6421&bt=6421&cs=0&ds=12&ft=5QYTUxhhe6BMyq~PPPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Njk6N2Q6M2hlaDNnZ2k5M0Bpam9zbTRrbzlsOjczNDM7M0AyYF82X181NS0xNV4tLzAuYSNfbTJucWdeXmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776625184&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420025944021214073158601D124",
+    "videoFile": "outputs/ep01/videos/shot-59.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-59.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 35,
+    "submittedAt": "2026-04-20T02:51:48+08:00",
+    "completedAt": "2026-04-20T02:59:46+08:00"
   }
 }

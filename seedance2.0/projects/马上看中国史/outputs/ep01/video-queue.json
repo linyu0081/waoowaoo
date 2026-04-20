@@ -1,346 +1,9 @@
 {
   "maxInflight": 1,
-  "paused": false,
+  "paused": true,
   "defaultModel": "seedance2.0fast",
   "defaultRatio": "16:9",
-  "waitList": [
-    {
-      "shot": "45",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "31",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "30",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "05",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "11",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "21",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "22",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "23",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "24",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "25",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "42",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-关键路径（尾帧喂下游）"
-    },
-    {
-      "shot": "06",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "12",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "26",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "43",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "51",
-      "model": "",
-      "ratio": "",
-      "note": "",
-      "addedAt": "2026-04-19T13:17:17+08:00"
-    },
-    {
-      "shot": "55",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "56",
-      "model": "",
-      "ratio": "",
-      "note": "",
-      "addedAt": "2026-04-19T13:17:23+08:00"
-    },
-    {
-      "shot": "58",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "59",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "60",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "61",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "62",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "63",
-      "model": "",
-      "ratio": "",
-      "note": "",
-      "addedAt": "2026-04-19T13:17:25+08:00"
-    },
-    {
-      "shot": "64",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "65",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "66",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "67",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "68",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "69",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "70",
-      "model": "",
-      "ratio": "",
-      "note": "批量-非纪录片-无首帧依赖",
-      "addedAt": "2026-04-19T09:30:08+08:00"
-    },
-    {
-      "shot": "72",
-      "model": "",
-      "ratio": "",
-      "note": "",
-      "addedAt": "2026-04-19T13:17:30+08:00"
-    },
-    {
-      "shot": "73",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "74",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "75",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "77",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "78",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "79",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "80",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "81",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "82",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "83",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "84",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "85",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "86",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "87",
-      "model": "",
-      "ratio": "",
-      "addedAt": "2026-04-19T14:03:19+08:00",
-      "note": "批量补池-可并行"
-    },
-    {
-      "shot": "15",
-      "model": "",
-      "ratio": "",
-      "note": "",
-      "addedAt": "2026-04-19T19:23:36+08:00"
-    },
-    {
-      "shot": "47",
-      "model": "",
-      "ratio": "",
-      "note": "",
-      "addedAt": "2026-04-19T22:54:23+08:00"
-    }
-  ],
+  "waitList": [],
   "history": [
     {
       "shot": "07",
@@ -1003,658 +666,2315 @@
     {
       "shot": "09",
       "submit_id": "45bd3944-11a0-44d6-a9a4-d2dae42c848f",
-      "result": "submitted",
+      "result": "done",
       "reason": "",
       "at": "2026-04-19T23:07:52+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-19T23:32:47+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "74",
+      "submit_id": "ea97096a-d302-4edf-822f-34006a714e89",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-19T23:32:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:23:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "36",
+      "submit_id": "8c9edc63-91b8-4930-b1e6-b3019e5300be",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T00:23:49+08:00",
+      "model": "seedance2.0",
+      "endAt": "2026-04-20T00:54:49+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "10",
+      "submit_id": "8a5ef887-9cd8-4394-8844-a1e639b6aff1",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T00:23:53+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:24:15+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": "b470fcbc-27f7-46f9-bd60-36287a1ff827",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T00:24:18+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:24:49+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "16",
+      "submit_id": "f9df8070-75ac-4b40-b43a-2a23fc2fb4e4",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T00:24:53+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:27:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": "acfffb14-e85f-4709-87c5-a09f36f30fb9",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T00:27:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:30:20+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "20",
+      "submit_id": "aee993dc-e53b-4a85-b789-5662098a131e",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T00:30:24+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:30:55+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": "3f5fd858-df40-42ba-9ca6-10dbd4a9ad63",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T00:30:59+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:34:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "15",
+      "submit_id": "b59d73e6-05c5-49ee-adae-02799fd86338",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T00:34:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:45:47+08:00",
+      "durationSec": 5
+    },
+    {
+      "shot": "47",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "shot-47 already done",
+      "at": "2026-04-20T00:45:47+08:00",
       "model": "seedance2.0fast"
+    },
+    {
+      "shot": "45",
+      "submit_id": "3582615d-7c51-4513-b4d1-bebb11157f81",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T00:45:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T00:59:00+08:00",
+      "durationSec": 14
+    },
+    {
+      "shot": "10",
+      "submit_id": "1453928e-0706-4eaa-b03d-4d799fb73b01",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T00:54:52+08:00",
+      "model": "seedance2.0",
+      "endAt": "2026-04-20T01:18:50+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "31",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "shot-31 already done",
+      "at": "2026-04-20T00:59:00+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "30",
+      "submit_id": "e700b4c9-663f-4846-955a-372e2e51030f",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T00:59:03+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:18:50+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "37",
+      "submit_id": "a41ba27b-ab24-4433-b311-78b6d85c6a3d",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T01:18:53+08:00",
+      "model": "seedance2.0",
+      "endAt": "2026-04-20T01:38:47+08:00",
+      "durationSec": 7
+    },
+    {
+      "shot": "05",
+      "submit_id": "f65a3cd0-8616-4e58-a946-cff0005b0d6d",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T01:18:57+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:30:46+08:00",
+      "durationSec": 6
+    },
+    {
+      "shot": "11",
+      "submit_id": "10478af1-52b8-4d60-b4d7-87bf270f4086",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T01:30:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:34:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "42",
+      "submit_id": "ba7d0149-e9f9-434d-8b06-a4f07e52e8d7",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T01:34:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:38:47+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "06",
+      "submit_id": "289bfdb9-286e-44b4-8e31-56666c8cde85",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T01:38:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:46:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "51",
+      "submit_id": "1bcefa6b-77e5-4b43-9383-b28f31a67917",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T01:46:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:53:18+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "55",
+      "submit_id": "6a3792ab-ed6e-4ea7-ae4d-a6e2b48bb827",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T01:53:21+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T01:53:51+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "56",
+      "submit_id": "3a170284-49da-4ced-ab1a-81445a587b66",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T01:53:55+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:06:47+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "11",
+      "submit_id": "bd826dc2-71dd-4279-9215-0db43aae6204",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T02:06:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:09:10+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "11",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:09:10+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "13",
+      "submit_id": "d6704128-d2f8-4652-aa01-f8e1b209e302",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T02:09:14+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:09:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:09:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "16",
+      "submit_id": "edbe5fdb-a777-4f36-8e05-95d5c4ff2fbb",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T02:09:47+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:11:19+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "16",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:11:19+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "20",
+      "submit_id": "131ba85f-b6ca-460f-abee-0fa2430da691",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T02:11:23+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:11:53+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "20",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:11:53+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "27",
+      "submit_id": "110cfd19-5641-49e3-8ee3-5e10c6fd8745",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T02:11:57+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:13:31+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:13:31+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "58",
+      "submit_id": "cabf56ef-fc0d-4378-89f6-80de29480a32",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T02:13:35+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:19:49+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "42",
+      "submit_id": "01670568-dbbc-4efe-a8fb-042f748415f0",
+      "result": "failed",
+      "reason": "generation failed: post-TNS check did not pass",
+      "at": "2026-04-20T02:19:53+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:27:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "42",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:27:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "19",
+      "submit_id": "ca87e926-3dd3-42d5-bed9-52719e6766c3",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T02:27:47+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:35:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "61",
+      "submit_id": "8adbb6a9-4902-4381-af94-b7889e729055",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T02:35:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:43:46+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "60",
+      "submit_id": "b19ae966-7fbc-46d2-ae16-a5e0dca1ced4",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T02:43:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:47:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:47:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "20",
+      "submit_id": "0fae2787-3367-4d06-bcac-65bd27bbb9d9",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T02:47:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:51:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "20",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T02:51:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "59",
+      "submit_id": "709c9a5a-8aa1-4d06-b496-1a9132e17698",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T02:51:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T02:59:46+08:00",
+      "durationSec": 7
+    },
+    {
+      "shot": "62",
+      "submit_id": "8992cfb8-63c3-47dc-8131-bf9857a1e633",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T02:59:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T03:35:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "63",
+      "submit_id": "93e3b47b-cbc5-4a16-9093-06421e5008e1",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T03:35:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T03:39:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "63",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T03:39:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "03142a8e-1d3f-48b7-b994-597a9a860b34",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T03:39:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T03:43:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T03:43:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "66",
+      "submit_id": "00e75156-2d94-4d9c-b6a2-4b66a2a9fde6",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T03:43:47+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T03:47:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "66",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T03:47:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "67",
+      "submit_id": "294d4545-b7f7-448d-a8d1-f247e7904dcc",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T03:47:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T03:51:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "67",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T03:51:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "68",
+      "submit_id": "5f7837bf-a466-4cff-8ec6-df13400b8983",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T03:51:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:03:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "69",
+      "submit_id": "9afcbcae-d8a2-4fb9-a972-cfd9d0f7f999",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:03:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:07:47+08:00",
+      "durationSec": 9
+    },
+    {
+      "shot": "70",
+      "submit_id": "431947f6-d714-4ecb-b409-4d26bdc4a8f4",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:07:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:15:46+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "72",
+      "submit_id": "3bc72611-156b-41d5-9f8b-1b5e1f3b0d63",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:15:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:23:47+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "73",
+      "submit_id": "df964e74-1434-4e85-8240-21b529b2f36b",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:23:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:27:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "75",
+      "submit_id": "ffafaa14-fb47-47cf-90a4-5fb4bd37f76e",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T04:27:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:31:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "75",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T04:31:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "77",
+      "submit_id": "bed76e90-b4c5-4b7c-9acd-3cadba9269c0",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:31:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:35:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "78",
+      "submit_id": "e7110731-5421-48ac-9fde-8b597fd06bb9",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:35:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:39:47+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "79",
+      "submit_id": "2814a598-859a-4263-9d37-a494aca28cc4",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:39:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:43:46+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "80",
+      "submit_id": "34f59001-aa9e-4eee-8686-0cabcda4da44",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:43:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:47:47+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "81",
+      "submit_id": "a2fa90f5-d98f-4d3f-a19e-77b9b3648bc5",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T04:47:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T04:59:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "81",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T04:59:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "82",
+      "submit_id": "c9167a35-529d-42d1-9ec6-badd7b5cb8de",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T04:59:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T05:11:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "83",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "asset-map miss: '@音频7'",
+      "at": "2026-04-20T05:11:46+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "84",
+      "submit_id": "d5dc3d46-4e87-4792-b210-94218b140f48",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T05:11:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T05:19:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "85",
+      "submit_id": "b3bd749e-27f0-4239-93b4-1d27f8477b86",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T05:19:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T05:31:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "85",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T05:31:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "86",
+      "submit_id": "196e0ba4-2b23-4e9c-ac22-2ddb2ddf294c",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T05:31:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T05:39:46+08:00",
+      "durationSec": 14
+    },
+    {
+      "shot": "87",
+      "submit_id": "e4fdaaab-a7c9-40ed-942c-0b068b2989aa",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T05:39:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T05:51:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "87",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T05:51:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "74",
+      "submit_id": "2bba5fce-da41-4b45-9379-68901225f9ff",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T05:51:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:15:46+08:00",
+      "durationSec": 12
+    },
+    {
+      "shot": "64",
+      "submit_id": "f9973c6d-afc5-416d-b104-ba0282b28d20",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T06:15:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:19:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:19:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "13",
+      "submit_id": "c9651af5-0ffa-41ad-a37a-8f6aeaa55513",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T06:19:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:23:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:23:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "27",
+      "submit_id": "d1154077-a0c4-4ab8-98dc-c5dd55eb43d1",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T06:23:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:27:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:27:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "60",
+      "submit_id": "c1af82d4-6c07-4044-91f3-b26644d24533",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T06:27:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:31:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:31:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "63",
+      "submit_id": "20c3175d-273b-444b-a259-727ba9787af0",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T06:31:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:35:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "65",
+      "submit_id": "1dac03d5-54c2-4ee7-bdb4-9366df7a254c",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T06:35:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:39:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:39:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "66",
+      "submit_id": "dab551f8-6ff7-4219-9d05-efa565d71c4b",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T06:39:47+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:43:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "66",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:43:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "67",
+      "submit_id": "bfd64023-15b2-4793-991b-5f97fa61bf39",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T06:43:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:47:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "67",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T06:47:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "75",
+      "submit_id": "3772bf0d-f044-4bf5-ac26-afe304868fbb",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T06:47:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T06:55:47+08:00",
+      "durationSec": 14
+    },
+    {
+      "shot": "81",
+      "submit_id": "97083623-f432-4718-956a-d13170a026e1",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T06:55:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:07:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "81",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T07:07:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "85",
+      "submit_id": "ed62f685-0305-4173-9e28-a309bd35c67d",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T07:07:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:19:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "85",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T07:19:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "87",
+      "submit_id": "65e1a399-b1fc-430f-acbd-2e6d073cba6a",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T07:19:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:31:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "87",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T07:31:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "64",
+      "submit_id": "f6d28a0f-0deb-4e14-af80-80384e2b2ceb",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T07:31:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:35:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:35:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "13",
+      "submit_id": "c12cee16-693a-4937-bc07-4732f1a66b56",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T07:35:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:39:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:39:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "27",
+      "submit_id": "b73beeb6-be57-493c-81a0-502e128ea622",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T07:39:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:43:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:43:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "60",
+      "submit_id": "d1ae4956-76d6-4304-8313-ae8c8eb15b56",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T07:43:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:47:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:47:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "9361e560-c864-4cad-8f1c-b0928dc8aa8c",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T07:47:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:51:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:51:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "66",
+      "submit_id": "fcad3e77-d441-4365-b32c-0f0ab7d050ca",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T07:51:47+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:55:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "66",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:55:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "67",
+      "submit_id": "6d5964e5-9315-4eaf-894a-805b12bc84e2",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T07:55:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T07:59:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "67",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T07:59:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "81",
+      "submit_id": "a5310d81-498c-45cf-8b4d-b211d6b6a967",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T07:59:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T08:11:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "81",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T08:11:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "85",
+      "submit_id": "9578d6ac-84a2-4f56-8b62-0f77b4733ef6",
+      "result": "stuck",
+      "reason": "提交后 10+ 分钟仍未进入即梦队列，疑似服务端静默丢单",
+      "at": "2026-04-20T08:11:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T08:22:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "85",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from stuck; retry=1/2",
+      "at": "2026-04-20T08:22:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "87",
+      "submit_id": "82a90805-3e90-4ec1-bdac-fa429c3fb386",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T08:22:47+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "81",
+      "submit_id": "c67447bd-4d37-4155-9f4b-34a1ded3b00b",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T08:33:43+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T08:40:52+08:00",
+      "durationSec": 15
+    },
+    {
+      "shot": "85",
+      "submit_id": "35921d2e-6155-49c5-90e2-2cc0fe8c6d93",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T08:40:57+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T08:48:46+08:00",
+      "durationSec": 15
+    },
+    {
+      "shot": "87",
+      "submit_id": "66246082-9b8e-43a1-a57b-3900727b348c",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T08:48:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T08:59:11+08:00",
+      "durationSec": 15
+    },
+    {
+      "shot": "11",
+      "submit_id": "3b9b619a-0d4c-478b-ae95-3eda61422d7d",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T08:59:15+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T08:59:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "11",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T08:59:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "13",
+      "submit_id": "e717360e-bead-4963-a80a-dc239fd26274",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T08:59:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:00:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:00:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "16",
+      "submit_id": "364c1df5-8e3f-4dfb-a92e-48a373d9cb82",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T09:00:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:04:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "16",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:04:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "20",
+      "submit_id": "fcfed56e-1fd0-4a08-848a-55ea42484cc1",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T09:04:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:20:46+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "27",
+      "submit_id": "72a63188-b3d2-4106-bba4-040aee132fe8",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T09:20:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:24:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:24:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "42",
+      "submit_id": "6b7d145a-fd00-436c-a01f-65231d7f4495",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T09:24:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:28:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "42",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:28:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "60",
+      "submit_id": "cbc2bae6-5c38-4c30-967b-88f227ec52a6",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T09:28:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:32:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:32:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "64",
+      "submit_id": "59a24351-bca4-4a3b-942e-6963c46ff999",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T09:32:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:36:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:36:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "46572b0c-a49b-44d1-8576-e9d4c1c2db11",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T09:36:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:40:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:40:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "66",
+      "submit_id": "9fb89f9e-80ed-4850-a0fd-65248473fe24",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T09:40:47+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T09:44:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "66",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T09:44:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "67",
+      "submit_id": "9fa5ed1e-b2eb-49f4-a142-1757d853b97c",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T09:44:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T10:20:47+08:00",
+      "durationSec": 10
+    },
+    {
+      "shot": "13",
+      "submit_id": "5289190b-2716-4956-9813-f6955a47fb9a",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T10:20:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T10:24:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T10:24:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "27",
+      "submit_id": "cf0fc014-4c19-4251-9a66-904c35f9b2ca",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T10:24:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T10:28:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T10:28:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "60",
+      "submit_id": "772febca-30a6-4f1c-bcd1-90348b4d39c7",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T10:28:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T10:32:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T10:32:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "64",
+      "submit_id": "cb11fbaa-564a-4f81-8e86-ef7c084b22e8",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T10:32:51+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T10:36:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T10:36:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "5aa15d07-5a9a-4761-8a47-3891b110a74d",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T10:36:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T10:40:04+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T10:40:04+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "66",
+      "submit_id": "5b6073a5-03b7-4ce3-a8eb-754d20843fe0",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T10:40:06+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:32:35+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "13",
+      "submit_id": "354a77c3-9040-4ce9-b33d-6e5f3f1c56a3",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T11:32:40+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:32:57+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:32:57+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "27",
+      "submit_id": "90598b61-068b-4bbb-a906-edb0c46fb935",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T11:33:02+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:33:32+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:33:32+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "60",
+      "submit_id": "93e99cd9-5119-45e0-8f6f-a89f0dcdf9a1",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T11:33:36+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:34:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:34:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "64",
+      "submit_id": "d82b68bb-2070-4410-8c1b-812ed422748d",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T11:34:50+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:36:54+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:36:54+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "beba1c9a-c585-4f5a-817d-e6307bbde8bf",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T11:36:58+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:37:28+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:37:28+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "83",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "asset-map miss: '@音频7'",
+      "at": "2026-04-20T11:37:28+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "13",
+      "submit_id": "4bb2aea1-116f-47d1-8c5d-641e298fcf17",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T11:37:33+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:38:01+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "13",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:38:01+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "27",
+      "submit_id": "6c117a9f-ffaa-4c8f-9d8c-90ea32c3f42a",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T11:38:05+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:41:44+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "27",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:41:44+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "60",
+      "submit_id": "d27fc5cb-5f41-4837-a0bd-9dd350f6bed8",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T11:41:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:44:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:44:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "64",
+      "submit_id": "8cb7ac26-e3fe-4f8b-a9fa-469c20753bf8",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T11:44:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T11:48:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T11:48:45+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "1e6cd70c-ec71-4955-8ea1-925d099b3a87",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T11:48:49+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T13:54:54+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "21",
+      "submit_id": "d7iqu085o9alhig643fg",
+      "result": "done",
+      "reason": "workrally SD2.0 SubjectToVideo 手动批量跑完，已下载并截尾帧",
+      "at": "2026-04-20T13:05:50+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally",
+      "promptMode": "full"
+    },
+    {
+      "shot": "12",
+      "submit_id": null,
+      "result": "done",
+      "reason": "workrally SD2.0 SubjectToVideo 批量跑完，已下载并截尾帧",
+      "at": "2026-04-20T13:28:48+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally",
+      "promptMode": "full"
+    },
+    {
+      "shot": "42",
+      "submit_id": null,
+      "result": "done",
+      "reason": "workrally SD2.0 SubjectToVideo 批量跑完，已下载并截尾帧",
+      "at": "2026-04-20T13:28:48+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally",
+      "promptMode": "full"
+    },
+    {
+      "shot": "60",
+      "submit_id": null,
+      "result": "done",
+      "reason": "workrally SD2.0 SubjectToVideo 批量跑完，已下载并截尾帧",
+      "at": "2026-04-20T13:28:48+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally",
+      "promptMode": "full"
+    },
+    {
+      "shot": "64",
+      "submit_id": null,
+      "result": "done",
+      "reason": "workrally SD2.0 SubjectToVideo 批量跑完，已下载并截尾帧",
+      "at": "2026-04-20T13:28:48+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally",
+      "promptMode": "full"
+    },
+    {
+      "shot": "16",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "workrally pre-TNS: 输入提示词敏感或违反平台规定；已标 needsRework 交 shot-prompt-rewrite-skill",
+      "at": "2026-04-20T13:28:48+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally",
+      "promptMode": "full"
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T13:54:54+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "22",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "shot-22 already done",
+      "at": "2026-04-20T13:54:54+08:00",
+      "model": "seedance2.0fast"
+    },
+    {
+      "shot": "65",
+      "submit_id": "d0b68c1d-4bc5-40e2-8252-46a34f99589d",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T13:54:57+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T13:55:28+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T13:55:28+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "c6af42f1-a0d9-4e7d-8050-bd6c79507473",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T13:55:32+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T13:55:51+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T13:55:51+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "a456dece-78f2-4681-8c11-eabedf24756c",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T13:55:54+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T13:56:21+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T13:56:21+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "68746b0b-b804-4d4a-b340-b8ba99849031",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T13:56:24+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T13:56:55+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "65",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T13:56:55+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "e1ed103a-6263-418e-82ba-6c7eb54f137b",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T13:56:59+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T14:26:45+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "55",
+      "submit_id": null,
+      "result": "skipped",
+      "reason": "巡检：shot-55 已 done（mp4/tail 齐全），清理 waitList 残留",
+      "at": "2026-04-20T14:03:34+08:00",
+      "model": ""
+    },
+    {
+      "shot": "43",
+      "submit_id": null,
+      "result": "needs-rework",
+      "reason": "巡检：final-gen 敏感打回（\"马前卒崩溃爆哭…后晋就亡了\"）需要改写剧情，移出 waitList",
+      "at": "2026-04-20T14:03:34+08:00",
+      "model": ""
+    },
+    {
+      "shot": "23",
+      "submit_id": "08c18cae-5315-4dd2-907a-1ff87a1ac9d1",
+      "result": "done",
+      "reason": "",
+      "at": "2026-04-20T14:26:48+08:00",
+      "model": "seedance2.0fast",
+      "endAt": "2026-04-20T15:30:48+08:00",
+      "durationSec": 8
+    },
+    {
+      "shot": "83",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "asset-map miss: '@音频7'",
+      "at": "2026-04-20T15:20:53+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "dreamina"
+    },
+    {
+      "shot": "65",
+      "submit_id": "a9c6cdde-0369-49df-8cae-4ff601e7eaed",
+      "result": "failed",
+      "reason": "generation failed: pre-TNS check did not pass",
+      "at": "2026-04-20T15:24:02+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "dreamina",
+      "endAt": "2026-04-20T15:27:02+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "83",
+      "submit_id": null,
+      "result": "failed",
+      "reason": "asset-map miss: '@音频7'",
+      "at": "2026-04-20T15:30:48+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "dreamina"
+    },
+    {
+      "shot": "24",
+      "submit_id": "ff485abe-6fcd-420a-a3c5-ccf5ed732c12",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T15:30:52+08:00",
+      "model": "seedance2.0fast",
+      "engine": "dreamina",
+      "endAt": "2026-04-20T15:34:47+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "24",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=1/2",
+      "at": "2026-04-20T15:34:47+08:00",
+      "model": "seedance2.0fast",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "24",
+      "submit_id": "cae7ff94-d6a9-40f5-bb5b-559fede4006b",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T15:34:52+08:00",
+      "model": "seedance2.0fast",
+      "engine": "dreamina",
+      "endAt": "2026-04-20T15:41:25+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "24",
+      "submit_id": null,
+      "result": "auto-requeued",
+      "reason": "from failed; retry=2/2",
+      "at": "2026-04-20T15:41:25+08:00",
+      "model": "seedance2.0fast",
+      "engine": "dreamina",
+      "promptMode": "slim"
+    },
+    {
+      "shot": "65",
+      "submit_id": "wr-65-2026-04-20T15:41:25+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T15:41:25+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "20",
+      "submit_id": "wr-20-2026-04-20T15:41:25+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T15:41:25+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "24",
+      "submit_id": "7fb7bb27-693c-4a45-b86d-fcf0eec4294b",
+      "result": "failed",
+      "reason": "generation failed: final generation failed",
+      "at": "2026-04-20T15:41:31+08:00",
+      "model": "seedance2.0fast",
+      "engine": "dreamina",
+      "endAt": "2026-04-20T15:43:12+08:00",
+      "durationSec": 0
+    },
+    {
+      "shot": "24",
+      "submit_id": "wr-24-2026-04-20T15:44:50+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T15:44:50+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "40",
+      "submit_id": "wr-40-2026-04-20T15:55:38+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T15:55:38+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "83",
+      "submit_id": "wr-83-2026-04-20T15:55:38+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T15:55:38+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "20",
+      "submit_id": "wr-20-2026-04-20T16:21:04+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T16:21:04+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "20",
+      "submit_id": "wr-20-2026-04-20T16:52:44+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T16:52:44+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "20",
+      "submit_id": "wr-20-2026-04-20T16:55:44+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T16:55:44+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "20",
+      "submit_id": "wr-20-2026-04-20T16:57:30+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T16:57:30+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "21",
+      "submit_id": "wr-21-2026-04-20T17:10:40+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T17:10:40+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "21",
+      "submit_id": "wr-21-2026-04-20T17:17:44+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T17:17:44+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "22",
+      "submit_id": "wr-22-2026-04-20T17:36:41+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T17:36:41+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
+    },
+    {
+      "shot": "23",
+      "submit_id": "wr-23-2026-04-20T18:16:20+08:00",
+      "result": "submitted",
+      "reason": "",
+      "at": "2026-04-20T18:16:20+08:00",
+      "model": "Zen-SD2.0",
+      "engine": "workrally"
     }
   ],
-  "lastHeartbeat": "2026-04-19T23:07:52+08:00",
-  "depStatus": {
-    "shot-09": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": "45",
-      "fromShot": "08",
-      "reason": "首帧 @图片45 就绪（来自 shot-08）"
-    },
-    "shot-45": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-31": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-30": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-05": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": "41",
-      "fromShot": "04",
-      "reason": "首帧 @图片41 就绪（来自 shot-04）"
-    },
-    "shot-11": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "46",
-      "fromShot": "10",
-      "reason": "等 shot-10 出片后才能提交"
-    },
-    "shot-21": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "51",
-      "fromShot": "20",
-      "reason": "等 shot-20 出片后才能提交"
-    },
-    "shot-22": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "52",
-      "fromShot": "21",
-      "reason": "等 shot-21 出片后才能提交"
-    },
-    "shot-23": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "53",
-      "fromShot": "22",
-      "reason": "等 shot-22 出片后才能提交"
-    },
-    "shot-24": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "54",
-      "fromShot": "23",
-      "reason": "等 shot-23 出片后才能提交"
-    },
-    "shot-25": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "55",
-      "fromShot": "24",
-      "reason": "等 shot-24 出片后才能提交"
-    },
-    "shot-42": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": "58",
-      "fromShot": "41",
-      "reason": "首帧 @图片58 就绪（来自 shot-41）"
-    },
-    "shot-06": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "42",
-      "fromShot": "05",
-      "reason": "等 shot-05 出片后才能提交"
-    },
-    "shot-12": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "47",
-      "fromShot": "11",
-      "reason": "等 shot-11 出片后才能提交"
-    },
-    "shot-26": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "56",
-      "fromShot": "25",
-      "reason": "等 shot-25 出片后才能提交"
-    },
-    "shot-43": {
-      "ready": false,
-      "blocker": "dep-missing",
-      "tailNum": "59",
-      "fromShot": "42",
-      "reason": "等 shot-42 出片后才能提交"
-    },
-    "shot-51": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-55": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": "60",
-      "fromShot": "54",
-      "reason": "首帧 @图片60 就绪（来自 shot-54）"
-    },
-    "shot-56": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-58": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-59": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-60": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-61": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-62": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-63": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-64": {
-      "ready": false,
-      "blocker": "needsRework",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "分镜被标记为需返工，清除 needsRework 后才能提交"
-    },
-    "shot-65": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-66": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-67": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-68": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-69": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-70": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-72": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-73": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-74": {
-      "ready": false,
-      "blocker": "needsRework",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "分镜被标记为需返工，清除 needsRework 后才能提交"
-    },
-    "shot-75": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-77": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-78": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-79": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-80": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-81": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-82": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-83": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-84": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-85": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-86": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-87": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    },
-    "shot-15": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": "48",
-      "fromShot": "14",
-      "reason": "首帧 @图片48 就绪（来自 shot-14）"
-    },
-    "shot-47": {
-      "ready": true,
-      "blocker": "",
-      "tailNum": null,
-      "fromShot": null,
-      "reason": "无首帧依赖，可直接提交"
-    }
-  },
+  "lastHeartbeat": "2026-04-20T20:38:44+08:00",
+  "depStatus": {},
   "skipLog": [
     {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "22",
-      "blocker": "dep-missing",
-      "reason": "等 shot-21 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "23",
-      "blocker": "dep-missing",
-      "reason": "等 shot-22 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "24",
-      "blocker": "dep-missing",
-      "reason": "等 shot-23 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "25",
-      "blocker": "dep-missing",
-      "reason": "等 shot-24 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "42",
-      "blocker": "dep-missing",
-      "reason": "等 shot-41 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "06",
-      "blocker": "dep-missing",
-      "reason": "等 shot-05 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:25:45+08:00",
-      "shot": "12",
-      "blocker": "dep-missing",
-      "reason": "等 shot-11 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:29:45+08:00",
-      "shot": "05",
-      "blocker": "dep-missing",
-      "reason": "等 shot-04 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:29:45+08:00",
-      "shot": "11",
-      "blocker": "dep-missing",
-      "reason": "等 shot-10 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:29:45+08:00",
+      "at": "2026-04-20T01:34:45+08:00",
       "shot": "21",
       "blocker": "dep-missing",
       "reason": "等 shot-20 出片后才能提交"
     },
     {
-      "at": "2026-04-19T17:29:45+08:00",
+      "at": "2026-04-20T01:34:45+08:00",
       "shot": "22",
       "blocker": "dep-missing",
       "reason": "等 shot-21 出片后才能提交"
     },
     {
-      "at": "2026-04-19T17:29:45+08:00",
+      "at": "2026-04-20T01:34:45+08:00",
       "shot": "23",
       "blocker": "dep-missing",
       "reason": "等 shot-22 出片后才能提交"
     },
     {
-      "at": "2026-04-19T17:29:45+08:00",
+      "at": "2026-04-20T01:34:45+08:00",
       "shot": "24",
       "blocker": "dep-missing",
       "reason": "等 shot-23 出片后才能提交"
     },
     {
-      "at": "2026-04-19T17:29:45+08:00",
+      "at": "2026-04-20T01:34:45+08:00",
       "shot": "25",
       "blocker": "dep-missing",
       "reason": "等 shot-24 出片后才能提交"
     },
     {
-      "at": "2026-04-19T17:29:45+08:00",
-      "shot": "42",
-      "blocker": "dep-missing",
-      "reason": "等 shot-41 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:29:45+08:00",
-      "shot": "06",
-      "blocker": "dep-missing",
-      "reason": "等 shot-05 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T17:29:45+08:00",
-      "shot": "12",
-      "blocker": "dep-missing",
-      "reason": "等 shot-11 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:01:48+08:00",
-      "shot": "05",
-      "blocker": "dep-missing",
-      "reason": "等 shot-04 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:01:48+08:00",
-      "shot": "11",
-      "blocker": "dep-missing",
-      "reason": "等 shot-10 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:38:47+08:00",
       "shot": "21",
       "blocker": "dep-missing",
       "reason": "等 shot-20 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:38:47+08:00",
       "shot": "22",
       "blocker": "dep-missing",
       "reason": "等 shot-21 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:38:47+08:00",
       "shot": "23",
       "blocker": "dep-missing",
       "reason": "等 shot-22 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:38:47+08:00",
       "shot": "24",
       "blocker": "dep-missing",
       "reason": "等 shot-23 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:38:47+08:00",
       "shot": "25",
       "blocker": "dep-missing",
       "reason": "等 shot-24 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
-      "shot": "42",
+      "at": "2026-04-20T01:46:46+08:00",
+      "shot": "21",
       "blocker": "dep-missing",
-      "reason": "等 shot-41 出片后才能提交"
+      "reason": "等 shot-20 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
-      "shot": "06",
+      "at": "2026-04-20T01:46:46+08:00",
+      "shot": "22",
       "blocker": "dep-missing",
-      "reason": "等 shot-05 出片后才能提交"
+      "reason": "等 shot-21 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:46:46+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T01:46:46+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T01:46:46+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T01:46:46+08:00",
       "shot": "12",
       "blocker": "dep-missing",
       "reason": "等 shot-11 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:01:48+08:00",
+      "at": "2026-04-20T01:46:46+08:00",
       "shot": "26",
       "blocker": "dep-missing",
       "reason": "等 shot-25 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
-      "shot": "05",
+      "at": "2026-04-20T01:46:46+08:00",
+      "shot": "43",
       "blocker": "dep-missing",
-      "reason": "等 shot-04 出片后才能提交"
+      "reason": "等 shot-42 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
-      "shot": "11",
-      "blocker": "dep-missing",
-      "reason": "等 shot-10 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "21",
       "blocker": "dep-missing",
       "reason": "等 shot-20 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "22",
       "blocker": "dep-missing",
       "reason": "等 shot-21 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "23",
       "blocker": "dep-missing",
       "reason": "等 shot-22 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "24",
       "blocker": "dep-missing",
       "reason": "等 shot-23 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "25",
       "blocker": "dep-missing",
       "reason": "等 shot-24 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
-      "shot": "42",
-      "blocker": "dep-missing",
-      "reason": "等 shot-41 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:05:45+08:00",
-      "shot": "06",
-      "blocker": "dep-missing",
-      "reason": "等 shot-05 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "12",
       "blocker": "dep-missing",
       "reason": "等 shot-11 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:05:45+08:00",
+      "at": "2026-04-20T01:53:18+08:00",
       "shot": "26",
       "blocker": "dep-missing",
       "reason": "等 shot-25 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
-      "shot": "05",
+      "at": "2026-04-20T01:53:18+08:00",
+      "shot": "43",
       "blocker": "dep-missing",
-      "reason": "等 shot-04 出片后才能提交"
+      "reason": "等 shot-42 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
-      "shot": "11",
-      "blocker": "dep-missing",
-      "reason": "等 shot-10 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "21",
       "blocker": "dep-missing",
       "reason": "等 shot-20 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "22",
       "blocker": "dep-missing",
       "reason": "等 shot-21 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "23",
       "blocker": "dep-missing",
       "reason": "等 shot-22 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "24",
       "blocker": "dep-missing",
       "reason": "等 shot-23 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "25",
       "blocker": "dep-missing",
       "reason": "等 shot-24 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
-      "shot": "42",
-      "blocker": "dep-missing",
-      "reason": "等 shot-41 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:33:46+08:00",
-      "shot": "06",
-      "blocker": "dep-missing",
-      "reason": "等 shot-05 出片后才能提交"
-    },
-    {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "12",
       "blocker": "dep-missing",
       "reason": "等 shot-11 出片后才能提交"
     },
     {
-      "at": "2026-04-19T18:33:46+08:00",
+      "at": "2026-04-20T01:53:51+08:00",
       "shot": "26",
       "blocker": "dep-missing",
       "reason": "等 shot-25 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T01:53:51+08:00",
+      "shot": "43",
+      "blocker": "dep-missing",
+      "reason": "等 shot-42 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "21",
+      "blocker": "dep-missing",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "12",
+      "blocker": "dep-missing",
+      "reason": "等 shot-11 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "26",
+      "blocker": "dep-missing",
+      "reason": "等 shot-25 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:13:31+08:00",
+      "shot": "43",
+      "blocker": "dep-missing",
+      "reason": "等 shot-42 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:19:49+08:00",
+      "shot": "21",
+      "blocker": "dep-missing",
+      "reason": "等 shot-20 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:19:49+08:00",
+      "shot": "22",
+      "blocker": "dep-missing",
+      "reason": "等 shot-21 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:19:49+08:00",
+      "shot": "23",
+      "blocker": "dep-missing",
+      "reason": "等 shot-22 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:19:49+08:00",
+      "shot": "24",
+      "blocker": "dep-missing",
+      "reason": "等 shot-23 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T02:19:49+08:00",
+      "shot": "25",
+      "blocker": "dep-missing",
+      "reason": "等 shot-24 出片后才能提交"
+    },
+    {
+      "at": "2026-04-20T13:15:09+08:00",
+      "shot": "batch",
+      "blocker": "cleanup",
+      "reason": "workrally 已 done：['shot-11', 'shot-13', 'shot-21', 'shot-27']；从 depStatus 移除；waitList 清理 0 项"
+    },
+    {
+      "shot": "55",
+      "reason": "patrol: already done, dedup from waitList",
+      "ts": "2026-04-20T14:03:34+08:00"
+    },
+    {
+      "shot": "43",
+      "reason": "patrol: final-gen sensitive, need rewrite",
+      "ts": "2026-04-20T14:03:34+08:00"
     }
-  ]
+  ],
+  "inflightByModel": {},
+  "inflight": []
 }

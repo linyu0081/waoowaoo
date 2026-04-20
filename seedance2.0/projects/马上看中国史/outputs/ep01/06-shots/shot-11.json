@@ -8,13 +8,13 @@
   "connection": "接住上一镜青砖断壁拱形轮廓接力物：图形匹配切入二维手绘青石城门拱形门洞。",
   "transition": "动作动势硬切：禁军出城的动势延续到下一镜军队与叛军合流举刀回转，方向保持向前但目标反转。",
   "dualAnchor": "9:16 强调上下城门纵深+大军从门洞深处走向镜头的纵向轨迹；16:9 强调左右城门拱形展开+李嗣源居中禁军左右散开。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画历史纪录片风格二维手绘历史出征大场面镜头，中国传统动画厚涂暖调质感，8K电影感。\n第一段：镜头承接上一镜青砖断壁拱形轮廓切入国产动画二维手绘洛阳城门拱形青石门洞，门洞深处以明确墨线勾勒出拱形轮廓与暗部厚涂冷灰色块，门洞纵深处浮现李嗣源跨黑马深色铠甲的前进轮廓，马蹄声与士兵脚步声由远及近手绘颗粒在侧光里漂浮。\n第二段：李嗣源身穿深色铠甲红披风手持长枪走出城门口，铠甲以厚涂冷金属色块+披风以二维手绘笔触飘动呈现，身后禁军士兵以手绘剪影群像方式整齐跟出，数面黑底禁军旌旗在队列中以平涂色块起伏，阳光以手绘色块斜照在武将脸上，马上以说书腔画外音响起，**马上**：\"唐庄宗李存勖，派他的义兄李嗣源率领禁军去贝州，平定那里的藩镇叛乱。\"。\n第三段：队列前进到画面中景位置手绘尘土线条飞扬气势正盛，李嗣源居中马头昂起披风被疾风扬起采用二维手绘笔触笔锋分明，身后禁军士兵以剪影群像塞满画面纵深举手呐喊，武将战马前蹄腾空落地压出手绘泥土色块，画面在浩荡洪流中定格。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘历史出征大场面镜头，中国传统动画厚涂暖调质感，8K电影感。\n第一段：镜头承接上一镜青砖断壁拱形轮廓切入洛阳城门拱形青石门洞，门洞纵深处浮现李嗣源跨黑马深色铠甲的前进轮廓，侧光下可见墨线勾勒的拱形门框与暗部冷灰色块。\n第二段：李嗣源身穿深色铠甲红披风手持长枪走出城门口，身后禁军士兵以手绘剪影群像方式整齐跟出；数面黑底禁军旌旗在队列中起伏；阳光斜照在武将脸上，马上以说书腔画外音响起，**马上**：\"唐庄宗李存勖，派他的义兄李嗣源率领禁军去贝州，平定那里的藩镇叛乱。\"\n第三段：队列前进到画面中景位置，李嗣源居中马头昂起披风被风扬起，身后禁军士兵塞满画面纵深举手呐喊，战马前蹄腾空落地压出手绘泥土色块，画面在浩荡气势中定格。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "二维手绘洛阳青石城门拱形门洞、李嗣源跨黑马铠甲红披风出城、身后禁军手绘剪影群像举兵器",
   "qualityRoute": "二维手绘墨线轮廓+整体暖调与门洞内冷色反差色调+手绘侧光颗粒漂浮；城门石砖色块层次清晰+李嗣源铠甲披风线条笔锋稳定+禁军剪影群像边缘稳定。",
   "imagingStyle": "低位仰角+纵深推进+剪影群像三段推进，不靠写实铠甲质感，靠国产动画厚涂色块与墨线勾勒的出征气势直接传达由远及近的压迫感。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义历史纪录风出征场面+中华勤学故事二维手绘厚涂；稳帧点：二维手绘洛阳青石城门拱形门洞。",
+  "reference": "参照：80年代国产二维手绘历史纪录出征厚涂；稳帧点：二维手绘洛阳青石城门拱形门洞。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是大军，而是国产动画纪录片风下军队从城门洞涌出的纵深压迫。\n城门洞必须让观众看到二维手绘墨线勾勒的石砖肌理与拱形暗部厚涂色块。\n李嗣源披风要又厚又急，不靠CG飘逸，靠二维手绘笔触笔锋与马步节奏承载。\n落幅停在人马洪流手绘剪影群像塞满纵深，让下一镜禁军举刀反转的动势顺势承接。",
   "e15": "",
@@ -24,16 +24,38 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7iqcrc0ronsa3ueaa00",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-11.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-11.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T12:06:30+08:00",
+    "completedAt": "2026-04-20T12:15:00+08:00",
+    "assetId": "a7cjn93l4d",
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {"role": "character-李嗣源", "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/a3e4300c-dcd2-4d37-b093-ca28cbcadcdb.png"},
+      {"role": "scene-洛阳城门军营", "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/e5d4ab76-3bfd-4b48-80c9-b2f8d21ce60b.png"},
+      {"role": "first-frame-tail-shot-10", "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/ec8d3586-0c4c-40e9-a579-919d1ba24433.jpg"}
+    ],
+    "failHistory": [
+      {
+        "taskId": "3b9b619a-0d4c-478b-ae95-3eda61422d7d",
+        "failReason": "generation failed: final generation failed",
+        "submittedAt": "2026-04-20T08:59:15+08:00",
+        "failedAt": "2026-04-20T08:59:45+08:00",
+        "model": "seedance2.0fast",
+        "kind": "fail"
+      }
+    ],
+    "autoRetryCount": 1,
+    "lastAutoRetryAt": "2026-04-20T08:59:45+08:00"
   }
 }

@@ -14,7 +14,7 @@
   "qualityRoute": "二维手绘墨线轮廓+帐外篝火暖橙与将领皮甲暗色冷反差厚涂+夜色冷蓝+帐内油灯暖金与赵匡胤深青中衣冷反差；篝火色块与皮甲纹样墨线层次清晰可辨。",
   "imagingStyle": "帐外咬牙密谋+帐内呼噜变调，不靠戏腔写实，靠国产动画墨线勾勒与厚涂色块的咬牙姿态与呼噜戏腔变调承载权谋+喜剧反差。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义帐外密谋桥段+中华勤学故事二维手绘厚涂喜剧呼噜打断；稳帧点：赵匡胤呼噜变调Wow帐内定格。",
+  "reference": "参照：80年代国产二维手绘帐外密谋厚涂喜剧呼噜打断；稳帧点：赵匡胤呼噜变调Wow帐内定格。",
   "microExpressions": "马前卒李处耘装扮+咬牙切齿压低声音+眼睛扫视周围将领+眉头深锁带愤懑+嘴角微抽带暗谋；马后炮马仁瑀装扮+低头凝听+眼神共鸣；帐内赵匡胤睡梦中嘴角一咧+呼噜声从沉稳鼻息变调成戏腔Wow+眉头微跳+胸口随呼噜起伏。",
   "nailLines": "这镜最值钱的不是密谋，而是国产动画纪录片风下李处耘咬牙拥立没说完被帐内呼噜变调Wow打断的权谋+喜剧钩子。\n呼噜变调必须让观众听到从沉稳鼻息到戏腔Wow的声调反差。\n帐外与帐内二段构图，不靠配乐，靠墨线咬牙姿态与厚涂色块呼噜变调承载权谋喜剧双重分量。\n落幅停在呼噜Wow定格，让下一镜拥立黄袍加身戏从悬念自然承接。",
   "e15": "",
@@ -25,16 +25,18 @@
     "{{scene:雪地军帐}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "e7110731-5421-48ac-9fde-8b597fd06bb9",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v3-artist.vlabvod.com/b698fe919722e1bb50dd1fc199c8ce39/69e54bac/video/tos/cn/tos-cn-v-148450/ogXLQS6dUyCyomSlAgxSI15HBUpgPBfHSTZeVC/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6228&bt=6228&cs=0&ds=12&ft=5QYTUxhhe6BMyqngiPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZGU8Omc0aWk3Nmc0aTg5O0Bpam12bTRrb3ZtOjczNDM7M0AzLTNeYjMtXjExMTVeM15iYSMxXzJucWdmbmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776631184&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420043944021214073158597E556",
+    "videoFile": "outputs/ep01/videos/shot-78.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-78.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 60,
+    "submittedAt": "2026-04-20T04:35:50+08:00",
+    "completedAt": "2026-04-20T04:39:47+08:00"
   }
 }

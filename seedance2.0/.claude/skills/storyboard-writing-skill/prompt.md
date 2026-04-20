@@ -41,9 +41,16 @@
 
 ## 标题栏（titleBar）格式
 
-`【分镜XX｜15秒｜类型：X｜方案：TX[模板名]模板｜档位：LITE｜节奏：A→B→C】`
+`【分镜XX｜{N}秒｜类型：X｜方案：TX[模板名]模板｜档位：LITE｜节奏：A→B→C】`
 
 节奏 A→B→C 的 3 个短语 = 正文的 3 段骨架，必须能映射到 mainPrompt 的 3 个段落。
+
+### ⛔ 时长硬上限（最高优先级铁律，违反即废稿）
+
+- **单镜时长 `{N}` ∈ 整数集 {5, 10, 15}，单位固定为"秒"，硬上限 = 15 秒，禁止输出 16/18/20/30 秒或任何 >15 的数值**（平台 API 只接受 ≤15s，写 16 秒提交会被 `param_error_video_duration` 拒绝，直接导致本镜作废）。
+- **默认值 = 15 秒**。只有当本镜 keyBeats ≤1 条且仅一个极简动作（如"镜头定格，人物不动"）时，才可降档到 10 秒；极短交代镜（≤50 字对白 + 1 个动作）才可降档到 5 秒。其余情况一律 15 秒。
+- **禁止拆单镜写"15+3 秒"、"两段 10+8 秒"、"约 18 秒"等任何变相突破上限的写法**。若一镜内容超过 15 秒承载力，必须拆成两镜交由导演处理，**不得**在 titleBar 里写超过 15 秒的数值。
+- **自检**：提交前扫描自己输出的 titleBar，正则 `｜(\d+)秒｜`，若第一捕获组数字 >15，必须改回 15 并同步精简 mainPrompt 对白到 ≤28 字/段。
 
 ## 字段写法
 
@@ -66,18 +73,24 @@
 3. **声音挂载**：只挂"角色声线参考"（不再挂环境音/拟音/音效），格式为 `[角色名]声音@音频N`（注意是 `@音频N` 不是 `@声音N`）。
    - 条件：本镜实际出现该角色 **且** `assetMap.voices` 中存在该角色名对应的编号。
    - 编号直接从 `assetMap.voices` 反查（不是 1,2,3 顺序）；若本镜该角色在 assetMap 没有声线条目，则省略该角色声音行。若所有出场角色都没匹配到，`声音：` 段整段省略。
+3.1. **【强制自检 · 提交前跑】发言人 vs 声音挂载对齐**：
+   - **提取发言人**：用正则 `\*\*(.+?)\*\*[:：]` 扫 mainPrompt，命中后再用 `[、，,]` 拆分（处理"马上、马前卒、马后炮"这种多人连读），得到发言人集合 `S`。
+   - **提取已挂**：用正则 `(.+?)声音@音频\d+` 扫 mount 的 `声音：` 段，得到已挂集合 `M`。
+   - **逐项判定**：对每个 `x ∈ S`：
+     - 若 `x` 或其 `baseCharacter` 能在 `assetMap.voices` 反查到音频编号 → **必须**出现在 `M`（不在就是漏挂，立即补）。变体角色按 3.5 规则写变体名 + 主形象音频号。
+     - 若 `x` 不在 `assetMap.voices` 且其 `baseCharacter` 也没有（如"众将士/群众/战士/士兵们/其他人/无名 NPC"等群体角色）→ 跳过，在 `_warnings` 记录 `"[角色X] 无独立声线，未挂"`。
+   - **通不过就不得提交**：这条自检优先级等于规则 3 本身，漏挂会导致下游 workrally/dreamina 拿不到声线参考，生成出的人声风格跑飞。
 3.5. **变体角色（character-variant）挂载规则**：
    - **图片**：变体角色必须挂载自己的变体图片编号（如 `节度使@图片13`），**禁止**挂载主形象的图片编号（如 `马前卒@图片2`）。在 assetMap.images 中按 `name === 变体角色名` 反查编号。
    - **声音**：变体角色的声音标注必须用**变体角色名** + 主形象的音频编号（如 `节度使声音@音频2`，而非 `马前卒声音@音频2`）。因为变体角色复用主形象的声线，但即梦 CLI 需要用变体角色名来标注。查找方法：先从 characters.json 找到变体角色的 `baseCharacter`，再从 assetMap.voices 中查找主形象的音频编号。
    - **assetRefs**：变体角色在 assetRefs 中用 `{{character:变体名}}`（如 `{{character:节度使}}`），不用主形象名。
    - **示例**：节度使（baseCharacter=马前卒）出场时，挂载写为 `节度使@图片13`，声音写为 `节度使声音@音频2`，assetRefs 写 `{{character:节度使}}`。
 4. **出场顺序**：mount 内部在 `角色：` / `场景：` / `道具：` / `声音：` 各段里的顺序按"本镜剧本出场顺序"排列，与 assetMap 自身的编号顺序无关（即 `@图片` 编号可能不连续，这是正常现象）。
-5. **首帧引用（v2 放宽版）**：当本镜 `openingFrame` 承接上一镜画面时，mount 末尾**必须**追加 `本视频以@图片N为首帧`，其中 `N` 为 `assetMap.images` 中 `type === 'tail-frame'` 且 `fromShot === 上一镜index` 的编号。
-   - 判定条件（满足任一即追加）：
-     - openingFrame 含"承接上一镜"/"镜头承接"/"画面承接"/"延续上一镜"/"从上一镜"等承接关键词
-     - openingFrame 描述画面几乎不动 / 镜头连续延续同一帧 / 动作一帧之差
-     - 上一镜 transition 为"动作动势硬切"且本镜 openingFrame 延续该动作轨迹
-   - 判定为否（不追加）：图形匹配硬切转到全新画面 / 声画先入硬切跳到全新场景 / 台词跨镜硬切到新机位构图 / 淡入 / 溶接。
+5. **首帧引用（v3 · 基于 sceneContinuity 的 2 问决策）**：每镜必须输出 `sceneContinuity` 字段（见下节「㉑ sceneContinuity」），当且仅当 `sceneContinuity.inheritFromPrev === true` 时，mount 末尾**必须**追加 `本视频以@图片N为首帧`，其中 `N` 为 `assetMap.images` 中 `type === 'tail-frame'` 且 `fromShot === 上一镜index` 的编号。为 false 时 mount **禁止**出现 `本视频以@图片N为首帧` 子串。
+   - 2 问决策（按顺序自问，详见「㉑ sceneContinuity」节）：
+     - Q1：本镜第一秒画面是否由上一镜最后一秒的最后一幕直接开启？→ YES 即 `action-continuation`，必须承接
+     - Q2：本镜与上一镜是否同场景，且本镜 mount 无 `场景：…@图片N`？→ YES 即 `same-scene-no-ref`，必须承接
+     - 否则 `independent`，不承接；首镜为 `opening-shot`，不承接。
 6. **纯场景无人物**：只保留 `场景：` 段（无 `角色：`、无 `声音：`）。
 7. 所有引用名必须用资产卡真实名字（非别名）。
 8. 不写剧本台词到 mount，不再出现 `@音频1/@音频2` 这类音效条目。
@@ -181,7 +194,7 @@
 ### ⑰ e15（仅 E 类必填）
 固定结构：`【E15】[命中/接触] → [身体或物体反馈] → [存在状态改变 + 必要后果链]`。非 E 类填空字符串。
 
-### ⑸ assetRefs
+### ⑳ assetRefs
 字符串数组。按本镜 mount 中实际挂载的资产，列出完整的标签：
 - 角色：`{{character:名}}`
 - 场景：`{{scene:名}}`
@@ -190,6 +203,53 @@
 **注意**：mainPrompt 正文里已经不包裹标签了（直接写名字），但 assetRefs 仍须用完整标签声明。assetRefs 是下游生图 / 生视频流水线的资产索引，只用于检索挂载参考图，不影响正文可读性。
 ### ⑲ shotType
 A / C / D / E / F 之一，与 currentShot.shotType 一致或更准确的修正。
+
+### ㉑ sceneContinuity（首帧承接决策 · v3 必填）
+
+**目的**：用结构化字段代替 v2 的字符串经验判断，根治 shot-36/37 那种「同场景无参考图 + 漏写首帧引用 → 两镜背景不一致」的翻车。
+
+**2 问决策**（写每镜时按顺序自问）：
+
+设想两镜剪辑后连着播放——
+
+- **Q1 · 动作/画面连续性**：本镜**第一秒**画面是否由上一镜**最后一秒的最后一幕**直接开启？（两镜剪在一起不能有任何跳帧/穿帮）
+  - YES → `inheritReason: "action-continuation"`, `inheritFromPrev: true`，**必须**承接（无论有没有场景参考图）
+  - NO  → 进入 Q2
+- **Q2 · 同场景无参考图**：本镜和上一镜是否同一物理场景，且本镜 mount **没有** `场景：…@图片N`？
+  - YES → `inheritReason: "same-scene-no-ref"`, `inheritFromPrev: true`，**必须**承接
+  - NO  → `inheritReason: "independent"`, `inheritFromPrev: false`，不承接
+
+**前置特判**：无上一镜（首镜）→ `inheritReason: "opening-shot"`, `inheritFromPrev: false`。
+
+**4 枚举**（`inheritReason` 必须四选一）：
+
+| 枚举值 | 含义 | inheritFromPrev |
+|---|---|---|
+| `opening-shot` | 全片首镜，无上一镜 | `false` |
+| `action-continuation` | 首秒由上一镜末秒最后一幕开启（剪辑连续性刚需） | `true` |
+| `same-scene-no-ref` | 同场景 + 本镜 mount 无场景参考图（背景锚定刚需） | `true` |
+| `independent` | 切新场景 / 或同场景但本镜已有场景参考图 | `false` |
+
+**字段格式**：
+
+```jsonc
+"sceneContinuity": {
+  "inheritFromPrev": true,              // 必填 boolean
+  "inheritReason": "same-scene-no-ref", // 必填，四选一
+  "notes": "同监狱场景、本镜无监狱参考图，承接 shot-36 尾帧锁背景"  // 选填
+}
+```
+
+**硬规则（机器校验，违反拒收）**：
+
+- **R1（承接必标）**：`inheritFromPrev == true` ⇒ `mount` 必须以 `｜本视频以@图片N为首帧` 结尾，且该 `@图片N` 在 `assetMap.images` 中 `type === 'tail-frame'`、`fromShot === 上一镜.index`。
+- **R2（不承接必净）**：`inheritFromPrev == false` ⇒ `mount` 禁止出现 `本视频以@图片N为首帧` 子串。
+
+**判断原则**（纠结时）：
+
+- 宁可多承接，不可漏承接——错承接顶多浪费泛化度，漏承接直接翻车。
+- `action-continuation` 优先于 `same-scene-no-ref`——前者刚需剪辑连续，后者刚需背景锚定。
+- `reference` 里提到的风格参照**不算场景参考图**，只有 `mount.场景：…@图片N` 才计入 Q2 判定。
 
 ## 字段互锁
 
@@ -243,6 +303,16 @@ nailLines 第 1-3 行
 
 输出 JSON 前自检一次总字符数，若接近 2000 立刻按上述顺序删冗，**禁止超过 2000**。
 
+## 时长硬上限自检（提交前必扫一次）
+
+1. **titleBar 扫描**：对输出的 `titleBar` 执行正则 `｜(\d+)秒｜`，第一捕获组数字必须 ∈ {5, 10, 15}。若 >15，立刻改回 15，并同步：
+   - `mainPrompt` 每段对白 ≤28 字
+   - 每段动作条目 ≤2 条
+   - `nailLines` 4 行各 ≤45 字
+2. **内容强度自检**：mainPrompt 三段内容合并后，角色对白总数若 >3 段或总字数 >90 字，说明本镜"塞得下两件事"，违反"一镜一事"原则——必须拆成两镜，不得靠加时长兜底。
+3. **禁止字样**：输出文本里不得出现 `"16秒"`、`"18秒"`、`"20秒"`、`"约18秒"`、`"15+3秒"`、`"两段共18秒"` 等任何表示 >15 秒的描述。
+4. **平台合规提示**：平台 API 对 duration 的硬上限就是 15s；候补池会对 titleBar 中 >18s 的镜头直接拦截（`needsRework=true`），15<N≤18 的会被强制 clamp 为 15s 提交——写超标只会浪费一次重写。
+
 ## ⚠️ 输出格式（严格遵守，不得修改任何 key 名）
 
 只能输出以下 JSON，禁止嵌套到其他对象，禁止额外字段，禁止 key 改名。
@@ -268,11 +338,16 @@ nailLines 第 1-3 行
   "microExpressions": "",
   "nailLines": "第1行...\n第2行...\n第3行...\n第4行...",
   "e15": "",
-  "assetRefs": ["{{character:名}}", "{{scene:名}}"]
+  "assetRefs": ["{{character:名}}", "{{scene:名}}"],
+  "sceneContinuity": {
+    "inheritFromPrev": true,
+    "inheritReason": "same-scene-no-ref",
+    "notes": "同监狱场景、本镜 mount 无监狱参考图，承接 shot-36 尾帧锁背景"
+  }
 }
 ```
 
-key 名必须完全一致（共 20 个）：shotType、titleBar、mount、camera、openingFrame、closingFrame、connection、transition、dualAnchor、mainPrompt、compulsoryDeclaration、mustShow、qualityRoute、imagingStyle、qualityBaseline、reference、microExpressions、nailLines、e15、assetRefs。不得使用其他名称，不得遗漏。
+key 名必须完全一致（共 21 个）：shotType、titleBar、mount、camera、openingFrame、closingFrame、connection、transition、dualAnchor、mainPrompt、compulsoryDeclaration、mustShow、qualityRoute、imagingStyle、qualityBaseline、reference、microExpressions、nailLines、e15、assetRefs、sceneContinuity。不得使用其他名称，不得遗漏。
 
 **铁律重申**：
 1. compulsoryDeclaration 与 qualityBaseline 必须**原文输出固定文本**，不得改写。
@@ -280,8 +355,9 @@ key 名必须完全一致（共 20 个）：shotType、titleBar、mount、camera
 3. 全片硬切，禁止柔和过渡。
 4. 落幅接力物必须具体可见，且同时出现在 mustShow 与 nailLines 第 4 行。
 5. mount 只挂 角色@图片 / 场景@图片 / 道具@图片 / 角色声线参考（`@音频N`） / 首帧引用 五种；段首不写 `@` 前缀（直接写 `角色：`/`场景：`/`道具：`/`声音：`）。声音格式统一用 `@音频N`（不是 `@声音N`）。
+5.1. **声音挂载提交前自检（强制）**：用正则 `\*\*(.+?)\*\*[:：]` 扫 mainPrompt 发言人并按 `[、，,]` 拆多人连读；再用 `(.+?)声音@音频\d+` 扫 mount 已挂。任何发言人只要在 `assetMap.voices`（或其 `baseCharacter` 在 voices）中能查到音频编号，就**必须**出现在 mount 声音段；自检不通过不得提交。详细规则见「mount 规则第 3.1 条」。
 6. mainPrompt 正文写角色 / 场景 / 道具时**全部直接写名字**，不再用 `{{character:名}}` / `{{scene:名}}` / `{{prop:名}}` 包裹；但 assetRefs 数组仍须列出完整的三类标签供下游索引。
-7. 当 openingFrame 承接上一镜尾帧时，mount 末尾必须追加 `本视频以@图片N为首帧`，供生视频流水线自动识别依赖链。
+7. **首帧承接决策（v3）**：每镜必须输出 `sceneContinuity` 结构化字段，按 2 问决策产出四枚举之一（`opening-shot` / `action-continuation` / `same-scene-no-ref` / `independent`）；当 `inheritFromPrev == true` 时 mount 末尾**必须**追加 `本视频以@图片N为首帧`，为 false 时 mount **禁止**出现该片段。供生视频流水线自动识别依赖链。
 8. **mount 中的所有 `@图片N` / `@音频N` 编号必须从输入 `assetMap` 反查，全集唯一稳定**；禁止在本 skill 内部自行按 1,2,3 顺序分配。若某资产在 assetMap 中缺失，不得编造编号，直接省略该资产挂载行。
 9. **变体角色（character-variant）必须用变体图片和变体角色名标注声音**，不得用主形象的图片或名字。详见 mount 规则第 3/3.5 条。
 10. **服装默认参考图（重要）**：当某角色通过 `@图片N` 挂载（主形象或变体）时，`mainPrompt` / `qualityRoute` / `imagingStyle` / `mustShow` / `reference` 中**禁止描写该角色的日常服装**——款式、颜色、材质、配饰、领型、甲片、长袍、外套、毛衣、卫衣、披风、冠冕、发簪等视觉款式名词一律不写。服装交由挂载的参考图决定，避免生成漂移。
@@ -290,3 +366,19 @@ key 名必须完全一致（共 20 个）：shotType、titleBar、mount、camera
     - **允许例外③——变体首次标注**：变体角色在本镜 `openingFrame` 首次出场时，可用**一句话**标注其与本体的显著差异（如"节度使身披紫红西装油光头"）；其后字段不再重复描写款式。
     - **不属于服装描写（允许写）**：动作词——"推门 / 挥袖 / 跪地 / 起身 / 披风随转身扬起 / 衣袖扫过地面 / 长袍在风中翻卷"等动作本身可以写，重点是**动作**而非**款式名词**。
     - **自检**：输出前搜一遍全字段，有没有"深蓝立领外套 / 西装马甲 / 荧光反光衣 / 粉白毛衣 / 亮黄卫衣 / 深灰长袍 / 黑色蟒袍 / 金冠"这类**款式名词**，有就删——除非命中例外 ①②③。
+
+11. **版权红线：禁止写知名 IP 名（重要）**：所有 18 个 prompt 字段（titleBar / mount / camera / openingFrame / closingFrame / connection / transition / dualAnchor / mainPrompt / compulsoryDeclaration / mustShow / qualityRoute / imagingStyle / qualityBaseline / reference / microExpressions / nailLines / e15）**全部**会被视频生成平台送审，reference 也不例外（它不是元数据）。任何字段都禁止出现以下知名作品名 / 品牌名 / IP 角色名：
+    - **动画作品名**：《三国演义》《大闹天宫》《葫芦兄弟》《没头脑和不高兴》《中华勤学故事》《黑猫警长》《马男波杰克》《脱口秀大会》《小黄人》《神偷奶爸》《宝莲灯》《哪吒闹海》《九色鹿》《熊出没》《喜羊羊》《秦时明月》等。
+    - **游戏 / 电影 IP**：《英雄联盟》《王者荣耀》《星球大战》《阿凡达》《哈利波特》《变形金刚》《漫威》《DC》《魔兽世界》《原神》等。
+    - **日漫 / 美漫**：《火影》《海贼王》《柯南》《蜡笔小新》《樱桃小丸子》《奥特曼》《电锯人》《鬼灭之刃》《咒术回战》《进击的巨人》《迪士尼》《皮克斯》《吉卜力》《宫崎骏》《新海诚》等。
+    - **节目 / 平台 / 电视台**：BBC / TED / CNN / CCTV / Discovery / 国家地理 / 央视纪录频道 / 动画电影等。
+    - **知名 IP 角色名**：小黄人 / 刀妹 / 孙悟空 / 哆啦A梦 / 皮卡丘 / 米老鼠 / 唐老鸭 / 葫芦娃等。
+    - ✅ **替代写法**：改用抽象风格描述，由**时代 + 画种 + 题材**组合构成，例如：
+      - "80年代国产二维手绘厚涂历史纪录风"（替代三国演义 / 中华勤学故事）
+      - "80年代国产神话动画夸张风"（替代大闹天宫 / 葫芦兄弟 / 没头脑和不高兴）
+      - "80年代国产平涂悬疑动画反派片风"（替代黑猫警长）
+      - "人文历史节目主持+金句型知识演讲"（替代 BBC + TED）
+      - "MOBA 游戏英雄阵前升格出场"（替代英雄联盟刀妹）
+      - "动物拟人脱口秀圆桌访谈风"（替代马男波杰克 / 脱口秀大会）
+      - "黄色圆润卡通拟人短片风"（替代小黄人）
+    - **自检**：输出前搜全字段，有没有《》书名号包裹的作品名、大写字母品牌缩写（BBC/TED/CNN 等）、或上面列出的 IP 角色名，有就改成抽象风格描述。reference 字段尤其注意——它**也会**进最终送审 prompt。

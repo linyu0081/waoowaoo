@@ -26,16 +26,50 @@
     "{{prop:酱板鸭}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7ito2g5o9alhig6vv80",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-83.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-83.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T15:55:55+08:00",
+    "completedAt": "2026-04-20T16:05:27+08:00",
+    "failHistory": [],
+    "autoRetryCount": 0,
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-郭威",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/bcac7914-c718-438a-9490-fa6623a5f037.png",
+        "srcImg": "@图片7"
+      },
+      {
+        "role": "character-赵匡胤",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/83c75878-41ab-450b-83ba-fe323f19c8a4.png",
+        "srcImg": "@图片4"
+      },
+      {
+        "role": "scene-雪地军帐",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/ff2e3484-9a78-4686-a2f4-fa330e41ee56.png",
+        "srcImg": "@图片28"
+      },
+      {
+        "role": "prop-黄色纛旗",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/c27c1378-6e40-4db4-b624-72885d5efafe.png",
+        "srcImg": "@图片29"
+      },
+      {
+        "role": "prop-酱板鸭",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/78bf08d7-0351-4ef4-b260-f9175c712b3b.png",
+        "srcImg": "@图片31"
+      }
+    ],
+    "assetId": "s3k921hv99"
   }
 }

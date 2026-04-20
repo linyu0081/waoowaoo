@@ -1,6 +1,6 @@
 {
   "shotType": "F",
-  "titleBar": "【分镜87｜18秒｜类型：F｜方案：T87演播室尾联总结收场模板｜档位：LITE｜节奏：演播室马上总结兵不血刃是兵变中顶级谋略→马前卒深情Oh my dear Coin→马上吟诵尾联千秋疑案陈桥驿一著黄袍便罢兵→马上总结千载兴衰皆过客功过留予后人评→马上挥手各位下回见→马前卒马后炮扭动各位下回见点检做天子曲调收场】",
+  "titleBar": "【分镜87｜15秒｜类型：F｜方案：T87演播室尾联总结收场模板｜档位：LITE｜节奏：演播室马上总结兵不血刃是兵变中顶级谋略→马前卒深情Oh my dear Coin→马上吟诵尾联千秋疑案陈桥驿一著黄袍便罢兵→马上总结千载兴衰皆过客功过留予后人评→马上挥手各位下回见→马前卒马后炮扭动各位下回见点检做天子曲调收场】",
   "mount": "挂载：角色：马上@图片1｜马前卒@图片2｜马后炮@图片3｜场景：演播室-日@图片17｜声音：马上声音@音频1｜马前卒声音@音频2｜马后炮声音@音频3",
   "camera": "相机位置：演播室三人中景+马上近景+三人合影结尾全景切换；相机朝向：正对马上总结吟诗+马前卒马后炮扭动收场+三人合影挥手；角色朝向：马上居中总结吟诗马前卒马后炮左右扭动三人面向镜头挥手告别；构图锚点：马上吟诵尾联时的主持风范+马前卒马后炮扭动点检做天子曲调+三人挥手各位下回见的合影定格",
   "openingFrame": "镜头由上一镜赵匡胤端坐龙椅登基定格跨场切入演播室三人中景，马上神情庄重开始总结本集核心观点。",
@@ -25,16 +25,24 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "66246082-9b8e-43a1-a57b-3900727b348c",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v9-artist.vlabvod.com/4df4d2b4ccba7361dda4b8e475686a75/69e5886f/video/tos/cn/tos-cn-v-148450/oEM0Qh0bJ4Jhe4Ukvr9WAg0gnDHQ7AQ8IIqhKs/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=5638&bt=5638&cs=0&ds=12&ft=5QYTUxhhe6BMyqnNVPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZzUzOzRkMzRnNmgzNGQ2aUBpM3dqeWVrbzdxOjczNDM7M0BeMzVhNTYzNmMxYS5jM2E2YSNxNC0zcWduaGZhLS1kNC9zcw%3D%3D&btag=80000e00010000&dy_q=1776646736&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200858560212140731582471837",
+    "videoFile": "outputs/ep01/videos/shot-87.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-87.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 75,
+    "submittedAt": "2026-04-20T08:48:51+08:00",
+    "completedAt": "2026-04-20T08:59:11+08:00"
+  },
+  "_durationClamp": {
+    "originalSec": 18,
+    "clampedSec": 15,
+    "clampedAt": "2026-04-20T08:31:00+08:00",
+    "reason": "emergency clamp: seedance2.0fast hard limit 15s"
   }
 }

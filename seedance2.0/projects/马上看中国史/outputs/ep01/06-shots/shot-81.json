@@ -1,6 +1,6 @@
 {
   "shotType": "F",
-  "titleBar": "【分镜81｜16秒｜类型：F｜方案：T81演播室点评960大戏模板｜档位：LITE｜节奏：回演播室马上近景老马想说是你傻啊还是我傻→马上断言这明明就是一场潜心策划精心布局的960年度大戏→马上感慨他只是在花时间找一条可以少流血的兵变之路】",
+  "titleBar": "【分镜81｜15秒｜类型：F｜方案：T81演播室点评960大戏模板｜档位：LITE｜节奏：回演播室马上近景老马想说是你傻啊还是我傻→马上断言这明明就是一场潜心策划精心布局的960年度大戏→马上感慨他只是在花时间找一条可以少流血的兵变之路】",
   "mount": "挂载：角色：马上@图片1｜场景：演播室-日@图片17｜声音：马上声音@音频1",
   "camera": "相机位置：演播室胸上近景；相机朝向：正对马上面部特写；角色朝向：马上正视镜头做断言和点评；构图锚点：马上做断言时右手握拳砸桌的手势与感慨少流血兵变之路的眼神",
   "openingFrame": "镜头由上一镜赵匡胤帐内皱眉定格跨场切回演播室胸上近景，马上神色从静默转为犀利嘴角微扬准备抛出反问。",
@@ -23,16 +23,24 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "c67447bd-4d37-4155-9f4b-34a1ded3b00b",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v6-artist.vlabvod.com/d9490d8d3cae137566225b69cbd0cb70/69e58431/video/tos/cn/tos-cn-v-148450/o0NdYQIRpvACD3glBgesgV4eH5SBgJREISqzCX/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=4499&bt=4499&cs=0&ds=12&ft=5QYTUxhhe6BMyqoPVPVJD12Nzj&mime_type=video_mp4&qs=0&rc=OWY8Ojo1PDpkNmlnMzw6aEBpanE2NjNrb3lxOjczNDM7M0AxMjUuLzZhXl8xMWAyMjJiYSM1NGA2cWdeXmZhLS1kNC9zcw%3D%3D&btag=80000e00010000&dy_q=1776645650&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200840500212140731583268113",
+    "videoFile": "outputs/ep01/videos/shot-81.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-81.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 75,
+    "submittedAt": "2026-04-20T08:33:43+08:00",
+    "completedAt": "2026-04-20T08:40:52+08:00"
+  },
+  "_durationClamp": {
+    "originalSec": 16,
+    "clampedSec": 15,
+    "clampedAt": "2026-04-20T08:31:00+08:00",
+    "reason": "emergency clamp: seedance2.0fast hard limit 15s"
   }
 }

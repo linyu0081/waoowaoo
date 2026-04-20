@@ -25,16 +25,18 @@
     "{{scene:高平战场}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "3a170284-49da-4ced-ab1a-81445a587b66",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/005aa1c1a368ad0405b2f730df9bbbb8/69e527ce/video/tos/cn/tos-cn-v-148450/osylKJ48CG3ATeg90a0cyQhDQIblA91EHyrosP/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6350&bt=6350&cs=0&ds=12&ft=5QYTUxhhe6BMyqFe6PVJD12Nzj&mime_type=video_mp4&qs=0&rc=Nmc3M2U5aTVkNTczM2Q6ZEBpM25uaWVrb2hrOjczNDM7M0A2M2E2NGMtXy8xX2BfMC9gYSMuc2NhcWcvZmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776622004&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420020644021214073158597DDC3",
+    "videoFile": "outputs/ep01/videos/shot-56.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-56.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 50,
+    "submittedAt": "2026-04-20T01:53:55+08:00",
+    "completedAt": "2026-04-20T02:06:47+08:00"
   }
 }

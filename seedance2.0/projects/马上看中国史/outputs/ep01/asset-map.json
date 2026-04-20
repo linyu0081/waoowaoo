@@ -174,11 +174,6 @@
       "name": "酱板鸭",
       "file": "assets/images/prop-酱板鸭.png"
     },
-    "@图片32": {
-      "type": "prop",
-      "name": "铜钱山",
-      "file": "assets/images/prop-铜钱山.png"
-    },
     "@图片33": {
       "type": "prop",
       "name": "殿前都点检印绶",
@@ -313,6 +308,11 @@
       "type": "tail-frame",
       "fromShot": 54,
       "file": "outputs/ep01/tail-frames/tail-shot-54.jpg"
+    },
+    "@图片61": {
+      "type": "tail-frame",
+      "fromShot": 36,
+      "file": "outputs/ep01/tail-frames/tail-shot-36.jpg"
     }
   },
   "voices": {

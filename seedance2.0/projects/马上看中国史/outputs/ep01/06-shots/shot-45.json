@@ -14,7 +14,7 @@
   "qualityRoute": "街道冷灰色调+营帐暖光烛色强对比，武士服布料与披风色块层次清晰可辨。",
   "imagingStyle": "双段叙事+静态庄严，不靠激昂配乐，靠换装入帐与单膝跪地的身体仪式感直接传达投军分量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画历史纪录片青年人物传记+中华勤学故事主角拜师；稳帧点：赵匡胤单膝跪地抱拳与郭威伸手接纳。",
+  "reference": "参照：80年代国产二维手绘青年人物传记厚涂主角拜师；稳帧点：赵匡胤单膝跪地抱拳与郭威伸手接纳。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是投军，而是赵匡胤单膝跪地抱拳那一秒的立志分量。\n赵匡胤武士服必须让观众看到青年武者的厚涂手绘质感。\n赵匡胤要又稳又决，不靠台词，靠抱拳动作与眼神坚定。\n落幅停在拜师接纳定格，让下一镜从情绪跨幕自然承接。",
   "e15": "【E15】赵匡胤单膝触地右手抱拳举至胸前 → 膝盖接触帐内地面发出轻响披风被跪下动作带起向后扬落身体重心前倾胸前抱拳稳定不晃 → 赵匡胤正式完成拜师礼郭威伸手轻点三下示意接纳赵匡胤从此成为郭威帐下弟子身份状态确立",
@@ -26,25 +26,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "3582615d-7c51-4513-b4d1-bebb11157f81",
+    "status": "done",
     "queueStatus": "",
     "queueIdx": null,
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoUrl": "https://v6-artist.vlabvod.com/52cd7e79b8e43148ac886861126434af/69e517e3/video/tos/cn/tos-cn-v-148450/ocklgoN60IhKDpAuCA8et7SsEd4QwCJFtQK3Ww/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6202&bt=6202&cs=0&ds=12&ft=5QYTUxhhe6BMyqul7PVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZzNkaTQ4M2hnaTxlNWk8OkBpajduZmhrb3BqOjczNDM7M0AyYjFfNGJeXjAxL18vMTIuYSMzXzBscWdmZmZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776617925&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200058440212140731588960A58",
+    "videoFile": "outputs/ep01/videos/shot-45.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-45.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": "",
-    "needsRework": false,
-    "failHistory": [
-      {
-        "rewriteAt": "2026-04-19T10:46:00+08:00",
-        "rewriteReason": "顺应新规范改为国产动画二维手绘纪录片风，并弱化'甲胄加身/铁盔甲片/主帅甲胄/军帐/帅案/拜帅/主帅目光威严锐利'等军事皇权密集词，改为'武士服/护额/长案/主将服饰/拜师'等中性表达，台词与接力物保持不变；上一镜空镜承接同步更新"
-      }
-    ]
+    "creditCount": 70,
+    "submittedAt": "2026-04-20T00:45:51+08:00",
+    "completedAt": "2026-04-20T00:58:59+08:00"
   }
 }

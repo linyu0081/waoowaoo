@@ -1,6 +1,6 @@
 {
   "shotType": "C",
-  "titleBar": "【分镜85｜16秒｜类型：C｜方案：T85国产动画纛旗训话约法四不得模板｜档位：LITE｜节奏：二维手绘赵匡胤身披黄纛旗帐前高台训话→士兵们跪伏山呼万岁→赵匡胤立我为天子就须听从我的命令→马上画外音约法四不得→赵匡胤不得夯市不得抢劫府库违令者族诛不怠→众将士齐呼诺】",
+  "titleBar": "【分镜85｜15秒｜类型：C｜方案：T85国产动画纛旗训话约法四不得模板｜档位：LITE｜节奏：二维手绘赵匡胤身披黄纛旗帐前高台训话→士兵们跪伏山呼万岁→赵匡胤立我为天子就须听从我的命令→马上画外音约法四不得→赵匡胤不得夯市不得抢劫府库违令者族诛不怠→众将士齐呼诺】",
   "mount": "挂载：角色：赵匡胤@图片4｜场景：雪地军帐@图片28｜道具：黄色纛旗@图片29｜声音：马上声音@音频1｜赵匡胤声音@音频4",
   "camera": "相机位置：帐前高台中位近景+万千将士跪伏全景切换；相机朝向：正对赵匡胤披纛旗帐前训话+士兵跪伏山呼；角色朝向：赵匡胤立高台面向众将士众将士单膝跪伏面朝高台；构图锚点：二维手绘赵匡胤身披黄纛旗在帐前高台训话+万千将士跪伏山呼万岁",
   "openingFrame": "镜头由上一镜万千将士跪伏齐呼定格向前推进切入国产动画二维手绘帐前高台中位近景，赵匡胤身披黄色纛旗立于雪地临时搭建的高台之上。",
@@ -14,7 +14,7 @@
   "qualityRoute": "二维手绘墨线轮廓+雪地苍白色块与黄色纛旗高饱和厚涂反差+赵匡胤战袍色块+万千将士剪影群像+高台木纹粗墨线；纛旗色块飘动与剪影群像墨线与训话手势层次清晰可辨。",
   "imagingStyle": "纛旗训话+纪律誓言，不靠戏剧配乐，靠国产动画墨线勾勒与厚涂色块的纛旗飘动+万千跪伏+威严训话承载兵变与史册分野的历史分量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义黄袍加身训话桥段+中华勤学故事二维手绘厚涂约法纪律誓言；稳帧点：赵匡胤训话违令者族诛不怠目光扫全场定格。",
+  "reference": "参照：80年代国产二维手绘黄袍加身训话厚涂约法纪律誓言；稳帧点：赵匡胤训话违令者族诛不怠目光扫全场定格。",
   "microExpressions": "赵匡胤身披黄色纛旗+身姿挺拔+目光墨线如炬+右手缓缓压下示意安静+沉稳威严声音训话+嘴型说立我为天子就须听从我的命令+讲到违令者族诛不怠时目光扫过全场+下颌紧绷；万千将士剪影群像面朝高台+单膝跪伏+嘴型齐声山呼万岁万岁万岁+再齐声山呼诺+动作整齐划一+气势恢宏。",
   "nailLines": "这镜最值钱的不是训话，而是国产动画纪录片风下约法四不得+纪律誓言让陈桥兵变史册分野的历史分量。\n训话必须让观众通过墨线勾勒看到赵匡胤目光扫过全场的威严。\n三段节奏一披纛旗一训话一誓言，不靠配乐，靠明黄纛旗色块飘动+剪影群像跪伏+威严训话承载历史分野。\n落幅停在众将士齐呼诺定格，让下一镜大军入开封兵不血刃自然承接。",
   "e15": "",
@@ -25,16 +25,24 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "35921d2e-6155-49c5-90e2-2cc0fe8c6d93",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/e6805eb93f0e191d4df0eb5e69a958bd/69e5860b/video/tos/cn/tos-cn-v-148450/o0sseH8gstrdC4VVcBilPIn8dfGflI89nReEAu/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6246&bt=6246&cs=0&ds=12&ft=5QYTUxhhe6BMyqB6VPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZWloZTo1NTg1ZDdlPDplOUBpanV5Zmhrb2txOjczNDM7M0AtYDMuX19fNi8xYjE2YzIuYSMyYzQycWdeY2ZhLS1kNC9zcw%3D%3D&btag=80000e00010000&dy_q=1776646124&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200848440212140731585957F62",
+    "videoFile": "outputs/ep01/videos/shot-85.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-85.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 75,
+    "submittedAt": "2026-04-20T08:40:57+08:00",
+    "completedAt": "2026-04-20T08:48:46+08:00"
+  },
+  "_durationClamp": {
+    "originalSec": 16,
+    "clampedSec": 15,
+    "clampedAt": "2026-04-20T08:31:00+08:00",
+    "reason": "emergency clamp: seedance2.0fast hard limit 15s"
   }
 }

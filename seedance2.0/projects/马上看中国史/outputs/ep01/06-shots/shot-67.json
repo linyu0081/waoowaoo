@@ -8,7 +8,7 @@
   "connection": "接住上一镜两人被金光照亮大惊表情接力物：变装跨切从惊愕瞬间切到舞女造型妖娆飘舞。",
   "transition": "情绪峰值硬切：两人合唱点检做天子天子点检做的情绪峰值跨场切回演播室木牌放桌上。",
   "dualAnchor": "9:16 强调上下两人舞女妖娆向上舞步+郭荣赵匡胤黑线垂直对照；16:9 强调两人舞女居左妖娆+郭荣赵匡胤居右黑线横向对位。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG舞女变装合唱小剧场镜头，网梗变装合唱戏剧质感，8K电影感。\n第一段：镜头由上一镜两人大惊定格延续小剧场视角，画面中光影一闪马前卒申公豹与马后炮哪吒造型瞬间变身唐风舞女造型两人换上飘逸的唐风舞女长裙头顶梳着高髻腰间系着彩色绸带保留各自原本亮黄与粉白配色元素与圆脸识别特征。\n第二段：两人踩着妖娆小碎步扭着腰身摇摇摆摆从木板位置一路飘舞到郭荣与赵匡胤面前手里挥着彩色长绸带在空中飘舞节奏欢快头部左右摇摆配合舞步。\n第三段：郭荣身披金色铠甲赵匡胤身披青年战袍两人并立看到两个舞女扭腰飘到面前脸上浮现夸张的卡通三条黑线无奈表情嘴角微微抽搐，两人舞女一边妖娆舞动一边用童声合唱洗脑歌词，**马前卒、马后炮**：\"点检做天子，点检做天子！天子点检做，天子点检做！\"画面定格在这份舞女变装合唱中。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘官道小剧场跟拍+侧面近景切换，网感变装喜剧质感，8K电影感。\n第一段：镜头由上一镜两人大惊定格延续小剧场视角，画面光影一闪，马前卒与马后炮换装为唐风歌舞装扮，两人穿上飘逸的唐风长裙头顶梳着高髻腰间系着彩色绸带，保留各自亮黄与粉白配色元素与圆脸识别特征。\n第二段：两人踩着欢快的小碎步扭着腰身摇摇摆摆，从木板位置一路歌舞前行来到郭荣与赵匡胤面前，手里挥着彩色长绸带在空中飘舞，头部左右轻晃配合舞步。\n第三段：郭荣身披金色铠甲、赵匡胤身披青年战袍并立在一旁，看到两人歌舞到眼前，脸上浮现夸张的卡通三条黑线无奈表情嘴角微微抽搐；两人一边舞动一边用童声合唱口号，**马前卒、马后炮**：\"点检做天子，点检做天子！天子点检做，天子点检做！\"画面定格在这份合唱动作中。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马前卒马后炮瞬间变身唐风舞女长裙高髻保留原配色与圆脸特征、两人妖娆小碎步扭腰飘舞并挥长绸带、郭荣赵匡胤脸上夸张卡通三条黑线无奈表情",
   "qualityRoute": "官道压阴+舞女长裙彩色高饱和+彩色绸带明亮+郭荣金甲反光+赵匡胤战袍与卡通黑线反差，舞女衣摆布料与绸带飘扬高光保结构可辨。",
@@ -26,16 +26,18 @@
     "{{scene:北征行军路}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "9fa5ed1e-b2eb-49f4-a142-1757d853b97c",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v26-artist.vlabvod.com/bf96d44e65c6083b8b7ca29370a06911/69e59b96/video/tos/cn/tos-cn-v-148450/owSAQNAlFOpEVBKHfDxY1IMuC5jBZz6gwVoHLe/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6314&bt=6314&cs=0&ds=12&ft=5QYTUxhhe6BMyqKaDPVJD12Nzj&mime_type=video_mp4&qs=0&rc=NztmMzo5NGc3NDtnOmU0aUBpajM2cWlrb21yOjczNDM7M0AxMjQ2NjM0Xl8xMy1jMWM2YSMyXmlncWcvbWZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776651644&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604201020440212140731585988D50",
+    "videoFile": "outputs/ep01/videos/shot-67.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-67.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 50,
+    "submittedAt": "2026-04-20T09:44:48+08:00",
+    "completedAt": "2026-04-20T10:20:47+08:00"
   }
 }

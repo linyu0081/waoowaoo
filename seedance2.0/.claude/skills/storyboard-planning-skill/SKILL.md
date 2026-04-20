@@ -1,6 +1,6 @@
 ---
 name: storyboard-planning-skill
-description: 分镜大纲规划：基于剧本+时长+资产，输出 coreConflict/protagonistMotivation/fiveActs/shots 的分镜大纲 JSON。
+description: 分镜大纲规划：基于剧本+时长+资产，输出 coreConflict/protagonistMotivation/fiveActs/shots 的分镜大纲 JSON。单镜时长硬上限 15 秒，按每镜 15 秒估算镜数，禁止规划 >15 秒的单镜。
 ---
 
 # storyboard-planning-skill — 分镜规划

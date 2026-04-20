@@ -3,14 +3,14 @@
   "project": "马上看中国史",
   "episode": "ep01",
   "createdAt": "2026-04-18T23:07:22+0800",
-  "updatedAt": "2026-04-19T23:07:48+0800",
+  "updatedAt": "2026-04-20T18:32:47+0800",
   "backfillNote": "本集启用成本追踪前，历史生图记录按 assets/images/ 现存 PNG + _backup/ 备份 PNG 逐一补录，总计 45 次（37 次成功保留 + 8 次重生后废弃）。实际重生次数可能略高于此数，以后续逐次调用 cost-logger 为准。",
   "summary": {
     "imageGenCount": 45,
-    "videoGenCount": 43,
-    "videoUniqueShots": 37,
-    "videoTotalDurationSec": 340,
-    "videoTotalDurationMin": 5.67
+    "videoGenCount": 106,
+    "videoUniqueShots": 88,
+    "videoTotalDurationSec": 869,
+    "videoTotalDurationMin": 14.48
   },
   "byModel": {
     "nano-banana2": {
@@ -20,13 +20,23 @@
     },
     "seedance2.0fast": {
       "imageCount": 0,
-      "videoCount": 42,
-      "videoDurationSec": 390
+      "videoCount": 78,
+      "videoDurationSec": 762
     },
     "seedance2.0": {
       "imageCount": 0,
-      "videoCount": 1,
-      "videoDurationSec": 8
+      "videoCount": 4,
+      "videoDurationSec": 35
+    },
+    "18": {
+      "imageCount": 0,
+      "videoCount": 21,
+      "videoDurationSec": 206
+    },
+    "Zen-SD2.0": {
+      "imageCount": 0,
+      "videoCount": 3,
+      "videoDurationSec": 20
     }
   },
   "records": [
@@ -774,6 +784,636 @@
       "at": "2026-04-19T23:07:48+0800",
       "note": "auto: scheduler download@2026-04-19T23:07:48+08:00; credit=70",
       "taskId": "c33c6b7c-6261-4761-b3da-56bdf4b41b5e"
+    },
+    {
+      "type": "video",
+      "target": "shot-09",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-19T23:32:47+0800",
+      "note": "auto: scheduler download@2026-04-19T23:32:47+08:00; credit=50",
+      "taskId": "45bd3944-11a0-44d6-a9a4-d2dae42c848f"
+    },
+    {
+      "type": "video",
+      "target": "shot-74",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T00:23:46+0800",
+      "note": "auto: scheduler download@2026-04-20T00:23:46+08:00; credit=60",
+      "taskId": "ea97096a-d302-4edf-822f-34006a714e89"
+    },
+    {
+      "type": "video",
+      "target": "shot-15",
+      "model": "seedance2.0fast",
+      "durationSec": 5,
+      "isRegenerate": true,
+      "at": "2026-04-20T00:45:46+0800",
+      "note": "auto: scheduler download@2026-04-20T00:45:46+08:00; credit=25",
+      "taskId": "b59d73e6-05c5-49ee-adae-02799fd86338"
+    },
+    {
+      "type": "video",
+      "target": "shot-36",
+      "model": "seedance2.0",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-20T00:54:49+0800",
+      "note": "auto: scheduler download@2026-04-20T00:54:49+08:00; credit=64",
+      "taskId": "8c9edc63-91b8-4930-b1e6-b3019e5300be"
+    },
+    {
+      "type": "video",
+      "target": "shot-45",
+      "model": "seedance2.0fast",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-20T00:59:00+0800",
+      "note": "auto: scheduler download@2026-04-20T00:58:59+08:00; credit=70",
+      "taskId": "3582615d-7c51-4513-b4d1-bebb11157f81"
+    },
+    {
+      "type": "video",
+      "target": "shot-10",
+      "model": "seedance2.0",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T01:18:47+0800",
+      "note": "auto: scheduler download@2026-04-20T01:18:47+08:00; credit=96",
+      "taskId": "1453928e-0706-4eaa-b03d-4d799fb73b01"
+    },
+    {
+      "type": "video",
+      "target": "shot-30",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T01:18:50+0800",
+      "note": "auto: scheduler download@2026-04-20T01:18:50+08:00; credit=60",
+      "taskId": "e700b4c9-663f-4846-955a-372e2e51030f"
+    },
+    {
+      "type": "video",
+      "target": "shot-05",
+      "model": "seedance2.0fast",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-20T01:30:46+0800",
+      "note": "auto: scheduler download@2026-04-20T01:30:46+08:00; credit=30",
+      "taskId": "f65a3cd0-8616-4e58-a946-cff0005b0d6d"
+    },
+    {
+      "type": "video",
+      "target": "shot-37",
+      "model": "seedance2.0",
+      "durationSec": 7,
+      "isRegenerate": true,
+      "at": "2026-04-20T01:38:46+0800",
+      "note": "auto: scheduler download@2026-04-20T01:38:46+08:00; credit=56",
+      "taskId": "a41ba27b-ab24-4433-b311-78b6d85c6a3d"
+    },
+    {
+      "type": "video",
+      "target": "shot-06",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T01:46:46+0800",
+      "note": "auto: scheduler download@2026-04-20T01:46:46+08:00; credit=60",
+      "taskId": "289bfdb9-286e-44b4-8e31-56666c8cde85"
+    },
+    {
+      "type": "video",
+      "target": "shot-51",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T01:53:18+0800",
+      "note": "auto: scheduler download@2026-04-20T01:53:18+08:00; credit=40",
+      "taskId": "1bcefa6b-77e5-4b43-9383-b28f31a67917"
+    },
+    {
+      "type": "video",
+      "target": "shot-56",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T02:06:47+0800",
+      "note": "auto: scheduler download@2026-04-20T02:06:47+08:00; credit=50",
+      "taskId": "3a170284-49da-4ced-ab1a-81445a587b66"
+    },
+    {
+      "type": "video",
+      "target": "shot-58",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T02:19:49+0800",
+      "note": "auto: scheduler download@2026-04-20T02:19:49+08:00; credit=40",
+      "taskId": "cabf56ef-fc0d-4378-89f6-80de29480a32"
+    },
+    {
+      "type": "video",
+      "target": "shot-19",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-20T02:35:46+0800",
+      "note": "auto: scheduler download@2026-04-20T02:35:46+08:00; credit=40",
+      "taskId": "ca87e926-3dd3-42d5-bed9-52719e6766c3"
+    },
+    {
+      "type": "video",
+      "target": "shot-61",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T02:43:46+0800",
+      "note": "auto: scheduler download@2026-04-20T02:43:46+08:00; credit=50",
+      "taskId": "8adbb6a9-4902-4381-af94-b7889e729055"
+    },
+    {
+      "type": "video",
+      "target": "shot-59",
+      "model": "seedance2.0fast",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-20T02:59:46+0800",
+      "note": "auto: scheduler download@2026-04-20T02:59:46+08:00; credit=35",
+      "taskId": "709c9a5a-8aa1-4d06-b496-1a9132e17698"
+    },
+    {
+      "type": "video",
+      "target": "shot-62",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T03:35:46+0800",
+      "note": "auto: scheduler download@2026-04-20T03:35:46+08:00; credit=40",
+      "taskId": "8992cfb8-63c3-47dc-8131-bf9857a1e633"
+    },
+    {
+      "type": "video",
+      "target": "shot-68",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:03:46+0800",
+      "note": "auto: scheduler download@2026-04-20T04:03:46+08:00; credit=40",
+      "taskId": "5f7837bf-a466-4cff-8ec6-df13400b8983"
+    },
+    {
+      "type": "video",
+      "target": "shot-69",
+      "model": "seedance2.0fast",
+      "durationSec": 9,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:07:47+0800",
+      "note": "auto: scheduler download@2026-04-20T04:07:47+08:00; credit=45",
+      "taskId": "9afcbcae-d8a2-4fb9-a972-cfd9d0f7f999"
+    },
+    {
+      "type": "video",
+      "target": "shot-70",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:15:46+0800",
+      "note": "auto: scheduler download@2026-04-20T04:15:46+08:00; credit=50",
+      "taskId": "431947f6-d714-4ecb-b409-4d26bdc4a8f4"
+    },
+    {
+      "type": "video",
+      "target": "shot-72",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:23:47+0800",
+      "note": "auto: scheduler download@2026-04-20T04:23:47+08:00; credit=60",
+      "taskId": "3bc72611-156b-41d5-9f8b-1b5e1f3b0d63"
+    },
+    {
+      "type": "video",
+      "target": "shot-73",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:27:46+0800",
+      "note": "auto: scheduler download@2026-04-20T04:27:46+08:00; credit=60",
+      "taskId": "df964e74-1434-4e85-8240-21b529b2f36b"
+    },
+    {
+      "type": "video",
+      "target": "shot-77",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:35:46+0800",
+      "note": "auto: scheduler download@2026-04-20T04:35:46+08:00; credit=40",
+      "taskId": "bed76e90-b4c5-4b7c-9acd-3cadba9269c0"
+    },
+    {
+      "type": "video",
+      "target": "shot-78",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:39:47+0800",
+      "note": "auto: scheduler download@2026-04-20T04:39:47+08:00; credit=60",
+      "taskId": "e7110731-5421-48ac-9fde-8b597fd06bb9"
+    },
+    {
+      "type": "video",
+      "target": "shot-79",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:43:46+0800",
+      "note": "auto: scheduler download@2026-04-20T04:43:46+08:00; credit=50",
+      "taskId": "2814a598-859a-4263-9d37-a494aca28cc4"
+    },
+    {
+      "type": "video",
+      "target": "shot-80",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T04:47:47+0800",
+      "note": "auto: scheduler download@2026-04-20T04:47:47+08:00; credit=50",
+      "taskId": "34f59001-aa9e-4eee-8686-0cabcda4da44"
+    },
+    {
+      "type": "video",
+      "target": "shot-82",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T05:11:46+0800",
+      "note": "auto: scheduler download@2026-04-20T05:11:46+08:00; credit=60",
+      "taskId": "c9167a35-529d-42d1-9ec6-badd7b5cb8de"
+    },
+    {
+      "type": "video",
+      "target": "shot-84",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T05:19:46+0800",
+      "note": "auto: scheduler download@2026-04-20T05:19:46+08:00; credit=60",
+      "taskId": "d5dc3d46-4e87-4792-b210-94218b140f48"
+    },
+    {
+      "type": "video",
+      "target": "shot-86",
+      "model": "seedance2.0fast",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-20T05:39:46+0800",
+      "note": "auto: scheduler download@2026-04-20T05:39:46+08:00; credit=70",
+      "taskId": "196e0ba4-2b23-4e9c-ac22-2ddb2ddf294c"
+    },
+    {
+      "type": "video",
+      "target": "shot-74",
+      "model": "seedance2.0fast",
+      "durationSec": 12,
+      "isRegenerate": true,
+      "at": "2026-04-20T06:15:46+0800",
+      "note": "auto: scheduler download@2026-04-20T06:15:46+08:00; credit=60",
+      "taskId": "2bba5fce-da41-4b45-9379-68901225f9ff"
+    },
+    {
+      "type": "video",
+      "target": "shot-63",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T06:35:46+0800",
+      "note": "auto: scheduler download@2026-04-20T06:35:46+08:00; credit=40",
+      "taskId": "20c3175d-273b-444b-a259-727ba9787af0"
+    },
+    {
+      "type": "video",
+      "target": "shot-75",
+      "model": "seedance2.0fast",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-20T06:55:47+0800",
+      "note": "auto: scheduler download@2026-04-20T06:55:47+08:00; credit=70",
+      "taskId": "3772bf0d-f044-4bf5-ac26-afe304868fbb"
+    },
+    {
+      "type": "video",
+      "target": "shot-81",
+      "model": "seedance2.0fast",
+      "durationSec": 15,
+      "isRegenerate": false,
+      "at": "2026-04-20T08:40:52+0800",
+      "note": "auto: scheduler download@2026-04-20T08:40:52+08:00; credit=75",
+      "taskId": "c67447bd-4d37-4155-9f4b-34a1ded3b00b"
+    },
+    {
+      "type": "video",
+      "target": "shot-85",
+      "model": "seedance2.0fast",
+      "durationSec": 15,
+      "isRegenerate": false,
+      "at": "2026-04-20T08:48:46+0800",
+      "note": "auto: scheduler download@2026-04-20T08:48:46+08:00; credit=75",
+      "taskId": "35921d2e-6155-49c5-90e2-2cc0fe8c6d93"
+    },
+    {
+      "type": "video",
+      "target": "shot-87",
+      "model": "seedance2.0fast",
+      "durationSec": 15,
+      "isRegenerate": false,
+      "at": "2026-04-20T08:59:11+0800",
+      "note": "auto: scheduler download@2026-04-20T08:59:11+08:00; credit=75",
+      "taskId": "66246082-9b8e-43a1-a57b-3900727b348c"
+    },
+    {
+      "type": "video",
+      "target": "shot-20",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T09:20:46+0800",
+      "note": "auto: scheduler download@2026-04-20T09:20:46+08:00; credit=40",
+      "taskId": "fcfed56e-1fd0-4a08-848a-55ea42484cc1"
+    },
+    {
+      "type": "video",
+      "target": "shot-67",
+      "model": "seedance2.0fast",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T10:20:47+0800",
+      "note": "auto: scheduler download@2026-04-20T10:20:47+08:00; credit=50",
+      "taskId": "9fa5ed1e-b2eb-49f4-a142-1757d853b97c"
+    },
+    {
+      "type": "video",
+      "target": "shot-66",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T11:32:35+0800",
+      "note": "auto: scheduler download@2026-04-20T11:32:34+08:00; credit=40",
+      "taskId": "5b6073a5-03b7-4ce3-a8eb-754d20843fe0"
+    },
+    {
+      "type": "video",
+      "target": "shot-11",
+      "model": "18",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T12:15:57+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 3ref · 首次成功",
+      "taskId": "d7iqcrc0ronsa3ueaa00"
+    },
+    {
+      "type": "video",
+      "target": "shot-13",
+      "model": "18",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T12:41:33+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iqqtk563v83laptddg"
+    },
+    {
+      "type": "video",
+      "target": "shot-13",
+      "model": "18",
+      "durationSec": 12,
+      "isRegenerate": true,
+      "at": "2026-04-20T12:46:56+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iqtm05o9alhig642sg"
+    },
+    {
+      "type": "video",
+      "target": "shot-27",
+      "model": "18",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T12:47:36+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iqtvs0ronsa3ueau60"
+    },
+    {
+      "type": "video",
+      "target": "shot-21",
+      "model": "18",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:04:16+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iqu085o9alhig643fg"
+    },
+    {
+      "type": "video",
+      "target": "shot-64",
+      "model": "18",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:20:27+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ird140ronsa3uebk0g"
+    },
+    {
+      "type": "video",
+      "target": "shot-42",
+      "model": "18",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:22:15+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ird1g5o9alhig65fr0"
+    },
+    {
+      "type": "video",
+      "target": "shot-60",
+      "model": "18",
+      "durationSec": 12,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:23:49+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ird1o5o9alhig65ft0"
+    },
+    {
+      "type": "video",
+      "target": "shot-12",
+      "model": "18",
+      "durationSec": 15,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:25:04+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ird1c563v83lapuvrg"
+    },
+    {
+      "type": "video",
+      "target": "shot-22",
+      "model": "18",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:46:15+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iroh07hovbgac40j7g"
+    },
+    {
+      "type": "video",
+      "target": "shot-55",
+      "model": "18",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-20T13:51:28+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iroi85o9alhig67m1g"
+    },
+    {
+      "type": "video",
+      "target": "shot-43",
+      "model": "18",
+      "durationSec": 10,
+      "isRegenerate": false,
+      "at": "2026-04-20T14:43:05+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7isie87hovbgac4a6rg"
+    },
+    {
+      "type": "video",
+      "target": "shot-16",
+      "model": "18",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-20T14:54:49+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · slim prompt · 批量救场",
+      "taskId": "d7iso985o9alhig6jnt0"
+    },
+    {
+      "type": "video",
+      "target": "shot-23",
+      "model": "seedance2.0fast",
+      "durationSec": 8,
+      "isRegenerate": false,
+      "at": "2026-04-20T15:30:48+0800",
+      "note": "auto: scheduler download@2026-04-20T15:30:48+08:00; credit=40",
+      "taskId": "08c18cae-5315-4dd2-907a-1ff87a1ac9d1"
+    },
+    {
+      "type": "video",
+      "target": "shot-20",
+      "model": "18",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-20T15:48:03+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ithb07hovbgac4mfc0"
+    },
+    {
+      "type": "video",
+      "target": "shot-65",
+      "model": "18",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-20T15:49:07+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ithc85o9alhig6tdbg"
+    },
+    {
+      "type": "video",
+      "target": "shot-40",
+      "model": "18",
+      "durationSec": 6,
+      "isRegenerate": true,
+      "at": "2026-04-20T16:02:35+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ito1s0ronsa3ueoo10"
+    },
+    {
+      "type": "video",
+      "target": "shot-83",
+      "model": "18",
+      "durationSec": 14,
+      "isRegenerate": false,
+      "at": "2026-04-20T16:05:27+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ito2g5o9alhig6vv80"
+    },
+    {
+      "type": "video",
+      "target": "shot-20",
+      "model": "18",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-20T16:28:53+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iu3tk0ronsa3ueqv50"
+    },
+    {
+      "type": "video",
+      "target": "shot-20",
+      "model": "18",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-20T17:03:17+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iul04563v83lar4ucg"
+    },
+    {
+      "type": "video",
+      "target": "shot-21",
+      "model": "18",
+      "durationSec": 6,
+      "isRegenerate": true,
+      "at": "2026-04-20T17:33:55+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7iv3jc0ronsa3uf1e70"
+    },
+    {
+      "type": "video",
+      "target": "shot-23",
+      "model": "18",
+      "durationSec": 8,
+      "isRegenerate": true,
+      "at": "2026-04-20T18:22:24+0800",
+      "note": "workrally Zen-SD2.0 SubjectToVideo · full prompt · 批量救场",
+      "taskId": "d7ivpv05o9alhig7p37g"
+    },
+    {
+      "type": "video",
+      "target": "shot-24",
+      "model": "Zen-SD2.0",
+      "durationSec": 6,
+      "isRegenerate": false,
+      "at": "2026-04-20T18:32:42+0800",
+      "note": "auto: scheduler download@2026-04-20T18:32:42+08:00",
+      "taskId": "d7ivtpo7hovbgac5j3bg"
+    },
+    {
+      "type": "video",
+      "target": "shot-25",
+      "model": "Zen-SD2.0",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-20T18:32:44+0800",
+      "note": "auto: scheduler download@2026-04-20T18:32:44+08:00",
+      "taskId": "d7ivu587hovbgac5j6i0"
+    },
+    {
+      "type": "video",
+      "target": "shot-26",
+      "model": "Zen-SD2.0",
+      "durationSec": 7,
+      "isRegenerate": false,
+      "at": "2026-04-20T18:32:47+0800",
+      "note": "auto: scheduler download@2026-04-20T18:32:47+08:00",
+      "taskId": "d7ivud40ronsa3uf61dg"
     }
   ]
 }

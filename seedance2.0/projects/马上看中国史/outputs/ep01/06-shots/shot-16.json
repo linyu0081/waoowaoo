@@ -6,15 +6,15 @@
   "openingFrame": "镜头承接上一镜马后炮左侧空位，马上从画面左侧抬起右手食指进入画面胸上近景，身体略前倾目光坚定看向镜头准备开讲。",
   "closingFrame": "马上讲到钱第一名四字后嘴角微微上扬保持食指抬起的手势定格，为下一镜衔接金句老板不够硬留出表情与手势的承接基础。",
   "connection": "接住上一镜马后炮左侧空位接力物：马上从左侧抬手进入填入构图中央讲解位置。",
-  "transition": "台词跨镜硬切：马上钱第一名尾句未落直接切入下一镜金句老板不够硬就发动兵变。",
+  "transition": "台词跨镜硬切：马上钱第一名尾句未落直接切入下一镜金句。",
   "dualAnchor": "9:16 强调马上竖向抬手手势+身体前倾向上姿态；16:9 强调马上居中抬手+身后演播室墙面LOGO横向背景。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG主持深入讲解近景，文化节目专业厚重质感，8K电影感。\n第一段：镜头承接上一镜空位，马上从画面左侧抬起右手食指进入胸上近景，身体略前倾目光坚定看向镜头，右上追光圆斑落在面颊侧面。\n第二段：马上右手食指在胸前抬起做讲解手势，语调沉稳对镜头清晰发声，**马上**：\"是这意思！唐末以来天下不太平，征战四起。各地方的节度要花钱雇用职业军人，也就是藩镇兵。\"说到藩镇兵三字时食指向空中点两下强调。\n第三段：马上右手收回再抬起食指做承接手势，**马上**：\"而中央的直属军队，又是由藩镇精锐组成。这帮军人呢，打仗不一定行，要钱第一名。\"讲到钱第一名四字时嘴角微微上扬食指停住定格。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG国产动画二维手绘演播室胸上近景，文化节目稳定讲解质感，8K电影感。\n第一段：镜头承接上一镜空位，马上从画面左侧抬起右手食指进入胸上近景，身体略前倾目光坚定看向镜头，右上追光圆斑落在面颊侧面。\n第二段：马上右手食指在胸前抬起做讲解手势，语调沉稳对镜头清晰发声，**马上**：\"是这意思！唐末以来天下不太平，征战四起。各地方的节度要花钱雇用藩镇兵。\"讲到\"藩镇兵\"三字时食指在空中轻点两下强调。\n第三段：马上右手收回再抬起食指做承接手势，**马上**：\"而这些人打仗不一定行，要钱第一名。\"讲完嘴角微微上扬食指定格。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "马上从左侧抬手进入画面的动势、右手食指讲解手势与点强调动作、嘴角微扬停住的定格",
   "qualityRoute": "卡通色块背景+右上追光圆斑，马上面部高光保结构+手指骨节清晰+边缘稳定。",
   "imagingStyle": "靠手势节奏与语调沉稳让复杂制度听得懂。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：BBC历史讲解主持+TED专业演讲手势；稳帧点：马上右手抬起食指讲解手势。",
+  "reference": "参照：人文历史节目主持+金句型演讲手势；稳帧点：马上右手抬起食指讲解手势。",
   "microExpressions": "马上右手食指在胸前抬起做讲解姿势+说到藩镇兵时食指向空中点两下+右手收回再抬起做承接+讲到钱第一名时嘴角微扬15度+食指在胸前停住不动；眉头微微上扬表示重点。",
   "nailLines": "这镜最值钱的不是讲制度，而是主持人把复杂史实讲得通俗易懂的节奏。\n马上食指必须让观众看到手势节奏与语调同步感。\n马上要又严谨又幽默，不靠戏剧腔，靠嘴角微扬与手势力度。\n落幅停在食指抬起嘴角微扬定格，让下一镜金句老板不够硬在同一构图延续。",
   "e15": "",
@@ -23,28 +23,75 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "dreamina",
-    "modelName": "seedance2.0fast",
-    "taskId": "15e2044a-f5c6-4bc3-8ebb-80e322b19e42",
-    "status": "failed",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7iso985o9alhig6jnt0",
+    "status": "done",
     "queueStatus": "",
     "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
-    "failReason": "generation failed: pre-TNS check did not pass",
-    "creditCount": 70,
-    "submittedAt": "2026-04-19T22:39:50+08:00",
-    "completedAt": "2026-04-19T22:40:44+08:00",
-    "needsRework": true,
+    "videoFile": "outputs/ep01/videos/shot-16.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-16.jpg",
+    "failReason": "",
+    "creditCount": null,
+    "submittedAt": "2026-04-20T14:48:05+08:00",
+    "completedAt": "2026-04-20T14:54:49+08:00",
     "failHistory": [
       {
-        "taskId": "15e2044a-f5c6-4bc3-8ebb-80e322b19e42",
+        "taskId": "364c1df5-8e3f-4dfb-a92e-48a373d9cb82",
         "failReason": "generation failed: pre-TNS check did not pass",
-        "submittedAt": "2026-04-19T22:39:50+08:00",
-        "failedAt": "2026-04-19T22:40:44+08:00",
-        "model": "seedance2.0fast"
+        "submittedAt": "2026-04-20T09:00:49+08:00",
+        "failedAt": "2026-04-20T09:04:45+08:00",
+        "model": "seedance2.0fast",
+        "kind": "fail"
+      },
+      {
+        "taskId": "d7iqu0k0ronsa3ueau7g",
+        "failReason": "❌ 生成失败: 输入提示词敏感或违反平台规定 / 请换个提示词试试",
+        "failedAt": "2026-04-20T12:45:19+08:00",
+        "model": "Zen-SD2.0",
+        "engine": "workrally",
+        "promptMode": "full"
+      },
+      {
+        "at": "2026-04-20T13:16:05+08:00",
+        "engine": "workrally",
+        "modelName": "Zen-SD2.0",
+        "promptMode": "full",
+        "taskId": "d7ird185o9alhig65fpg",
+        "failReason": "❌ 生成失败: 输入提示词敏感或违反平台规定 / 请换个提示词试试"
+      },
+      {
+        "at": "2026-04-20T14:43:11+08:00",
+        "engine": "workrally",
+        "modelName": "Zen-SD2.0",
+        "promptMode": "full",
+        "taskId": "d7isid4563v83laqahug",
+        "failReason": "❌ 生成失败: 输入提示词敏感或违反平台规定 / 请换个提示词试试",
+        "kind": "fail"
       }
-    ]
+    ],
+    "needsRework": false,
+    "promptMode": "slim",
+    "pinned": true,
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-马上",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/f25f4416-5943-439d-8f77-7693b81944ad.png",
+        "srcImg": "@图片1"
+      },
+      {
+        "role": "scene-演播室",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/31113743-022b-4a40-9294-5cc47e45fca7.png",
+        "srcImg": "@图片17"
+      },
+      {
+        "role": "tail-frame-?",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/72ec7086-8a3b-4044-ad5f-8a51d7d78ad1.jpg",
+        "srcImg": "@图片49"
+      }
+    ],
+    "assetId": "mrkflxflyd"
   }
 }

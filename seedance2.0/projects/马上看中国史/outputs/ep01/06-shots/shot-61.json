@@ -14,7 +14,7 @@
   "qualityRoute": "演播室暖金顶光+冷蓝侧补光，马上深蓝立领金边反光与食指骨节高光保结构清晰可辨。",
   "imagingStyle": "打响指+立论但书，不靠字幕标注金句，靠响指手势与食指强调节奏承载论点分量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：BBC历史主持立论手势+TED演讲响指金句；稳帧点：马上食指在胸前抬起做强调定格。",
+  "reference": "参照：人文历史节目主持立论手势+金句型演讲响指；稳帧点：马上食指在胸前抬起做强调定格。",
   "microExpressions": "马上右手中指与拇指做响指起始+嘴角微上扬+一甩打出响指+兴奋喊Bingo+立刻收敛情绪+右手收回胸前做设问手势+眉头微皱陷入思辨+设问语气带悬念+但书时右手食指在胸前抬起+眼神锋利+食指在空中轻一顿+目光坚定。",
   "nailLines": "这镜最值钱的不是响指，而是从Bingo到陈桥兵变绝对不同立论的节奏转折。\n响指必须让观众看到右手中指拇指一甩的清脆动作。\n马上要又活又稳，不靠戏腔，靠响指与食指强调承载立论分量。\n落幅停在食指立论定格，让下一镜引入959年郭荣北征路上怪事自然承接。",
   "e15": "",
@@ -23,16 +23,18 @@
     "{{scene:演播室}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "8adbb6a9-4902-4381-af94-b7889e729055",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v9-artist.vlabvod.com/ab76196d61ea995e21fc09810ec0162a/69e5307a/video/tos/cn/tos-cn-v-148450/oogHK6pcSBTRA4xoRVufRCAgZ6QcY5yo1fFSBt/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=3927&bt=3927&cs=0&ds=12&ft=5QYTUxhhe6BMyq~RPPVJD12Nzj&mime_type=video_mp4&qs=0&rc=PDZkaWU6OWU5Zmg3NDlpZUBpM25ya2Zrb3RsOjczNDM7M0BjMGAvYy8xXzAxMGJeMzYxYSNfbm1ncWcvL2ZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776624224&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200243440212140731585930E40",
+    "videoFile": "outputs/ep01/videos/shot-61.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-61.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 50,
+    "submittedAt": "2026-04-20T02:35:49+08:00",
+    "completedAt": "2026-04-20T02:43:46+08:00"
   }
 }

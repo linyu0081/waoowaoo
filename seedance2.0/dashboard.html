@@ -559,6 +559,26 @@ body {
   0%, 100% { opacity: 0.4; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.2); }
 }
+/* 生成进度条 */
+.gen-progress-wrap {
+  width: 70%; max-width: 240px; margin-top: 4px;
+}
+.gen-progress-bar {
+  height: 6px; border-radius: 3px; background: rgba(59,130,246,0.15);
+  overflow: hidden; position: relative;
+}
+.gen-progress-fill {
+  height: 100%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), #60a5fa);
+  transition: width 0.6s ease;
+}
+.gen-progress-text {
+  font-family: var(--font-mono); font-size: 11px; color: var(--accent-blue);
+  margin-top: 3px; text-align: center;
+}
+.gen-progress-time {
+  font-size: 10px; color: var(--text-muted); margin-top: 2px;
+}
 .video-status-failed {
   background: rgba(239,68,68,0.06); color: var(--accent-red-bright);
 }
@@ -2555,9 +2575,26 @@ function renderVideos() {
       if (queueStatus === 'queuing') {
         const qIdx = (vt.queueIdx != null && vt.queueIdx !== '') ? vt.queueIdx : '';
         const qLabel = qIdx !== '' ? `队列 #${qIdx}` : '账号级排队中';
-        videoArea = `<div class="video-status-placeholder video-status-queuing"><span>🕒 ${qLabel}</span><span style="font-size:11px;color:var(--text-muted);max-width:85%;text-align:center">即梦同账号同模型并发=1，排前面的跑完再上</span></div>`;
+        videoArea = `<div class="video-status-placeholder video-status-queuing"><span>🕒 ${qLabel}</span><span style="font-size:11px;color:var(--text-muted);max-width:85%;text-align:center">同账号同模型并发=1，不同模型可同时跑</span></div>`;
       } else {
-        videoArea = `<div class="video-status-placeholder video-status-generating"><div class="pulse-dot"></div><span>⏳ 生成中…</span></div>`;
+        // 生成中：展示进度条 + 百分比 + 更新时间
+        const _prog = typeof vt.progress === 'number' ? vt.progress : 0;
+        const _progPct = Math.min(100, Math.max(0, Math.round(_prog * 1000) / 10));
+        const _progUpdated = vt.progressUpdatedAt ? (() => {
+          try {
+            const d = new Date(vt.progressUpdatedAt);
+            return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`;
+          } catch { return ''; }
+        })() : '';
+        const _progBar = _progPct > 0
+          ? `<div class="gen-progress-wrap">
+               <div class="gen-progress-bar"><div class="gen-progress-fill" style="width:${_progPct}%"></div></div>
+               <div class="gen-progress-text">${_progPct}%</div>
+               ${_progUpdated ? `<div class="gen-progress-time">更新于 ${_progUpdated}</div>` : ''}
+             </div>`
+          : '';
+        const _engineTag = engine === 'workrally' ? ' · WorkRally' : '';
+        videoArea = `<div class="video-status-placeholder video-status-generating"><div class="pulse-dot"></div><span>⏳ 生成中${_engineTag}…</span>${_progBar}</div>`;
       }
     } else if (status === 'failed') {
       const rwTag = vt.needsRework ? `<span style="font-size:10px;color:var(--accent-red-bright);font-weight:700;background:rgba(235,77,75,0.15);padding:2px 6px;border-radius:3px;margin-top:4px">⚠️ 需分镜师优化 prompt</span>` : '';
@@ -2701,7 +2738,7 @@ function renderVideoQueue() {
       <span class="vq-sep">|</span>
       <span>上次心跳: ${hb}</span>
       <span class="vq-sep">|</span>
-      <span>并发上限: ${q.maxInflight || 1} · 默认模型: ${q.defaultModel || 'seedance2.0fast'}${paused ? ' · <span style="color:var(--accent-red-bright)">已暂停</span>' : ''}</span>
+      <span>当前并发: ${(function(){ var ibm=q.inflightByModel||{}; var ks=Object.keys(ibm); return ks.length? ks.map(function(k){return k+'='+ibm[k];}).join(' / ') : '—'; })()}${paused ? ' · <span style="color:var(--accent-red-bright)">已暂停</span>' : ''}</span>
       <span class="vq-sep">|</span>
       <span id="schedulerCfgView" style="color:var(--text-secondary)">⏱ 周期: —</span>
       <span style="margin-left:auto;display:flex;gap:6px;align-items:center">
@@ -2791,6 +2828,7 @@ async function onQueueAdd(shot) {
         videoUrl: '', videoFile: '', tailFrame: '', failReason: '',
         creditCount: null, submittedAt: '', completedAt: '',
         failHistory: vt.failHistory || [],
+        autoRetryCount: 0,  // 人工加入候补池 → 重置自动重投计数
         // needsRework 在 onMarkReworkedAndRetry 中才清除，普通 onQueueAdd 路径此处不会到（未标记才可能走此分支）
       };
       target.videoTask = cleared;
@@ -2809,6 +2847,10 @@ async function onQueueAdd(shot) {
     });
     const j = await res.json();
     if (!j.ok) {
+      if (j.durationRejected) {
+        showToast(`⛔ shot-${shot} 时长 ${j.rawSec}s 超过最大 ${j.clampSec}s，已标记需返工：请让分镜师拆分镜头（单镜 ≤${j.maxSec}s）后再入池`, 'error', 6000);
+        return;
+      }
       if (j.needsRework) {
         showToast(`⚠️ shot-${shot} 被标记需返工，请先让分镜师重写 prompt（点卡片上的“✏️ 已优化重投”确认）`, 'error', 5000);
         return;
@@ -2833,14 +2875,16 @@ async function onMarkReworkedAndRetry(shot) {
       videoUrl: '', videoFile: '', tailFrame: '', failReason: '',
       creditCount: null, submittedAt: '', completedAt: '',
       failHistory: oldVt.failHistory || [],
+      autoRetryCount: 0,  // 人工干预 → 重置自动重投计数
       // needsRework: 有意不写，即清除
     };
     await fetch('/api/save-json', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify({ path: shotPath, content: full }),
     });
-    // 再入池
-    await _callQueueAPI('add', { shot });
+    // 再入池（带上 shot.json 里已有的 engine）
+    const reEngine = (full.videoTask && full.videoTask.engine) || '';
+    await _callQueueAPI('add', { shot, engine: reEngine });
     await _refreshQueueState();
     showToast(`✅ shot-${shot} 已解除返工标记并重新入池`, 'success');
   } catch (e) { showToast(`操作失败: ${e.message}`, 'error'); }
@@ -2860,35 +2904,134 @@ async function onRegenerate(shot) {
   const vt = (target && target.videoTask) || {};
   const oldFile = vt.videoFile || '—';
   const oldCredit = vt.creditCount || 0;
-  const msg = `⚠️ 确认重新生成 shot-${shot} 的视频？\n\n`
-    + `当前视频：${oldFile}\n`
-    + `上次消耗积分：${oldCredit}\n\n`
-    + `操作后：当前视频引用将被清空（文件不删）→ 重新加入候补池 → 等待调度器提交 → 消耗积分重新生成。\n\n`
-    + `确认继续？`;
-  if (!confirm(msg)) return;
+  const oldModel = vt.modelName || '—';
+  const defaultModel = ((sd2.videoQueue || {}).defaultModel) || vt.modelName || 'seedance2.0fast';
+
+  // 选择模型：弹一个带下拉的浮层（原生 confirm 无法承载 select，自己画一个最小交互）
+  const pick = await _pickRegenModel({ defaultModel, oldModel, oldFile, oldCredit, shot });
+  if (!pick) return; // 用户取消
+
   try {
     const shotPath = `projects/${currentProject}/outputs/${currentEpisode}/06-shots/shot-${String(shot).padStart(2,'0')}.json`;
     const full = await fetch(`${shotPath}?_t=${Date.now()}`).then(r => r.json());
     const oldVt = full.videoTask || {};
-    // 归零 videoTask，保留引擎/模型偏好 + failHistory
+    // 归零 videoTask，保留引擎 + failHistory；modelName 改为用户选择值（调度器提交时会再用 entry.model 覆盖）
     full.videoTask = {
-      engine: oldVt.engine || '', modelName: oldVt.modelName || '',
+      engine: pick.engine || oldVt.engine || '', modelName: pick.model || oldVt.modelName || '',
       taskId: '', status: 'pending', queueStatus: '', queueIdx: null,
       videoUrl: '', videoFile: '', tailFrame: '', failReason: '',
       creditCount: null, submittedAt: '', completedAt: '',
       failHistory: oldVt.failHistory || [],
+      autoRetryCount: 0,  // 人工重生成 → 重置自动重投计数
     };
     await fetch('/api/save-json', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify({ path: shotPath, content: full }),
     });
-    // 加入候补池
-    await _callQueueAPI('add', { shot });
+    // 加入候补池（带上用户选择的引擎 + 模型 + 拼接模式）
+    await _callQueueAPI('add', { shot, engine: pick.engine || 'dreamina', model: pick.model, promptMode: pick.promptMode });
     await _refreshQueueState();
-    showToast(`🔄 shot-${shot} 已清空视频引用并加入候补池`, 'success');
+    const pmLabel = pick.promptMode === 'slim' ? '精简参数' : '全部参数';
+    const engLabel = (pick.engine || 'dreamina') === 'workrally' ? 'WorkRally' : 'Dreamina';
+    showToast(`🔄 shot-${shot} 已清空视频引用并加入候补池（${engLabel} · ${pick.model} · ${pmLabel}）`, 'success');
   } catch (e) { showToast(`重新生成失败: ${e.message}`, 'error'); }
 }
+
+// 模型选择弹层（Promise 风格，resolve({engine, model, promptMode}) 或 null）
+function _pickRegenModel({ defaultModel, oldModel, oldFile, oldCredit, shot }) {
+  return new Promise((resolve) => {
+    // 按引擎分组的模型列表
+    const ENGINE_MODELS = {
+      dreamina: [
+        { value: 'seedance2.0',         label: 'seedance2.0（标准版 · 质量最高）', recommend: true },
+        { value: 'seedance2.0fast',     label: 'seedance2.0fast（快速版 · 速度更快）' },
+        { value: 'seedance2.0_vip',     label: 'seedance2.0_vip（VIP 标准 · 需 VIP 权限）', vip: true },
+        { value: 'seedance2.0fast_vip', label: 'seedance2.0fast_vip（VIP 快速 · 需 VIP 权限）', vip: true },
+      ],
+      workrally: [
+        { value: 'Zen-SD2.0', label: 'Zen-SD2.0（全能参考 · SubjectToVideo）', recommend: true },
+      ],
+    };
+    // 默认选中：队列 defaultModel 或上次用过的模型
+    const defVal = ENGINE_MODELS.dreamina.find(m => m.value === defaultModel) ? defaultModel
+      : (ENGINE_MODELS.dreamina.find(m => m.value === oldModel) ? oldModel : 'seedance2.0fast');
+
+    const mask = document.createElement('div');
+    mask.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;display:flex;align-items:center;justify-content:center;';
+    mask.innerHTML = `
+      <div style="background:var(--bg-card,#1b1f24);color:var(--text-primary,#fff);border:1px solid var(--border,#333);border-radius:10px;padding:20px 22px;min-width:460px;max-width:560px;box-shadow:0 20px 60px rgba(0,0,0,0.6);font-family:inherit;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;">🔄 重新生成 shot-${shot}</div>
+        <div style="font-size:12px;color:var(--text-muted,#aaa);line-height:1.7;margin-bottom:14px;">
+          当前视频：<code>${oldFile}</code><br>
+          上次模型：<code>${oldModel}</code>　上次消耗积分：${oldCredit}<br>
+          操作后：当前视频引用清空（文件不删）→ 重新加入候补池 → 调度器提交新任务。
+        </div>
+        <div style="font-size:12px;margin-bottom:6px;color:var(--text-secondary,#ccc);">选择生成引擎：</div>
+        <div id="__regenEngineRow" style="display:flex;gap:16px;font-size:12px;margin-bottom:12px;">
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="radio" name="__regenEngine" value="dreamina" checked />
+            <span>Dreamina<span style="color:var(--text-muted,#888);margin-left:4px">（即梦 · 心跳队列）</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="radio" name="__regenEngine" value="workrally" />
+            <span>WorkRally<span style="color:var(--text-muted,#888);margin-left:4px">（全能参考 · 多并发）</span></span>
+          </label>
+        </div>
+        <div style="font-size:12px;margin-bottom:6px;color:var(--text-secondary,#ccc);">选择用于重新生成的模型：</div>
+        <select id="__regenModelSel" style="width:100%;padding:8px 10px;font-size:13px;border-radius:6px;border:1px solid var(--border,#333);background:var(--bg-elevated,#111);color:inherit;font-family:inherit;">
+          ${ENGINE_MODELS.dreamina.map(m => `<option value="${m.value}" ${m.value===defVal?'selected':''}>${m.label}${m.recommend?'  ★ 默认推荐':''}</option>`).join('')}
+        </select>
+        <div style="font-size:12px;margin:12px 0 6px;color:var(--text-secondary,#ccc);">拼接参数：</div>
+        <div style="display:flex;gap:16px;font-size:12px;">
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="radio" name="__regenPromptMode" value="full" checked />
+            <span>全部参数<span style="color:var(--text-muted,#888);margin-left:4px">（默认，所有字段）</span></span>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+            <input type="radio" name="__regenPromptMode" value="slim" />
+            <span>精简参数<span style="color:var(--text-muted,#888);margin-left:4px">（仅 mount / camera / mainPrompt / compulsoryDeclaration / qualityBaseline）</span></span>
+          </label>
+        </div>
+        <div id="__regenVipWarn" style="font-size:11px;color:var(--accent-gold,#e6b45a);margin-top:8px;line-height:1.5;">
+          ⚠️ 选 VIP 模型会在非 VIP 账号下失败/多扣积分，请确认账号权限。
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
+          <button id="__regenCancel" class="vq-btn" style="padding:6px 14px;">取消</button>
+          <button id="__regenOk" class="vq-btn vq-btn-primary" style="padding:6px 14px;">确认重新生成</button>
+        </div>
+      </div>`;
+    document.body.appendChild(mask);
+
+    // 引擎切换联动模型列表
+    const selEl = mask.querySelector('#__regenModelSel');
+    const vipWarn = mask.querySelector('#__regenVipWarn');
+    mask.querySelectorAll('input[name="__regenEngine"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const eng = radio.value;
+        const models = ENGINE_MODELS[eng] || ENGINE_MODELS.dreamina;
+        selEl.innerHTML = models.map(m =>
+          `<option value="${m.value}" ${m.recommend?'selected':''}>${m.label}${m.recommend?'  ★ 默认推荐':''}</option>`
+        ).join('');
+        // WorkRally 不需要 VIP 警告
+        vipWarn.style.display = eng === 'workrally' ? 'none' : '';
+      });
+    });
+
+    const cleanup = (v) => { document.body.removeChild(mask); resolve(v); };
+    mask.querySelector('#__regenCancel').onclick = () => cleanup(null);
+    mask.querySelector('#__regenOk').onclick = () => {
+      const engEl = mask.querySelector('input[name="__regenEngine"]:checked');
+      const engine = (engEl && engEl.value) || 'dreamina';
+      const m = selEl.value || 'seedance2.0fast';
+      const pmEl = mask.querySelector('input[name="__regenPromptMode"]:checked');
+      const promptMode = (pmEl && pmEl.value) || 'full';
+      cleanup({ engine, model: m, promptMode });
+    };
+    mask.addEventListener('click', (e) => { if (e.target === mask) cleanup(null); });
+  });
+}
 // 置顶：把指定 shot 移到 waitList 队首。blocked=true 时先弹确认。
+// 置顶后会给 entry 打 pinned=true 标记，scheduler 的自动排序不会再把它挤走。
 async function onQueueTop(shot, blocked) {
   const q = (window.__sd2 || {}).videoQueue || {};
   const wl = (q.waitList || []).slice();
@@ -2901,6 +3044,8 @@ async function onQueueTop(shot, blocked) {
     if (!ok) return;
   }
   const [item] = wl.splice(idx, 1);
+  // 打置顶粘性：后端自动排序会优先保留 pinned 的顺序
+  item.pinned = true;
   wl.unshift(item);
   try {
     await _callQueueAPI('update', { patch: { waitList: wl } });

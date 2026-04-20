@@ -141,14 +141,31 @@ description: WorkRally CLI (旧名 zencli) 调用技能包。用于 AI 生图、
     | FrameSequence    | 序列帧驱动     | --sequence-frames (JSON) |
     | SubjectToVideo   | 主体驱动       | --reference-assets (JSON) |
 
+    ⚠️ **项目默认生视频方案（2026-04-20 起）**：
+    - **默认 provider = 18（Zen-SD2.0）**，默认 mode = **SubjectToVideo（全能参考）**
+    - 「全能参考」= 把该镜所有参考图都挂上：角色图 + 场景图 + 首帧图（前镜尾帧），全部通过 --reference-assets 传入
+    - 适用场景：提示词复杂、即梦侧 seedance 反复失败的复杂镜，走 workrally + SD2.0 走多图主体驱动兜底
+    - 若用户另行指定 Text 模式或其它 provider，则遵用户指定；未指定时一律按默认方案执行
+
+    ⚠️ **批量/并发调用规范**：当需要对一组 ≥2 镜批量走 workrally 救场时，必须遵循
+    `workrally-skill/workrally-batch-guide.md`（触发条件/单镜脚本/并发编排/批次收尾/已知陷阱），
+    不允许直接用 shell for 循环裸跑；单次批量提交未经用户确认首跑效果时禁止启动。
+
+    🔗 **候补池集成（v1.1）**：WorkRally 已接入心跳候补池调度。
+    - waitList entry 新增 `engine` 字段（`'dreamina'` | `'workrally'`），缺省为 `'dreamina'`
+    - 心跳调度器按 engine 分支派发：dreamina→`submit_shot()`、workrally→spawn `_workrally_one_shot.py`
+    - WorkRally 并发上限由 `video-queue.json` 的 `maxInflightWorkrally`（默认 5）控制，与 Dreamina 池隔离
+    - Dashboard 重生成弹窗可选引擎（Dreamina / WorkRally），切换引擎联动模型下拉列表
+    - WorkRally 子进程自己轮询 + 写回 shot.json（done/failed），心跳只负责数 generating 数量用于 slot 判断
+
     常用视频模型（文本驱动 Text 模式）：
     | provider | 名称              | 时长选项      | 附图 | 音效  | 推荐 |
     |----------|-------------------|-------------|------|------|------|
-    | 2        | Zen-01-1.5pro     | 5/8/10/12s  | 1图  | 支持 | ★推荐 |
+    | 2        | Zen-01-1.5pro     | 5/8/10/12s  | 1图  | 支持 | Text 推荐 |
     | 1        | Zen-02.3.0        | 5/10/15s    | 1图  | 支持 | 写实  |
     | 202      | Zen-01 [1.0]      | 5/10s       | 1图  | 不支持 | —   |
 
-    Zen-SD2.0 SubjectToVideo（主体驱动）模式——项目默认备选生视频方案：
+    Zen-SD2.0 SubjectToVideo（全能参考 / 主体驱动）——★★★ **项目默认生视频方案**：
     | provider | 名称       | 模式              | 时长        | 最大图片 | 最大视频 | 音效  |
     |----------|-----------|-------------------|------------|---------|---------|------|
     | 18       | Zen-SD2.0 | Text/FirstLastFrame/SubjectToVideo | 4-15s | 9       | 3       | 支持 |

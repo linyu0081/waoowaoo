@@ -14,7 +14,7 @@
   "qualityRoute": "二维手绘墨线轮廓+寝殿明黄纱幔暖金基调+郭荣蜡黄色块面色冷反差+大殿金漆龙椅厚涂色块+小皇帝龙袍明黄色块加冕冠珠串墨线高光；纱幔色块与龙椅金漆墨线纹理层次清晰可辨。",
   "imagingStyle": "病榻闭眼+继位登基双场景并列，不靠戏剧配乐，靠国产动画厚涂色块与龙椅瘦小反差呈现权力交接冷峻分量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：国产动画三国演义君主驾崩桥段+中华勤学故事二维手绘厚涂仪式戏；稳帧点：7岁小皇帝坐宽大龙椅显瘦小定格。",
+  "reference": "参照：80年代国产二维手绘君主驾崩厚涂仪式戏；稳帧点：7岁小皇帝坐宽大龙椅显瘦小定格。",
   "microExpressions": "郭荣面色蜡黄色块+双眼半睁带不甘牵挂+右手从锦被缓缓抬起+无力垂下+双眼闭合+头向枕上侧倾；郭宗训小皇帝端坐龙椅+双脚悬空仅及椅面一半+冕冠珠串墨线垂下+稚嫩面庞严肃茫然+小手放膝上不知所措。",
   "nailLines": "这镜最值钱的不是驾崩，而是国产动画纪录片风下郭荣闭眼与7岁小皇帝瘦小坐龙椅的历史冷峻对照。\n龙椅瘦小必须让观众通过二维手绘色块看到小皇帝双脚悬空与宽大龙椅的物理反差。\n两代皇帝要一终一始，不靠配乐，靠墨线姿态与悬空双脚承载权力分量。\n落幅停在瘦小龙椅定格，让下一镜赵匡胤在军中安插势力重权在握自然承接。",
   "e15": "",
@@ -26,16 +26,18 @@
     "{{character:马上}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
-    "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "engine": "dreamina",
+    "modelName": "seedance2.0fast",
+    "taskId": "df964e74-1434-4e85-8240-21b529b2f36b",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
+    "videoUrl": "https://v9-artist.vlabvod.com/be9e173800842d959a50b1befd2e5fe1/69e548dc/video/tos/cn/tos-cn-v-148450/owOp0AEj1Q4uQdJPIPPDAJtl1heqg8ssYJs2KQ/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6289&bt=6289&cs=0&ds=12&ft=5QYTUxhhe6BMyq1UiPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZTk5NDo2N2dkZmZmOTVlaEBpamZwZTZrbzptOjczNDM7M0A0YS0yNTI2X2AxNTReMzJgYSNucV9vcWdmaWZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776630464&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604200427440212140731585943EF1",
+    "videoFile": "outputs/ep01/videos/shot-73.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-73.jpg",
     "failReason": "",
-    "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "creditCount": 60,
+    "submittedAt": "2026-04-20T04:23:51+08:00",
+    "completedAt": "2026-04-20T04:27:46+08:00"
   }
 }

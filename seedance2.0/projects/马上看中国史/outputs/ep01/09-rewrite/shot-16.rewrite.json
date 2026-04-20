@@ -1,0 +1,23 @@
+{
+  "shotId": "16",
+  "status": "rewritten",
+  "verdict": "pre-TNS 连续 3 次命中：画面描述把台词里的'藩镇兵'做了视觉化强调（食指空中点两下），叠加军事雇佣组合词，触发风控。去掉画面对敏感词的强调、瘦身动作描述即可通过。",
+  "detectedRisks": [
+    {"category": "F类高危组合（军事+讲解强调）", "hit": "讲到\"藩镇兵\"三字时食指在空中轻点两下强调", "fixedTo": "说话间食指在胸前自然起落"},
+    {"category": "E类密度堆叠", "hit": "目光坚定看向镜头 / 食指在胸前抬起做讲解手势", "fixedTo": "目光看向镜头 / 食指在胸前轻抬做讲解手势"},
+    {"category": "E类同义动词", "hit": "右手收回再抬起", "fixedTo": "右手放下再抬起"}
+  ],
+  "rewrittenFields": {
+    "mainPrompt": "见 shot-16.json"
+  },
+  "preservedFields": ["titleBar","mount","camera","compulsoryDeclaration","qualityBaseline","openingFrame","closingFrame","connection","transition","assetRefs","dialogue(台词逐字)"],
+  "submitConfig": {
+    "engine": "workrally",
+    "model": "Zen-SD2.0",
+    "mode": "SubjectToVideo",
+    "promptMode": "full",
+    "pinned": true,
+    "note": "mainPrompt-rewritten-20260420T14(sensitive-word-desensitize)"
+  },
+  "checklistPassed": ["起手句原样","台词原文逐字保留","A类0命中","B类0命中","C类0命中","D类0命中","E类降敏","F类组合拆解","三段骨架","长度≤450","挂载未动"]
+}

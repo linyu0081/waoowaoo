@@ -1,20 +1,20 @@
 {
   "shotType": "C",
   "titleBar": "【分镜55｜14秒｜类型：C｜方案：T55长台词呐喊模板｜档位：LITE｜节奏：振臂高呼枪戟护家国河山→此战只为结束百年乱局→举兵器呐喊随我破敌】",
-  "mount": "挂载：角色：赵匡胤@图片4｜马前卒@图片2｜场景：高平战场-日@图片24｜本视频以@图片60为首帧",
+  "mount": "挂载：角色：赵匡胤@图片4｜马前卒@图片2｜场景：高平战场-日@图片24｜声音：赵匡胤声音@音频4｜本视频以@图片60为首帧",
   "camera": "相机位置：战场中位仰角近景到全景切换；相机朝向：正对赵匡胤振臂高呼到举兵器方向；角色朝向：赵匡胤振臂挥兵器呐喊面向全军；构图锚点：赵匡胤振臂高呼举兵器的动作与呐喊嘴型",
   "openingFrame": "镜头承接上一镜乱世悲悯定格延续拍摄角度，赵匡胤振臂右手长兵器从胸前抬起面向镜头开始长段呐喊。",
   "closingFrame": "赵匡胤呐喊完兄弟们随我破敌最后一句后举兵器朝北汉联军方向一指画面定格在这份一指破敌的英雄动势中，为下一镜马前卒与赵匡胤并肩厮杀做冲锋动势承接。",
   "connection": "接住上一镜乱世悲悯定格接力物：情绪继续升格到振臂高呼长段呐喊。",
   "transition": "动作动势硬切：赵匡胤举兵器指向北汉联军的动势延续到下一镜马前卒与赵匡胤并肩厮杀冲锋动作。",
   "dualAnchor": "9:16 强调上下赵匡胤振臂高举+长兵器向上动势；16:9 强调赵匡胤居中振臂+全军望向赵匡胤横向排列。",
-  "mainPrompt": "【本分镜S+质量描述】REAL_CG长台词呐喊战场镜头，英雄联盟刀妹风+热血激昂质感，8K电影感。\n第一段：镜头承接上一镜乱世悲悯定格延续拍摄角度赵匡胤身姿挺拔跨马于阵前，赵匡胤振臂右手长兵器从胸前抬起面向镜头开始长段呐喊声音激昂中带着深情，**赵匡胤**：\"你们手中的枪戟，护的是家国河山，你们身上的甲胄，扛的是苍生黎庶。\"。\n第二段：赵匡胤振臂节奏加强继续慷慨陈词眼神由悲悯转为坚定，**赵匡胤**：\"此战不为仇怨，不为虚名，只为结束这百年乱局，还四方一个盛世太平。\"；说到盛世太平时长兵器向上扬起画面随呐喊动势微仰。\n第三段：赵匡胤呐喊情绪达到峰值声调由陈词转为军令节奏，**赵匡胤**：\"为逝者默哀，为生者奋战。今日，便以吾辈热血，定乾坤，安社稷！兄弟们，随我破敌！\"；说完最后一句时举兵器朝北汉联军方向一指画面定格在这份一指破敌的英雄动势中。",
+  "mainPrompt": "【本分镜S+质量描述】REAL_CG长台词呐喊战场镜头，MOBA游戏女剑士风+热血激昂质感，8K电影感。\n第一段：镜头承接上一镜乱世悲悯定格延续拍摄角度赵匡胤身姿挺拔跨马于阵前，赵匡胤振臂右手长兵器从胸前抬起面向镜头开始长段呐喊声音激昂中带着深情，**赵匡胤**：\"你们手中的枪戟，护的是家国河山，你们身上的甲胄，扛的是苍生黎庶。\"。\n第二段：赵匡胤振臂节奏加强继续慷慨陈词眼神由悲悯转为坚定，**赵匡胤**：\"此战不为仇怨，不为虚名，只为结束这百年乱局，还四方一个盛世太平。\"；说到盛世太平时长兵器向上扬起画面随呐喊动势微仰。\n第三段：赵匡胤呐喊情绪达到峰值声调由陈词转为军令节奏，**赵匡胤**：\"为逝者默哀，为生者奋战。今日，便以吾辈热血，定乾坤，安社稷！兄弟们，随我破敌！\"；说完最后一句时举兵器朝北汉联军方向一指画面定格在这份一指破敌的英雄动势中。",
   "compulsoryDeclaration": "【强制声明】无背景音乐，仅保留环境音与人声：画面禁字幕/文字/水印/Logo/重复的模型：禁止可读文字：禁止超现实夸张：禁止无反作用力动作",
   "mustShow": "赵匡胤振臂右手长兵器从胸前抬起呐喊姿态、赵匡胤讲到盛世太平时长兵器向上扬起、赵匡胤说随我破敌时举兵器一指北汉联军",
   "qualityRoute": "战场背景压阴+赵匡胤甲胄暖金属反光+披风猎猎，长兵器金属锋刃与呐喊口型唾沫粒子边缘保结构可辨。",
   "imagingStyle": "长台词+振臂升格动作，不靠字幕标注金句，靠手势节奏与眼神变化承载陈词分量。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：英雄联盟刀妹长台词呐喊+武侠片破敌前阵前演说；稳帧点：赵匡胤举兵器一指北汉联军定格。",
+  "reference": "参照：MOBA游戏女剑士阵前长台词呐喊+武侠片破敌阵前演说；稳帧点：赵匡胤举兵器一指北汉联军定格。",
   "microExpressions": "赵匡胤振臂右手长兵器从胸前抬起+说到家国河山时手臂节奏加强+说到盛世太平时长兵器向上扬起+眼神由悲悯转坚定+说到随我破敌时嘴角紧抿咬字一字一顿+举兵器一指北汉联军+下颌微抬目光锋利+面部激昂神情。",
   "nailLines": "这镜最值钱的不是长台词，而是从陈词到军令三段节奏升格的热血动势。\n振臂高举必须让观众看到长兵器向上扬起与甲胄反光的物理动势。\n赵匡胤要又悲又雄又令，不靠戏腔，靠手势节奏与眼神变化呈现英雄立场。\n落幅停在举兵器一指定格，让下一镜马前卒与赵匡胤并肩厮杀从冲锋动势自然承接。",
   "e15": "",
@@ -24,16 +24,52 @@
     "{{scene:高平战场}}"
   ],
   "videoTask": {
-    "engine": "",
-    "modelName": "",
-    "taskId": "",
-    "status": "pending",
+    "engine": "workrally",
+    "modelName": "Zen-SD2.0",
+    "taskId": "d7iroi85o9alhig67m1g",
+    "status": "done",
+    "queueStatus": "",
+    "queueIdx": null,
     "videoUrl": "",
-    "videoFile": "",
-    "tailFrame": "",
+    "videoFile": "outputs/ep01/videos/shot-55.mp4",
+    "tailFrame": "outputs/ep01/tail-frames/tail-shot-55.jpg",
     "failReason": "",
     "creditCount": null,
-    "submittedAt": "",
-    "completedAt": ""
+    "submittedAt": "2026-04-20T13:40:26+08:00",
+    "completedAt": "2026-04-20T13:51:28+08:00",
+    "failHistory": [
+      {
+        "taskId": "6a3792ab-ed6e-4ea7-ae4d-a6e2b48bb827",
+        "failReason": "generation failed: pre-TNS check did not pass",
+        "submittedAt": "2026-04-20T01:53:21+08:00",
+        "failedAt": "2026-04-20T01:53:51+08:00",
+        "model": "seedance2.0fast"
+      }
+    ],
+    "promptMode": "full",
+    "workrallyMode": "SubjectToVideo",
+    "workrallyReferenceAssets": [
+      {
+        "role": "character-赵匡胤",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/86cbdef1-19b1-44ac-ac0a-cf104c6dab7a.png",
+        "srcImg": "@图片4"
+      },
+      {
+        "role": "character-马前卒",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/b801fb52-0f31-44c7-9f1e-037c64c3f875.png",
+        "srcImg": "@图片2"
+      },
+      {
+        "role": "scene-高平战场",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/d868f20d-e538-4b3a-b47f-7ba4031d5e6a.png",
+        "srcImg": "@图片24"
+      },
+      {
+        "role": "tail-frame-?",
+        "url": "https://zenvideo-pro.gtimg.com/animation_aigc/short_series/assets/upload/02dk8jku2bxf2f1byf7rgv7/20260420/ce548a53-0d8d-4d0c-85cb-3e08210b1705.jpg",
+        "srcImg": "@图片60"
+      }
+    ],
+    "assetId": "uritv374zu"
   }
 }

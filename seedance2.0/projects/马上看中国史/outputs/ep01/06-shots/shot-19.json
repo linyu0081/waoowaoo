@@ -1,7 +1,7 @@
 {
   "shotType": "A",
   "titleBar": "【分镜19｜8秒｜类型：A｜方案：T19国产动画土味年会建立模板｜档位：LITE｜节奏：二维手绘年会大全景→大红条幅显眼→铜钱山与士兵队列铺开】",
-  "mount": "挂载：场景：土味年会现场-夜@图片22｜道具：铜钱山@图片32",
+  "mount": "挂载：场景：土味年会现场-夜@图片22",
   "camera": "相机位置：舞台斜前高位缓推；相机朝向：正对舞台主条幅与背景；角色朝向：无人物聚焦；构图锚点：舞台正中大红条幅庆功表彰大会金色烫字",
   "openingFrame": "镜头由上一镜卡通标题金色高亮切入国产动画二维手绘土味年会大全景，舞台大红条幅挂在画面顶端庆功表彰大会金色烫字醒目。",
   "closingFrame": "镜头下推定格在舞台斜前方中景，舞台一侧铜钱山堆积发亮，台下整齐排列数百名士兵以二维手绘剪影群像密密麻麻，舞台左侧预留一个空位等待下一镜节度使登台。",
@@ -14,27 +14,26 @@
   "qualityRoute": "二维手绘粗墨线轮廓+舞台蓝紫色LED冷光色块与顶光大红烫金暖色厚涂强反差+春晚金粉颗粒漂浮；铜钱串金色块与兵器剪影墨线层次清晰可辨。",
   "imagingStyle": "土味年会直给饱和，不靠写实滤镜高级感，靠80年代国产动画的厚涂大红大金色块与剪影群像堆满画面的土味氛围。",
   "qualityBaseline": "【画质底线】高光保结构、暗部不死黑、中间调厚实、主体边缘稳定、介质分层清楚",
-  "reference": "参照：80年代国产动画《大闹天宫》宫殿金光+《葫芦兄弟》反派夸张造型+《没头脑和不高兴》舞台滑稽氛围；稳帧点：舞台大红条幅庆功表彰大会金字。",
+  "reference": "参照：80年代国产动画舞台滑稽氛围；稳帧点：舞台大红条幅庆功表彰大会金字。",
   "microExpressions": "",
   "nailLines": "这镜最值钱的不是年会场景，而是国产动画土味年会风下大红金字与藩镇兵制的荒诞对照。\n大红条幅必须让观众通过厚涂色块一眼看清庆功表彰大会金字的土味冲击。\n铜钱山要又密又亮，不靠粒子特效，靠二维手绘厚涂金色块堆积+卡通闪效星点承载土味质感。\n落幅停在舞台左侧空位+士兵剪影群像队列，让下一镜节度使登台进入空位自然承接。",
   "e15": "",
   "assetRefs": [
-    "{{scene:土味年会现场}}",
-    "{{prop:铜钱山}}"
+    "{{scene:土味年会现场}}"
   ],
   "videoTask": {
     "engine": "dreamina",
     "modelName": "seedance2.0fast",
-    "taskId": "c30b4745-6b8e-4aa5-a5f9-f6b0ab99a923",
+    "taskId": "ca87e926-3dd3-42d5-bed9-52719e6766c3",
     "status": "done",
     "queueStatus": "",
     "queueIdx": null,
-    "videoUrl": "https://v9-artist.vlabvod.com/c94abe5422396ef9e833d05fd05c099f/69e49be0/video/tos/cn/tos-cn-v-148450/o0K0c9gfDW48nk9saj9bQQ4aAsMkIQAKkQghYJ/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6552&bt=6552&cs=0&ds=12&ft=5QYTUxhhe6BMyqS5lPVJD12Nzj&mime_type=video_mp4&qs=0&rc=ZTtkZDdlO2dpOjw7M2U1NkBpMztpNzhrbzs7OjczNDM7M0AzMC9fLWEwXi4xXjBiNmE2YSNfcWYzcWcvb2ZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776586184&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202604191609440212140731585960898",
+    "videoUrl": "https://v9-artist.vlabvod.com/fbc22a5b522becf95a6fed5c438b4cf8/69e52e98/video/tos/cn/tos-cn-v-148450/o0XsxHj5InqHCQ5Bbly4qAuBfLSeQWRgGDwpE2/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&br=6454&bt=6454&cs=0&ds=12&ft=5QYTUxhhe6BMyq18PPVJD12Nzj&mime_type=video_mp4&qs=0&rc=Nzg4N2Q0N2Q1MzQ7OzlmZkBpM3U5d2RrbzhrOjczNDM7M0BgL18xYzNhXjYxXzJeNTVgYSNrM2pncWduc2ZhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1776623744&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=20260420023544021214073158594F7E9",
     "videoFile": "outputs/ep01/videos/shot-19.mp4",
     "tailFrame": "outputs/ep01/tail-frames/tail-shot-19.jpg",
     "failReason": "",
     "creditCount": 40,
-    "submittedAt": "2026-04-19T15:41:51+08:00",
-    "completedAt": "2026-04-19T16:09:47+08:00"
+    "submittedAt": "2026-04-20T02:27:47+08:00",
+    "completedAt": "2026-04-20T02:35:46+08:00"
   }
 }
